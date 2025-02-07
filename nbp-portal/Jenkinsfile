@@ -2,25 +2,25 @@ pipeline {
     agent any
 
     environment {
-        LIFERAY_HOME = "/opt/liferay"  // Update with your Liferay installation path
+        LIFERAY_HOME = "C:\JBG\Server\liferay-dxp" 
     }
 
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-repo.git'  // Replace with your Git repo
+                git 'https://github.com/VipinSingh112/jenkins_prc.git'
             }
         }
 
         stage('Build with Gradle') {
             steps {
-                sh './gradlew clean build'  // Run Gradle build
+                sh './gradlew clean build'
             }
         }
 
         stage('Deploy to Liferay') {
             steps {
-                sh 'cp modules/build/libs/*.jar $LIFERAY_HOME/deploy/'  // Copy jar to Liferay deploy folder
+                sh 'cp modules/build/libs/*.jar $LIFERAY_HOME/deploy/' 
             }
         }
     }
