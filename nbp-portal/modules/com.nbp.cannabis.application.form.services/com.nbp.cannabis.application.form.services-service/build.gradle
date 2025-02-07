@@ -1,0 +1,11 @@
+dependencies {
+	implementation  project(":modules:com.nbp.cannabis.application.form.services:com.nbp.cannabis.application.form.services-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.cannabis.application.form.services-api/src/main/java"
+}
+
+group = "com.nbp.cannabis.application.form.services"

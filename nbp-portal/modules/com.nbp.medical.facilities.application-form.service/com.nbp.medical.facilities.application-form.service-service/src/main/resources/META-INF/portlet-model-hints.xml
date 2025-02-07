@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="medicalCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesApp">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="natureOfApplicant" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="registrationNumber" type="Long" />
+		<field name="medicalCategory" type="String" />
+		<field name="subCategory" type="String" />
+		<field name="nursingHomesCategory" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nursingSubCategoryVal" type="String" />
+		<field name="numberOfBeds" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="entityId" type="String" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesAppliInfo">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesAppliId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="appliTelephoneNumber" type="String" />
+		<field name="appliAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="appliEmailAddress" type="String" />
+		<field name="appliNationality" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesComDetail">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesComDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="fullName" type="String" />
+		<field name="privateAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="registeredOffice" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesHomeInfo">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesHomeInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfOwner" type="String" />
+		<field name="homeAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="homeTelephoneNumber" type="String" />
+		<field name="homeEmailAddress" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="otherBusinessDetails" type="String" />
+		<field name="maternityPatients" type="String" />
+		<field name="otherPatients" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesHomeTwo">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesHomeTwoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="maternityPatients" type="String" />
+		<field name="otherPatients" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesMaterHome">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesMaterHomeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nurseName" type="String" />
+		<field name="nurseQualification" type="String" />
+		<field name="otherPerson" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesNurseDetail">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesNurseDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="qNurseName" type="String" />
+		<field name="qNurseQualification" type="String" />
+		<field name="ratioOfQNurses" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesNurseStaff">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesNurseStaffId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nStaffName" type="String" />
+		<field name="nStaffQualification" type="String" />
+		<field name="nStaffState" type="String" />
+		<field name="counter" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesQNurse">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesQNurseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="checkQualifiedNurse" type="String" />
+		<field name="name" type="String" />
+		<field name="qualification" type="String" />
+		<field name="nursingStaffCategory" type="String" />
+		<field name="qNurseName" type="String" />
+		<field name="qNurseQualification" type="String" />
+		<field name="ratioOfQNurses" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFacilitiesSignInfo">
+		<field name="uuid" type="String" />
+		<field name="medicalFacilitiesSignInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="particulars" type="String" />
+		<field name="chargedFees" type="String" />
+		<field name="addressOfOtherNHome" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="enteredDate" type="Date" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalFaciltiesPayment">
+		<field name="medicalFaciltiesPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+	<model name="com.nbp.medical.facilities.application.form.service.model.MedicalNurseStaffPremises">
+		<field name="medicalNurseStaffPremisesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nursingStaffCategory" type="String" />
+		<field name="medicalFacilitiesAppId" type="long" />
+	</model>
+</model-hints>

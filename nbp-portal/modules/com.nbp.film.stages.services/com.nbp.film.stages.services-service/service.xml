@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.film.stages.services">
+	<namespace>FILM_STAGES</namespace>
+	<entity local-service="true" name="FilmApplicationStages" remote-service="true" table="nbp_film_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="filmApplicationStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="filmApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+
+		<!-- Finder methods -->
+
+		<finder name="getFAS_CAI" return-type="FilmApplicationStages">
+			<finder-column name="filmApplicationId" />
+		</finder>
+		<finder name="getFAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getFAS_StageName_StageStatus" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getFAS_CaseIdStageName" return-type="FilmApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getFAS_CaseIdStageStatus" return-type="FilmApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getFAS_CaseIdAndStatus" return-type="FilmApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+<finder name="getCAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="FilmFullRegistration" local-service="true" table="nbp_film_full_registration">
+
+		<!-- PK fields -->
+
+		<column name="filmFullRegistrationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="nameOfApplicant" type="String"></column>
+        <column name="productionType" type="String"></column>
+        <column name="registrationNumber" type="String"></column>
+        <column name="duration" type="String"></column>
+        <column name="dateOfIssued" type="Date"></column>
+        <column name="productionTitle" type="String"></column>
+        <column name="productionDateFrom" type="Date"></column>
+        <column name="productionDateTo" type="Date"></column>
+        <column name="termsAndConditions" type="String"></column>
+        <column name="docFileEntrys" type="long"></column>
+        <finder name="getFilmFullRegistrationBy_CI" return-type="FilmFullRegistration">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getFilmFullRegistrationBy_RN" return-type="FilmFullRegistration">
+            <finder-column name="registrationNumber"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FilmApplicationRegister" local-service="true"
+		table="nbp_film_register">
+
+
+		<!-- PK fields -->
+
+		<column name="filmApplicationRegisterId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="nameOfApplicant" type="String"></column>
+        <column name="registrationDate" type="Date"></column>
+        <column name="filmRegistrationNum" type="String"></column>
+        <column name="titleOfProduction" type="String"></column>
+        <column name="dateOfIssued" type="Date"></column>
+        <column name="productionCompany" type="String"></column>
+        <column name="technicalFormOfProd" type="String"></column>
+        <column name="OriginOfProdCom" type="String"></column>
+        <column name="permitsRequired" type="String"></column>
+        <column name="shootLocationInJamaica" type="String"></column>
+        <column name="preProductionDate" type="Date"></column>
+        <column name="productionStartDate" type="Date"></column>
+        <column name="proposedDateOfArrival" type="String"></column>
+        <column name="portOfEntry" type="String"></column>
+        <column name="proposedDateOfDeparture" type="Date"></column>
+        <column name="fullProductionBudget" type="String"></column>
+        <column name="expectedBudgetSpendInJA" type="String"></column>
+        <column name="numberOFForeignCrewHired" type="String"></column>
+        <column name="numberJamaicaCrewHired" type="String"></column>
+        <column name="valueOfBondWaiver" type="String"></column>
+        <column name="customsBroker" type="String"></column>
+        <column name="localProductionManagerOrFixer" type="String"></column>
+        <finder name="getFilmByCI" return-type="FilmApplicationRegister">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FilmDeskVerification" local-service="true"
+		table="nbp_film_desk_verification">
+
+		<!-- PK fields -->
+
+		<column name="filmDeskVerificaId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="filmApplicationId" type="long"></column>
+        <column name="documentName" type="String"></column>
+        <column name="status" type="String"></column>
+        
+         <finder name="getFilmDeskVerificationByStatus_ApplicationId" return-type="Collection">
+          <finder-column name="status"></finder-column>
+          <finder-column name="filmApplicationId"></finder-column>
+        </finder>
+      <finder name="getFilmById" return-type="FilmDeskVerification">
+          <finder-column name="filmApplicationId"></finder-column>
+      </finder>
+      <finder name="getDeskVerificationFilmById" return-type="Collection">
+          <finder-column name="filmApplicationId"></finder-column>
+      </finder>
+	</entity>
+		<entity name="FilmPaymentConfirmation" local-service="true" table="nbp_film_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="filmPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getFilmFullPaymentConfirmationBy_CI" return-type="FilmPaymentConfirmation">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getFilmFullPaymentConfirmations_By_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	
+</service-builder>

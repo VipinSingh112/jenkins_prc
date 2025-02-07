@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.quarry.stage.service-api
+Bundle-SymbolicName: com.nbp.quarry.stage.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.quarry.stage.service.exception,\
+	com.nbp.quarry.stage.service.model,\
+	com.nbp.quarry.stage.service.service,\
+	com.nbp.quarry.stage.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.quarry.stage.service-service/service.xml

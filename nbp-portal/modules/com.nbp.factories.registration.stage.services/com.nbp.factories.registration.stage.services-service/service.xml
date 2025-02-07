@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.factories.registration.stage.services">
+	<namespace>FACTORIES_REGISTRATION</namespace>
+	<entity local-service="true" name="FactoriesApplicationStage"
+		remote-service="true" uuid="true" table="nbp_factories_app_stage">
+		<!-- PK fields -->
+
+		<column name="factoriesApplicationStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+			<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="factoriesApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!--finders -->
+		<finder name="getFactories_By_AI"
+			return-type="FactoriesApplicationStage">
+			<finder-column name="factoriesApplicationId"></finder-column>
+		</finder>
+		<finder name="getFactories_By_CaseIdStageName"
+			return-type="FactoriesApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="get_Factories_By_CaseId"
+			return-type="FactoriesApplicationStage">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getFactories_By_CaseIdStageStatus"
+			return-type="FactoriesApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getFactories_By_CaseIdAndStatus"
+			return-type="FactoriesApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getFactories_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getFactories_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+	</entity>
+	<entity name="FactoriesCerticateOfRegis" local-service="true"
+		table="nbp_factories_cert_regis">
+
+		<!-- PK fields -->
+
+		<column name="factoriesCerticateOfRegisId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<column name="caseId" type="String"></column>
+        <column name="nameOfEstablishment" type="String"></column>
+        <column name="parish" type="String"></column>
+        <column name="procuctCatAndName" type="String"></column>
+        <column name="certificateIssueDate" type="Date"></column>
+        <column name="dateOfExpiration" type="Date"></column>
+        <column name="registration" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        
+         <finder name="getFactoryCertifiResgiBy_CI" return-type="FactoriesCerticateOfRegis">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getFactoryCertifiResgisBy_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="FactoriesInspection" local-service="true"
+		table="nbp_factories_inspection">
+
+		<!-- PK fields -->
+
+		<column name="factoriesInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		 <column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="factoriesApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+        
+        <order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+        
+        <finder name="getFactoryInspectionBy_CI" return-type="FactoriesInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getFI_FAI" return-type="Collection">
+			<finder-column name="factoriesApplicationId" />
+		</finder>
+		<finder name="getMI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getMI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="factoriesApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="FactoriesInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="factoriesApplicationId" />
+		</finder>
+	</entity>
+	<entity name="FactoriesAppCommitteeDecision" local-service="true"
+		table="nbp_factories_comm_decision">
+
+		<!-- PK fields -->
+
+		<column name="factoriesAppCommiDecId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="dateOfCommitteeDecision" type="Date"></column>
+        <column name="committeeDecision" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+		<finder name="getFactory_CD_CI" return-type="FactoriesAppCommitteeDecision">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getFactory_By_CD" return-type="Collection">
+			<finder-column name="committeeDecision" />
+		</finder>
+	</entity>
+	<entity name="FactoryPaymentVerification" local-service="true"
+		table="nbp_factory_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="factoryPaymentVerificationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <!-- Other fields -->
+	    <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getFactoryPaymentConfBy_CI" return-type="FactoryPaymentVerification">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getFactoryPayConfBy_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.ogt.application.form.services-api
+Bundle-SymbolicName: com.nbp.ogt.application.form.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.ogt.application.form.services.exception,\
+	com.nbp.ogt.application.form.services.model,\
+	com.nbp.ogt.application.form.services.service,\
+	com.nbp.ogt.application.form.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.ogt.application.form.services-service/service.xml

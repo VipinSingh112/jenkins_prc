@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.tourism.application.stages.services">
+	<namespace>TOURISM_STAGES</namespace>
+	<entity local-service="true" name="TourismApplicationStages" remote-service="true" uuid="true" table="nbp_tourism_app_stages">
+
+		<!-- PK fields -->
+		<column name="tourismApplicationStagesId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="tourismApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		
+		<!-- Finder methods -->
+		<finder name="getTAS_TAI" return-type="TourismApplicationStages">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+		<finder name="getTAS_CaseIdStageName" return-type="TourismApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getTAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getTAS_CaseIdStageStatus" return-type="TourismApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getTAS_CaseIdAndStatus" return-type="TourismApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getTAS_SNAndSS" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getTAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="TourismPermit" local-service="true"
+		table="nbp_tourism_permit">
+
+		<!-- PK fields -->
+
+		<column name="tourismgPermitId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="PIRPermtNumber" type="String"></column>
+        <column name="dateOfIssue" type="Date"></column>
+        <column name="dateOfExpiration" type="Date"></column>
+        <column name="durationOfPermit" type="String"></column>
+        <column name="typeOfPermit" type="String"></column>
+        <column name="numberOfExtensions" type="String"></column>
+        <column name="parish" type="String"></column>
+        <column name="pirPermitCertificateNumber" type="long"></column>
+        <finder name="getManufacturingPermitBY_CI" return-type="TourismPermit">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="TourismDeskVerification" local-service="true"
+		table="nbp_tourism_desk_verifica">
+
+		<!-- PK fields -->
+
+		<column name="tourismDeskVeriId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="tourismApplicationId" type="long"></column>
+        <column name="documentStatus" type="String"></column>
+        <column name="documentName" type="String"></column>
+        <finder name="getTourismDV_ById" return-type="Collection">
+          <finder-column name="tourismApplicationId"></finder-column>
+      </finder>
+	</entity>
+			<entity name="TourismPaymentConfirmation" local-service="true" table="nbp_tourism_payment_con">
+
+		<!-- PK fields -->
+
+		<column name="tourismPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getTourismPaymentConfirmationBy_CI" return-type="TourismPaymentConfirmation">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getTourismPaymentConfirmations_By_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

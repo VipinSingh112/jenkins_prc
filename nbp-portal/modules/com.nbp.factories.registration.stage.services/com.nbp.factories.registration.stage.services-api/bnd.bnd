@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.factories.registration.stage.services-api
+Bundle-SymbolicName: com.nbp.factories.registration.stage.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.factories.registration.stage.services.exception,\
+	com.nbp.factories.registration.stage.services.model,\
+	com.nbp.factories.registration.stage.services.service,\
+	com.nbp.factories.registration.stage.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.factories.registration.stage.services-service/service.xml

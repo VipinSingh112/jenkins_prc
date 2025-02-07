@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.medical.stages.service">
+	<namespace>MEDICAL_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity local-service="true" name="MedicalApplicationStages"
+		remote-service="true" uuid="true" table="nbp_medical_app_stage">
+
+		<!-- PK fields -->
+
+		<column name="medicalStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="stageName" type="String"></column>
+		<column name="duration" type="String"></column>
+		<column name="stageStatus" type="String"></column>
+		<column name="stageStartDate" type="Date"></column>
+		<column name="stageEndDate" type="Date"></column>
+		<column name="medicalApplicationId" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="updateBySource" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getMedical_AI"
+			return-type="MedicalApplicationStages">
+			<finder-column name="medicalApplicationId"></finder-column>
+		</finder>
+		<finder name="getMedical_By_CaseIdStageName"
+			return-type="MedicalApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="get_Medical_By_CaseId"
+			return-type="MedicalApplicationStages">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMedical_By_CaseIdStageStatus"
+			return-type="MedicalApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getMedical_By_CaseIdAndStatus"
+			return-type="MedicalApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getMedical_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMedical_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+	</entity>
+	<entity name="MedicalCertificateIssuance" local-service="true"
+		table="nbp_medical_licence_issu">
+
+		<!-- PK fields -->
+
+		<column name="medicalCertificateIssuanceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="caseId" type="String" />
+		<column name="licenceNumber" type="String" />
+		<column name="status" type="String" />
+		<column name="medicalCategory" type="String" />
+		<column name="dateOfLicIssuance" type="Date" />
+		<column name="dateOfLicenseExpiration" type="Date" />
+		<column name="docLicFileEntryId" type="long" />
+		<finder name="getMedical_Issuance_By_CI"
+			return-type="MedicalCertificateIssuance">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="MedicalPaymentConfirmation" local-service="true"
+		table="nbp_medical_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="medicalPaymentConfirmationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+	   <!-- Other fields -->
+	    <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getMedicalPaymentConfBy_CI" return-type="MedicalPaymentConfirmation">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getMedicalPayConfBy_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="MedicalFacilitiesInspection" local-service="true"
+		table="nbp_medical_inspection">
+
+		<!-- PK fields -->
+
+		<column name="medicalInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="medicalApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+        
+        <finder name="getMedicalInspectionBy_CI" return-type="MedicalFacilitiesInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getMed_FBAI" return-type="Collection">
+			<finder-column name="medicalApplicationId" />
+		</finder>
+		<finder name="getMed_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMed_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getMed_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMed_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="medicalApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="MedicalFacilitiesInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="medicalApplicationId" />
+		</finder>
+		
+	</entity>
+</service-builder>

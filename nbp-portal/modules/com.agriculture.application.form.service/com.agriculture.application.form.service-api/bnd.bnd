@@ -1,0 +1,10 @@
+Bundle-Name: com.agriculture.application.form.service-api
+Bundle-SymbolicName: com.agriculture.application.form.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.agriculture.application.form.service.exception,\
+	com.agriculture.application.form.service.model,\
+	com.agriculture.application.form.service.service,\
+	com.agriculture.application.form.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.agriculture.application.form.service-service/service.xml

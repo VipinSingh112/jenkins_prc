@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.sez.status.application.stage.services">
+	<namespace>SEZ_STATUS_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity local-service="true" name="SezStatusApplicationStages"
+		remote-service="true" uuid="true" table="nbp_sez_status_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="SezStatusApplicationStagesId" primary="true"
+			type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate" type="Date" />
+		<column name="sezStatusApplicationId" type="long" />
+		<column name="caseId" type="String" />
+		<column name="updatedBySource" type="String" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getSAS_SAI"
+			return-type="SezStatusApplicationStages">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+		<finder name="getSAS_CaseIdStageName"
+			return-type="SezStatusApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getSAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getSAS_CaseIdStageStatus"
+			return-type="SezStatusApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getSAS_CaseIdAndStatus"
+			return-type="SezStatusApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getSAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getSAS_By_CaseId" return-type="SezStatusApplicationStages">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="SezStatusDeskVerification" local-service="true"
+		table="nbp_sez_status_desk_verificat">
+
+		<!-- PK fields -->
+
+		<column name="SezDeskVerificationId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="sezApplicationId" type="long"></column>
+		<column name="document" type="String"></column>
+		<column name="documentName" type="String"></column>
+		<column name="status" type="String"></column>
+		<finder name="getDeskVerificationSezById"
+			return-type="Collection">
+			<finder-column name="sezApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity local-service="true" name="SezStatusARCDecision"
+		remote-service="true" uuid="true" table="nbp_sez_status_committe_deci">
+
+		<!-- PK fields -->
+
+		<column name="sezStatusCommitteeId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="caseId" type="String" />
+		<column name="committeeDecision" type="String" />
+		<column name="committeeDecisionDate" type="Date" />
+
+		<finder name="getSezStatus_Committee_Decision_By_CI"
+			return-type="SezStatusARCDecision">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity local-service="true" name="SezStatusBoardDecision"
+		remote-service="true" uuid="true" table="nbp_sez_status_board_deci">
+
+		<!-- PK fields -->
+
+		<column name="sezStatusBoardId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="caseId" type="String" />
+		<column name="boardDecision" type="String" />
+		<column name="boardDecisionDate" type="Date" />
+
+		<finder name="getSezStatus_Board_Decision_By_CI"
+			return-type="SezStatusBoardDecision">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity local-service="true" name="SezStatusWelcomePackage"
+		remote-service="true" uuid="true" table="nbp_sez_status_welcome_pack">
+
+		<!-- PK fields -->
+
+		<column name="sezStatusWelcomeId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="caseId" type="String" />
+		<column name="dateWelcomePackageSigned" type="Date" />
+		<column name="welcomePackageSubmitToAppli" type="Date" />
+		<column name="docLicFileEntryId" type="long" />
+		<finder name="getSezStatus_Welcome_Package_By_CI"
+			return-type="SezStatusWelcomePackage">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity local-service="true" name="SezStatusLicenseIssuance"
+		remote-service="true" uuid="true" table="nbp_sez_status_licence_issu">
+		<!-- PK fields -->
+		<column name="sezStatusLicIssuedId" primary="true" type="long" />
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="caseId" type="String" />
+		<column name="licenceNumber" type="String" />
+		<column name="nameOfApplicant" type="String" />
+		<column name="sezStatus" type="String" />
+		<column name="sezDeveloperNumber" type="String" />
+		<column name="dateOfLicIssuance" type="Date" />
+		<column name="dateOfLicenseExpiration" type="Date" />
+		<column name="docLicFileEntryId" type="long" />
+		<finder name="getSezStatus_License_Issuance_By_CI"
+			return-type="SezStatusLicenseIssuance">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="SezStatusPaymentConfirmation" local-service="true"
+		table="nbp_sez_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="sezPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountreceived" type="String"></column>
+        <column name="receivedNumber" type="String"></column>
+        <column name="comments" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="paymentreceiptFileEntryId" type="long"></column>
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getPaymentConfirmationBy_CI" return-type="SezStatusPaymentConfirmation">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+        <finder name="getPaymentConfirmation_By_CI" return-type="Collection">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="SezStatusPreApprovalConditions" local-service="true"
+		table="nbp_sez_pre_approval">
+
+		<!-- PK fields -->
+
+		<column name="preApprovalId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="preApprovalLetterId" type="long"></column>
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getPreAPprovalConditionBy_CI" return-type="SezStatusPreApprovalConditions">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="SezStatusWFHApplicationStages" local-service="true" table="nbp_sez_status_wfh_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="sezWFHAppStagesId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate" type="Date" />
+		<column name="sezStatusApplicationId" type="long" />
+		<column name="caseId" type="String" />
+		<column name="updatedBySource" type="String" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getSAS_SAI"
+			return-type="SezStatusWFHApplicationStages">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+		<finder name="getSAS_CaseIdStageName"
+			return-type="SezStatusWFHApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getSAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getSAS_CaseIdStageStatus"
+			return-type="SezStatusWFHApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getSAS_CaseIdAndStatus"
+			return-type="SezStatusWFHApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getSAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+</service-builder>

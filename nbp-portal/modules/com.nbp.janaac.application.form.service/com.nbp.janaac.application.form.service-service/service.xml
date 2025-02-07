@@ -1,0 +1,2370 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.janaac.application.form.service">
+	<namespace>JANAAC_APPLICATION_FORM</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity name="JanaacApplication" local-service="true"
+		table="nbp_janaac_application" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="janaacApplicationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="accreditationType" type="String"></column>
+		<column name="accServiceType" type="String"></column>
+		<column name="transactionType" type="String"></column>
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getJANAAC_ByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getJANAAC_By_Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getJANAAC_By_AppNum" return-type="JanaacApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getJANAAC_ByCaseId" return-type="JanaacApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+<!-- Accreditation for medical labs application form -->
+	<entity name="AccMediLabApplicationInfo" local-service="true"
+		table="nbp_janaac_acc_medi_app_info" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="accMediLabApplicationInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="nameOfApplicant" type="String"></column>
+		<column name="applicantAddress" type="String"></column>
+		<column name="appliTelephoneNo" type="String"></column>
+		<column name="appliFaxNo" type="String"></column>
+		<column name="appliWebsite" type="String"></column>
+		<column name="laboratoryName" type="String"></column>
+		<column name="laboratoryAddress" type="String"></column>
+		<column name="nameOfIncharge" type="String"></column>
+		<column name="emailOfIncharge" type="String"></column>
+		<column name="personnelQMName" type="String"></column>
+		<column name="personnelQMEmail" type="String"></column>
+		<column name="deputyInchargeName" type="String"></column>
+		<column name="deputyInchargeEmail" type="String"></column>
+		<column name="personnelFMName" type="String"></column>
+		<column name="personnelFMEmail" type="String"></column>
+		<column name="accRequestType" type="String"></column>
+		<column name="authorizedPersonnelName" type="String"></column>
+		<column name="authorizedPosition" type="String"></column>
+		<column name="authorizedPersonnelDate" type="Date"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabApplicationInfo">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+	</entity>
+<!-- Accreditation for medical labs description of activities -->
+	<entity name="AccMediLabActivitiesDesc" local-service="true"
+			table="nbp_janaac_acc_med_activity" uuid="true">
+		<!-- PK fields -->
+
+		<column name="accMediLabActivitiesDescId" primary="true"
+				type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="activitiesDescription" type="String"></column>
+		<column name="shiftWork" type="String"></column>
+		<column name="specimenNo" type="String"></column>
+		<column name="specimenLocation" type="String"></column>
+		<column name="requestedPOCT" type="String"></column>
+		<column name="requestedPOCTLocation" type="String"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabActivitiesDesc">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+		</entity>
+<!-- Accreditation for medical laboratory ORGANIZATION -->
+    <entity name="AccMediLabOrganization" local-service="true"
+    	table="nbp_janaac_acc_medi_org" uuid="true">
+
+    	<!-- PK fields -->
+
+    	<column name="accMediLabOrganizationId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="laboratoryLegalEntity" type="String"></column>
+		<column name="legalStatus" type="String"></column>
+		<column name="laboratoryPartOfOrg" type="String"></column>
+		<column name="laboratoryPartOfOrgName" type="String"></column>
+		<column name="laboratoryPartOfOrgPos" type="String"></column>
+		<column name="nameOfAnalysts" type="String"></column>
+		<column name="majorIncomeSource" type="String"></column>
+		<column name="laboratoryClients" type="String"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabOrganization">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+    </entity>
+    
+    
+     <entity name="AddLaboratoryPartOfOrg" local-service="true"
+ 	table="nbp_janaac_add_ins_lab_org">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLaboratoryPartOfOrgId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- Other fields -->
+ 	<column name="laboratoryPartOfOrgName" type="String"></column>
+	<column name="laboratoryPartOfOrgPosition" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacByAppId" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ 
+ 
+ 
+ <!-- Accreditation for medical laboratory Physical Resources -->
+ <entity name="AccMediLabPhysicalResource" local-service="true"
+ 	table="nbp_janaac_acc_medi_physical" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabPhysicalResourceId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	<!-- Other fields -->
+	<column name="laboratoryfacilities" type="String"></column>
+	<column name="safetyFeatures" type="String"></column>
+	<column name="specialEnvironment" type="String"></column>
+	<column name="monitoringActivities" type="String"></column>
+	<column name="securityArrangements" type="String"></column>
+	<column name="laboratoryDocumented" type="String"></column>
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabPhysicalResource">
+		<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+ </entity>
+ <!-- Accreditation for medical laboratory management system requirements -->
+ <entity name="AccMediLabManagementReq" local-service="true"
+ 	table="nbp_janaac_acc_med_manage_req" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabManagementReqId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	<!-- Other fields -->
+	<!-- Management System Requirements-->
+	<column name="managementEstablished" type="String"></column>
+	<column name="qMRefManagement" type="String"></column>
+	<column name="personAware" type="String"></column>
+	<column name="qMRefPerson" type="String"></column>
+	<column name="policiesAcknowledged" type="String"></column>
+	<column name="qMRefPolicies" type="String"></column>
+	<column name="controlledDocument" type="String"></column>
+	<column name="qMRefControlDoc" type="String"></column>
+	<column name="laboratoryEstablished" type="String"></column>
+	<column name="qMReflabEstab" type="String"></column>
+	<column name="identifiedRisks" type="String"></column>
+	<column name="qMRefRisks" type="String"></column>
+	<column name="havePersonnel" type="String"></column>
+	<column name="qMRefPersonnel" type="String"></column>
+	<column name="authorizePersonnel" type="String"></column>
+	<column name="qMRefAuthorize" type="String"></column>
+		<!-- Management Requirements-->
+	<column name="labControlDocsFulfilment" type="String"></column>
+	<column name="otherRefFulfil" type="String"></column>
+	<column name="legibleRecordsFulfil" type="String"></column>
+	<column name="otherRefLegibleRec" type="String"></column>
+	<column name="proceduresInPlace" type="String"></column>
+	<column name="otherRefProcedure" type="String"></column>
+	<column name="communicatedRequirement" type="String"></column>
+	<column name="otherRefRequirement" type="String"></column>
+	<column name="procedureForSelection" type="String"></column>
+	<column name="otherRefSelection" type="String"></column>
+	<column name="arrangementInPlace" type="String"></column>
+	<column name="otherRefArrange" type="String"></column>
+	<column name="processInPlace" type="String"></column>
+	<column name="otherRefProcess" type="String"></column>
+	<column name="labOperateProgramme" type="String"></column>
+	<column name="otherRefLabOperate" type="String"></column>
+	<column name="identifyOpportunities" type="String"></column>
+	<column name="otherRefOpportunity" type="String"></column>
+	<column name="demonstrateFulfilment" type="String"></column>
+	<column name="otherRefDemonstrate" type="String"></column>
+	<column name="ensureLabPlan" type="String"></column>
+	<column name="otherRefEnsurePlan" type="String"></column>
+	<column name="plannedManageReview" type="String"></column>
+	<column name="otherRefPlanned" type="String"></column>
+	<!-- Management System - Resource and Process Requirements -->
+	<column name="availablePersonnel" type="String"></column>
+	<column name="manualRefAvailable" type="String"></column>
+	<column name="educationProgramme" type="String"></column>
+	<column name="manualRefEducation" type="String"></column>
+	<column name="ensureAccomodation" type="String"></column>
+	<column name="manualRefAccom" type="String"></column>
+	<column name="processForSelection" type="String"></column>
+	<column name="manualRefSelection" type="String"></column>
+	<column name="verifyReagents" type="String"></column>
+	<column name="manualRefReagents" type="String"></column>
+	<column name="docProcedure" type="String"></column>
+	<column name="manualRefDocProce" type="String"></column>
+	<column name="useExamMethods" type="String"></column>
+	<column name="manualRefExam" type="String"></column>
+	<column name="monitoringValidity" type="String"></column>
+	<column name="manualRefValidity" type="String"></column>
+	<column name="validateExam" type="String"></column>
+	<column name="manualRefValidateExam" type="String"></column>
+	<column name="uncertainityReview" type="String"></column>
+	<column name="manualRefUncertainity" type="String"></column>
+	<column name="preventResRelease" type="String"></column>
+	<column name="manualRefPrevent" type="String"></column>
+	<column name="equipmentMaintenance" type="String"></column>
+	<column name="manualRefMaintenance" type="String"></column>
+	<column name="equipCalibration" type="String"></column>
+	<column name="manualRefCalibrat" type="String"></column>
+	<column name="proficencyTesting" type="String"></column>
+	<column name="manualRefProfiTest" type="String"></column>
+	<column name="postExamReliabilty" type="String"></column>
+	<column name="manualRefPostExam" type="String"></column>
+	<column name="reportedAccurately" type="String"></column>
+	<column name="manualRefReported" type="String"></column>
+	<column name="responsiblitySpecified" type="String"></column>
+	<column name="manualRefSpecified" type="String"></column>
+	<column name="ensureAuthorities" type="String"></column>
+	<column name="manualRefAuthorities" type="String"></column>
+
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabManagementReq">
+			<finder-column name="janaacApplicationId"></finder-column>
+	</finder>
+ </entity>
+ <!--  Accreditation for medical laboratory other requirements -->
+ <entity name="AccMediLabOtherReq" local-service="true"
+ 	table="nbp_janaac_acc_med_other_req" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabOtherReqId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- Other fields -->
+ 	<column name="paymentMethod" type="String"></column>
+	<column name="representativeName" type="String"></column>
+	<column name="representativePos" type="String"></column>
+	<column name="signDate" type="Date"></column>
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabOtherReq">
+			<finder-column name="janaacApplicationId"></finder-column>
+	</finder>
+ </entity>
+  <!--  Accreditation for medical laboratory testing description of activities -->
+ <entity name="AccMediLabTestDescription" local-service="true"
+ 	table="nbp_janaac_acc_med_test_desc" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabTestDescriptionId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- Other fields -->
+	<column name="testClinicalActivity" type="String"></column>
+	<column name="testLabShiftWork" type="String"></column>
+	<column name="testLabSpecimenNo" type="String"></column>
+	<column name="testSpecimenLocation" type="String"></column>
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabTestDescription">
+			<finder-column name="janaacApplicationId"></finder-column>
+	</finder>
+ </entity>
+   <!--  Accreditation for medical laboratory testing structural requirements -->
+ <entity name="AccMediLabTestStructural" local-service="true"
+ 	table="nbp_janaac_acc_med_test_struct" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabTestStructuralId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 		<!-- Other fields -->
+		<column name="testLabLegalEntity" type="String"></column>
+		<column name="testlegalStatus" type="String"></column>
+		<column name="testlabPartOfOrg" type="String"></column>
+		<column name="testlabPartOfOrgName" type="String"></column>
+		<column name="testLabPartOfOrgPos" type="String"></column>
+		<column name="testMangerialStaff" type="String"></column>
+		<column name="testTechnicalStaff" type="String"></column>
+		<column name="testingRelevantDoc" type="String"></column>
+		<column name="testMajorIncome" type="String"></column>
+		<column name="testLabClients" type="String"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabTestStructural">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+ </entity>
+ <entity name="AccMediLabTestResourceReq" local-service="true"
+ 	table="nbp_janaac_acc_med_test_reso" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabTestResourceReqId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- Other fields -->
+	<column name="testExternal" type="String"></column>
+	<column name="testCompetence" type="String"></column>
+	<column name="testLabFacilities" type="String"></column>
+	<column name="testLabContracted" type="String"></column>
+	<column name="testLabFacilityEnv" type="String"></column>
+	<column name="testSpecialEnv" type="String"></column>
+	<column name="testMonitoringAct" type="String"></column>
+	<column name="testLabRelatedEquip" type="String"></column>
+	<column name="testSecurityArrange" type="String"></column>
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabTestResourceReq">
+		<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+ </entity>
+ <entity name="AccMediLabTestManageReq" local-service="true"
+ 	table="nbp_janaac_acc_med_test_manage" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accMediLabTestManageReqId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- Other fields -->	
+	<column name="policiesForFulfil" type="String"></column>
+	<column name="labDocRefPolicies" type="String"></column>
+	<column name="impartialityProvision" type="String"></column>
+	<column name="labDocRefImpartProv" type="String"></column>
+	<column name="confidientialityProv" type="String"></column>
+	<column name="labDocRefConfid" type="String"></column>
+	<column name="commitmentEvidence" type="String"></column>
+	<column name="labDocRefCommitment" type="String"></column>
+	<column name="referenceEvidence" type="String"></column>
+	<column name="labDocRefReference" type="String"></column>
+	<column name="docDescribingRole" type="String"></column>
+	<column name="labDocRefDocDes" type="String"></column>
+	<column name="rolesofPersonnel" type="String"></column>
+	<column name="labDocRefRoles" type="String"></column>
+	
+    <column name="competenceReq" type="String"></column>
+	<column name="labDocRefCompetence" type="String"></column>
+	<column name="selectionOfPerson" type="String"></column>
+	<column name="labDocRefSelection" type="String"></column>
+	<column name="handlingEquip" type="String"></column>
+	<column name="labDocRefHandling" type="String"></column>
+	<column name="calibrationProgram" type="String"></column>
+	<column name="labDocRefCalibrat" type="String"></column>
+	<column name="approvingReq" type="String"></column>
+	<column name="labDocRefApproving" type="String"></column>
+	<column name="monitorPerformance" type="String"></column>
+	<column name="labDocRefMonitor" type="String"></column>
+	<column name="ensuringService" type="String"></column>
+	<column name="labDocRefEnsuring" type="String"></column>
+	
+	<column name="reviewOfRequest" type="String"></column>
+	<column name="labDocRefRequest" type="String"></column>
+	<column name="procedureForLab" type="String"></column>
+	<column name="labDocRefProcedure" type="String"></column>
+	<column name="testMethodValidat" type="String"></column>
+	<column name="labDocRefTestMethod" type="String"></column>
+	<column name="samplingPlan" type="String"></column>
+	<column name="labDocRefSampling" type="String"></column>
+	<column name="transportationReciept" type="String"></column>
+	<column name="labDocRefTransport" type="String"></column>
+	<column name="uncertainityMeasure" type="String"></column>
+	<column name="labDocRefUncertain" type="String"></column>
+	<column name="testResultValidity" type="String"></column>
+	<column name="labDocReftestResult" type="String"></column>
+	<column name="complaints" type="String"></column>
+	<column name="labDocRefComplaints" type="String"></column>
+	<column name="nonConformingWork" type="String"></column>
+	<column name="labDocRefNonConfirm" type="String"></column>
+	
+	<column name="uniqueIdentification" type="String"></column>
+	<column name="labDocRefUnique" type="String"></column>
+	<column name="currentRevisionStatus" type="String"></column>
+	<column name="labDocRefCurrentRev" type="String"></column>
+	<column name="docChangeIdentify" type="String"></column>
+	<column name="labDocRefDocChange" type="String"></column>
+	<column name="recordControl" type="String"></column>
+	<column name="labDocRefRecordControl" type="String"></column>
+	<column name="plannedAction" type="String"></column>
+	<column name="labDocRefPlanned" type="String"></column>
+	<column name="imporvementOpportunity" type="String"></column>
+	<column name="labDocRefImprovement" type="String"></column>
+	<column name="correctiveAction" type="String"></column>
+	<column name="labDocRefCorrective" type="String"></column>
+	<column name="internalAudits" type="String"></column>
+	<column name="labDocRefInternal" type="String"></column>
+	<column name="managementReview" type="String"></column>
+	<column name="labDocRefManagement" type="String"></column>
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccMediLabTestManageReq">
+			<finder-column name="janaacApplicationId"></finder-column>
+	</finder>
+ </entity>
+ <!-- Accreditation Inspection Bodies -->
+ <entity name="AccInsBodiesOrganization" local-service="true"
+ 	table="nbp_janaac_acc_ins_body_org" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accInsBodiesOrganizationId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	 <!-- Other fields -->
+	 <column name="insLegalEntity" type="String"></column>
+   	 <column name="insLegalStatusEntity" type="String"></column>
+	 <column name="insBodyOrgPart" type="String"></column>
+	 <column name="insPersonnelName" type="String"></column>
+	 <column name="insPersonnelPosition" type="String"></column>
+	 <column name="insStaffSize" type="String"></column>
+	 <column name="insStaffComplement" type="String"></column>
+	 <column name="insIncomeSource" type="String"></column>
+	 <column name="insOrgBodyType" type="String"></column>
+	 <column name="insBodyOwnOrgClient" type="String"></column>
+	 <column name="insBodyOtherOrgClient" type="String"></column>
+
+	 <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccInsBodiesOrganization">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+ </entity>
+
+ 	<entity name="AccInsBodiesPhyResource" local-service="true"
+ 		table="nbp_janaac_acc_ins_body_phys" uuid="true">
+
+ 		<!-- PK fields -->
+
+ 		<column name="accInsBodiesPhyResourceId" primary="true"
+ 			type="long">
+ 		</column>
+
+ 		<!-- Group instance -->
+
+ 		<column name="groupId" type="long"></column>
+
+ 		<!-- Audit fields -->
+
+ 		<column name="companyId" type="long"></column>
+ 		<column name="userId" type="long"></column>
+ 		<column name="userName" type="String"></column>
+ 		<column name="createDate" type="Date"></column>
+ 		<column name="modifiedDate" type="Date"></column>
+ 		<!-- Other fields -->
+ 	<column name="insBodiesfacilities" type="String"></column>
+	<column name="insSafetyFeatures" type="String"></column>
+	<column name="insSecurityArrangements" type="String"></column>
+    <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccInsBodiesPhyResource">
+		<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+		
+ 	</entity>
+ 	<entity name="AccInsBodiesManageSys" local-service="true"
+ 		table="nbp_janaac_acc_ins_body_manag" uuid="true">
+
+ 		<!-- PK fields -->
+
+ 		<column name="accInsBodiesManageSysId" primary="true"
+ 			type="long">
+ 		</column>
+
+ 		<!-- Group instance -->
+
+ 		<column name="groupId" type="long"></column>
+
+ 		<!-- Audit fields -->
+
+ 		<column name="companyId" type="long"></column>
+ 		<column name="userId" type="long"></column>
+ 		<column name="userName" type="String"></column>
+ 		<column name="createDate" type="Date"></column>
+ 		<column name="modifiedDate" type="Date"></column>
+ 	<!-- Other fields -->	
+	<column name="optionFollow" type="String"></column>
+	<column name="manualApproval" type="String"></column>
+	<column name="qMRefManual" type="String"></column>
+	<column name="relevantPolicies" type="String"></column>
+	<column name="qMRefRelevant" type="String"></column>
+	<column name="overallObj" type="String"></column>
+	<column name="qMRefOverallObj" type="String"></column>
+	<column name="supportingProcedure" type="String"></column>
+	<column name="qMRefSupporting" type="String"></column>
+	<column name="technicalMangmnt" type="String"></column>
+	<column name="qMRefTechnical" type="String"></column>
+	<column name="documentation" type="String"></column>
+	<column name="qMRefDocumentation" type="String"></column>
+	<column name="docContolProc" type="String"></column>
+	<column name="qMRefDocControl" type="String"></column>
+	<column name="documntChanges" type="String"></column>
+	<column name="qMRefDocumntChanges" type="String"></column>
+	<column name="controlOfQuality" type="String"></column>
+	<column name="qMRefControl" type="String"></column>
+	<column name="managementReview" type="String"></column>
+	<column name="qMRefManage" type="String"></column>
+	<column name="insInternalAudits" type="String"></column>
+	<column name="qMRefInternalAudit" type="String"></column>
+	<column name="insCorrectiveAction" type="String"></column>
+	<column name="qMRefCorrect" type="String"></column>
+	<column name="insPreventiveAction" type="String"></column>
+	<column name="qMRefPreventive" type="String"></column>
+	<column name="personnel" type="String"></column>
+	<column name="qMRefPersonnel" type="String"></column>
+	<column name="equipment" type="String"></column>
+	<column name="qMRefEquip" type="String"></column>
+	<column name="inspection" type="String"></column>
+	<column name="qMRefInspection" type="String"></column>
+	<column name="contractualArrange" type="String"></column>
+	<column name="qMRefContractual" type="String"></column>
+	<column name="handlingInsItem" type="String"></column>
+	<column name="qMRefHandling" type="String"></column>
+	<column name="complaintsAppeals" type="String"></column>
+	<column name="qMRefComplaints" type="String"></column>
+   <column name="janaacApplicationId" type="long" ></column>
+		
+	<finder name="getJANAAC_ByApplicationId" return-type="AccInsBodiesManageSys">
+		<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+ 	</entity>
+ 	<entity name="AccInsBodiesOtherReq" local-service="true"
+ 		table="nbp_janaac_acc_ins_body_other" uuid="true">
+
+ 		<!-- PK fields -->
+
+ 		<column name="accInsBodiesOtherReqId" primary="true"
+ 			type="long">
+ 		</column>
+
+ 		<!-- Group instance -->
+
+ 		<column name="groupId" type="long"></column>
+
+ 		<!-- Audit fields -->
+
+ 		<column name="companyId" type="long"></column>
+ 		<column name="userId" type="long"></column>
+ 		<column name="userName" type="String"></column>
+ 		<column name="createDate" type="Date"></column>
+ 		<column name="modifiedDate" type="Date"></column>
+ 		<!-- Other fields -->
+ 		<column name="applicationFees" type="String"></column>
+	    <column name="insPaymentMethod" type="String"></column>
+		<column name="applicantRepName" type="String"></column>
+		<column name="applicantRepPosition" type="String"></column>
+		<column name="signatureDate" type="Date"></column>
+   		<column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccInsBodiesOtherReq">
+		<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+ 	</entity>
+ 	<!-- Accreditation for certification bodies Applicant info -->
+ 	<entity name="AccCerBodyApplicantInfo" local-service="true"
+ 		table="nbp_janaac_acc_cer_app_info" uuid="true">
+
+ 		<!-- PK fields -->
+
+ 		<column name="accCerBodyApplicantInfoId" primary="true"
+ 			type="long">
+ 		</column>
+
+ 		<!-- Group instance -->
+
+ 		<column name="groupId" type="long"></column>
+
+ 		<!-- Audit fields -->
+
+ 		<column name="companyId" type="long"></column>
+ 		<column name="userId" type="long"></column>
+ 		<column name="userName" type="String"></column>
+ 		<column name="createDate" type="Date"></column>
+ 		<column name="modifiedDate" type="Date"></column>
+	   <!-- Other fields -->
+		<column name="applicantName" type="String"></column>
+		<column name="applicantAddress" type="String"></column>
+		<column name="applicantTelephone" type="String"></column>
+		<column name="applicantFaxNo" type="String"></column>
+		<column name="applicantWebsite" type="String"></column>
+		<column name="certificationName" type="String"></column>
+		<column name="certiAddress" type="String"></column>
+		<column name="personnelName" type="String"></column>
+		<column name="personnelEmail" type="String"></column>
+		<column name="personnelContactName" type="String"></column>
+		<column name="personnelContactEmail" type="String"></column>
+		<column name="personnelFMName" type="String"></column>
+		<column name="personnelFMEmail" type="String"></column>
+		<column name="accreditationRequest" type="String"></column>
+		<column name="managementSystem" type="String"></column>
+		<column name="specifyOther" type="String"></column>		
+		<column name="listOfStandard" type="String"></column>
+		<column name="authorizedPersonnelName" type="String"></column>
+		<column name="authorizedPersonnelPos" type="String"></column>
+		<column name="authorizedPersonnelDate" type="Date"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyApplicantInfo">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder> 		
+ 	</entity>
+ 	<!-- Accreditation for certification bodies general -->
+ 	<entity name="AccCerBodyGeneral" local-service="true"
+ 		table="nbp_janaac_acc_cer_general" uuid="true">
+
+ 		<!-- PK fields -->
+
+ 		<column name="accCerBodyGeneralId" primary="true"
+ 			type="long">
+ 		</column>
+
+ 		<!-- Group instance -->
+
+ 		<column name="groupId" type="long"></column>
+
+ 		<!-- Audit fields -->
+
+ 		<column name="companyId" type="long"></column>
+ 		<column name="userId" type="long"></column>
+ 		<column name="userName" type="String"></column>
+ 		<column name="createDate" type="Date"></column>
+ 		<column name="modifiedDate" type="Date"></column>
+ 		<!-- other fields -->
+	    <column name="cerLegalEntity" type="String"></column>
+		<column name="cerLegalStatusEntity" type="String"></column>
+		<column name="cerMajorIncomeSources" type="String"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyGeneral">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder> 		 		
+ 	</entity>
+ <!-- Accreditation for certification bodies scope service clients -->
+ 	<entity name="AccCerBodyScope" local-service="true"
+ 		table="nbp_janaac_acc_cer_scope" uuid="true">
+
+ 		<!-- PK fields -->
+
+ 		<column name="accCerBodyScopeId" primary="true" type="long"></column>
+
+ 		<!-- Group instance -->
+
+ 		<column name="groupId" type="long"></column>
+
+ 		<!-- Audit fields -->
+
+ 		<column name="companyId" type="long"></column>
+ 		<column name="userId" type="long"></column>
+ 		<column name="userName" type="String"></column>
+ 		<column name="createDate" type="Date"></column>
+ 		<column name="modifiedDate" type="Date"></column>
+        <!-- Other fields -->
+		<column name="certificationStandard" type="String"></column>
+		<column name="expertiseField1" type="String"></column>
+		<column name="expertiseField2" type="String"></column>
+		<column name="expertiseField3" type="String"></column>
+		<column name="expertiseField4" type="String"></column>
+		<column name="expertiseField5" type="String"></column>
+		<column name="expertiseField6" type="String"></column>
+		<column name="expertiseField7" type="String"></column>
+		<column name="expertiseField8" type="String"></column>
+		<column name="expertiseField9" type="String"></column>
+		<column name="expertiseField10" type="String"></column>
+		<column name="expertiseField11" type="String"></column>
+		<column name="expertiseField12" type="String"></column>
+		<column name="expertiseField13" type="String"></column>
+		<column name="expertiseField14" type="String"></column>
+		<column name="cerIntrestedParties" type="String"></column>
+		<column name="otherServices" type="String"></column>
+		<column name="otherServicesDescribe" type="String"></column>
+		<column name="establishedRelation" type="String"></column>
+		<column name="establishedRelDesc" type="String"></column>		
+		<column name="clientService" type="String"></column>
+		<column name="certificationCerBody" type="String"></column>
+		<column name="orgAccredited" type="String"></column>
+		<column name="responsibleBody" type="String"></column>		
+		<column name="accExpDate" type="Date"></column>
+		<column name="certBodyScope" type="String"></column>		
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyScope">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>  		
+ 	</entity>
+ <!-- Accreditation for certification bodies scope service clients -->
+ <entity name="AccCerBodyPersonnel" local-service="true"
+ 	table="nbp_janaac_acc_cer_personnel" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accCerBodyPersonnelId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	    <!-- Other fields -->
+ 		<column name="internalStaffSize" type="String"></column>
+	    <column name="auditorsNum" type="String"></column>
+		<column name="contractedPerNum" type="String"></column>
+		<column name="bodyOutsource" type="String"></column>
+		<column name="descSecurity" type="String"></column>
+   		<column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyPersonnel">
+		<finder-column name="janaacApplicationId"></finder-column>
+		</finder> 
+ </entity>
+ <!-- Accreditation for certification bodies scope service clients -->
+ <entity name="AccCerBodyInfo" local-service="true"
+ 	table="nbp_janaac_acc_cer_info" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accCerBodyInfoId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- other fields -->
+	<column name="describeMechanism" type="String"></column>		
+	 <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyInfo">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>  	 	
+ </entity>
+  <!-- Accreditation for certification bodies management system requirement -->
+ <entity name="AccCerBodyManageReq" local-service="true"
+ 	table="nbp_janaac_acc_cer_manage" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accCerBodyManageReqId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+    	<!-- other fields -->
+    	<column name="optionFollow" type="String"></column>
+		<column name="impartialityPolicy" type="String"></column>
+		<column name="qMRefImpartiality" type="String"></column>
+		<column name="riskAssessment" type="String"></column>
+		<column name="qMRefRisk" type="String"></column>
+		<column name="orgStructure" type="String"></column>
+		<column name="qMRefOrgStruct" type="String"></column>
+		<column name="termsOfReference" type="String"></column>
+		<column name="qMRefTerms" type="String"></column>
+		<column name="processForControl" type="String"></column>
+		<column name="qMRefProcess" type="String"></column>
+		<column name="criteriaReq" type="String"></column>
+		<column name="qMRefCriteria" type="String"></column>
+		<column name="initialCompetence" type="String"></column>
+		<column name="qMRefInitial" type="String"></column>
+		<column name="selectingTraining" type="String"></column>
+		<column name="qMRefSelecting" type="String"></column>
+		<column name="monitoringCompetence" type="String"></column>
+		<column name="qMRefMonitoring" type="String"></column>
+		<column name="writtenAgreement" type="String"></column>		
+		<column name="qMRefWritten" type="String"></column>
+		<column name="descOfProcess" type="String"></column>		
+		<column name="qMRefDescProcess" type="String"></column>
+		<column name="processForMonitor" type="String"></column>
+		<column name="qMRefMonitorProcess" type="String"></column>		
+		<column name="auditProcess" type="String"></column>
+		<column name="qMRefAuditProcess" type="String"></column>
+	    <column name="processGranting" type="String"></column>
+		<column name="qMRefGranting" type="String"></column>
+		<column name="managemntSys" type="String"></column>
+		<column name="qMRefManagemnt" type="String"></column>		
+		<column name="useOfCertification" type="String"></column>
+		<column name="qMRefUseOfCerti" type="String"></column>
+	    <column name="handlingReq" type="String"></column>
+		<column name="qMRefHandling" type="String"></column>
+		<column name="impartialityPolicies" type="String"></column>
+		<column name="qMRefImpartPolicy" type="String"></column>		
+		<column name="provisionInform" type="String"></column>
+		<column name="qMRefProvision" type="String"></column>
+	    <column name="certificationDoc" type="String"></column>
+		<column name="qMRefCertification" type="String"></column>
+		
+		<column name="rulesGoverning" type="String"></column>
+		<column name="qMRefGoverning" type="String"></column>		
+		<column name="enforcableArrangements" type="String"></column>
+		<column name="qMRefEnforcable" type="String"></column>
+	    <column name="ensureConfidential" type="String"></column>
+		<column name="qMRefEnsureConfid" type="String"></column>
+		<column name="informingMechanism" type="String"></column>
+		<column name="qMRefInforming" type="String"></column>		
+		<column name="applicationProcess" type="String"></column>
+		<column name="qMRefApplication" type="String"></column>
+	    <column name="applicationReview" type="String"></column>
+		<column name="qMRefReview" type="String"></column>
+		<column name="certificationCycle" type="String"></column>
+		<column name="qMRefCertiCycle" type="String"></column>		
+		<column name="auditTime" type="String"></column>
+		<column name="qMRefAuditTime" type="String"></column>
+		<column name="samplingProgram" type="String"></column>											
+		<column name="qMRefSampling" type="String"></column>											
+		<column name="auditPlanning" type="String"></column>											
+		<column name="qMRefPlanning" type="String"></column>											
+		<column name="auditTeam" type="String"></column>											
+		<column name="qMRefAuditTeam" type="String"></column>											
+		<column name="onSiteAudit" type="String"></column>											
+		<column name="qMRefonSiteAudit" type="String"></column>											
+		<column name="auditReport" type="String"></column>											
+		<column name="qMRefAuditReport" type="String"></column>											
+		<column name="correctiveActions" type="String"></column>											
+		<column name="qMRefCorrective" type="String"></column>											
+		<column name="reviewPriorDecision" type="String"></column>											
+		<column name="qMRefReviewPrior" type="String"></column>											
+		<column name="transferCertification" type="String"></column>											
+		<column name="qMRefTransfer" type="String"></column>											
+		<column name="suspensionPolicies" type="String"></column>											
+		<column name="qMRefSuspension" type="String"></column>											
+		<column name="suspensionProcedure" type="String"></column>											
+		<column name="qMRefSuspensionProc" type="String"></column>											
+		<column name="decisionOnAppeals" type="String"></column>											
+		<column name="qMRefDecision" type="String"></column>											
+		<column name="handlingComplaints" type="String"></column>											
+		<column name="qMRefComplaints" type="String"></column>											
+		<column name="recordRetentionPolicy" type="String"></column>											
+		<column name="qMRefRetentionPolicy" type="String"></column>											
+		<column name="recordRetentionProc" type="String"></column>
+													
+		<column name="qMRefRetentionProc" type="String"></column>											
+		<column name="manageSysPolicies" type="String"></column>											
+		<column name="qMRefPolicies" type="String"></column>											
+		<column name="manageSysObjective" type="String"></column>											
+		<column name="qMRefObjective" type="String"></column>											
+		<column name="manageSysManual" type="String"></column>											
+		<column name="qMRefManual" type="String"></column>											
+		<column name="docControlProcedure" type="String"></column>											
+		<column name="qMRefDocControl" type="String"></column>											
+		<column name="recControlProc" type="String"></column>
+		<column name="qMRefRecControl" type="String"></column>											
+		<column name="managementReview" type="String"></column>											
+		<column name="qMRefManagementRev" type="String"></column>											
+		<column name="internalAudits" type="String"></column>											
+		<column name="qMRefInternal" type="String"></column>											
+		<column name="identificationProc" type="String"></column>											
+		<column name="qMRefIdentification" type="String"></column>											
+		<column name="qMSScopeB" type="String"></column>											
+		<column name="qMRefQMSScopeB" type="String"></column>											
+		<column name="designDevB" type="String"></column>											
+		<column name="qMRefDesignB" type="String"></column>											
+		<column name="interestedPartyNeedsB" type="String"></column>											
+		<column name="qMRefInterestedB" type="String"></column>											
+		<column name="managementReviewB" type="String"></column>											
+		<column name="qMRefmanagementReviewB" type="String"></column>											
+													
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyManageReq">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>  		
+ </entity>
+ <entity name="AccCerBodyProdScope" local-service="true"
+ 	table="nbp_janaac_acc_cer_pro_scope" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accCerBodyProdScopeId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<!-- other fields -->
+		<column name="cerIntrestedParties" type="String"></column>
+		<column name="otherServices" type="String"></column>
+		<column name="otherServicesDescribe" type="String"></column>
+		<column name="establishedRelation" type="String"></column>
+		<column name="establishedRelDesc" type="String"></column>		
+		<column name="clientService" type="String"></column>
+		<column name="orgAccredited" type="String"></column>
+		<column name="responsibleBody" type="String"></column>		
+		<column name="accExpDate" type="Date"></column>
+		<column name="certBodyScope" type="String"></column>		
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyProdScope">
+			<finder-column name="janaacApplicationId"></finder-column> 	
+			</finder>
+ </entity>
+ <entity name="AccCerBodyMngReqTwo" local-service="true"
+ 	table="nbp_janaac_acc_cer_manage_2" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accCerBodyMngReqTwoId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+     <!-- other fields -->
+    	<column name="optionFollow" type="String"></column>
+		<column name="certiAgreement" type="String"></column>
+		<column name="qMRefCertiAgreement" type="String"></column>
+		<column name="riskAssessment" type="String"></column>
+		<column name="qMRefRisk" type="String"></column>
+		<column name="confidentiality" type="String"></column>
+		<column name="qMRefConfidentiality" type="String"></column>
+		<column name="security" type="String"></column>
+		<column name="qMRefSecurity" type="String"></column>
+		<column name="certificationScheme" type="String"></column>
+		<column name="qMRefCertifiScheme" type="String"></column>
+		<column name="validCertification" type="String"></column>
+		<column name="qMRefValidCertification" type="String"></column>
+		<column name="preRequisites" type="String"></column>
+		<column name="qMRefPrerequisites" type="String"></column>
+		<column name="infoProvided" type="String"></column>
+		<column name="qMRefInfoProvided" type="String"></column>
+		<column name="handlingAppeals" type="String"></column>
+		<column name="qMRefHandlingAppeals" type="String"></column>
+		<column name="handlingComplaints" type="String"></column>		
+		<column name="qMRefHandlingComplaint" type="String"></column>
+		<column name="orgStructure" type="String"></column>		
+		<column name="qMRefOrgStructure" type="String"></column>
+		<column name="formalRules" type="String"></column>
+		<column name="qMRefFormalRules" type="String"></column>		
+		<column name="safeguardingMechanism" type="String"></column>
+		<column name="qMRefSafeguarding" type="String"></column>
+	    <column name="managementProc" type="String"></column>
+		<column name="qMRefManagementProc" type="String"></column>
+		<column name="contractExaminer" type="String"></column>
+		<column name="qMRefExaminer" type="String"></column>
+		<column name="contractBody" type="String"></column>
+		<column name="qMRefContractBody" type="String"></column>
+		<column name="docPolicies" type="String"></column>
+		<column name="qMRefDocPolicies" type="String"></column>
+		<column name="specifiedStandard" type="String"></column>
+		<column name="qMRefSpecified" type="String"></column>
+		<column name="applicationForm" type="String"></column>
+		<column name="qMRefAppliForm" type="String"></column>
+		<column name="applicationReview" type="String"></column>
+		<column name="qMRefAppliReview" type="String"></column>
+		<column name="assessmentPlan" type="String"></column>
+		<column name="qMRefAssessmentPlan" type="String"></column>
+		<column name="examinationProcess" type="String"></column>
+		<column name="qMRefExamProcess" type="String"></column>
+		<column name="certificationDecision" type="String"></column>
+		<column name="qMRefCertiDecision" type="String"></column>
+		<column name="certificationDoc" type="String"></column>
+		<column name="qMRefCertiDoc" type="String"></column>		
+		<column name="useOfCertificates" type="String"></column>
+		<column name="qMRefUseOfCertificate" type="String"></column>
+		<column name="suspension" type="String"></column>
+		<column name="qMRefSuspension" type="String"></column>
+		<column name="processToReceive" type="String"></column>
+		<column name="qMRefReceiveProcess" type="String"></column>
+		<column name="generalManage" type="String"></column>
+		<column name="qMRefGeneral" type="String"></column>
+		<column name="docControl" type="String"></column>
+		<column name="qMRefDocControl" type="String"></column>
+		<column name="recordControl" type="String"></column>
+		<column name="qMRefRecControl" type="String"></column>
+		<column name="manageReview" type="String"></column>
+		<column name="qMRefManageReview" type="String"></column>
+		<column name="internalAudit" type="String"></column>
+		<column name="qMRefInternal" type="String"></column>
+		<column name="correctiveAction" type="String"></column>
+		<column name="qMRefCorrective" type="String"></column>	
+		<column name="preventiveAction" type="String"></column>											
+		<column name="qMRefPreventive" type="String"></column>											
+		<column name="docInKeeping" type="String"></column>											
+		<column name="qMRefDocInKeeping" type="String"></column>																					
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccCerBodyMngReqTwo">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>  					 	
+ </entity>
+ <!-- FDA  Accreditation third party form -->
+ <entity name="AccThirdPartyAppliInfo" local-service="true"
+ 	table="nbp_janaac_acc_third_appli" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accThirdPartyAppliInfoId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	   <!-- Other fields -->
+		<column name="applicantName" type="String"></column>
+		<column name="applicantAddress" type="String"></column>
+		<column name="applicantTelephone" type="String"></column>
+		<column name="applicantFaxNo" type="String"></column>
+		<column name="applicantWebsite" type="String"></column>
+		<column name="certificationName" type="String"></column>
+		<column name="certiAddress" type="String"></column>
+		<column name="personnelName" type="String"></column>
+		<column name="personnelEmail" type="String"></column>
+		<column name="personnelContactName" type="String"></column>
+		<column name="personnelContactEmail" type="String"></column>
+		<column name="personnelFMName" type="String"></column>
+		<column name="personnelFMEmail" type="String"></column>
+		<column name="accreditationRequest" type="String"></column>
+		<column name="accFdaScheme" type="String"></column>		
+		<column name="specifyOther" type="String"></column>		
+		<column name="supplementaryCertificate" type="String"></column>
+		<column name="supplementaryOther" type="String"></column>
+		<column name="listOfStandard" type="String"></column>
+		<column name="authorizedPersonnelName" type="String"></column>
+		<column name="authorizedPersonnelPos" type="String"></column>
+		<column name="authorizedPersonnelDate" type="Date"></column>
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccThirdPartyAppliInfo">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder> 	 	
+ </entity>
+ <entity name="AccThirdPartyScope" local-service="true"
+ 	table="nbp_janaac_acc_third_scope" uuid="true">
+
+ 	<!-- PK fields -->
+
+ 	<column name="accThirdPartyScopeId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+     <!-- Other fields -->
+		<column name="accreditationCategory" type="String"></column>
+		<column name="foodProduct1" type="String"></column>
+		<column name="foodRegulation1" type="String"></column>		
+		<column name="foodProduct2" type="String"></column>
+		<column name="foodRegulation2" type="String"></column>
+		<column name="foodProduct3" type="String"></column>
+		<column name="foodRegulation3" type="String"></column>	
+		<column name="foodProduct4" type="String"></column>
+		<column name="foodRegulation4" type="String"></column>
+		<column name="foodProduct5" type="String"></column>
+		<column name="foodRegulation5" type="String"></column>
+		<column name="foodProduct6" type="String"></column>
+		<column name="foodRegulation6" type="String"></column>
+		<column name="foodProduct7" type="String"></column>
+		<column name="foodRegulation7" type="String"></column>
+		<column name="foodProduct8" type="String"></column>
+		<column name="foodRegulation8" type="String"></column>
+		<column name="foodProduct9" type="String"></column>
+		<column name="foodRegulation9" type="String"></column>
+		<column name="foodProduct10" type="String"></column>
+		<column name="foodRegulation10" type="String"></column>
+		<column name="accCategoryOther" type="String"></column>
+		<column name="foodProduct11" type="String"></column>
+		<column name="foodRegulation11" type="String"></column>
+		<column name="accCategoryOther12" type="String"></column>
+		<column name="foodProduct12" type="String"></column>
+		<column name="foodRegulation12" type="String"></column>
+		<column name="cerIntrestedParties" type="String"></column>
+		<column name="otherServices" type="String"></column>
+		<column name="otherServicesDescribe" type="String"></column>
+		<column name="establishedRelation" type="String"></column>
+		<column name="establishedRelDesc" type="String"></column>		
+		<column name="clientService" type="String"></column>
+		<column name="certificationCerBody" type="String"></column>
+		<column name="orgAccredited" type="String"></column>
+		<column name="responsibleBody" type="String"></column>		
+		<column name="accExpDate" type="Date"></column>
+		<column name="certBodyScope" type="String"></column>		
+	    <column name="janaacApplicationId" type="long" ></column>
+		
+		<finder name="getJANAAC_ByApplicationId" return-type="AccThirdPartyScope">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>  		 	
+ </entity>
+ <!-- Add form for First Category -->
+ <entity name="AddLabAppliInfo" local-service="true"
+ 	table="nbp_janaac_add_lab_aapli_info">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabAppliInfoId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	<column name="name" type="String"></column>
+	<column name="email" type="String"></column>		
+    <column name="janaacApplicationId" type="long" ></column>
+    <column name="counter" type="String"></column>
+    
+ 			<!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddLabDescOfActivity" local-service="true"
+    	table="nbp_janaac_add_lab_des_of_act">
+
+    	<!-- PK fields -->
+
+    	<column name="addLabDescOfActivityId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+	    <column name="number" type="String"></column>
+		<column name="location" type="String"></column>	
+		<column name="janaacApplicationId" type="long" ></column>
+		<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+    </entity>
+ <entity name="AddLabMedicalDescOfActiSec" local-service="true"
+ 	table="nbp_janaac_add_lab_med_dec_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabMedicalDescOfActiSecId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	<column name="requestedPoct" type="String"></column>
+	<column name="location" type="String"></column>	
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddLabMedicalOrganFirst" local-service="true"
+ 	table="nbp_janaac_add_lab_med_or_fir">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabMedicalOrganFirstId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="nameOfStaff" type="String"></column>
+	<column name="jobTitle" type="String"></column>	
+	<column name="majorResponsibilities" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddLabMedicalOrganSec" local-service="true"
+ 	table="nbp_janaac_add_lab_med_or_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabMedicalOrganSecId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="product" type="String"></column>
+	<column name="examination" type="String"></column>	
+	<column name="methods" type="String"></column>
+	 <column name="equipment" type="String"></column>
+	<column name="referenceRange" type="String"></column>	
+	<column name="measurementUncertainty" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddLabMedicalPhysicalFirst" local-service="true"
+ 	table="nbp_janaac_add_medi_phy_first">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabMedicalPhysicalFirstId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="inventoryNum" type="String"></column>
+	<column name="item" type="String"></column>	
+	<column name="manufacturer" type="String"></column>
+	 <column name="modelNum" type="String"></column>
+	<column name="calibrationInterval" type="String"></column>	
+	<column name="calibratedBy" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddLabMedicalPhysicalSec" local-service="true"
+ 	table="nbp_janaac_add_lab_med_phy_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabMedicalPhysicalSecId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="number" type="String"></column>
+	<column name="location" type="String"></column>	
+	<column name="activitiesPerformed" type="String"></column>
+	<column name="contactDetails" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddLabStructuralRequirement" local-service="true"
+ 	table="nbp_janaac_add_lab_stru_req">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabStructuralRequirementId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+    <column name="nameOfStaff" type="String"></column>
+	<column name="jobTitle" type="String"></column>	
+	<column name="majorResponsibilities" type="String"></column>
+	<column name="indicateAnalysts " type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddLabTestStructuralReqSec" local-service="true"
+ 	table="nbp_janaac_add_lab_testStr_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabTestStructuralReqSecId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+    <column name="productMaterial" type="String"></column>
+	<column name="tests" type="String"></column>	
+	<column name="method" type="String"></column>
+	<column name="equipment" type="String"></column>
+	<column name="listOfCapability" type="String"></column>
+	<column name="estimateOfMeasurement" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddLabResourceReqFirst" local-service="true"
+ 	table="nbp_janaac_add_lab_res_req_fir">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabResourceReqFirstId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="num" type="String"></column>
+	<column name="location" type="String"></column>	
+	<column name="activities" type="String"></column>
+	<column name="contactDetails" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddLabResourceReqSec" local-service="true"
+ 	table="nbp_janaac_add_lab_res_req_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabResourceReqSecId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	
+ 	<column name="inventoryNumber" type="String"></column>
+	<column name="item" type="String"></column>	
+	<column name="manufacturer" type="String"></column>
+	<column name="modelNumber" type="String"></column>
+	<column name="calibrationInterval" type="String"></column>
+	<column name="calibratedBy" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddLabCalibraStrucReqSec" local-service="true"
+ 	table="nbp_janaac_add_lab_carStrucSec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addLabCalibraStrucReqSecId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+	<column name="number" type="String"></column>
+	<column name="measuredQuantity" type="String"></column>	
+	<column name="calibrationItem" type="String"></column>
+	<column name="range" type="String"></column>
+	<column name="measurementProcedure" type="String"></column>
+	<column name="calibration" type="String"></column>
+	<column name="remarks" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddCerApplicationInfo" local-service="true"
+ 	table="nbp_janaac_add_cer_appli_info">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addCerApplicationInfoId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="name" type="String"></column>
+	<column name="email" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddCerScopeService" local-service="true"
+ 	table="nbp_janaac_add_cer_scope_ser">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addCerScopeServiceId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="clientOrganization" type="String"></column>
+	<column name="certificationStandards" type="String"></column>
+	<column name="currentCertification" type="String"></column>
+	<column name="dateFirstGranted" type="Date"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddCerPersonnelFirst" local-service="true"
+ 	table="nbp_janaac_add_cer_per_first">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addCerPersonnelFirstId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="nameOfStaff" type="String"></column>
+	<column name="jobTitle" type="String"></column>
+	<column name="majorResponsibility" type="String"></column>
+	<column name="specificFunctions" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+    	
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddCerPersonnelSecond" local-service="true"
+ 	table="nbp_janaac_add_cer_per_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addCerPersonnelSecondId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	
+ 	<column name="name" type="String"></column>
+	<column name="role" type="String"></column>
+	<column name="certificateStandard" type="String"></column>
+	<column name="areaOfExpertise" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddCerPersonnelThird" local-service="true"
+ 	table="nbp_janaac_add_cer_per_third">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addCerPersonnelThirdId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	
+ 	<column name="number" type="String"></column>
+	<column name="location" type="String"></column>
+	<column name="certificationActivities" type="String"></column>
+	<column name="contactDetails" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddCerScopeServiceThird" local-service="true"
+ 	table="nbp_janaac_add_scope_ser_third">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addCerScopeServiceThirdId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+    <column name="organizationName" type="String"></column>
+	<column name="organizationAddress" type="String"></column>
+	<column name="certificationScheme" type="String"></column>
+	<column name="currentStatus" type="String"></column>
+	<column name="dateFirstGranted" type="Date"></column>
+	<column name="DateOfNextExamination" type="Date"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddInsApplicationInfo" local-service="true"
+ 	table="nbp_janaac_add_ins_appli_info">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addInsApplicationInfoId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="name" type="String"></column>
+	<column name="email" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ 	
+ 	
+ 	
+ </entity>
+ <entity name="AddInsOrgInfoFirst" local-service="true"
+ 	table="nbp_janaac_add_ins_org_first">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addInsOrgInfoFirstId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="name" type="String"></column>
+	<column name="position" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddInsOrgInfoSecond" local-service="true"
+ 	table="nbp_janaac_add_ins_org_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addInsOrgInfoSecondId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="nameOfStaff" type="String"></column>
+	<column name="jobTitle" type="String"></column>
+	<column name="majorResponsibilities" type="String"></column>
+	<column name="indexInspector" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddInsOrgInfoThird" local-service="true"
+ 	table="nbp_janaac_add_ins_org_third">
+
+ 	<!-- PK fields -->
+
+ 	<column name="AddInsOrgInfoThirdId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="inspectionActivity" type="String"></column>
+	<column name="fieldOfInspection" type="String"></column>
+	<column name="typeOfInspection" type="String"></column>
+	<column name="method" type="String"></column>
+	<column name="eqipment" type="String"></column>
+	<column name="limitsOfCapabilities" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddPhyResourceFirst" local-service="true"
+ 	table="nbp_janaac_add_ins_phy_first">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addPhyResourceFirstId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="inventoryNumber" type="String"></column>
+	<column name="item" type="String"></column>
+	<column name="manufacturer" type="String"></column>
+	<column name="modelNumber" type="String"></column>
+	<column name="calibrationInterval" type="String"></column>
+	<column name="calibratedBy" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddPhyResourceSec" local-service="true"
+ 	table="nbp_janaac_add_ins_phy_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addPhyResourceSecId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="number" type="String"></column>
+	<column name="location" type="String"></column>
+	<column name="activitiesPerformed" type="String"></column>
+	<column name="contactDetails" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ </entity>
+ <entity name="AddFdaAppliInfo" local-service="true"
+ 	table="nbp_janaac_add_fda_Appli_info">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addFdaAppliInfoId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="name" type="String"></column>
+	<column name="email" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddFdaScopeClient" local-service="true"
+ 	table="nbp_janaac_add_fda_scop_client">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addFdaScopeClientId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="clientOrganization" type="String"></column>
+	<column name="foodProducts" type="String"></column>
+	<column name="fdaRegulations" type="String"></column>
+	<column name="dateGranted" type="Date"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddFdaPersonnelFirst" local-service="true"
+ 	table="nbp_janaac_add_fda_per_first">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addFdaPersonnelFirstId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="nameOfStaff" type="String"></column>
+	<column name="jobTitle" type="String"></column>
+	<column name="majorResponsibilites" type="String"></column>
+	<column name="specificFunctions" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddFdaPersonnelSecond" local-service="true"
+ 	table="nbp_janaac_add_fda_per_sec">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addFdaPersonnelSecondId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="name" type="String"></column>
+	<column name="role" type="String"></column>
+	<column name="fdaRegulation" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="AddFdaPersonnelThird" local-service="true"
+ 	table="nbp_janaac_add_fda_per_third">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addFdaPersonnelThirdId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="outsourcedActivity" type="String"></column>
+	<column name="supplierServiceProvider" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ </entity>
+ <entity name="AddFdaPersonnelFour" local-service="true"
+ 	table="nbp_janaac_add_fda_per_four">
+
+ 	<!-- PK fields -->
+
+ 	<column name="addFdaPersonnelFourId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="number" type="String"></column>
+	<column name="locationAddress" type="String"></column>
+	<column name="certificationActivities" type="String"></column>
+	<column name="contactDetails" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+      <!-- Finder methods -->
+	<finder name="getJanaacById" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ 	
+ </entity>
+ <entity name="JanaacAppliCurrentStage" local-service="true"
+ 	table="nbp_janaac_appli_current_stage">
+
+ 	<!-- PK fields -->
+
+ 	<column name="janaacAppliCurrentStageId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+    <column name="currentStage" type="String" />
+	<column name="lastFormStep" type="String" />
+	<column name="janaacApplicationId" type="long"></column>
+		
+	<order by="desc">
+		<order-column name="createDate" />
+	</order>
+	
+	<!-- Finder methods -->
+	<finder name="getJanaac_Stage_JAI" return-type="JanaacAppliCurrentStage">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+	</entity>
+ <entity name="AddOutsourcedActivities" local-service="true" table="nbp_janaac_add_out_src_act">
+
+
+ 	<!-- PK fields -->
+
+ 	<column name="addOutsourcedActivitiesId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="outSourcedActivity" type="String"></column>
+	<column name="serviceProvider" type="String"></column>
+	<column name="locationAddress" type="String"></column>
+	<column name="janaacApplicationId" type="long" ></column>
+	<column name="counter" type="String"></column>
+ 	
+ 	<finder name="getJanaac_OutSrc_Id" return-type="Collection">
+		<finder-column name="janaacApplicationId" />
+	</finder>
+ 	
+ 	
+ </entity>
+ <entity name="JanaacApplicationPayment" local-service="true"
+ 	table="nbp_janaac_appli_payment">
+
+ 	<!-- PK fields -->
+
+ 	<column name="janaacApplicationPaymentId" primary="true"
+ 		type="long">
+ 	</column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	
+ 	<!-- other fields -->
+	<column name="paymentMethod" type="String"></column>
+	<column name="paymentFee" type="String"></column>
+	<column name="amountPaid" type="String"></column>
+	<column name="amountCurrency" type="String"></column>
+	<column name="janaacApplicationId"  type="long"></column>
+	
+	<order by="desc">
+		<order-column name="createDate" />
+	 </order>
+	<finder name="getJanaacById" return-type="JanaacApplicationPayment">
+	          <finder-column name="janaacApplicationId"></finder-column>
+	      </finder>
+ </entity>
+
+
+
+</service-builder>

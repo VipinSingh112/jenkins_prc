@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.manufacturing.application.stages.services-api
+Bundle-SymbolicName: com.nbp.manufacturing.application.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.manufacturing.application.stages.services.exception,\
+	com.nbp.manufacturing.application.stages.services.model,\
+	com.nbp.manufacturing.application.stages.services.service,\
+	com.nbp.manufacturing.application.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.manufacturing.application.stages.services-service/service.xml

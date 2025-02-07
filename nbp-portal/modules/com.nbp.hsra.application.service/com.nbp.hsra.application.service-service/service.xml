@@ -1,0 +1,1678 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.hsra.application.service">
+	<namespace>HSRA_APPLICATION_FORM</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="HsraApplication" remote-service="true" uuid="true" table="nbp_hsra_application">
+
+		<!-- PK fields -->
+
+		<column name="hsraApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="typeOfApplicant" type="String"></column>
+		<column name="typeOfActivities" type="String"></column>
+		<column name="categoryOfSources" type="String"></column>
+		<column name="highOne" type="String"></column>
+		<column name="highTwo" type="String"></column>
+		<column name="medium" type="String"></column>
+		<column name="lowOne" type="String"></column>
+		<column name="lowTwo" type="String"></column>
+		<column name="typeOfTransaction" type="String"></column>
+		<column name="riskLevel" type="String"></column>
+		<column name="typeOfApplication" type="String"></column>
+		<column name="brokerTransactionType" type="String"></column>
+		<column name="specificApplicable" type="String"></column>
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="expiredLicenseAppNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="entityId" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+		<column name="qualifiedArea" type="String" />
+		<column name="expiredDate" type="Date" />
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getHsraByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getHsraByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getHsraByAppNum"
+			return-type="HsraApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getHsraByCaseId"
+			return-type="HsraApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		 	<finder name="getHsraByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getHsraByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getHsraByEI_CI" return-type="HsraApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getHsraByRT_AppNo" return-type="HsraApplication">
+			<finder-column name="typeOfApplicant"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+	<entity name="RadiationProtectionSecOne" local-service="true"
+		table="nbp_hsra_rad_section_one">
+
+		<!-- PK fields -->
+
+		<column name="radiationProtectSecOneId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="currentAuthNum" type="String"></column>
+		<column name="reasonForAmendment" type="String"></column>
+		<column name="typeOfApplication" type="String"></column>
+		
+        <column name="hsraApplicationId" type="long"></column>
+        
+          <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="RadiationProtectionSecOne">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="DetailOfApplicantSecTwo" local-service="true"
+		table="nbp_hsra_detail_applicant">
+
+		<!-- PK fields -->
+
+		<column name="detailOfAppliSecTwoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="organizationName" type="String"></column>
+		<column name="nuclearMailingAddr" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="nuclearTrnNumber" type="String"></column>
+		<column name="nuclearTelephoneNo" type="String"></column>
+		<column name="nuclearFaxNo" type="String"></column>
+		<column name="nuclearEmailAddr" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+          <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="DetailOfApplicantSecTwo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="DetailOfBusinessSecThree" local-service="true"
+		table="nbp_hsra_det_business">
+
+		<!-- PK fields -->
+
+		<column name="detailOfBusinessSecThreeId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="businessType" type="String"></column>
+		<column name="nuclearBusinessNumber" type="String"></column>
+		<column name="nuclearCorporationNum" type="String"></column>
+		<column name="nuclearPublicAct" type="String"></column>
+		<column name="nuclearName" type="String"></column>
+		<column name="nuclearAddressThird" type="String"></column>
+		<column name="nuclearThirdParish" type="String"></column>
+		<column name="nuclearTelephoneNum" type="String"></column>
+		<column name="nuclearfaxNumber" type="String"></column>
+		<column name="nuclearEmailAdd" type="String"></column>
+		<column name="nuclearFinancial" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="DetailOfBusinessSecThree">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="PurposeOfPropLicence" local-service="true"
+		table="nbp_hsra_purpose_regst">
+
+		<!-- PK fields -->
+
+		<column name="purposeOfPropLicenceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="nuclearRegstLic" type="String"></column>
+		<column name="nuclearBusinessPlace" type="String"></column>
+		<column name="nuclearActivityMainAdd" type="String"></column>
+		<column name="applicationType" type="String"></column>
+		<column name="nuclearAdditionalLoc" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="PurposeOfPropLicence">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="UnsealedSourceAdd" local-service="true"
+		table="nbp_hsra_unsealed_sources">
+
+		<!-- PK fields -->
+
+		<column name="unsealedSourceAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="unsealedSourcesRadionu" type="String"></column>
+		<column name="unsealedSourcesActivity" type="String"></column>
+		<column name="unsealedSourcesTotalYear" type="String"></column>
+		<column name="unsealedSourcesUse" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SealedSourcesAdd" local-service="true"
+		table="nbp_hsra_sealed_source">
+
+		<!-- PK fields -->
+
+		<column name="sealedSourcesAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="sealedSourcesRadionu" type="String"></column>
+		<column name="sealedSourcesMaxActivity" type="String"></column>
+		<column name="sealedSourcesActivityDate" type="Date"></column>
+		<column name="sealedSourcesCategories" type="String"></column>
+		<column name="sealedSourcesUse" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="RadiationDevicesAdd" local-service="true"
+		table="nbp_hsra_radiation_dev">
+
+		<!-- PK fields -->
+
+		<column name="radiationDevicesAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="radiationDevicesRadio" type="String"></column>
+		<column name="radiationDevicesMaxActivity" type="String"></column>
+		<column name="radiationDevicesManufacturer" type="String"></column>
+		<column name="radiationDevicesName" type="String"></column>
+		<column name="radiationDevicesModelNo" type="String"></column>
+		<column name="radiationDevicesNumber" type="String"></column>
+		<column name="radiationDevicesUse" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SpecificReqPropLicActivity"
+		table="nbp_hsra_specific_require" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="specificReqPropLicActivityId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="adminTreatment" type="String"></column>
+		<column name="qualityProgramme" type="String"></column>
+		<column name="instructionsCaregivers" type="String"></column>
+		<column name="instructionsPatients" type="String"></column>
+		<column name="patientsRelease" type="String"></column>
+		<column name="treatmentRooms" type="String"></column>
+		<column name="medicalEmergencies" type="String"></column>
+		<column name="nuclearMedicine" type="String"></column>
+		<column name="diagnosticStudies" type="String"></column>
+		<column name="biomedicalResearch" type="String"></column>
+		<column name="researchReview" type="String"></column>
+		<column name="emergencyOperating" type="String"></column>
+		<column name="certificatePackages" type="String"></column>
+		<column name="exposureDevices" type="String"></column>
+		<column name="equipmentSafety" type="String"></column>
+		<column name="transportPlan" type="String"></column>
+		<column name="animalsTreatment" type="String"></column>
+		<column name="animalHousing" type="String"></column>
+		<column name="disposalWaste" type="String"></column>
+		<column name="monitoringAnimalHousing" type="String"></column>
+		<column name="releaseAnimals" type="String"></column>
+		<column name="proceduresApp" type="String"></column>
+		<column name="disposalsApp" type="String"></column>
+		<column name="monitoringMaterialNu" type="String"></column>
+		<column name="handlingProcedures" type="String"></column>
+		<column name="hoppersEntry" type="String"></column>
+		<column name="operatingConditions" type="String"></column>
+		<column name="insertionType" type="String"></column>
+		<column name="installationFixed" type="String"></column>
+		<column name="transportPlanGauge" type="String"></column>
+		<column name="emergencyAddition" type="String"></column>
+		<column name="nuclearEnviroment" type="String"></column>
+		<column name="fishingTool" type="String"></column>
+		<column name="sealedSources" type="String"></column>
+		<column name="abandonmentZone" type="String"></column>
+		<column name="servicingCopy" type="String"></column>
+		<column name="manufacturingDevelopment" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="SpecificReqPropLicActivity">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="RadiationDeclaration" local-service="true"
+		table="nbp_hsra_rad_declaration">
+
+		<!-- PK fields -->
+
+		<column name="radiationDeclarationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="legalOperatorName" type="String"></column>
+		<column name="operatorTitle" type="String"></column>
+		<column name="operatorDate" type="Date"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="RadiationDeclaration">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="RadiationSafetyProgram"
+		table="nbp_hsra_safety_prog">
+
+		<!-- PK fields -->
+
+		<column name="radiationSafetyProgramId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="nuclearRsoName" type="String"></column>
+		<column name="nuclearRsoTitle" type="String"></column>
+		<column name="nuclearRsoTeleNo" type="String"></column>
+		<column name="nuclearRsoExt" type="String"></column>
+		<column name="nuclearRsoFax" type="String"></column>
+		<column name="nuclearRsoEmail" type="String"></column>
+		<column name="rsoDetails" type="String"></column>
+		<column name="qualifiedExpertName" type="String"></column>
+		<column name="qualifiedExpertTitle" type="String"></column>
+		<column name="qualifiedExpertTele" type="String"></column>
+		<column name="qualifiedExpertExt" type="String"></column>
+		<column name="qualifiedExpertFax" type="String"></column>
+		<column name="qualifiedExpertEmail" type="String"></column>
+		<column name="qualifiedExpertRegstNo" type="String"></column>
+		<column name="qualifiedExpertDate" type="Date"></column>
+		<column name="qualifiedDetails" type="String"></column>
+		<column name="applicantName" type="String"></column>
+		<column name="applicantTitle" type="String"></column>
+		<column name="otherLimitationAuth" type="String"></column>
+		<column name="otherDate" type="Date"></column>
+		<column name="classifiWorkersList" type="String"></column>
+		<column name="respiPleaseSpecify" type="String"></column>
+		<column name="tongsPleaseSpecify" type="String"></column>
+		<column name="scopeOfActivities" type="String"></column>
+		<column name="managementSystem" type="String"></column>
+		<column name="workerRecordings" type="String"></column>
+		<column name="categoriesLicence" type="String"></column>
+		<column name="renewalsSummary" type="String"></column>
+		<column name="constraintsLimits" type="String"></column>
+		<column name="equipmentMonitoring" type="String"></column>
+		<column name="areasControl" type="String"></column>
+		<column name="radioactiveSources" type="String"></column>
+		<column name="radiationiInstruments" type="String"></column>
+		<column name="healthWorkers" type="String"></column>
+		<column name="investigationLevel" type="String"></column>
+		<column name="policyDetails" type="String"></column>
+		<column name="securityAccess" type="String"></column>
+		<column name="raditionSources" type="String"></column>
+		<column name="workerTraining" type="String"></column>
+		<column name="publicControl" type="String"></column>
+		<column name="managementSources" type="String"></column>
+		<column name="emergencyProcedure" type="String"></column>
+		<column name="licenceLocation" type="String"></column>
+		<column name="achievableProgram" type="String"></column>
+		<column name="leakedTestingSources" type="String"></column>
+		<column name="transferSources" type="String"></column>
+		<column name="nuclearMaterials" type="String"></column>
+		<column name="transportPackaging" type="String"></column>
+		<column name="internalReview" type="String"></column>
+		<column name="sourcesActivities" type="String"></column>
+		<column name="individualProtectiveEquipment" type="String"></column>
+		<column name="ResProPleaseSpecify" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="RadiationSafetyProgram">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="RadiationSafetyLowRisk" local-service="true"
+		table="nbp_hsra_low_risk_safety">
+
+		<!-- PK fields -->
+
+		<column name="radiationSafetyLowRiskId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="appendixRsoName" type="String" />
+		  <column name="appendixRsoTitle" type="String" />
+		  <column name="appendixRsoTeleNo" type="String" />
+		  <column name="appendixRsoExt" type="String" />
+		  <column name="appendixRsoFax" type="String" />
+		  <column name="appendixRsoEmail" type="String" />
+		  <column name="appendixRsoDetails" type="String" />
+		  <column name="qualifiedAppendixName" type="String" />
+		  <column name="qualifiedAppendixTitle" type="String" />
+		  <column name="qualifiedAppendixTele" type="String" />
+		  <column name="qualifiedAppendixExt" type="String" />
+		  <column name="qualifiedAppendixFax" type="String" />
+		  <column name="qualifiedAppendixEmail" type="String" />
+		  <column name="qualifiedAppendixRegstNo" type="String" />
+		  <column name="qualifiedAppendixDate" type="Date" />
+		  <column name="qualifiedAppendixDetails" type="String" />
+		  <column name="monitoringExposure" type="String" />
+		  <column name="recordSystem" type="String" />
+		  <column name="securityAccess" type="String" />
+		  <column name="trainingInformation" type="String" />
+		  <column name="leakTesting" type="String" />
+		  <column name="emergencyProcedures" type="String" />
+		  <column name="managementSourcesDis" type="String" />
+		  <column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="RadiationSafetyLowRisk">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="NotifiLegalInfo"
+		table="nbp_hsra_noti_legal_info">
+
+		<!-- PK fields -->
+
+		<column name="notifiLegalInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="legalPersonName" type="String" />
+        <column name="legalPersonAddress" type="String" />
+        <column name="organizationName" type="String" />
+        <column name="organizationAddress" type="String" />
+        <column name="contactNumber" type="String" />
+        <column name="legalPersonEmail" type="String" />
+        <column name="practiceNature" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="NotifiLegalInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="DetailOfSources"
+		table="nbp_hsra_noti_detail_source">
+
+		<!-- PK fields -->
+
+		<column name="detailOfSourcesId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="sourceIdentification" type="String" />
+        <column name="sourceLocation" type="String" />
+        <column name="stateActivity" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="DetailOfSources">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="RadionuclideInfo"
+		table="nbp_hsra_noti_radionuclide">
+
+		<!-- PK fields -->
+
+		<column name="radionuclideInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="radionuclideDetails" type="String" />
+        <column name="activityDetails" type="String" />
+        <column name="activityDetailBq" type="String" />
+        <column name="activityDate" type="Date" />
+        <column name="chemicalDetailsForm" type="String" />
+        <column name="serialNo" type="String" />
+        <column name="sealedSource" type="String" />
+        <column name="manufacturerDetails" type="String" />
+        <column name="modelNo" type="String" />
+        <column name="identificationNo" type="String" />
+        <column name="statusDetails" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="RadionuclideInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="GenerateEquipmentInfo"
+		table="nbp_hsra_noti_gen_equip">
+
+		<!-- PK fields -->
+
+		<column name="GenerateEquipmentInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="manufacturerEquipment" type="String" />
+		<column name="equipmentModel" type="String" />
+		<column name="equipmentSerial" type="String" />
+		<column name="operatingPotential" type="String" />
+		<column name="equipmentModels" type="String" />
+		<column name="natureEquipment" type="String" />
+		<column name="equipmentStatusDetail" type="String" />
+		<column name="equipmentDate" type="Date" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="GenerateEquipmentInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="FitPropPersonalDetailInfo"
+		table="nbp_hsra_fitprop_personal">
+
+		<!-- PK fields -->
+
+		<column name="fitPropPersonalDetailInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="applicantFirstName" type="String" />
+        <column name="applicantMiddleName" type="String" />
+        <column name="applicantSurname" type="String" />
+        <column name="applicantFormerName" type="String" />
+        <column name="applicantAlias" type="String" />
+        <column name="applicantStreetName" type="String" />
+        <column name="applicantStreetNo" type="String" />
+        <column name="applicantPostalCode" type="String" />
+        <column name="applicantCountry" type="String" />
+        <column name="applicantTownName" type="String" />
+        <column name="applicantCity" type="String" />
+        <column name="applicantParish" type="String" />
+        <column name="applicantTelephoneNum" type="String" />
+        <column name="applicantEmailAdd" type="String" />
+        <column name="applicantDateBirth" type="Date" />
+        <column name="applicantPlaceOfBirthTown" type="String" />
+        <column name="applicantPlaceOfBirthParish" type="String" />
+        <column name="applicantPlaceOfBirthCountry" type="String" />
+        <column name="applicantNationality" type="String" />
+        <column name="applicantNisNum" type="String" />
+        <column name="applicantSocialNum" type="String" />
+        <column name="applicantNationalNum" type="String" />
+        <column name="applicantRegistrationNum" type="String" />
+        <column name="maritalStatusDetails" type="String" />
+        <column name="applicantRelationship" type="String" />
+        <column name="applicantSecTelephone" type="String" />
+        <column name="applicantSecMail" type="String" />
+        <column name="applicantSecAddress" type="String" />
+        <column name="applicantSecAddressParish" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="FitPropPersonalDetailInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="FitPropBusinessInfo"
+		table="nbp_hsra_fitprop_business">
+
+		<!-- PK fields -->
+
+		<column name="fitPropBusinessInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		  <column name="companyType" type="String" />
+        <column name="applicantBusinessName" type="String" />
+        <column name="applicantcomName" type="String" />
+        <column name="applicantComAddress" type="String" />
+        <column name="applicantComAddressParish" type="String" />
+        <column name="applicantComNo" type="String" />
+        <column name="applicantComEmail" type="String" />
+        <column name="applicantComTelephone" type="String" />
+        <column name="applicantComTitle" type="String" />
+        <column name="materialTechnology" type="String" />
+        <column name="relevantBox" type="String" />
+        <column name="corporateDirector" type="String" />
+        <column name="facilitySources" type="String" />
+        <column name="criminalFraud" type="String" />
+        <column name="professionalSubject" type="String" />
+        <column name="employmentResign" type="String" />
+        <column name="mentallyIll" type="String" />
+        <column name="bankruptAuthority" type="String" />
+        <column name="circumstancesEvent" type="String" />
+        <column name="partnershipHsra" type="String" />
+        <column name="facilityAssociated" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="FitPropBusinessInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="FitPropFinancialProfile"
+		table="nbp_hsra_fitprop_financial">
+
+		<!-- PK fields -->
+
+		<column name="fitPropFinancialProfileId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="financialInstitution" type="String" />
+        <column name="creditfacility" type="String" />
+        <column name="surroundingAction" type="String" />
+        <column name="jamaicaInstitution" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="FitPropFinancialProfile">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="FitPropDeclareApplicant"
+		table="nbp_hsra_fitprop_declare">
+
+		<!-- PK fields -->
+
+		<column name="fitPropDeclareApplicantId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="nameApplicant" type="String" />
+        <column name="dateApplicant" type="Date" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="FitPropDeclareApplicant">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="BrokerRegistrationInfo"
+		table="nbp_hsra_broker_regst">
+
+		<!-- PK fields -->
+
+		<column name="brokerRegstInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="applicationTypes" type="String" ></column>
+        <column name="organizationNameD" type="String" ></column>
+        <column name="businessPlace" type="String" ></column>
+        <column name="organizationTrn" type="String" ></column>
+        <column name="organizationTeleNum" type="String" ></column>
+        <column name="organizationFaxNum" type="String" ></column>
+        <column name="organizationEmailAdd" type="String" ></column>
+        <column name="businessTypeBroker" type="String" ></column>
+        <column name="businessNumberBroker" type="String" ></column>
+        <column name="corporationNumberBroker" type="String" ></column>
+        <column name="publicActBroker" type="String" ></column>
+        <column name="licenceNumberBroker" type="String"  ></column>
+        <column name="expirationDateBroker" type="Date" ></column>
+        <column name="radioactiveMaterial" type="String" ></column>
+        <column name="nuclearMaterial" type="String" ></column>
+        <column name="nuclearTechnology" type="String"  ></column>
+        <column name="ionizingApparatus" type="String" ></column>
+        <column name="radiationSource" type="String" ></column>
+        <column name="organizationTransfer" type="String"  ></column>
+        <column name="nuclearProtection" type="String"  ></column>
+        <column name="storageFacility" type="String"  ></column>
+        <column name="additionalInformation" type="String"  ></column>
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="BrokerRegistrationInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="BrokerDeclarationInfo"
+		table="nbp_hsra_broker_declare">
+
+		<!-- PK fields -->
+
+		<column name="brokerDeclareInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="brokerOperatorName" type="String"  ></column>
+        <column name="brokerTitle" type="String"  ></column>
+        <column name="signDate" type="Date"  ></column>
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="BrokerDeclarationInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="QualityApplicantDetail"
+		table="nbp_hsra_quality_applicant">
+
+		<!-- PK fields -->
+
+		<column name="qualityApplicantDetailId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="expertSurname" type="String"></column>
+        <column name="expertFirstName" type="String"></column>
+        <column name="expertId" type="String"></column>
+        <column name="expertPosition" type="String"></column>
+        <column name="expertTelephone" type="String"></column>
+        <column name="expertMobile" type="String"></column>
+        <column name="expertEmail" type="String"></column>
+        <column name="expertDate" type="Date"></column>
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="QualityApplicantDetail">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="QualityEmploymentInfo"
+		table="nbp_hsra_quality_employee">
+
+		<!-- PK fields -->
+
+		<column name="qualityEmploymentInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="companyName" type="String"></column>
+        <column name="teleNo" type="String"></column>
+        <column name="address" type="String"></column>
+        <column name="parish" type="String"></column>
+        <column name="mobileNo" type="String"></column>
+        <column name="emailAddress" type="String"></column>
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="QualityEmploymentInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="QualityProficiencyDetail"
+		table="nbp_hsra_quality_proficient">
+
+		<!-- PK fields -->
+
+		<column name="qualityProficiDetailId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+       <column name="proficiencyDetails" type="String"></column>
+        <column name="workDurationOne" type="String"></column>
+        <column name="capacityOne" type="String"></column>
+
+        <column name="workDurationTwo" type="String"></column>
+        <column name="capacityTwo" type="String"></column>
+
+        <column name="workDurationThree" type="String"></column>
+        <column name="capacityThree" type="String"></column>
+
+        <column name="workDurationFour" type="String"></column>
+        <column name="capacityFour" type="String"></column>
+
+        <column name="workDurationFive" type="String"></column>
+        <column name="capacityFive" type="String"></column>
+
+        <column name="workDurationSix" type="String"></column>
+        <column name="capacitySix" type="String"></column>
+
+        <column name="workDurationSeven" type="String"></column>
+        <column name="capacitySeven" type="String"></column>
+
+        <column name="workDurationEight" type="String"></column>
+        <column name="capacityEight" type="String"></column>
+
+        <column name="workDurationNine" type="String"></column>
+        <column name="capacityNine" type="String"></column>
+
+        <column name="workDurationTen" type="String"></column>
+        <column name="capacityTen" type="String"></column>
+
+        <column name="workDurationEleven" type="String"></column>
+        <column name="capacityEleven" type="String"></column>
+
+        <column name="workDurationTwelve" type="String"></column>
+        <column name="capacityTwelve" type="String"></column>
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="QualityProficiencyDetail">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="QualityDeclarationInfo"
+		table="nbp_hsra_quality_declare">
+
+		<!-- PK fields -->
+
+		<column name="qualityDeclarationInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="declarationSignDate" type="Date"></column>
+		<column name="hsraApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="QualityDeclarationInfo">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="HsraApplicationCurrentStage" local-service="true"
+		table="nbp_hsra_appli_current_stage">
+
+
+		<!-- PK fields -->
+
+		<column name="hsraApplicationCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="hsraApplicationId" type="long"></column>
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getHsra_Stage_HAI" return-type="HsraApplicationCurrentStage">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="RadiationDevicesDetailAdd" local-service="true"
+		table="nbp_hsra_radiation_device_add">
+
+		<!-- PK fields -->
+
+		<column name="radiationDevicesDetailAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="radiationDevicesRadio" type="String"></column>
+		<column name="radiationDevicesMaxActivity" type="String"></column>
+		<column name="radiationDevicesManufacturer" type="String"></column>
+		<column name="radiationDevicesName" type="String"></column>
+		<column name="radiationDevicesModelNo" type="String"></column>
+		<column name="radiationDevicesNumber" type="String"></column>
+		<column name="radiationDevicesUse" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="MedicalPractitionerAdd" local-service="true"
+		table="nbp_hsra_medical_pract_add">
+
+		<!-- PK fields -->
+
+		<column name="medicalPractitionerAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<column name="medicalPractitionerName" type="String"></column>
+		<column name="medicalPractitionerAddress" type="String"></column>
+		<column name="medicalPractitionerTelephone" type="String"></column>
+		<column name="medicalPractitionerFax" type="String"></column>
+		<column name="medicalPractitionerEmail" type="String"></column>
+		<column name="medicalPractitionerLicenceNo" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="SourcesDetailAdd" local-service="true"
+		table="nbp_hsra_source_detail_add">
+
+		<!-- PK fields -->
+
+		<column name="sourcesDetailAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="sourceIdentification" type="String"></column>
+		<column name="stateActivity" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="RadionuclideAdd" local-service="true"
+		table="nbp_hsra_radionuclide_add">
+
+		<!-- PK fields -->
+
+		<column name="radionuclideAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="radionuclideDetails" type="String"></column>
+		<column name="activityDetails" type="String"></column>
+		<column name="activityDate" type="Date"></column>
+		<column name="chemicalDetailsForm" type="String"></column>
+		<column name="serialNo" type="String"></column>
+		<column name="radionuclideLocation" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+		
+		
+	</entity>
+	<entity name="AlternateRsoAdd" local-service="true" table="nbp_hsra_alternate_rso_add">
+
+		<!-- PK fields -->
+
+		<column name="alternateRsoAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="alternateRsoName" type="String"></column>
+		<column name="alternateRsoTitle" type="String"></column>
+		<column name="alternateRsoTelephone" type="String"></column>
+		<column name="alternateRsoExt" type="String"></column>
+		<column name="alternateRsoFax" type="String"></column>
+		<column name="alternateRsoEmailAdd" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="QualifedExpertAdd" local-service="true"
+		table="nbp_hsra_qualified_expert_add">
+
+		<!-- PK fields -->
+
+		<column name="qualifedExpertAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="qualifedName" type="String"></column>
+		<column name="qualifedTitle" type="String"></column>
+		<column name="qualifedTelephone" type="String"></column>
+		<column name="qualifedExt" type="String"></column>
+		<column name="qualifedFax" type="String"></column>
+		<column name="qualifedEmailAdd" type="String"></column>
+		<column name="qualifedRegistrationNo" type="String"></column>
+		<column name="qualifedExpirationDate" type="Date"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AlternateRsoOneAdd" local-service="true"
+		table="nbp_hsra_alter_rso_one_add">
+
+		<!-- PK fields -->
+
+		<column name="alternateRsoOneAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="alternateRsoOneName" type="String"></column>
+		<column name="alternateRsoOneTitle" type="String"></column>
+		<column name="alternateRsoOneTelephone" type="String"></column>
+		<column name="alternateRsoOneExt" type="String"></column>
+		<column name="alternateRsoOneFax" type="String"></column>
+		<column name="alternateRsoOneEmailAdd" type="String"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="GenEquipmentData" local-service="true"
+		table="nbp_hsra_equipment_add">
+
+		<!-- PK fields -->
+
+		<column name="genEquipmentDataId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="manufacturerEquipment" type="String"></column>
+		<column name="equipmentModel" type="String"></column>
+		<column name="equipmentSerial" type="String"></column>
+		<column name="operatingPotential" type="String"></column>
+		<column name="natureEquipment" type="String"></column>
+		<column name="radiationGeneratingLoc" type="String"></column>
+		<column name="equipmentModels" type="String"></column>
+		<column name="equipmentStatusDetail" type="String"></column>
+		<column name="equipmentDate" type="Date"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="QualifedExpertOneAdd" local-service="true"
+		table="nbp_hsra_quali_expert_one_add">
+
+		<!-- PK fields -->
+
+		<column name="qualifedExpertOneAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="qualifedOneName" type="String"></column>
+		<column name="qualifedOneTitle" type="String"></column>
+		<column name="qualifedOneTelephone" type="String"></column>
+		<column name="qualifedOneExt" type="String"></column>
+		<column name="qualifedOneFax" type="String"></column>
+		<column name="qualifedOneEmailAdd" type="String"></column>
+		<column name="qualifedOneRegistrationNo" type="String"></column>
+		<column name="qualifedOneExpirationDate" type="Date"></column>
+		<column name="counter" type="String"></column>
+        <column name="hsraApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getHsraById" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="HsraApplicationPayment" local-service="true"
+		table="nbp_hsra_appli_payment">
+
+		<!-- PK fields -->
+
+		<column name="hsraApplicationPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- other fields -->
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="hsraApplicationId"  type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getHsraById" return-type="HsraApplicationPayment">
+            <finder-column name="hsraApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="AddMedicalPractitioner" local-service="true" table="nbp_hsra_medical_practitioner" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="addMedicalPractitionerId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- other fields -->
+        <column name="medicalPractitionerDate" type="Date"></column>
+        <column name="applicantDate" type="Date"></column>
+        <column name="counter" type="String" />
+        <column name="hsraApplicationId"  type="long"></column>
+	
+        <!-- Finder methods -->
+		<finder name="getHsraById"
+			return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AddApplicantPractitioner" local-service="true" table="nbp_hsra_applicant" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="addApplicantPractitionerId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+
+        <column name="applicantDate" type="Date"></column>
+        <column name="counter" type="String" />
+        <column name="hsraApplicationId"  type="long"></column>
+		
+        <!-- Finder methods -->
+		<finder name="getHsraById"
+			return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+
+		
+	</entity>
+
+</service-builder>

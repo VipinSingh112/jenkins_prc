@@ -1,0 +1,5 @@
+Bundle-Name: com.nbp.user.draft.dashboard.web
+Bundle-SymbolicName: com.nbp.user.draft.dashboard.web
+Bundle-Version: 1.0.0
+Export-Package: com.nbp.user.draft.dashboard.web.constants
+Web-ContextPath: /com.nbp.user.draft.dashboard.web

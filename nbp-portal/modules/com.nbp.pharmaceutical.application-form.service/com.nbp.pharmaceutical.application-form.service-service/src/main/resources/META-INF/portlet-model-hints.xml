@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaApplication">
+		<field name="pharmaApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="entityId" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="requesttype" type="String" />
+		<field name="typeOfPharmaProduct" type="String" />
+		<field name="typeOfPharmaDrug" type="String" />
+		<field name="secondaryCategory" type="String" />
+		<field name="typeOfProduct" type="String" />
+		<field name="subCategoryFirstField" type="String" />
+		<field name="subCategorySecondField" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseld" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaApplicationPayment">
+		<field name="pharmaApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaCancellationForm">
+		<field name="pharmaCancellationFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfLicenseHolder" type="String" />
+		<field name="dateOfRecall" type="Date" />
+		<field name="initiatedBy" type="String" />
+		<field name="licenseNumber" type="String" />
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaCurrentStage">
+		<field name="pharmaCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaDocumentList">
+		<field name="pharmaDocListId" type="long" />
+		<field name="pharmaAppType" type="String" />
+		<field name="pharmaDocList" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaDrugInfo">
+		<field name="pharmaDrugInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="pharmaDrugBrandName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaDrugDeisgnation" type="String" />
+		<field name="pharmaDosageForm" type="String" />
+		<field name="pharmaAdministrationRoute" type="String" />
+		<field name="pharmaOriginDispensing" type="String" />
+		<field name="pharmaLicenseHolderName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaLicenseHolderAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaManufacturerInfo">
+		<field name="pharmaManufacturerInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="pharmaDrugManufacturerName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaDrugManufacturerAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaDrugDeisgnation" type="String" />
+		<field name="pharmaMarketAuthName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaMarketAuthAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaReguOfficerName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaReguOfficerContact" type="String" />
+		<field name="pharmaDrugApplicName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaDrugApplicAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaLocalReprName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaLocalReprContact" type="String" />
+		<field name="pharmaLocalReprAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaLocalDistName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaLocalDistAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaLocalDistContact" type="String" />
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaMedicalDeviceInfo">
+		<field name="pharmaMedicalDeviceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="pharmaDeviceName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaDeviceDeisgnation" type="String" />
+		<field name="pharmaManufacturerName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaManufacturerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaMedicalApplicantName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaMedicalApplicantAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaRepresentativeName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="pharmaRepresentativeAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaRecallForm">
+		<field name="pharmaRecallFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfLicenseHolder" type="String" />
+		<field name="dateOfRecall" type="Date" />
+		<field name="initiatedBy" type="String" />
+		<field name="typeOfRecall" type="String" />
+		<field name="licenseNumber" type="String" />
+		<field name="pharmaApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.pharmaceutical.application.form.service.model.PharmaSubCategoriesMapping">
+		<field name="pharmaSubCategoriesMappingId" type="long" />
+		<field name="pharmaSubCategory" type="String" />
+		<field name="pharmaSubCategoryMapValue" type="String" />
+	</model>
+</model-hints>

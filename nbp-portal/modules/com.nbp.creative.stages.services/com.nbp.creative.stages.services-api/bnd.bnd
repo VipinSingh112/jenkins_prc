@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.creative.stages.services-api
+Bundle-SymbolicName: com.nbp.creative.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.creative.stages.services.exception,\
+	com.nbp.creative.stages.services.model,\
+	com.nbp.creative.stages.services.service,\
+	com.nbp.creative.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.creative.stages.services-service/service.xml

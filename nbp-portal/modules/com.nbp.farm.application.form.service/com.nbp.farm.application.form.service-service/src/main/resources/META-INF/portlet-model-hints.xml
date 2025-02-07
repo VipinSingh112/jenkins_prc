@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.farm.application.form.service.model.FarmerApplication">
+		<field name="farmerApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="requestType" type="String" />
+		<field name="perishLocal" type="String" />
+		<field name="farmType" type="String" />
+		<field name="farmParishLocal" type="String" />
+		<field name="entityId" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseappNumber" type="String" />
+		<field name="caseld" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="PdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerApplicationCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="farmerCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerCrop">
+		<field name="farmerCropId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="cropAndVariety" type="String" />
+		<field name="area" type="String" />
+		<field name="unit" type="String" />
+		<field name="cropContent" type="String" />
+		<field name="plantingDate" type="Date" />
+		<field name="majorMarket" type="String" />
+		<field name="majorMarketPercentSold" type="String" />
+		<field name="minorMarket" type="String" />
+		<field name="minorMarketPercentSold" type="String" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="propertyId02" type="String" />
+		<field name="propertyId03" type="String" />
+		<field name="cropCounter" type="String" />
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerCropPractice">
+		<field name="farmerCropPracticeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="crop1landPrepration" type="String" />
+		<field name="crop1CropCare" type="String" />
+		<field name="crop1water" type="String" />
+		<field name="crop1postHarvest" type="String" />
+		<field name="crop02" type="String" />
+		<field name="crop03" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="cropPracticeCounter" type="String" />
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerLivestock">
+		<field name="farmerLiveStockId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="livestockBreed" type="String" />
+		<field name="stageOflife" type="String" />
+		<field name="count" type="String" />
+		<field name="colonies" type="String" />
+		<field name="capacity" type="String" />
+		<field name="majorMarket" type="String" />
+		<field name="majorMarketSold" type="String" />
+		<field name="minorMarket" type="String" />
+		<field name="minorMarketSold" type="String" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="livestockCounter" type="String" />
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerlivestockPractice">
+		<field name="farmerLivestockPracticeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="husbandry" type="String" />
+		<field name="liveStockCare" type="String" />
+		<field name="nutrient" type="String" />
+		<field name="water" type="String" />
+		<field name="postHarvest" type="String" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="livestockPracticeCounter" type="String" />
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerProfile">
+		<field name="farmerProfileId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="respondent" type="String" />
+		<field name="manager" type="String" />
+		<field name="liveOnFarm" type="String" />
+		<field name="livelihood" type="String" />
+		<field name="educationLevel" type="String" />
+		<field name="mainOccupation" type="String" />
+		<field name="agriiInstitution" type="String" />
+		<field name="qualification" type="String" />
+		<field name="agriTraining" type="String" />
+		<field name="trainingMethod" type="String" />
+		<field name="mainAgriActivity" type="String" />
+		<field name="neareshPoliceStation" type="String" />
+		<field name="jasBranchGroup" type="String" />
+		<field name="holdingStartYear" type="String" />
+		<field name="farmerType" type="String" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="mainInformationSources" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerProperty">
+		<field name="farmerPropertyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="property01Extension" type="String" />
+		<field name="property01District" type="String" />
+		<field name="property01Tenure" type="String" />
+		<field name="property01Status" type="String" />
+		<field name="property01Size" type="String" />
+		<field name="property01Usage" type="String" />
+		<field name="property01Volume" type="String" />
+		<field name="property01Folio" type="String" />
+		<field name="property01DistanceFromRoad" type="String" />
+		<field name="propertyId02" type="String" />
+		<field name="propertyId03" type="String" />
+		<field name="propertyCounter" type="String" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="farmerApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerStakeholderAddress">
+		<field name="farmerStakeholderAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="streetName" type="String" />
+		<field name="district" type="String" />
+		<field name="postoffice" type="String" />
+		<field name="parish" type="String" />
+		<field name="telephoneNumber" type="String" />
+		<field name="applicationNumber" type="String" />
+		<field name="farmerApplicationId" type="long" />
+		<field name="stakeholderAddressId" type="long" />
+		<field name="farmerStakeholderInfoId" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.form.service.model.FarmerStakeholderInfo">
+		<field name="farmerStakeholderInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="alias" type="String" />
+		<field name="residentialStreetName" type="String" />
+		<field name="residentialDistrict" type="String" />
+		<field name="residentialPostOffice" type="String" />
+		<field name="residentialParish" type="String" />
+		<field name="residentialtelephoneNumber" type="String" />
+		<field name="businessStreetName" type="String" />
+		<field name="businessDistrict" type="String" />
+		<field name="businessPostOffice" type="String" />
+		<field name="businessParish" type="String" />
+		<field name="businessTelephoneNumber" type="String" />
+		<field name="identificationType" type="String" />
+		<field name="identificationNumber" type="String" />
+		<field name="gender" type="String" />
+		<field name="dateOfBirth" type="Date" />
+		<field name="taxpayerRegistrationNumber" type="String" />
+		<field name="cellPhone" type="String" />
+		<field name="fax" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="farmerApplicationId" type="long" />
+	</model>
+</model-hints>

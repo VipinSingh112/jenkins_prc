@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.mining.stage.service">
+	<namespace>MINING_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity local-service="true" name="MiningApplicationStages" remote-service="true" table="nbp_mining_app_stage"
+		uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="miningStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="stageName" type="String"></column>
+		<column name="duration" type="String"></column>
+		<column name="stageStatus" type="String"></column>
+		<column name="stageStartDate" type="Date"></column>
+		<column name="stageEndDate" type="Date"></column>
+		<column name="miningApplicationId" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="updateBySource" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getMining_By_AI"
+			return-type="MiningApplicationStages">
+			<finder-column name="miningApplicationId"></finder-column>
+		</finder>
+		<finder name="getMining_By_CaseIdStageName"
+			return-type="MiningApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getMining_By_CaseIdStageStatus"
+			return-type="MiningApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getMining_By_CaseIdAndStatus"
+			return-type="MiningApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getMining_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMiningBy_Case_Id" return-type="MiningApplicationStages">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMining_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity local-service="true" name="MiningApplicationMinisterialDecision" remote-service="true" table="nbp_mining_mini_dec"
+		uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="miningDecId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="caseId" type="String"></column>
+		<column name="dateOfCommDec" type="Date"></column>
+		<column name="commDecision" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getMining_APP_List_By_CI" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMining_APP_By_CI" return-type="MiningApplicationMinisterialDecision">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity local-service="true" name="MiningApplicationDueDiligence" remote-service="true" table="nbp_mining_due_dili"
+		uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="miningDueDiliId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="caseId" type="String"></column>
+		<column name="agencyName" type="String"></column>
+		<column name="feedbackReceived" type="String"></column>
+		<column name="status" type="String"></column>
+		<column name="isSubToAgency" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getMining_APP_List_By_CI" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMining_APP_By_CI" return-type="MiningApplicationDueDiligence">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		</entity>
+	<entity local-service="true" name="MiningApplicationCertificateIssuance" remote-service="true" table="nbp_mining_cert_issue"
+		uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="miningCertIssuId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="dateCertificateIssued" type="Date"></column>
+    	<column name="dateOfExpiration" type="Date"></column>
+    	<column name="certificateNumber" type="String"></column>
+    	<column name="caseId" type="String"></column>
+    	<column name="documentFileEntryId" type="long"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getMining_APP_List_By_CI" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMining_APP_By_CI" return-type="MiningApplicationCertificateIssuance">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMining_APP_By_CN" return-type="MiningApplicationCertificateIssuance">
+			<finder-column name="certificateNumber"></finder-column>
+		</finder>
+	</entity>
+		<entity name="MiningApplicationDeskVeri" local-service="true"
+		table="nbp_mining_desk_verifi">
+
+		<!-- PK fields -->
+
+		<column name="miningDeskVeriId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="miningApplicationId" type="long"></column>
+        <column name="documentStatus" type="String"></column>
+        <column name="documentName" type="String"></column>
+        <finder name="getMiningAppDV_ById" return-type="Collection">
+          <finder-column name="miningApplicationId"></finder-column>
+      </finder>
+	</entity>
+</service-builder>

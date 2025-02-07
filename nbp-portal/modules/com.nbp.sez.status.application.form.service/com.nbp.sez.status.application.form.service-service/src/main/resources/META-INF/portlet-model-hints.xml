@@ -1,0 +1,1013 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.sez.status.application.form.service.model.SezConsultancyInspection">
+		<field name="sezConsultancyInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="doYouWant" type="String" />
+		<field name="consultancyName" type="String" />
+		<field name="consultancyEmail" type="String" />
+		<field name="consultancyPhoneNum" type="String" />
+		<field name="consultancyDateBirth" type="Date" />
+		<field name="consultancyBirthCountry" type="String" />
+		<field name="consultancyCountry" type="String" />
+		<field name="consultancySezStatus" type="String" />
+		<field name="agendaName" type="String" />
+		<field name="dateForInspection" type="Date" />
+		<field name="consultancyTime" type="String" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevDisasterManagement">
+		<field name="sezDevDisasterManagementId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="disasterManagement" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevDisasterManagementAdd">
+		<field name="sezDevDisasterManagementAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="disasterMitigationPlan" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDeveloperDetails">
+		<field name="sezDeveloperDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="developerName" type="String" />
+		<field name="developerNumber" type="String" />
+		<field name="developerControl" type="String" />
+		<field name="letterOfApprovalDate" type="Date" />
+		<field name="sezDeveloperDate" type="Date" />
+		<field name="letterOfApprovalEntrtyId" type="long" />
+		<field name="sezDeveloperAgreementEntryId" type="long" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.sezDeveloperUndertaking">
+		<field name="sezDeveloperUndertakingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="titleOfApplicant" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="telephoneNum" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="applicantSignatureDate" type="Date" />
+		<field name="nameOfNotaryPublic" type="String" />
+		<field name="publicNotarySignatureDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevEmplomentInfo">
+		<field name="sezDevEmplomentInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstYearDirect" type="String" />
+		<field name="firstYearInDirect" type="String" />
+		<field name="firstYearMale" type="String" />
+		<field name="firstYearFemale" type="String" />
+		<field name="firstYearLocal" type="String" />
+		<field name="firstYearForeign" type="String" />
+		<field name="secondYearDirect" type="String" />
+		<field name="secondYearIndirect" type="String" />
+		<field name="secondYearMale" type="String" />
+		<field name="secondYearFemale" type="String" />
+		<field name="secondYearLocal" type="String" />
+		<field name="secondYearForeign" type="String" />
+		<field name="thirdYearDirect" type="String" />
+		<field name="thirdYearIndirect" type="String" />
+		<field name="thirdYearMale" type="String" />
+		<field name="thirdYearFemale" type="String" />
+		<field name="thirdYearLocal" type="String" />
+		<field name="thirdYearForeign" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevEmployeeDefineOccuAdd">
+		<field name="sezDevEmployeeDefineOccuAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occuSafetySystem" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevEmployeeSafetyInfoAdd">
+		<field name="sezDevEmployeeSafetyInfoAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="securityMeasures" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevGenBusinessInfoAdd">
+		<field name="sezDevGenBusinessInfoAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="buildingNum" type="String" />
+		<field name="townCity" type="String" />
+		<field name="parish" type="String" />
+		<field name="country" type="String" />
+		<field name="telephoneNum" type="String" />
+		<field name="faxNum" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevGeneralBusinessIfo">
+		<field name="sezDevGeneralBusinessIfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="applicationDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="companyName" type="String" />
+		<field name="buildingNum" type="String" />
+		<field name="townCity" type="String" />
+		<field name="Parish" type="String" />
+		<field name="country" type="String" />
+		<field name="telephoneNum" type="String" />
+		<field name="faxNum" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="website" type="String" />
+		<field name="headOfficeBuildingNum" type="String" />
+		<field name="headOfficeTown" type="String" />
+		<field name="headOfficeParish" type="String" />
+		<field name="authRepName" type="String" />
+		<field name="authRepBuildingNum" type="String" />
+		<field name="authRepTown" type="String" />
+		<field name="authRepParish" type="String" />
+		<field name="authRepCountry" type="String" />
+		<field name="authReptelephoneNum" type="String" />
+		<field name="authRepFaxNum" type="String" />
+		<field name="autheEmailAddress" type="String" />
+		<field name="joinVenture" type="String" />
+		<field name="existingJamicanCom" type="String" />
+		<field name="articleOfIncorporation" type="String" />
+		<field name="pleaseSpecify" type="String" />
+		<field name="companyClassified" type="String" />
+		<field name="taxRegisNum" type="String" />
+		<field name="genConsumptionNum" type="String" />
+		<field name="taxComplianceCertificateNum" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevInvestmentAndFinancial">
+		<field name="sezDevInvestmentAndFinancialId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="valueOfLand" type="String" />
+		<field name="buildingFactoryDevelop" type="String" />
+		<field name="onSiteInfrastructure" type="String" />
+		<field name="port" type="String" />
+		<field name="airPort" type="String" />
+		<field name="other" type="String" />
+		<field name="total" type="String" />
+		<field name="totalLocalDirector" type="String" />
+		<field name="totalForeignDirector" type="String" />
+		<field name="companyName" type="String" />
+		<field name="resisdentAddress" type="String" />
+		<field name="sourceOfFunds" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevPropDevelopmentPlan">
+		<field name="sezDevPropDevelopmentPlanId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="existingBuilding" type="String" />
+		<field name="existingBuildingForBusiDetail" type="String" />
+		<field name="activitiesForSingleEntity" type="String" />
+		<field name="volume" type="String" />
+		<field name="folio" type="String" />
+		<field name="buildingNum" type="String" />
+		<field name="townCity" type="String" />
+		<field name="zipCode" type="String" />
+		<field name="zoningClassification" type="String" />
+		<field name="landUse" type="String" />
+		<field name="sezAreaHectares" type="String" />
+		<field name="sezAreaAcres" type="String" />
+		<field name="customsHectares" type="String" />
+		<field name="customsAcres" type="String" />
+		<field name="topography" type="String" />
+		<field name="northBoundaries" type="String" />
+		<field name="eastBoundaries" type="String" />
+		<field name="westBoundaries" type="String" />
+		<field name="southBoundaries" type="String" />
+		<field name="customLandMeasurement" type="String" />
+		<field name="customPercent" type="String" />
+		<field name="commonLandMeasurement" type="String" />
+		<field name="commonPercent" type="String" />
+		<field name="bufferLandMeasurement" type="String" />
+		<field name="bufferPercent" type="String" />
+		<field name="zoneLandMeasurement" type="String" />
+		<field name="zonePercent" type="String" />
+		<field name="ResidentialLandMeasurement" type="String" />
+		<field name="ResidentialPercent" type="String" />
+		<field name="totalLandMeasurement" type="String" />
+		<field name="totalPercent" type="String" />
+		<field name="industrialProcess" type="String" />
+		<field name="drinkingPurpose" type="String" />
+		<field name="otherSpecify" type="String" />
+		<field name="totalRequirement" type="String" />
+		<field name="quantumAndNature" type="String" />
+		<field name="specifyWhetherOwn" type="String" />
+		<field name="reqOfPower" type="String" />
+		<field name="mainRoadRowWidth" type="String" />
+		<field name="mainRoadTypeOfPavement" type="String" />
+		<field name="secondRowWidhth" type="String" />
+		<field name="secondTypeOfPavement" type="String" />
+		<field name="tertiaryRowWidhth" type="String" />
+		<field name="tertiaryTypeOfPavement" type="String" />
+		<field name="waterInstallationReq" type="String" />
+		<field name="powerInstallationReq" type="String" />
+		<field name="teleComInstallationReq" type="String" />
+		<field name="cctvInstallationReq" type="String" />
+		<field name="securityInterconnection" type="String" />
+		<field name="fireFightingInstallationReq" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevProposedProject">
+		<field name="sezDevProposedProjectId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="previouslyFreeZone" type="String" />
+		<field name="curentlyOperatingZone" type="String" />
+		<field name="businessConductedZone" type="String" />
+		<field name="locally" type="String" />
+		<field name="overseas" type="String" />
+		<field name="proposedName" type="String" />
+		<field name="specialEconomicZone" type="String" />
+		<field name="pleaseDescribe" type="String" />
+		<field name="seaPortKm" type="String" />
+		<field name="seaPortMi" type="String" />
+		<field name="airportKm" type="String" />
+		<field name="airportMi" type="String" />
+		<field name="roadKm" type="String" />
+		<field name="roadMi" type="String" />
+		<field name="railKm" type="String" />
+		<field name="railMi" type="String" />
+		<field name="customProcessingKm" type="String" />
+		<field name="customProcessingMi" type="String" />
+		<field name="indicateTheLandMeasurement" type="String" />
+		<field name="building" type="String" />
+		<field name="landArea" type="String" />
+		<field name="ownerShip" type="String" />
+		<field name="otherPleaseSpecify" type="String" />
+		<field name="landOwnerName" type="String" />
+		<field name="lnadOwnerAddressOne" type="String" />
+		<field name="lnadOwnerAddressTwo" type="String" />
+		<field name="lnadOwnerTenure" type="String" />
+		<field name="stepToAcquireLand" type="String" />
+		<field name="stateWheatherTheProposedArea" type="String" />
+		<field name="applicantPreviously" type="String" />
+		<field name="pleaseProvideBrief" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevProposedProjectAdd">
+		<field name="sezDevProposedProjectAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfZone" type="String" />
+		<field name="parish" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevShareComDirectorShipAdd">
+		<field name="sezDevSharComDirectorShipAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="company" type="String" />
+		<field name="replationship" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevShareCorporationBusAdd">
+		<field name="sezDevCorporationBusinessAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="company" type="String" />
+		<field name="relationship" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevShareDirectorAdd">
+		<field name="sezDevShareDirectorAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="shareholderName" type="String" />
+		<field name="numOfShare" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevShareholdingInfo">
+		<field name="sezDevShareholdingInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="authorised" type="String" />
+		<field name="subscribed" type="String" />
+		<field name="paidUpShareCapital" type="String" />
+		<field name="directorBankrupts" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevSharePleaseStateAdd">
+		<field name="sezDevPleaseStateAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezDevSharePrincipalAdd">
+		<field name="sezDevSharePrincipalAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="buildingNum" type="String" />
+		<field name="parishPost" type="String" />
+		<field name="country" type="String" />
+		<field name="nationality" type="String" />
+		<field name="taxRegistrationNum" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccLocationAdd">
+		<field name="sezOccLocationAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="developerLocation" type="String" />
+		<field name="developerLocationDescription" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantDirectorPartnerSponsorInfo">
+		<field name="sezOccDirectSpoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occAppDate" type="Date" />
+		<field name="occDirectorName" type="String" />
+		<field name="occDirectorStreetAddress" type="String" />
+		<field name="occDirectorZipCode" type="String" />
+		<field name="occDirectorCountry" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupanteDeveloperUndertakingInfo">
+		<field name="sezOccDevUnderId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occUndertakingDevName" type="String" />
+		<field name="occUndertakingApprLetter" type="String" />
+		<field name="occUndertakingDate" type="Date" />
+		<field name="occUndertakingAgreeNum" type="String" />
+		<field name="occUndertakingAgreeDate" type="Date" />
+		<field name="occUndertakingControlNum" type="String" />
+		<field name="occDevApplicantTitle" type="String" />
+		<field name="occDevApplicantName" type="String" />
+		<field name="occDevApplicantTele" type="String" />
+		<field name="occDevApplicantEmail" type="String" />
+		<field name="occDevApplicantSignDate" type="Date" />
+		<field name="occDevPublicNotaryName" type="String" />
+		<field name="occDevPublicNotarySignDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantEmploymentInfo">
+		<field name="sezOccEmpId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occLabourYear" type="String" />
+		<field name="occLabourDirect" type="String" />
+		<field name="occLabourMale" type="String" />
+		<field name="occLabourFemale" type="String" />
+		<field name="occLabourLocal" type="String" />
+		<field name="occLabourForeign" type="String" />
+		<field name="occEmpCounter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupanteSubmissionChecklistInfo">
+		<field name="sezOccCheckSubmitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occNameReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occDateReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occGeneral" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occComInfoRequest" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occSwanStateRequest" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occSelectedRequest" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occSelectedFacilityRequest" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occSelectedApprovals" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occSelectedSecurityRequest" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occSelectedSDetailedBussiness" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occPaidShareCapProof" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantExistingProposedProjectBriefInfo">
+		<field name="sezOccExistPorpId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occBusinessDesc" type="String" />
+		<field name="occDeniedFreeZoneAppr" type="String" />
+		<field name="occDeniedFreeZoneApprDate" type="Date" />
+		<field name="occDeniedFreeZoneApprType" type="String" />
+		<field name="occFreeZoneLocation" type="String" />
+		<field name="occSezDevLoc" type="String" />
+		<field name="occSezDevLocDesc" type="String" />
+		<field name="occSubConcessionBuilding" type="String" />
+		<field name="occSubConcessionTown" type="String" />
+		<field name="occSubConcessionParish" type="String" />
+		<field name="occCompleteSurveyTechDesc" type="String" />
+		<field name="occNorthBoundaries" type="String" />
+		<field name="occEastBoundaries" type="String" />
+		<field name="occWestBoundaries" type="String" />
+		<field name="occSouthBoundaries" type="String" />
+		<field name="occOwnership" type="String" />
+		<field name="occLeaseYears" type="String" />
+		<field name="occVolume" type="String" />
+		<field name="occFolio" type="String" />
+		<field name="occFloorNum" type="String" />
+		<field name="occUndertakenService" type="String" />
+		<field name="occUndertakenManufacturing" type="String" />
+		<field name="occSeaPortDistanceKM" type="String" />
+		<field name="occSeaPortDistanceMI" type="String" />
+		<field name="occAirportDistanceKM" type="String" />
+		<field name="occAirportDistanceMI" type="String" />
+		<field name="occRoadDistanceKM" type="String" />
+		<field name="occRoadDistanceMI" type="String" />
+		<field name="occRailDistanceKM" type="String" />
+		<field name="occRailDistanceMI" type="String" />
+		<field name="occCustomDistanceKM" type="String" />
+		<field name="occCustomDistanceMI" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantGeneralBussinessAddress">
+		<field name="sezOccGenBussAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occName" type="String" />
+		<field name="occStreetAddress" type="String" />
+		<field name="occTown" type="String" />
+		<field name="occParish" type="String" />
+		<field name="occCountry" type="String" />
+		<field name="addresstype" type="String" />
+		<field name="sezOccGenBussId" type="long" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantGeneralBussinessInfo">
+		<field name="sezOccGenBussId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occAppDate" type="Date" />
+		<field name="occSezDevName" type="String" />
+		<field name="occSezDevControlNum" type="String" />
+		<field name="occExistingCom" type="String" />
+		<field name="occFormArticle" type="String" />
+		<field name="occFormArticleOther" type="String" />
+		<field name="occTRN" type="String" />
+		<field name="occGCT" type="String" />
+		<field name="occTCC" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantInvestAndFinanceInfo">
+		<field name="sezOccInvestFinancId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occInfraBuilding" type="String" />
+		<field name="occInfraEquipment" type="String" />
+		<field name="occInfraMachines" type="String" />
+		<field name="occInfraTotal" type="String" />
+		<field name="occInfraFinanceSource" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantLocationAddBox">
+		<field name="sezOccLocationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="developerCodeLocation" type="String" />
+		<field name="descTypeOfAct" type="String" />
+		<field name="locationCounter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantPrincipleDirector">
+		<field name="sezOccPrincDirectId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occShareholderName" type="String" />
+		<field name="occShareholderNation" type="String" />
+		<field name="occShareholderShares" type="String" />
+		<field name="occShareholderCounter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantPrincipleOfficer">
+		<field name="sezOccPrincOffId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="position" type="String" />
+		<field name="principlOfficerCounter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantProposedAreaDevelopmentPlanInfo">
+		<field name="sezOccPropAreaId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occProcessingArea" type="String" />
+		<field name="occNonProcessingArea" type="String" />
+		<field name="occOfficeRequirement" type="String" />
+		<field name="occFactoryRequirement" type="String" />
+		<field name="otherBuildUpRequirement" type="String" />
+		<field name="occOtherAreaReqName" type="String" />
+		<field name="occOtherAreaRequirement" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantShareHoldingInfo">
+		<field name="sezOccShareHolderId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occAuthorised" type="String" />
+		<field name="occSubscribed" type="String" />
+		<field name="occShareHolderCounter" type="String" />
+		<field name="occPaidCapital" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezOccupantUserUndertakingInfo">
+		<field name="sezOccUserunderId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="occApplicantTitle" type="String" />
+		<field name="occApplicantName" type="String" />
+		<field name="occApplicantTeleNum" type="String" />
+		<field name="occApplicantEmail" type="String" />
+		<field name="occApplicantSignDate" type="Date" />
+		<field name="occPublicNotaryName" type="String" />
+		<field name="occPublicNotarySignDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezStatusApplication">
+		<field name="sezStatusApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="sezStatus" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="zoningClassification" type="String" />
+		<field name="specialEconomicZone" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="parish" type="String" />
+		<field name="industries" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="doYouWantTo" type="String" />
+		<field name="typeOfTransactionWFH" type="String" />
+		<field name="controlNumberWFH" type="String" />
+		<field name="applicantStatusWFH" type="String" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezStatusApplicationCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="sezStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezStatusAppPayment">
+		<field name="sezStatusAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezStatusWFMLocationAdd">
+		<field name="sezStatusWFHLocId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="controlNumber" type="String" />
+		<field name="location" type="String" />
+		<field name="parish" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezStatusWorkFromHome">
+		<field name="sezStatusWorkFromHomeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="contactPersonName" type="String" />
+		<field name="contactPersonEmail" type="String" />
+		<field name="controlNumber" type="String" />
+		<field name="workerUtilizingIncentive" type="String" />
+		<field name="workerUtilizingIncentiveMonth" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.sezSubmissionChecklist">
+		<field name="sezSubmissionChecklistId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="selectedGeneral" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedComInfoReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="paidShareCapProof" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedSwornStateReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedLandOccuReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedSafetyHealthReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedLandDevlopmentReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedTechInfoReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedSezPreliminaryReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedSezDevDetailReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="selectedApprovalReq" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="nameReq" type="String" />
+		<field name="dateReq" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneDevUnderInfo">
+		<field name="sezZoneDevUnderInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="developerName" type="String" />
+		<field name="approvalLetterNum" type="String" />
+		<field name="approvalLetterDate" type="Date" />
+		<field name="developerAgreeNum" type="String" />
+		<field name="developerAgreeDate" type="Date" />
+		<field name="developerControlNum" type="String" />
+		<field name="declarantTitle" type="String" />
+		<field name="declarantName" type="String" />
+		<field name="declarantTelephoneNum" type="String" />
+		<field name="declarantEmail" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="publicNotaryName" type="String" />
+		<field name="publicNotarySignatureDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneEmployInfo">
+		<field name="sezZoneEmpInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="labourRequirementYear" type="String" />
+		<field name="labourRequirementDirect" type="String" />
+		<field name="labourRequirementMale" type="String" />
+		<field name="labourRequirementFemale" type="String" />
+		<field name="labourRequirementLocal" type="String" />
+		<field name="labourRequirementForeign" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneFinancialInfo">
+		<field name="sezZoneFinancialnfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="buildingInfrastructure" type="String" />
+		<field name="equipmentInfrastructure" type="String" />
+		<field name="machinesInfrastructure" type="String" />
+		<field name="totalInfrastructure" type="String" />
+		<field name="financeSource" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="otherFinanceSource" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneGeneralBusinessInfo">
+		<field name="sezZoneGeneralBusinessInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicationDate" type="Date" />
+		<field name="developerName" type="String" />
+		<field name="LocationName" type="String" />
+		<field name="controlNum" type="String" />
+		<field name="existingCompany" type="String" />
+		<field name="articleForm" type="String" />
+		<field name="otherArticleForm" type="String" />
+		<field name="nonResidentCom" type="String" />
+		<field name="taxRegisNum" type="String" />
+		<field name="genConsumptionNum" type="String" />
+		<field name="taxComplianceCertificateNum" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneGeneralBussinessAddress">
+		<field name="sezZoneGenBussAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="zoneName" type="String" />
+		<field name="zoneStreetAddress" type="String" />
+		<field name="zoneTown" type="String" />
+		<field name="zoneParish" type="String" />
+		<field name="zoneCountry" type="String" />
+		<field name="addresstype" type="String" />
+		<field name="sezZoneGeneralBusinessInfoId" type="long" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneLocationAdd">
+		<field name="sezZoneLocationAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="developerLocation" type="String" />
+		<field name="developerLocationDescription" type="String" />
+		<field name="counter" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneProposedProjectInfo">
+		<field name="sezZoneProposedProjectInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityDeniedApproval" type="String" />
+		<field name="deniedApprovalDate" type="Date" />
+		<field name="deniedApprovalProjectType" type="String" />
+		<field name="freeZoneLocation" type="String" />
+		<field name="leasedBuildingNum" type="String" />
+		<field name="leasedTown" type="String" />
+		<field name="leasedParish" type="String" />
+		<field name="leaseYears" type="String" />
+		<field name="volume" type="String" />
+		<field name="folio" type="String" />
+		<field name="floorNum" type="String" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneSubCheckInfo">
+		<field name="sezZoneSubCheckInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="generalRequirement" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="companyInformation" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="swornState" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="occupancyRequirement" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="approvals" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="signatureName" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.form.service.model.SezZoneUserUnderInfo">
+		<field name="sezZoneUserUnderInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="declarantTitle" type="String" />
+		<field name="declarantName" type="String" />
+		<field name="declarantTeleNum" type="String" />
+		<field name="declarantEmail" type="String" />
+		<field name="applicantSignatureDate" type="Date" />
+		<field name="publicNotaryName" type="String" />
+		<field name="publicNotarySignatureDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+	</model>
+</model-hints>

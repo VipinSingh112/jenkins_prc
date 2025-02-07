@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.creative.stages.services.model.CreativeApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="creativeApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="creativeApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.creative.stages.services.model.CreativeDeskVerification">
+		<field name="creativeDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="creativeApplicationId" type="long" />
+		<field name="documentName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="documentStatus" type="String" />
+	</model>
+	<model name="com.nbp.creative.stages.services.model.CreativeInspection">
+		<field name="creativeInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+		<field name="creativeApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.creative.stages.services.model.CreativePermit">
+		<field name="creativePermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="pirPermtNumber" type="String" />
+		<field name="dateofIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="durationOfPermit" type="String" />
+		<field name="pirCertificateNumber" type="long" />
+	</model>
+</model-hints>

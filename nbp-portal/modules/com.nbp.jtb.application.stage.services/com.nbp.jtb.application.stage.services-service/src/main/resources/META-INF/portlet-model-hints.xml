@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.jtb.application.stage.services.model.JtbAppBoardDecision">
+		<field name="jtbAppDeciBoardDecisionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfBoardDecision" type="Date" />
+		<field name="committeeDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.jtb.application.stage.services.model.JtbApplicationDeskVeri">
+		<field name="jtbApplicationDeskVeriId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+		<field name="documentStatus" type="String" />
+		<field name="documentName" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+	</model>
+	<model name="com.nbp.jtb.application.stage.services.model.JtbApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="jtbApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+	<model name="com.nbp.jtb.application.stage.services.model.JtbInspection">
+		<field name="jtbInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="jtbApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.stage.services.model.JTBLicenceCertificate">
+		<field name="jTBLicenceCertificateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="licenceCertificate" type="String" />
+		<field name="category" type="String" />
+		<field name="issueDate" type="Date" />
+		<field name="expirationDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.stage.services.model.JtbPaymentConfirmation">
+		<field name="jtbPaymentConfirmationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+</model-hints>

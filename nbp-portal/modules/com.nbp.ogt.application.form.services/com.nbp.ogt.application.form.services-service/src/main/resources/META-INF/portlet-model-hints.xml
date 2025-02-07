@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.ogt.application.form.services.model.OGTAppCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="ogtAppCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="ogtApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtApplication">
+		<field name="ogtApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="doYouWant" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="natureOfApplicant" type="String" />
+		<field name="typeOfMatter" type="String" />
+		<field name="typeOfDebt" type="String" />
+		<field name="debtStatute" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="registeredManufacturer" type="String" />
+		<field name="prospectingRightsNum" type="String" />
+		<field name="typeOfBankruptcy" type="String" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtClaimantDetail">
+		<field name="ogtClaimantDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="claimantName" type="String" />
+		<field name="claimantFirstName" type="String" />
+		<field name="claimantLastName" type="String" />
+		<field name="claimantCompanyName" type="String" />
+		<field name="claimantAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="claimantEmailAddr" type="String" />
+		<field name="claimantTeleNum" type="String" />
+		<field name="claimantFaxNo" type="String" />
+		<field name="claimantDate" type="Date" />
+		<field name="claimantTrn" type="String" />
+		<field name="claimantRelative" type="String" />
+		<field name="ogtApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtClaimToProperty">
+		<field name="ogtClaimToPropertyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="propertyDate" type="Date" />
+		<field name="propClaimDesc" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="affidavitDesc" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="ogtApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtClaimToSpouse">
+		<field name="ogtClaimToSpouseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="spouseDate" type="Date" />
+		<field name="claimSpouseDesc" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="nameCompletionForm" type="String" />
+		<field name="nameCompletionDate" type="Date" />
+		<field name="compPersonAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="justicePeaceParish" type="String" />
+		<field name="nameJusticeOfPeace" type="String" />
+		<field name="nameJusticeDate" type="Date" />
+		<field name="officialAmtClaim" type="String" />
+		<field name="officialSection" type="String" />
+		<field name="officialAmtVoting" type="String" />
+		<field name="officialAmtVotingDate" type="Date" />
+		<field name="officialPayment" type="String" />
+		<field name="officialPaymentDate" type="Date" />
+		<field name="ogtApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtInsolventPersonDetail">
+		<field name="ogtInsolventPersonDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="natureOfInsolvent" type="String" />
+		<field name="insolventFirstName" type="String" />
+		<field name="insolventLastName" type="String" />
+		<field name="insolventCompanyName" type="String" />
+		<field name="insolventDebtStatute" type="String" />
+		<field name="ogtApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtProofOfClaim">
+		<field name="ogtProofOfClaimId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="claimProofMatter" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="claimDebtorName" type="String" />
+		<field name="claimantName" type="String" />
+		<field name="claimSentAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="claimSentPhoneNum" type="String" />
+		<field name="claimSentFaxNo" type="String" />
+		<field name="claimSentEmailAddr" type="String" />
+		<field name="claimCompName" type="String" />
+		<field name="claimCertifyCheck" type="String" />
+		<field name="claimCompPosition" type="String" />
+		<field name="claimName" type="String" />
+		<field name="claimByCredDebtor" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="claimDateAppli" type="Date" />
+		<field name="claimByDebtTotalVal" type="String" />
+		<field name="claimByDebtStatement" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="claimCategory" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="claimUnsecured" type="String" />
+		<field name="claimRegardingAmt" type="String" />
+		<field name="indicateCategoryOne" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="indicateCategoryTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="indicateCategoryThree" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="indicateCategoryFour" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="otherPleaseSpecify" type="String" />
+		<field name="claimSecured" type="String" />
+		<field name="claimSecuredOne" type="String" />
+		<field name="claimDesc" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="aboveNamedCreditor" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="paymentDetailDesc" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="inCaseOfBankruptcy" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ogtApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ogt.application.form.services.model.OgtSectionB">
+		<field name="ogtSectionBId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="theDebtor" type="String" />
+		<field name="name" type="String" />
+		<field name="dateOfInsolvencyOfDebtor" type="Date" />
+		<field name="totalValueOfClaim" type="String" />
+		<field name="statementOfAccount" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="unsecuredClaim" type="String" />
+		<field name="unsecuredClaimOf" type="String" />
+		<field name="regardingTheAmount" type="String" />
+		<field name="categoryOne" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="categoryTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="categoryThree" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="categoryFour" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="otherPleaseSpecify" type="String" />
+		<field name="securedClaim" type="String" />
+		<field name="securedClaimOf" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="relationWithDebtor" type="String" />
+		<field name="bankruptcyEventDescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bankruptcyOfAnIndividual" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ogtApplicationId" type="long" />
+	</model>
+</model-hints>

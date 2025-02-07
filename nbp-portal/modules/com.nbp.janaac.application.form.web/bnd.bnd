@@ -1,0 +1,6 @@
+Bundle-Name: com.nbp.janaac.application.form.web
+Bundle-SymbolicName: com.nbp.janaac.application.form.web
+Bundle-Version: 1.0.0
+Export-Package: com.nbp.janaac.application.form.web.constants
+
+-liferay-aggregate-resource-bundles: com.nbp.custom.resource.bundle

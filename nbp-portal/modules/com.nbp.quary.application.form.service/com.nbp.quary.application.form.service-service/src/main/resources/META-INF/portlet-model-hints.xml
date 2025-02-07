@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.quary.application.form.service.model.DirectorDetailsAdd">
+		<field name="directorDetailsAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="directorName" type="String" />
+		<field name="directorNationality" type="String" />
+		<field name="quarryApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryApplication">
+		<field name="uuid" type="String" />
+		<field name="quarryApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="long" />
+		<field name="natureOfApplicant" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="renewLicenceNumber" type="String" />
+		<field name="typeOfMaterialQuarried" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryApplicationMachinesAndEquipment">
+		<field name="uuid" type="String" />
+		<field name="quarryApplicationMachinId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="manchineName" type="String" />
+		<field name="isManchineNameChecked" type="String" />
+		<field name="quantity" type="String" />
+		<field name="locationOfPermises" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="locatedOnLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="otherValue" type="String" />
+		<field name="quarryApplicationId" type="String" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryApplicationPayment">
+		<field name="quarryApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryApplicatntInformation">
+		<field name="auarryApplicantId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="addressOfApplicant" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="telephoneOfApplicant" type="String" />
+		<field name="emailOfApplicant" type="String" />
+		<field name="trnAndTcc" type="String" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryCurrentStage">
+		<field name="auarryStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormDetailsStep" type="String" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryGeneralInformation">
+		<field name="generalInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="proposedNumberOfEmploy" type="String" />
+		<field name="nonRefundableFee" type="String" />
+		<field name="convictedUnderQuarryLaw" type="String" />
+		<field name="giveDetails" type="String" />
+		<field name="licenseRefused" type="String" />
+		<field name="dateOfSignature" type="Date" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryInformaation">
+		<field name="auarryInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="location" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="district" type="String" />
+		<field name="parish" type="String" />
+		<field name="actualSizeOfQuary" type="String" />
+		<field name="hasQuarrySubmitted" type="String" />
+		<field name="sixCopiesOfLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="legalAccessToLand" type="String" />
+		<field name="ownerShipEnclosed" type="String" />
+		<field name="adjacentPropOwner" type="String" />
+		<field name="measurement" type="String" />
+		<field name="landOwnerName" type="String" />
+		<field name="landOwnerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryMaterialInformation">
+		<field name="materialInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfMaterial" type="String" />
+		<field name="reserveEstimate" type="String" />
+		<field name="estimateDailyProd" type="String" />
+		<field name="actualSizeOfQuary" type="String" />
+		<field name="hasQuarrySubmitted" type="String" />
+		<field name="sixCopiesOfLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="legalAccessToLand" type="String" />
+		<field name="ownerShipEnclosed" type="String" />
+		<field name="adjacentPropOwner" type="String" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryMaterialInformationEquipmentList">
+		<field name="materialInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="machineName" type="String" />
+		<field name="quantity" type="String" />
+		<field name="locatedOnPermises" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="isManchineNameChecked" type="String" />
+		<field name="otherValue" type="String" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.quary.application.form.service.model.QuarryTransferApplicantInfo">
+		<field name="quarryTransferInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="transferCompanyName" type="String" />
+		<field name="transferLicenceNumber" type="String" />
+		<field name="transferLicenseLease" type="String" />
+		<field name="transferLeaseReason" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="telephone" type="String" />
+		<field name="email" type="String" />
+		<field name="nationalityOfApplicant" type="String" />
+		<field name="addressInJamaica" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nameOfDirector" type="String" />
+		<field name="nationalityOfDirector" type="String" />
+		<field name="dateOfTransfer" type="Date" />
+		<field name="trnAndTcc" type="String" />
+		<field name="quarryApplicationId" type="long" />
+	</model>
+</model-hints>

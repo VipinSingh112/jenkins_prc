@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.manufacturing.application.stages.services.model.ManuDeskVerification">
+		<field name="manuDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="documentName" type="String" />
+		<field name="status" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.stages.services.model.ManufacturingApplicationStages">
+		<field name="manufacturingAppStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="manufacturingApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+	<model name="com.nbp.manufacturing.application.stages.services.model.ManufacturingPermit">
+		<field name="manufacturingPermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="PIRPermtNumber" type="String" />
+		<field name="dateOfIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="durationOfPermit" type="String" />
+		<field name="typeOfPermit" type="String" />
+		<field name="numberOfExtensions" type="String" />
+		<field name="parish" type="String" />
+		<field name="pirPermitCertificateNumber" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.stages.services.model.ManufacturingRecommendationToJCA">
+		<field name="manufacturingJCAId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="date" type="Date" />
+		<field name="recommendationToJCA" type="String" />
+		<field name="recommendation" type="String" />
+		<field name="numberOfMIICInspectors" type="String" />
+	</model>
+	<model name="com.nbp.manufacturing.application.stages.services.model.ManuInspection">
+		<field name="manuInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+</model-hints>

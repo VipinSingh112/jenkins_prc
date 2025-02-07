@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.acquire.stages.service">
+	<namespace>NBP_ACQUIRE</namespace>
+	<entity local-service="true" name="AcquireApplicationStages" remote-service="true" table="nbp_acquire_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="acquireApplicationStagesId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="acquireApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		
+		<!-- Finder methods -->
+		<finder name="getAcquireApplicationBy_AppId" return-type="AcquireApplicationStages">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+		<finder name="getAcquireApplicationBy_CaseId_StageName" return-type="AcquireApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getAcquireApplication_By_SN" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getAcquireApplication_By_SN_StageStatus" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getAcquireApplicationBy_CaseId_StageName_Status" return-type="AcquireApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getAcquireApplicationBy_CaseId_Status" return-type="AcquireApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getAcquireApplicationBy_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getAcquireApplicationBy_CI" return-type="AcquireApplicationStages">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="AcquireDueDiligence" remote-service="true" table="nbp_acquire_duediligence">
+
+		<!-- PK fields -->
+
+		<column name="sampleId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="siteVisitRequired" type="String"></column>
+		<column name="preferredSitVisitDate" type="Date"></column>
+		<column name="agencySubmissionStatus" type="String"></column>
+		<column name="nameOfAgency" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="dateSubmittedToAgency" type="Date"></column>
+		<column name="agencyRecommendations" type="String"></column>
+		<column name="dateFeedbackReceived" type="Date"></column>
+		<column name="acquireApplicationId"  type="long" ></column>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate"></order-column>
+		</order>
+		<!-- Finder methods -->
+		<finder name="getADD_AAI" return-type="AcquireDueDiligence">
+			<finder-column name="acquireApplicationId"></finder-column>
+		</finder>
+		<finder name="getADD_CaseId_AgencyName" return-type="AcquireDueDiligence">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="nameOfAgency"></finder-column>
+		</finder>
+		<finder name="getADD_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<!-- <finder name="getADD_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder> -->
+        <finder name="getADD_CI" return-type="AcquireDueDiligence">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="AcquireValuation" local-service="true"
+		table="nbp_acquire_valuation">
+
+		<!-- PK fields -->
+
+		<column name="acquireValuationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="valuationNumber" type="String"></column>
+        <column name="valuationVolume" type="String"></column>
+        <column name="valuationFolio" type="String"></column>
+        <column name="valuationStatus" type="String"></column>
+        
+        <finder name="getAcquireValuationBy_CaseId" return-type="AcquireValuation">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AcquireAdvertising" local-service="true"
+		table="nbp_acquire_advertising">
+
+		<!-- PK fields -->
+
+		<column name="acquireAdvertisingId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateFrom" type="Date"></column>
+        <column name="dateTo" type="Date"></column>
+        <column name="advertisingMediaStatus" type="String"></column>
+        
+        <finder name="getAcquireAdvertisingBy_CaseId" return-type="AcquireAdvertising">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+        
+	</entity>
+	<entity name="AcquireTendering" local-service="true"
+		table="nbp_acquire_tendering">
+
+		<!-- PK fields -->
+
+		<column name="acquireTenderingId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="nameOfEachBidders" type="String"></column>
+        <column name="bidPriceofeachBid" type="String"></column>
+        <column name="minPriceOfTenderOffer" type="String"></column>
+        <column name="meetsMinimum" type="String"></column>
+        <column name="highestOffer" type="String"></column>
+        <column name="status" type="String"></column>
+        
+         <finder name="getAcquireTenderingBy_CaseId" return-type="AcquireTendering">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+         <finder name="getAcquireTenderingBy_CI" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AcquireEvaluation" local-service="true"
+		table="nbp_acquire_evaluation">
+
+		<!-- PK fields -->
+
+		<column name="acquireEvaluationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="typeOfCommittee" type="String"></column>
+        <column name="dateOfCommitteeDecision" type="Date"></column>
+        <column name="committeeDecision" type="String"></column>
+        <finder name="getAcquireEvaluationBy_CaseId" return-type="AcquireEvaluation">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AcquireExecution" table="nbp_acquie_execution" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="acquireExecutionId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="paymentSection" type="String"></column>
+        <column name="paymentAmountDue" type="String"></column>
+        <column name="contractSection" type="String"></column>
+        <column name="dateContractExecuted" type="Date"></column>
+        <column name="docFileEntryId" type="long"></column>
+        <finder name="getAcquireExecutionBy_CI" return-type="AcquireExecution">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="AcquireDeskVerification" local-service="true" table="nbp_acquire_desk_verification">
+
+		<!-- PK fields -->
+
+		<column name="acquireDeskVerificationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="acquireApplicationId" type="long"></column>
+        <column name="documentName" type="String"></column>
+        <column name="documentStatus" type="String"></column>
+        <finder name="getDeskVerificationAcquireById" return-type="Collection">
+          <finder-column name="acquireApplicationId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="AcquireDraftAgreement" local-service="true" table="nbp_acquire_draft_agree">
+
+		<!-- PK fields -->
+
+		<column name="acquireDraftId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="paymentAmountDue" type="String"></column>
+        <column name="docFileEntryId" type="long"></column>
+        <finder name="getAcquire_DA_By_CI" return-type="AcquireDraftAgreement">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="AcquireFinalExecutedAgreement" local-service="true" table="nbp_acquire_executed_agree">
+
+		<!-- PK fields -->
+
+		<column name="acquirefinalId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateContractExecuted" type="Date"></column>
+        <column name="docFileEntryId" type="long"></column>
+        <finder name="getAcquire_FEA_By_CI" return-type="AcquireFinalExecutedAgreement">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+ 		<entity name="AcquirePaymentConfirmation" local-service="true" table="nbp_acquire_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="acquirePaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getAcquirePaymentConfirmationBy_CI" return-type="AcquirePaymentConfirmation">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getAcquirePaymentConfirmations_By_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>	
+</service-builder>

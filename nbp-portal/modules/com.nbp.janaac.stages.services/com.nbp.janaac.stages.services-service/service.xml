@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.janaac.stages.services">
+	<namespace>JANAAC_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="JanaacApplicationStages" remote-service="true" uuid="true" table="nbp_janaac_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="janaacApplicationStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="stageName" type="String"></column>
+		<column name="duration" type="String"></column>
+		<column name="stageStatus" type="String"></column>
+		<column name="stageStartDate" type="Date"></column>
+		<column name="stageEndDate" type="Date"></column>
+		<column name="janaacApplicationId" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="updateBySource" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJanaac_By_AI"
+			return-type="JanaacApplicationStages">
+			<finder-column name="janaacApplicationId"></finder-column>
+		</finder>
+		<finder name="getJanaac_By_CaseIdStageName"
+			return-type="JanaacApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getJanaac_By_CaseIdStageStatus"
+			return-type="JanaacApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getJanaac_By_CaseIdAndStatus"
+			return-type="JanaacApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getJanaac_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJanaac_ByCaseId" return-type="JanaacApplicationStages">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJanaac_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+	</entity>
+	<entity name="JanaacInspection" local-service="true"
+		table="nbp_janaac_inspection">
+
+		<!-- PK fields -->
+
+		<column name="janaacInspectionId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	    <column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="janaacApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		<order>
+  		  <order-column name="createDate" order-by="desc" />
+		</order>
+        
+        <finder name="getJanaacInspectionBy_CI" return-type="JanaacInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getJanaac_AI" return-type="Collection">
+			<finder-column name="janaacApplicationId" />
+		</finder>
+		<finder name="getjanaac_by_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJanaac_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getJanaac_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJanaac_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="janaacApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="JanaacInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="janaacApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JanaacReport" local-service="true"
+		table="nbp_janaac_report">
+
+		<!-- PK fields -->
+
+		<column name="janaacReportId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateOfReport" type="Date"></column>
+        <column name="report" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+		<finder name="getJanaac_by_caseId" return-type="JanaacReport">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="JanaacCommitteeDecision" local-service="true"
+		table="nbp_janaac_committee_decision">
+
+		<!-- PK fields -->
+
+		<column name="janaacCommitteeDecisionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateOfCommitteeDecision" type="Date"></column>
+        <column name="committeeDecision" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+		<finder name="getJanaac_by_caseId" return-type="JanaacCommitteeDecision">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="JanaacPaymentVerification" local-service="true"
+		table="nbp_janaac_payment_verifi">
+
+		<!-- PK fields -->
+
+		<column name="janaacPaymentVerificationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		  <!-- Other fields -->
+	    <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getJanaacPaymentBy_CI" return-type="JanaacPaymentVerification">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        	 <finder name="getJanaacPayConfBy_CI" return-type="Collection">
+        <finder-column name="caseId"></finder-column>
+ </finder>
+	</entity>
+</service-builder>

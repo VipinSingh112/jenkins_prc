@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.wra.application.form.service">
+	<namespace>WRA_APPLICATION</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="WRAApplication" remote-service="true" table="nbp_wra_application">
+
+		<!-- PK fields -->
+
+		<column name="wraApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="Date" />
+
+		<!-- Other fields -->
+		<column name="typeOfApplication" type="String" />
+		<column name="typeOfTransaction" type="String" />
+		<column name="typeOfPermit" type="String" />
+		<column name="typeOfTransacPermit" type="String" />
+		<column name="userWaterTypeCat" type="String" />
+		<column name="consumptiveSubCat" type="String" />
+		<column name="nonConsumptiveSubCat" type="String" />
+		<column name="industrialTypeSubCat" type="String" />
+		<column name="icmDocumentPath" type="String" />
+		<column name="status" type="int" />
+		<column name="caseId" type="String" />
+		<column name="applicationNumber" type="String" />
+		 <column name="pdfFileEntryId" type="long" />
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="appCurrentStageName" type="String" />
+
+		<!-- Order -->
+
+		  <order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+			<!-- Finder methods -->
+	
+		<finder name="getWRA_ByS_U" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="getWRA_By_CaseId"
+			return-type="WRAApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getWRA_By_Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getWRA_By_EntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getWRA_By_EntityId_Status"
+			return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getWRA_By_EI_CI"
+			return-type="WRAApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getWRAByAppNo"
+			return-type="WRAApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="get_WraBy_Case_Id"
+			return-type="WRAApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getWraByRT_AppNo" return-type="WRAApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+		<entity local-service="true" name="LicenceToAbstractInfo" remote-service="true" table="nbp_wra_abstract_info">
+
+		<!-- PK fields -->
+
+		<column name="abstractLicenceId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="applicationNum" type="String" />
+		<column name="nameOfApplicant" type="String" />
+		<column name="parishApplicant" type="String" />
+		<column name="mailingAddOfApplicant" type="String" />
+		<column name="emailOfApplicant" type="String" />
+		<column name="officePhone" type="String" />
+		<column name="mobilePhone" type="String" />
+		<column name="homePhone" type="String" />
+		 <column name="locationOfProposedParish" type="String" />
+        <column name="locationOfProParishWork" type="String"></column>
+        <column name="nameOfContractor" type="String" />
+        <column name="parishContractor" type="String" />
+        <column name="addressOfContractor" type="String" />
+        <column name="sourceOfWater" type="String" />
+        <column name="purposeWaterUse" type="String" />
+        <column name="areaAndCropType" type="String" />
+        <column name="systemOfIrrigation" type="String" />
+        <column name="meansOfDisposal" type="String" />
+        <column name="estimateDepthOfBorewell" type="String" />
+        <column name="diameterOfBorewell" type="String" />
+        <column name="artesianSupply" type="String" />
+        <column name="geologicalStrait" type="String" />
+        <column name="methodOfAbstractingWater" type="String" />
+        <column name="maxDailyQuant" type="String" />
+        <column name="typeOfAppratusProposed" type="String" />
+        <column name="otherInformation" type="String" />
+        <column name="requestToSupplyWater" type="String" />
+        <column name="authorityInformation" type="String" />
+        <column name="dateOfSign" type="Date" />
+		<column name="wraApplicationId" type="long" />
+		<!-- Order -->
+
+		  <order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+			<!-- Finder methods -->
+	
+		<finder name="getWRA_By_Id" return-type="LicenceToAbstractInfo">
+			<finder-column name="wraApplicationId"></finder-column>
+		</finder>
+	</entity>
+		<entity local-service="true" name="PermitToDrillAWell" remote-service="true" table="nbp_wra_drill_well_info">
+
+		<!-- PK fields -->
+
+		<column name="drillAWellApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+	    <column name="permitDrillApplicationNum" type="String" />
+	    <column name="permitDrillingApplicantName" type="String" />
+	    <column name="permitDrillingMailingAddParish" type="String" />
+	    <column name="permitDrillingMailingAddress" type="String" />
+	    <column name="permitDrillingEmailAddress" type="String" />
+	    <column name="permitDrillingOfficePhone" type="String" />
+	    <column name="permitDrillingMobilePhone" type="String" />
+	    <column name="wellDrillingHomePhone" type="String" />
+	    <column name="permitDrillingWorkLocation" type="String" />
+	    <column name="permitDrillingLocation" type="String" />
+	    <column name="permitDrillingNature" type="String" />
+	    <column name="permitDrillingContractorName" type="String" />
+	    <column name="permitDrillContractAddress" type="String" />
+	    <column name="permitDrillingContractorAdd" type="String" />
+	    <column name="permitDrillingPurpose" type="String" />
+	    <column name="permitDrillingBoreholeDepth" type="String" />
+	    <column name="permitDrillingDiameterBorehole" type="String" />
+	    <column name="permitDrillingMethod" type="String" />
+	    <column name="permitDrillingConstMethod" type="String" />
+	    <column name="permitDrillingSupplies" type="String" />
+	    <column name="permitDrillingTechnicalInfo" type="String" />
+	    <column name="permitDrillingCubic" type="String" />
+	    <column name="permitDrillingAuthority" type="String" />
+	    <column name="applicantSignaturePermitBtn" type="String" />
+	    <column name="permitDrillingSignDate" type="Date" />
+		<column name="wraApplicationId" type="long" />
+		<!-- Order -->
+
+		  <order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+			<!-- Finder methods -->
+	
+		<finder name="getWRA_By_Id" return-type="PermitToDrillAWell">
+			<finder-column name="wraApplicationId"></finder-column>
+		</finder>
+	</entity>
+		<entity local-service="true" name="LicenceToWellDriller" remote-service="true" table="nbp_wra_lic_well_drill_info">
+
+		<!-- PK fields -->
+
+		<column name="licenceToWellDrillerId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="wellDrillingApplicationNo" type="String" />
+		<column name="permitDrillingApplicantName" type="String" />
+	    <column name="permitDrillingAddressParish" type="String" />
+	    <column name="permitDrillingApplicantAddress" type="String" />
+	    <column name="permitDrillingDOBDate" type="Date" />
+	    <column name="permitDrillingEducational" type="String" />
+	    <column name="permitDrillingSpecificTraining" type="String" />
+	    <column name="permitDrillingSpecificExp" type="String" />
+	    <column name="permitDrillingSelfEmployed" type="String" />
+	    <column name="permitDrillingName" type="String" />
+	    <column name="permitDrillingPresentEmployer" type="String" />
+	    <column name="permitDrillingEmployerAddress" type="String" />
+	    <column name="permitDrillingFirstRefName" type="String" />
+	    <column name="permitDrillingFirstRefAdd" type="String" />
+	    <column name="permitDrillingSecondRefName" type="String" />
+	    <column name="permitDrillingSecondRefAdd" type="String" />
+	    <column name="permitDrillingSignature" type="String" />
+	    <column name="permitDrillingSignatureDate" type="Date" />
+	    <column name="wraApplicationId" type="long" />
+		  <order by="desc">
+				<order-column name="createDate" />
+		  </order>
+		<finder name="getWRA_By_Id" return-type="LicenceToWellDriller">
+			<finder-column name="wraApplicationId"></finder-column>
+		</finder>
+	</entity>
+		<entity name="RenewLicAbstractAndWater" local-service="true"
+			table="nbp_wra_renew_abstract">
+
+			<!-- PK fields -->
+
+			<column name="renewLicAbstractAndWaterId" primary="true"
+				type="long">
+			</column>
+
+			<!-- Group instance -->
+
+			<column name="groupId" type="long"></column>
+
+			<!-- Audit fields -->
+
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			
+			<column name="renewName" type="String" />
+			<column name="renewContact" type="String" />
+			<column name="renewJobTitle" type="String" />
+			<column name="renewTelephoneNum" type="String" />
+			<column name="renewFaxNum" type="String" />
+			<column name="renewParishLocation" type="String" />
+			<column name="renewAddress" type="String" />
+			<column name="renewSourceName" type="String" />
+			<column name="renewDetailsParishAdd" type="String" />
+			<column name="renewDetailsLocation" type="String" />
+			<column name="renewAbstractionRate" type="String" />
+			<column name="renewDetailsUse" type="String" />
+			<column name="renewAbstractionMethod" type="String" />
+			<column name="attachedDevice" type="String" />
+			<column name="renewStateDevice" type="String" />
+			<column name="abstractionData" type="String" />
+			<column name="renewSignName" type="String" />
+			<column name="renewDate" type="Date" />
+		    <column name="wraApplicationId" type="long" />
+			  <order by="desc">
+					<order-column name="createDate" />
+			  </order>
+			<finder name="getWRA_By_Id" return-type="RenewLicAbstractAndWater">
+				<finder-column name="wraApplicationId"></finder-column>
+			</finder>
+		</entity>
+		<entity name="WRAAppCurrentStage" table="nbp_wra_current_stage" uuid="true"
+     	local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="wraAppCurrentStageId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="wraApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getByWRA_Stage" return-type="WRAAppCurrentStage">
+			<finder-column name="wraApplicationId" />
+		</finder>
+     </entity>
+     <entity table="nbp_wra_app_payment" name="WRAAppPayment" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="wraAppPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other Field -->
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="wraApplicationId"  type="long"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getWRA_By_Id" return-type="WRAAppPayment">
+            <finder-column name="wraApplicationId"></finder-column>
+        </finder>
+	</entity>
+     <entity name="WRAReqIrrigation" local-service="true"
+     	table="nbp_wra_req_irrigation">
+
+     	<!-- PK fields -->
+
+     	<column name="wraReqIrrigationId" primary="true" type="long"></column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<column name="abstractAreaIrrigated" type="String"></column>
+     	<column name="abstractSystemIrrigated" type="String"></column>
+     	<column name="counter" type="String"></column>
+		<column name="wraApplicationId"  type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getWRA_By_Id" return-type="WRAReqIrrigation">
+            <finder-column name="wraApplicationId"></finder-column>
+        </finder>
+        		<finder name="getWRA_By_AppId" return-type="Collection">
+            <finder-column name="wraApplicationId"></finder-column>
+        </finder>
+        		<finder name="getWRA_By_CtrAppId" return-type="Collection">
+            <finder-column name="wraApplicationId"></finder-column>
+        </finder>
+     </entity>
+</service-builder>

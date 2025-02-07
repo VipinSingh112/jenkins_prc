@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.hsra.application.service-api
+Bundle-SymbolicName: com.nbp.hsra.application.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.hsra.application.service.exception,\
+	com.nbp.hsra.application.service.model,\
+	com.nbp.hsra.application.service.service,\
+	com.nbp.hsra.application.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.hsra.application.service-service/service.xml

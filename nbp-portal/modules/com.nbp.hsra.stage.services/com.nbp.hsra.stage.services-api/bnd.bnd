@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.hsra.stage.services-api
+Bundle-SymbolicName: com.nbp.hsra.stage.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.hsra.stage.services.exception,\
+	com.nbp.hsra.stage.services.model,\
+	com.nbp.hsra.stage.services.service,\
+	com.nbp.hsra.stage.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.hsra.stage.services-service/service.xml

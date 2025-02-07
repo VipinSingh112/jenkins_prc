@@ -1,0 +1,1776 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.tourism.application.form.services">
+	<namespace>TOURISM</namespace>
+
+	<entity name="TourismApplication" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_application">
+
+		<!-- PK fields -->
+
+		<column name="tourismApplicationId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+		<!-- Other fields -->
+
+        <column name="requestType" type="String" />
+        <column name="requestTypeTwo" type="String" />
+		<column name="licenseCategory" type="String" />
+		<column name="licenseSubCategory" type="String" />
+		<column name="status" type="int" />
+		<column name="applicationNumber" type="String" />
+		<column name="caseId" type="String" />
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long"></column>
+		<column name="appCurrentStageName" type="String" />
+
+		<!-- Order -->
+
+			<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="getTourismById" return-type="TourismApplication">
+			<finder-column name="tourismApplicationId" />
+				</finder>
+				
+  <finder name="getTourismApplicationByStatusUser" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="getTourismByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="getTourismByAppNo" return-type="TourismApplication">
+            <finder-column name="applicationNumber"></finder-column>
+        </finder>
+        <finder name="getTourismByCaseId" return-type="TourismApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	
+
+		
+	</entity>
+	<entity name="TourismNewAccommodationForm" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_new_accommodation">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAccoFormId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		
+		<column name="accoDateOfApplication" type="Date" />
+		<column name="accoTypeOfAccommodation" type="String" />
+		<column name="accoNameOfProperty" type="String" />
+		<column name="accoNameOfOwner" type="String" />
+		<column name="accoLocation" type="String" />
+		<column name="accoCompanyNumber" type="String" />
+		<column name="accoBusinessRegistrationNumber" type="String" />
+		<column name="accoDateOfRegistration" type="Date" />
+		<column name="accoOwnerTrnNumber" type="String" />
+		<column name="accoTccNumber" type="String" />
+		<column name="accoExpiryDate" type="Date" />
+		<column name="accoNameOfOperator" type="String" />
+		<column name="accoOperatorTrnNumber" type="String" />
+		<column name="accoOperatorTccNumber" type="String" />
+		<column name="accoOperatorExpiryDate" type="Date" />
+		<column name="accoContactPerson" type="String" />
+		<column name="accoPositionHeld" type="String" />
+		<column name="tourismApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewAccommodationForm">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+	</entity>
+	<entity name="TourismNewAccommodationAddress" local-service="true" uuid="false" table="nbp_tourism_new_accco_aoo">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAccommodationAOOId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	
+		<!-- Other fields -->
+		
+		<column name="addressType" type="String" />
+		<column name="accoAddress" type="String" />
+		<column name="accoTelephoneNumber" type="String" />
+		<column name="accoFaxNumber" type="String" />
+		<column name="accoEmail" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		<column name="tourismNewAccoFormId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewAccommodationAddress">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+        <finder name="getTN_A_AT" return-type="TourismNewAccommodationAddress">
+            <finder-column name="addressType"></finder-column>
+            <finder-column name="tourismNewAccoFormId"></finder-column>
+        </finder>
+		
+	</entity>
+    <entity name="TourismNewAttractionFormFirst" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_new_attraction_ff">
+
+    <!-- PK fields -->
+
+		<column name="tourismNewAttractFormFirstId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+		<column name="attractionDateOfApplication" type="Date" />
+		<column name="typeOfAttrcation" type="String" />
+		<column name="attractionNameOfProperty" type="String" />
+		<column name="attractionNameOfOwner" type="String" />
+		<column name="attractionLocation"  type="String" />
+		<column name="attractionCompanyNumber"  type="String" />
+		<column name="attractionBusinessRegisNo"  type="String" />
+		<column name="attractionDateOfRegistration"  type="Date" />
+		<column name="attractionOwnerTrnNumber"  type="String" />
+		<column name="attractionTccNumber"  type="String" />
+		<column name="attractionExpiryDate"  type="Date" />
+		<column name="attractionNameOfOperator"  type="String" />
+		<column name="attractionoperatorTrnNumber" type="String" />
+		<column name="attractionOperatorTccNumber" type="String" />
+		<column name="attractOperatorExpiryDate" type="Date" />
+		<column name="attractionContactPerson" type="String" />
+		<column name="attractionPositionHeld" type="String" />
+		<column name="attractionEntityId" type="String" />
+		<column name="attractionBriefdescription" type="String" />
+		<column name="tourismApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewAttractionFormFirst">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+		
+	</entity>
+	<entity name="TourismNewAttractionFormFirstAddress" local-service="true" table="nbp_tourism_new_attract_ffaoo" uuid="false">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAttractionFormFAOOId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="addressType" type="String" />
+		<column name="attractionAddress" type="String" />
+		<column name="attractionTelephoneNumber" type="String" />
+		<column name="attractionFaxNumber" type="String" />
+		<column name="attractionEmail" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		<column name="tourismNewAttractFormFirstId" type="long" />
+		
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewAttractionFormFirstAddress">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+        <finder name="getTN_Attract_AT" return-type="TourismNewAttractionFormFirstAddress">
+            <finder-column name="addressType"></finder-column>
+            <finder-column name="tourismNewAttractFormFirstId"></finder-column>
+        </finder>
+		
+		
+	</entity>
+    <entity name="TourismNewAttractionFormSecond" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_new_attraction_fs">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAttractionFormSecId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="targetMarketLocal" type="String" />
+		<column name="targetMarketForeign" type="String" />
+		<column name="targetMarketCountries" type="String" />
+		<column name="ownerCountryOfOrigin" type="String" />
+		<column name="ownerJointVenture" type="String" />
+		<column name="ownerLocal" type="String" />
+		<column name="ownerForeign" type="String" />
+		<column name="capitalizationUSComponent" type="String" />
+		<column name="capitalizationJEquivalent" type="String" />
+		<column name="capitalizationRateOfExchange" type="String" />
+		<column name="capitalizationJComponent" type="String" />
+		<column name="capitalizationCapitalInvest" type="String" />
+		<column name="sourcesLoan " type="String" />
+		<column name="sourcesEquity" type="String" />
+		<column name="sourcesStateSourceOfLoanFinanc" type="String" />
+		<column name="annualProjectedOne " type="String" />
+		<column name="annualProjectedTwo" type="String" />
+		<column name="annualProjectedThree " type="String" />
+		<column name="annualProjectedNumber" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewAttractionFormSecond">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+		
+		
+	</entity>
+	<entity name="TourismBonaAccommodationForm" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_af">
+
+    	<!-- PK fields -->
+
+    	<column name="tourismBonaAFId" primary="true" type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+    	<!-- Other fields -->
+		
+		<column name="bonaAccoDateOfApplication" type="Date" />
+		<column name="bonaAccoTypeOfAccommodation" type="String" />
+		<column name="bonaAccoPurposeOfIncentives" type="String" />
+		<column name="bonaAccoOtherIncPurpose" type="String" />
+		<column name="bonaAccoNameOfProperty" type="String" />
+		<column name="bonaAccoNameOfOwner" type="String" />
+		<column name="bonaAccoLocation" type="String" />
+		<column name="bonaAccoCompanyNumber" type="String" />
+		<column name="bonaBusinessRegistrationNumber" type="String" />
+		<column name="bonaAccoDateOfRegistration" type="Date" />
+		<column name="bonaAccoOwnerTrnNumber" type="String" />
+		<column name="bonaAccoTccNumber" type="String" />
+		<column name="bonaAccoExpiryDate" type="Date" />
+		<column name="bonaAccoNameOfOperator" type="String" />
+		<column name="bonaAccoOperatorTrnNumber" type="String" />
+		<column name="bonaAccoOperatorTccNumber" type="String" />
+		<column name="bonaAccoOperatorExpiryDate" type="Date" />
+		<column name="bonaAccoContactPerson" type="String" />
+		<column name="bonaAccoPositionHeld" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+    	
+    		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaAccommodationForm">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+	
+    </entity>
+	<entity name="TourismBonaAccommodationFormAddress" local-service="true" uuid="false" table="nbp_tourism_boma_acco_faoo">
+		<!-- PK fields -->
+
+		<column name="tourismBonaAccommodationFAOOId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="addressType" type="String" />
+		<column name="bonaAccoAddress" type="String" />
+		<column name="bonaAccoTelephoneNumber" type="String" />
+		<column name="bonaAccoFaxNumber" type="String" />
+		<column name="bonaAccoEmail" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		<column name="tourismBonaAFId"  type="long"/>
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaAccommodationFormAddress">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+        <finder name="getTB_Acco_AT" return-type="TourismBonaAccommodationFormAddress">
+            <finder-column name="addressType"></finder-column>
+            <finder-column name="tourismBonaAFId"></finder-column>
+        </finder>
+		
+	</entity>
+    <entity name="TourismBonaAttractionFormFirst" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_attraction_ff">
+		<!-- PK fields -->
+
+		<column name="tourismBonaAttractFormFirstId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+		<column name="bonaAttractDateOfApplication" type="Date" />
+		<column name="bonaTypeOfAttrcation" type="String" />
+		<column name="bonaAttractPurposeOfIncentives" type="String" />
+		<column name="bonaAttractOtherIncPurpose" type="String" />
+		<column name="bonaAttractionNameOfProperty" type="String" />
+		<column name="bonaAttractionNameOfOwner" type="String" />
+		<column name="bonaAttractionLocation"  type="String" />
+		<column name="bonaAttractionCompanyNumber"  type="String" />
+		<column name="bonaAttractionBusinessRegisNo"  type="String" />
+		<column name="bonaAttractionDateOfRegis"  type="Date" />
+		<column name="bonaAttractionOwnerTrnNumber"  type="String" />
+		<column name="bonaAttractionTccNumber"  type="String" />
+		<column name="bonaAttractionExpiryDate"  type="Date" />
+       <column name="bonaAttractionNameOfOperator"  type="String" />
+       <column name="bonaAttractionoperatorTrnNo" type="String" />
+		<column name="bonattractionOperatorTccNO" type="String" />
+		<column name="bonaAttractOperatorExpiryDate" type="Date" />
+		<column name="bonaAttractContactPerson" type="String" />
+		<column name="bonaAttractPositionHeld" type="String" />
+		<column name="bonaAttractEntityId" type="String" />
+		<column name="bonaAttractionBriefdescription" type="String" />
+		<column name="tourismApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaAttractionFormFirst">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+		
+		
+	</entity>
+    <entity name="TourismBonaAttractionFormFirstAddress" local-service="true" uuid="false" table="nbp_tourism_bona_attract_ffa">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaAttractionFFAOOId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="addressType" type="String" />
+		<column name="bonaAttractAddress" type="String" />
+		<column name="bonaAttractionTelephoneNo" type="String" />
+		<column name="bonaAttractionFaxNumber" type="String" />
+		<column name="bonaAttractionEmail" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		<column name="tourismBonaAttractFormFirstId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaAttractionFormFirstAddress">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+        <finder name="getTB_Attract_AT" return-type="TourismBonaAttractionFormFirstAddress">
+            <finder-column name="addressType"></finder-column>
+            <finder-column name="tourismBonaAttractFormFirstId"></finder-column>
+        </finder>
+		
+	</entity>
+    <entity name="TourismBonaAttractionFormSecond" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_attraction_fs">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaAttractFormSecId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="bonaTargetMarketLocal" type="String" />
+		<column name="bonaTargetMarketForeign" type="String" />
+		<column name="bonaTargetMarketCountries" type="String" />
+		<column name="bonaOwnerCountryOfOrigin" type="String" />
+		<column name="bonaOwnerJointVenture" type="String" />
+		<column name="bonaOwnerLocal" type="String" />
+		<column name="bonaOwnerForeign" type="String" />
+		<column name="bonaCapitalUSComponent" type="String" />
+		<column name="bonaCapitalizationJEquivalent" type="String" />
+		<column name="bonaCapitalRateOfExchange" type="String" />
+		<column name="bonaCapitalizationJComponent" type="String" />
+		<column name="bonaCapitalCapitalInvest" type="String" />
+		<column name="bonaSourcesLoan " type="String" />
+		<column name="bonaSourcesEquity" type="String" />
+		<column name="bonaSourcesStateOfLoanFinanc" type="String" />
+		<column name="bonaAnnualProjectedYearOne " type="String" />
+		<column name="bonaAnnualProjectedYearTwo" type="String" />
+		<column name="bonaAnnualProjectedYearThree " type="String" />
+		<column name="bonaAnnualProjectedNumber" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaAttractionFormSecond">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+		
+	</entity>
+	<entity name="TourismBonaGroundTransportation" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_ground_t">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroundTransportId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="typeOfGroundTransportation" type="String" />
+		<column name="bonaGroundName" type="String" />
+		<column name="bonaGroundLandlineNo" type="String" />
+		<column name="bonaGroundMobileNo" type="String" />
+		<column name="bonaGroundFaxNo" type="String" />
+		<column name="bonaGroundLicensedWith" type="String" />
+		<column name="bonaGroundBoardExpiryDate" type="Date" />
+		<column name="bonaGroundHaveYouBenefitBefore" type="String" />
+		<column name="bonaGroundDateOfLastBenefit" type="Date" />
+		<column name="bonaGroundEntityType" type="String" />
+		<column name="bonaGroundVehicleInfoMake" type="String" />
+		<column name="bonaGroundVehicleInfoModel" type="String" />
+		<column name="bonaGroundVehicleInfoYear" type="String" />
+		<column name="bonaGroundSeatingCapacity" type="String" />
+		<column name="bonaGroundExistingFleetAmount" type="String" />
+		<column name="bonaGroundIndicateVehicleWill" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaGroundTransportation">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+	</entity>
+   <entity name="TourismBonaGroundTransportationAddress" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_ground_ta">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroundTransAddresId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	
+	<!-- Other fields -->
+		<column name="addressType" type="String" />
+		<column name="bonaGroundAddress" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		<column name="tourismBonaGroundTransportId" type="long" />
+		
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaGroundTransportationAddress">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+        <finder name="getTB_Ground_AT" return-type="TourismBonaGroundTransportationAddress">
+            <finder-column name="addressType"></finder-column>
+            <finder-column name="tourismBonaGroundTransportId"></finder-column>
+        </finder>	
+	</entity>	
+   <entity name="TourismBonaGroundTransportatioCarRental" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_ground_tcr">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroundTransportCRId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="TypeOfGroundTransportation" type="String" />
+		<column name="bonaGroundDateOfApplication" type="Date" />
+		<column name="bonaGroundNameOfCompany" type="String" />
+		<column name="bonaGroundTradingName" type="String" />
+		<column name="bonaGroundCompanyRegisNo" type="String" />
+		<column name="bonaGroundTelephonNo" type="String" />
+		<column name="bonaGroundAddress" type="String" />
+		<column name="bonaGroundEmailAddress" type="String" />
+		<column name="bonaGroundContactPerson" type="String" />
+		<column name="bonaGroundEntityType" type="String" />
+		<column name="bonaGroundTccNo" type="String" />
+		<column name="bonaGroundExpiryDate" type="Date" />
+		<column name="bonaGroundCopyAttached" type="String" />
+		<column name="bonaGroundJtbLicense" type="String" />
+		<column name="bonaGroundExpiryDateTwo" type="Date" />
+		<column name="bonaGroundCopyAttachedTwo" type="String" />
+		<column name="bonaGroundTrnNo " type="String" />
+		<column name="bonaGroundYearInBusiness" type="String" />
+		<column name="bonaGroundCopyOfRegAttached " type="String" />
+		<column name="bonaGroundExistingFleetAmount" type="String" />
+		<column name="bonaGroundTotalVehicles" type="String" />
+		<column name="bonaGroundHowAdditionToFleet" type="String" />
+		<column name="bonaGroundReplacement" type="String" />
+		<column name="bonaGroundSummaryDealer" type="String" />
+		<column name="bonaGroundSummaryNumOfVechicle" type="String" />
+		<column name="bonaGroundSummarYear" type="String" />
+		<column name="bonaGroundSummaryType" type="String" />
+		<column name="bonaGroundSummaryCCRating" type="String" />
+		<column name="bonaGroundSummaryCommentary" type="String" />
+		<column name="bonaGroundDescription" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaGroundTransportatioCarRental">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+		
+	</entity>
+	<entity name="TourismBonaWaterSportsFormFirst" local-service="true" remote-service="true" uuid="false"  table="nbp_tourism_bona_water_sff">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaWaterSFFirstId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="bonaWaterTypeOfAttract" type="String" />
+		<column name="bonaWaterPurposeOfIncentives" type="String" />
+		<column name="bonaWaterOtherIncPurpose" type="String" />
+		<column name="bonaNameOfWatersportsEntity" type="String" />
+		<column name="bonaWaterNameOfOwnerCompany" type="String" />
+		<column name="bonaWaterLocation" type="String" />
+		<column name="bonaWaterCompanyNo" type="String" />
+		<column name="bonaWaterBusinessRegisNo" type="String" />
+		<column name="bonaWaterDateOfRegistration" type="Date" />
+		<column name="bonaWaterOwnerTrnNo" type="String" />
+		<column name="bonaWaterTccNo" type="String" />
+		<column name="bonaWaterExpiryDate" type="String" />
+		<column name="bonaWaterNameOfOperator" type="String" />
+		<column name="bonaWaterOperatorTrnNo" type="String" />
+		<column name="bonaWaterOperatorTccNo" type="String" />
+		<column name="bonaWaterOperatorExpiryDate" type="Date" />
+		<column name="bonaWaterContactPerson" type="String" />
+		<column name="bonaWaterPositionHeld" type="String" />
+		<column name="bonaWaterbriefdescription" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaWaterSportsFormFirst">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+		
+	</entity>
+	<entity name="TourismBonaWaterSportsFormFirstAddress" local-service="true" uuid="false" table="nbp_tourism_bona_water_sffa">
+		
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaWaterSportsFFAId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="addressType" type="String" />
+		<column name="bonaWaterAddress" type="String" />
+		<column name="bonaWaterTeleNo" type="String" />
+		<column name="bonaWaterFaxNo" type="String" />
+		<column name="bonaWaterEmail" type="String" />
+		<column name="tourismApplicationId" type="long" />
+		<column name="tourismBonaWaterSFFirstId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaWaterSportsFormFirstAddress">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+        <finder name="getTB_Water_AT" return-type="TourismBonaWaterSportsFormFirstAddress">
+            <finder-column name="addressType"></finder-column>
+            <finder-column name="tourismBonaWaterSFFirstId"></finder-column>
+        </finder>
+	
+	</entity>
+	<entity name="TourismBonaWaterSportsFormSecond" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_bona_water_ssf" >
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaWaterSportsFSecId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+	    <column name="bonaTargetMarketLocal" type="String" />
+		<column name="bonaTargetMarketForeign" type="String" />
+		<column name="bonaTargetMarketCountries" type="String" />
+		<column name="bonaOwnerCountryOfOrigin" type="String" />
+		<column name="bonaOwnerJointVenture" type="String" />
+		<column name="bonaOwnerLocal" type="String" />
+		<column name="bonaOwnerForeign" type="String" />
+		<column name="bonaCapitalizationUSComponent" type="String" />
+		<column name="bonaCapitalizationJEquivalent" type="String" />
+		<column name="bonaCapitalizationRateExchange" type="String" />
+		<column name="bonaCapitalizationJComponent" type="String" />
+		<column name="bonaCapitalCapitalInvest" type="String" />
+		<column name="bonaSourcesLoan " type="String" />
+		<column name="bonaSourcesEquity" type="String" />
+		<column name="bonaSourcesStateOfFinanc" type="String" />
+		<column name="bonaAnnualProjectedOne " type="String" />
+		<column name="bonaAnnualProjectedTwo" type="String" />
+		<column name="bonaAnnualProjectedThree " type="String" />
+		<column name="bonaAnnualProjectedNumber" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismBonaWaterSportsFormSecond">
+			<finder-column name="tourismApplicationId" />
+	</finder>	
+		
+	</entity>
+	<entity name="TourismApplicationCurrentStage" local-service="true"
+			table="nbp_tourism_stage">
+
+		<!-- PK fields -->
+
+		<column name="tourismAppliCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+        <column name="tourismApplicationId" type="long" />
+         
+         <!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+	<!-- Finder methods -->
+
+		
+        <finder name="getTA_Stage_TAI" return-type="TourismApplicationCurrentStage">
+            <finder-column name="tourismApplicationId"></finder-column>
+        </finder>
+	</entity>
+   <entity name="TourismNewAccoAssesment"
+		local-service="true" table="nbp_tourism_new_acco_assesment">
+
+		<!-- PK fields -->
+
+		<column name="TourismNewAccoAssesmentInfoId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="countryOrigin" type="String"></column>
+        <column name="jointVenture" type="String"></column>
+        <column name="localPer" type="String"></column>
+        <column name="foreignPer" type="String"></column>
+        <column name="capitalInvest" type="String"></column>
+        <column name="sourceAttach" type="String"></column>
+        <column name="shareCapital" type="String"></column>
+        <column name="loanCapital" type="String"></column>
+        <column name="other" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismNewAccoAssesment">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+        
+	</entity>
+    <entity name="TourismNewNumberOFEmployment"
+		local-service="true" table="nbp_tourism_new_acco_employe">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewNumberOFEmploymentId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		 <column name="permanentLocalMale" type="String"></column>
+        <column name="permanentLocalFemale" type="String"></column>
+        <column name="permanentForeignMale" type="String"></column>
+        <column name="permanentForeignFemale" type="String"></column>
+        <column name="temporaryLocalMale" type="String"></column>
+        <column name="temporaryLocalFemale" type="String"></column>
+        <column name="temporaryForeignMale" type="String"></column>
+        <column name="temporaryForeignFemale" type="String"></column>
+        <column name="totalLocalMale" type="String"></column>
+        <column name="totalLocalFemale" type="String"></column>
+        <column name="totalForeignMale" type="String"></column>
+        <column name="totalForeignFemale" type="String"></column>
+        <column name="salaryWages" type="String"></column>
+        <column name="estimatedExpenditure" type="String"></column>
+        <column name="otherExpenditure" type="String"></column>
+        <column name="perRoomInclusiveCost" type="String"></column>
+        <column name="perRoomExclusiveCost" type="String"></column>
+        <column name="staffPermanentLocalMale" type="String"></column>
+        <column name="staffPermanentLocalFemale" type="String"></column>
+        <column name="staffPermanentForeignMale" type="String"></column>
+        <column name="staffPermanentForeignFemale" type="String"></column>
+        <column name="staffTemporaryLocalMale" type="String"></column>
+        <column name="staffTemporaryLocalFemale" type="String"></column>
+        <column name="staffTemporaryForeignMale" type="String"></column>
+        <column name="staffTemporaryForeignFemale" type="String"></column>
+        <column name="staffTotalLocalMale" type="String"></column>
+        <column name="staffTotalLocalFemale" type="String"></column>
+        <column name="staffTotalForeignMale" type="String"></column>
+        <column name="staffTotalForeignFemale" type="String"></column>
+        <column name="salariesAndWages" type="String"></column>
+        <column name="expectedAnnualFunds" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismNewNumberOFEmployment">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+        
+	</entity>
+	<entity name="TourismNewAnnualEarnings"
+		local-service="true" table="nbp_tourism_new_acco_annual">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAnnualEarningsId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		  <column name="yearOne" type="String"></column>
+        <column name="yearTwo" type="String"></column>
+        <column name="yearThree" type="String"></column>
+        <column name="targetLocalPer" type="String"></column>
+        <column name="targetForeignPer" type="String"></column>
+        <column name="targetCountries" type="String"></column>
+        <column name="estimatedPer" type="String"></column>
+        <column name="volume" type="String"></column>
+        <column name="expenditure" type="String"></column>
+        <column name="manufactureEstimatedPer" type="String"></column>
+        <column name="manufactureVolume" type="String"></column>
+        <column name="manufactureExpenditure" type="String"></column>
+        <column name="seafoodPer" type="String"></column>
+        <column name="seafoodVolume" type="String"></column>
+        <column name="seafoodExpenditure" type="String"></column>
+        <column name="enterServices" type="String"></column>
+        <column name="enterLocal" type="String"></column>
+        <column name="enterForeign" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismNewAnnualEarnings">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+        
+	</entity>
+	<entity name="TourismNewAccoGeneralForm" local-service="true" table="nbp_tourism_new_acco_gerneral">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAccoGenFormId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="establishmentName" type="String"></column>
+        <column name="accomadationRoom" type="String"></column>
+        <column name="facilityDetail" type="String"></column>
+        <column name="hotelOperator" type="String"></column>
+        <column name="offeredAccomadation" type="String"></column>
+        <column name="constructionDate" type="Date"></column>
+        <column name="commenceDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        		
+		<!-- Finder methods -->
+
+		<finder name="getTourismById" return-type="TourismNewAccoGeneralForm">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismNewAccoSignInfo" local-service="true"
+		table="nbp_tourism_new_acco_signinfo">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAccoSignInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="signApplicantName" type="String"></column>
+        <column name="signApplicantStatus" type="String"></column>
+        <column name="newSignDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        
+        		<!-- Finder methods -->
+
+		<finder name="getTourismById" return-type="TourismNewAccoSignInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismNewAttractionEmployeeInfo" local-service="true"
+		table="nbp_tourism_new_attrac_emp">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAttractionEmploId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="actualPermanent" type="String"></column>
+        <column name="actualTemporary" type="String"></column>
+        <column name="actualForeign" type="String"></column>
+        <column name="actualLocal" type="String"></column>
+        <column name="actualPayroll" type="String"></column>
+        <column name="projectedPermanent" type="String"></column>
+        <column name="projectedTemporary" type="String"></column>
+        <column name="projectedForeign" type="String"></column>
+        <column name="projectedLocal" type="String"></column>
+        <column name="projectedPayroll" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        		<!-- Finder methods -->
+
+		<finder name="getTourismById" return-type="TourismNewAttractionEmployeeInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismNewAttractionSignInfo"
+		table="nbp_tourism_attrac_sign" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="tourismNewAttraSignInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="newSignApplicantName" type="String"></column>
+        <column name="newSignApplicantStatus" type="String"></column>
+        <column name="newSignDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismNewAttractionSignInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaAccoAssesment" local-service="true"
+		table="nbp_tourism_bona_aco_asses">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaAccoAssesmentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="countryOrigin" type="String"></column>
+        <column name="jointVenture" type="String"></column>
+        <column name="localPer" type="String"></column>
+        <column name="foreignPer" type="String"></column>
+        <column name="capitalInvest" type="String"></column>
+        <column name="sourceAttach" type="String"></column>
+        <column name="shareCapital" type="String"></column>
+        <column name="loanCapital" type="String"></column>
+        <column name="other" type="String"></column>
+        <column name="permanentLocalMale" type="String"></column>
+        <column name="permanentLocalFemale" type="String"></column>
+        <column name="permanentForeignMale" type="String"></column>
+        <column name="permanentForeignFemale" type="String"></column>
+        <column name="temporaryLocalMale" type="String"></column>
+        <column name="temporaryLocalFemale" type="String"></column>
+        <column name="temporaryForeignMale" type="String"></column>
+        <column name="temporaryForeignFemale" type="String"></column>
+        <column name="totalLocalMale" type="String"></column>
+        <column name="totalLocalFemale" type="String"></column>
+        <column name="totalForeignMale" type="String"></column>
+        <column name="totalForeignFemale" type="String"></column>
+        <column name="salaryWages" type="String"></column>
+        <column name="estimatedExpenditure" type="String"></column>
+        <column name="otherExpenditure" type="String"></column>
+        <column name="staffPermanentLocalMale" type="String"></column>
+        <column name="staffPermanentLocalFemale" type="String"></column>
+        <column name="staffForeignLocalMale" type="String"></column>
+        <column name="staffForeignLocalFemale" type="String"></column>
+        <column name="staffTemporaryLocalMale" type="String"></column>
+        <column name="staffTemporaryLocalFemale" type="String"></column>
+        <column name="staffTemporaryForeignMale" type="String"></column>
+        <column name="staffTemporaryForeignFemale" type="String"></column>
+        <column name="staffTotalForeignMale" type="String"></column>
+        <column name="staffTotalForeignFemale" type="String"></column>
+        <column name="staffTotalLocalMale" type="String"></column>
+        <column name="staffTotalLocalFemale" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        
+        <finder name="getTourismById" return-type="TourismBonaAccoAssesment">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaAccoGenralInfo"
+		table="nbp_tourism_bona_acco_gen" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaAccoGenralInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="establishmentName" type="String"></column>
+        <column name="establishmentNewName" type="String"></column>
+        <column name="generalFacilityRoom" type="String"></column>
+        <column name="existingFacilityRoom" type="String"></column>
+        <column name="offeredFacilityDetail" type="String"></column>
+        <column name="plannedFacilityDetail" type="String"></column>
+        <column name="accomodationToBeOffered" type="String"></column>
+        <column name="constructionDate" type="Date"></column>
+        <column name="expectedCommenceDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaAccoGenralInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaAccoSignInfo" local-service="true"
+		table="nbp_tourism_bona_acco_sign">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaAccoSignId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+    	<column name="newSignApplicantName" type="String"></column>
+        <column name="newSignApplicantStatus" type="String"></column>
+        <column name="newSignDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaAccoSignInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaAttractionEmployeeInfo"
+		local-service="true" table="nbp_tourism_attr_empl">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaAttrEmpId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="actualPermanent" type="String"></column>
+        <column name="actualTemporary" type="String"></column>
+        <column name="actualForeign" type="String"></column>
+        <column name="actualLocal" type="String"></column>
+        <column name="actualPayroll" type="String"></column>
+        <column name="projectedPermanent" type="String"></column>
+        <column name="projectedTemporary" type="String"></column>
+		<column name="projectedForeign" type="String"></column>
+		<column name="projectedLocal" type="String"></column>
+        <column name="projectedPayroll" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaAttractionEmployeeInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaAttractionSignInfo" local-service="true"
+		table="nbp_tourism_attrac_sign">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonAttrSignId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="applicantName" type="String"></column>
+        <column name="applicantStatus" type="String"></column>
+        <column name="signDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaAttractionSignInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaGroundPaymentInfo" local-service="true"
+		table="nbp_tourism_bona_gro_pay">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroundPayId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		 <column name="paymentMethod" type="String"></column>
+        <column name="paymentOtherMethod" type="String"></column>
+        <column name="paymentProof" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaGroundPaymentInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaGroundSignInfo" local-service="true" table="nbp_tourism_bona_gro_sign">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroundSignInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	  	 <column name="carApplicantName" type="String"></column>
+         <column name="tourismApplicationId" type="long"></column>
+         
+         <finder name="getTourismById" return-type="TourismBonaGroundSignInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaGroundContractTransPaymentInfo"
+		local-service="true" table="nbp_tourism_bona_gro_tranpay">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroTransPayId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	    <column name="contractType" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaGroundContractTransPaymentInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+
+	</entity>
+	<entity name="TourismBonaGroundTransContractSign"
+		table="nbp_tourism_bona_gro_tcsign" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaGroTraCoSignId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		 <column name="contractType" type="String"></column>
+         <column name="tourismApplicationId" type="long"></column>
+         
+         <finder name="getTourismById" return-type="TourismBonaGroundTransContractSign">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaWaterSportEmployeeInfo"
+		local-service="true" table="nbp_tourism_bona_water_emp">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaWSEmplId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="actualPermanent" type="String"></column>
+        <column name="actualTemporary" type="String"></column>
+        <column name="actualForeign" type="String"></column>
+        <column name="actualLocal" type="String"></column>
+        <column name="actualPayroll" type="String"></column>
+        <column name="projectedPermanent" type="String"></column>
+        <column name="projectedTemporary" type="String"></column>
+		<column name="projectedForeign" type="String"></column>
+		<column name="projectedLocal" type="String"></column>
+        <column name="projectedPayroll" type="String"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaWaterSportEmployeeInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+	</entity>
+	<entity name="TourismBonaWaterSportSignInfo" local-service="true"
+		table="nbp_tourism_bona_water_sign">
+
+		<!-- PK fields -->
+
+		<column name="tourismBonaWSSignId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		  <column name="applicantName" type="String"></column>
+        <column name="signApplicantStatus" type="String"></column>
+        <column name="signDate" type="Date"></column>
+        <column name="tourismApplicationId" type="long"></column>
+        
+        <finder name="getTourismById" return-type="TourismBonaWaterSportSignInfo">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+
+	</entity>
+    <entity name="TourismNewGroundTransportation" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_new_ground_tarns">
+
+		<!-- PK fields -->
+
+		<column name="TourismNewGroundTransId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="typeOfGroundTransportation" type="String" />
+		<column name="newGroundName" type="String" />
+		<column name="newGroundHomeAddress" type="String" />
+		<column name="newGroundBusinessAddress" type="String" />
+		<column name="newGroundLandlineNo" type="String" />
+		<column name="newGroundMobileNo" type="String" />
+		<column name="newGroundFaxNo" type="String" />
+		<column name="newGroundLicensedWith" type="String" />
+		<column name="newGroundBoardExpiryDate" type="Date" />
+		<column name="newGroundHaveYouBenefitBefore" type="String" />
+		<column name="newGroundHaveBenefitDate" type="Date" />
+		<column name="newGroundEntityType" type="String" />
+		<column name="newGroundVehicleInfoMake" type="String" />
+		<column name="newGroundVehicleInfoModel" type="String" />
+		<column name="newGroundVehicleInfoYear" type="String" />
+		<column name="newGroundSeatingCapacity" type="String" />
+		<column name="newGroundExistingFleetAmount" type="String" />
+		<column name="newGroundIndicateVehicleWill" type="String" />
+        <column name="tourismApplicationId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewGroundTransportation">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+	</entity>
+	<entity name="TourismNewGroundSignature" local-service="true" remote-service="true" uuid="false" table="nbp_tourism_new_ground_sign">
+
+		<!-- PK fields -->
+
+		<column name="TourismNewGroundSignatureId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="groundTransportationDate" type="Date" />
+        <column name="tourismApplicationId" type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getTourismById" return-type="TourismNewGroundSignature">
+			<finder-column name="tourismApplicationId" />
+	</finder>
+	</entity>
+	<entity name="TourismApplicationPayment" local-service="true" table="nbp_tourism_app_payment">
+
+     	<!-- PK fields -->
+
+     	<column name="TourismApplicationPaymentId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		
+		<column name="paymentMethod" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="paymentStatus" type="String" />
+		<column name="paymentFee" type="String" />
+		<column name="amountPaid" type="String" />
+		<column name="amountCurrency" type="String" />
+		<column name="transactionNumber" type="String" />
+		<column name="tourismApplicationId"  type="long" />
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getTAP_TAI" return-type="TourismApplicationPayment">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+     </entity>
+     <entity name="TourismAnnualEntertainBox" local-service="true" table="nbp_tourism_enter_box_add">
+
+     	<!-- PK fields -->
+
+     	<column name="tourismAnnualEntertainBoxId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column> 
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		
+		<column name="service" type="String" />
+		<column name="local" type="String" />
+		<column name="foreign" type="String" />
+		<column name="enterCounter" type="String" />
+		<column name="tourismApplicationId"  type="long" />
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getTAP_TAI" return-type="Collection">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+     </entity>
+        <entity name="TourismSummaryAddBox" local-service="true" table="nbp_tourism_summary_box">
+     	<!-- PK fields -->
+     	<column name="tourismSummaryBoxId" primary="true"
+     		type="long">
+     	</column>
+     	<!-- Group instance -->
+     	<column name="groupId" type="long"></column>
+     	<!-- Audit fields -->
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	<!-- Other fields -->
+		<column name="dealer" type="String" />
+		<column name="numberOfvehicles" type="String" />
+		<column name="year" type="String" />
+		<column name="type" type="String" />
+		<column name="ccRating" type="String" />
+		<column name="counterSummary" type="String" />
+		<column name="tourismApplicationId"  type="long" />
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getTAP_TAI" return-type="Collection">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+     </entity>
+        <entity name="TourismBonaOperatorInfo" local-service="true" table="nbp_tourism_bona_operator_info">
+
+        	<!-- PK fields -->
+
+        	<column name="tourismBonaOperatorInfoId" primary="true"
+        		type="long">
+        	</column>
+
+        	<!-- Group instance -->
+
+        	<column name="groupId" type="long"></column>
+
+        	<!-- Audit fields -->
+
+        	<column name="companyId" type="long"></column>
+        	<column name="userId" type="long"></column>
+        	<column name="userName" type="String"></column>
+        	<column name="createDate" type="Date"></column>
+        	<column name="modifiedDate" type="Date"></column>
+        	
+        	<column name="operatorName" type="String"></column>
+        	<column name="operatorNumber" type="String"></column>
+        	<column name="issueDate" type="Date"></column>
+        	<column name="expirationDate" type="Date"></column>
+        	<column name="categories" type="String"></column>
+        	<column name="subCategories" type="String"></column>
+        	<column name="tourismApplicationId" type="Long"></column>
+        	
+        	<!-- Finder methods -->
+			<finder name="getTourismById" return-type="TourismBonaOperatorInfo">
+				<finder-column name="tourismApplicationId" />
+			</finder>
+        </entity>
+               <entity name="TourismGroundTransBox" local-service="true" table="nbp_tourism_new_ground_box">
+     	<!-- PK fields -->
+     	<column name="tourismVehicleBoxId" primary="true"
+     		type="long">
+     	</column>
+     	<!-- Group instance -->
+     	<column name="groupId" type="long"></column>
+     	<!-- Audit fields -->
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	<!-- Other fields -->
+		<column name="vehicleMake" type="String" />
+		<column name="vehiclemodel" type="String" />
+		<column name="vehicleYear" type="String" />
+		<column name="vehicleCounter" type="String" />
+		<column name="tourismApplicationId"  type="long" />
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getTAP_TAI" return-type="Collection">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+     </entity>
+              <entity name="TourismBonaGroundTransBox" local-service="true" table="nbp_tourism_bona_ground_box">
+     	<!-- PK fields -->
+     	<column name="tourismVehicleBoxBonaId" primary="true"
+     		type="long">
+     	</column>
+     	<!-- Group instance -->
+     	<column name="groupId" type="long"></column>
+     	<!-- Audit fields -->
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	<!-- Other fields -->
+		<column name="vehicleMakeBona" type="String" />
+		<column name="vehiclemodelBona" type="String" />
+		<column name="vehicleYearBona" type="String" />
+		<column name="vehicleCounter" type="String" />
+		<column name="tourismApplicationId"  type="long" />
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getTAP_TAI" return-type="Collection">
+			<finder-column name="tourismApplicationId" />
+		</finder>
+     </entity>
+</service-builder>

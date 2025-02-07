@@ -1,0 +1,12 @@
+dependencies {
+	implementation project(":modules:com.nbp.healthcare.stage.service:com.nbp.healthcare.stage.service-api")
+	implementation project(":modules:com.nbp.healthcare.application-form.service:com.nbp.healthcare.application-form.service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.healthcare.stage.service-api/src/main/java"
+}
+
+group = "com.nbp.healthcare.stage.service"

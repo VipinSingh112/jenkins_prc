@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.miic.application.form.services-api
+Bundle-SymbolicName: com.nbp.miic.application.form.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.miic.application.form.services.exception,\
+	com.nbp.miic.application.form.services.model,\
+	com.nbp.miic.application.form.services.service,\
+	com.nbp.miic.application.form.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.miic.application.form.services-service/service.xml

@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.healthcare.application.form.service">
+	<namespace>HEALTH</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="HealthCareApplication" remote-service="true" uuid="false" table="nbp_healthcare_application">
+
+		<!-- PK fields -->
+
+		<column name="healthCareApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String" />
+
+		<!-- Other fields -->
+
+		 <column name="healthCareFacility" type="String"></column>
+		 <column name="healthCareRegistrationNum" type="String" />
+        <column name="status" type="int"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="caseId" type="String"></column>
+        <column name="icmDocumentPath" type="String"></column>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+
+         <!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		 <finder name="getHealthCareById" return-type="HealthCareApplication">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+        <finder name="getHealthCareByS_U" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="getHealthCareByAppNo" return-type="HealthCareApplication">
+            <finder-column name="applicationNumber"></finder-column>
+        </finder>
+         <finder name="getHealthCareByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="getHealthCareByCaseId" return-type="HealthCareApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+
+		<!-- References -->
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity name="HealthCareApplicantInfo" local-service="true" table="nbp_healthcare_applicant">
+
+		<!-- PK fields -->
+
+		<column name="healthCareApplicantInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="name" type="String"></column>
+        <column name="emailAddress" type="String"></column>
+        <column name="telephoneNumber" type="String"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <finder name="getHealthCareById" return-type="HealthCareApplicantInfo">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HealthCareApplicantAddress" local-service="true"
+		table="nbp_healthcare_applicant_add">
+
+		<!-- PK fields -->
+
+		<column name="healthCareApplicantAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="applicantMailingAddress" type="String"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <column name="healthCareApplicantInfoId" type="long"></column>
+        <finder name="getHealthCareById" return-type="HealthCareApplicantAddress">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HealthCareBussinessInfo" local-service="true" table="nbp_healthcare_bussiness">
+
+		<!-- PK fields -->
+
+		<column name="healthCareBussinessInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="name" type="String"></column>
+        <column name="telephoneNumber" type="String"></column>
+        <column name="email" type="String"></column>
+        <column name="parish" type="String"></column>
+        <column name="companyNumber" type="String"></column>
+        <column name="trnNumber" type="String"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <finder name="getHealthCareByid" return-type="HealthCareBussinessInfo">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HealthCareBusinessAddress" local-service="true" table="nbp_healthcare_bussiness_add">
+
+		<!-- PK fields -->
+
+		<column name="healthCareBusinessAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="bussinessAddress" type="String"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <column name="healthCareBussinessInfoId" type="long"></column>
+        <finder name="getHealthCareById" return-type="HealthCareBusinessAddress">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HealthCareDescriptionOfService" local-service="true"
+		table="nbp_healthcare_description">
+
+		<!-- PK fields -->
+
+		<column name="healthCareDescriptionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="descriptionOfService" type="String"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <finder name="getHealthCareById" return-type="HealthCareDescriptionOfService">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HealthCareEquipmentInfo" local-service="true"
+		table="nbp_healthcare_equipment_info">
+
+		<!-- PK fields -->
+
+		<column name="healthCareEquipmentInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <column name="equipmentManu" type="String"></column>
+        <column name="equipmentModel" type="String"></column>
+        <column name="equipmentMake" type="String"></column>
+        <column name="yearOfEquipment" type="String"></column>
+        <column name="serialNumber" type="String"></column>
+        <column name="quantity" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="hsHeading" type="String"></column>
+        <column name="hsSubHeading" type="String"></column>
+        <column name="counter" type="String" />
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getHelthCareById" return-type="HealthCareEquipmentInfo">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+        <finder name="getHC_EB_HAI" return-type="Collection">
+            <finder-column name="healthCareApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HealthCareCurrentStage" local-service="true" remote-service="true"  table="nbp_healthcare_stage" uuid="false">
+
+
+      	<!-- PK fields -->
+
+      	<column name="HealthCareCurrentStageId" primary="true"
+      		type="long">
+      	</column>
+
+      	<!-- Group instance -->
+
+      	<column name="groupId" type="long"></column>
+
+      	<!-- Audit fields -->
+
+      	<column name="companyId" type="long"></column>
+      	<column name="userId" type="long"></column>
+      	<column name="userName" type="String"></column>
+      	<column name="createDate" type="Date"></column>
+      	<column name="modifiedDate" type="Date"></column>
+            	<!-- Other fields -->
+       
+        <column name="currentStage" type="String"></column>
+        <column name="lastFormStage" type="String"></column>
+        <column name="healthCareApplicationId" type="long"></column>
+        <!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+		<finder name="gethealthById" return-type="HealthCareCurrentStage">
+			<finder-column name="healthCareApplicationId" />
+		</finder>
+	
+      </entity>
+	<entity name="HealthCareApplicationPayment" local-service="true" table="nbp_healthcare_app_payment">
+
+		<!-- PK fields -->
+
+		<column name="healthCareApplicationPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="paymentMethod" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="paymentStatus" type="String" />
+		<column name="paymentFee" type="String" />
+		<column name="transactionNumber" type="String" />
+		<column name="healthCareApplicationId"  type="long" />
+		
+		<!-- Finder methods -->
+		<finder name="getHAP_HAI" return-type="HealthCareApplicationPayment">
+			<finder-column name="healthCareApplicationId" />
+		</finder>
+	</entity>
+	<entity table="nbp_health_equip_heading_list" name="HealthcareEquipHeadingList" local-service="true">
+		<!-- PK fields -->
+		<column name="healthcareEquipHeadingListId" primary="true"
+			type="long">
+		</column>
+		<!-- Group instance -->
+		<!-- Audit fields -->
+        <column name="healthcareDescription" type="String"></column>
+        <column name="healthcareHsHeading" type="String"></column>
+        <column name="healthcareSubHeading" type="String"></column>
+        <finder name="get_HL_HD" return-type="HealthcareEquipHeadingList">
+        	<finder-column name="healthcareDescription"/>
+        </finder>
+	</entity>
+
+</service-builder>

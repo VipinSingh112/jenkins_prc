@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.manufacturing.application-form.service-api
+Bundle-SymbolicName: com.nbp.manufacturing.application.form.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.manufacturing.application.form.service.exception,\
+	com.nbp.manufacturing.application.form.service.model,\
+	com.nbp.manufacturing.application.form.service.service,\
+	com.nbp.manufacturing.application.form.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.manufacturing.application-form.service-service/service.xml

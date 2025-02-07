@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.osi.insolvency.stage.services-api
+Bundle-SymbolicName: com.nbp.osi.insolvency.stage.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.osi.insolvency.stage.services.exception,\
+	com.nbp.osi.insolvency.stage.services.model,\
+	com.nbp.osi.insolvency.stage.services.service,\
+	com.nbp.osi.insolvency.stage.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.osi.insolvency.stage.services-service/service.xml

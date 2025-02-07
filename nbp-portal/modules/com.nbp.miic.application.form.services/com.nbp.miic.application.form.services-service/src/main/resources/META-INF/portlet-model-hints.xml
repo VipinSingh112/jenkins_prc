@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.miic.application.form.services.model.MiicApplicantDetails">
+		<field name="miicApplicantDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="natureOfApplicant" type="String" />
+		<field name="applicantName " type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="email" type="String" />
+		<field name="telephone" type="String" />
+		<field name="dateOfApplication" type="Date" />
+		<field name="trnNumber" type="String" />
+		<field name="miicApplicationId" type="long" />
+		<field name="nameOfProducer" type="String" />
+		<field name="companyName" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicApplication">
+		<field name="uuid" type="String" />
+		<field name="miicApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="miicApplication" type="String" />
+		<field name="typeOfManufacturer " type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="entityId" type="String" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicApplicationCurrentStage">
+		<field name="miicApplicationCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="miicApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicPayment">
+		<field name="miicPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="miicApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicSafeguardGoodAdd">
+		<field name="miicSafeguardGoodAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="tariffHeadingNum" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="amountQuantity" type="String" />
+		<field name="amountEstimate" type="String" />
+		<field name="resonForRequest" type="String" />
+		<field name="counter" type="String" />
+		<field name="miicApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicSafeguardMaterialAdd">
+		<field name="miicSafeguardMaterialAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfProducer" type="String" />
+		<field name="addressOfProducer " type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length" />
+		</field>
+		<field name="tariffHeadingNum" type="String" />
+		<field name="amount" type="String" />
+		<field name="quantity" type="String" />
+		<field name="technologySpecification" type="String" />
+		<field name="periodOfImportationFrom" type="Date" />
+		<field name="periodOfImportationTo" type="Date" />
+		<field name="counter" type="String" />
+		<field name="miicApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicSuspensionOfCet">
+		<field name="miicSuspensionOfCetId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="indicationOfUrgency" type="String" />
+		<field name="requestForSuspension" type="String" />
+		<field name="evidenceOfInability" type="String" />
+		<field name="evidenceOfConsultation" type="String" />
+		<field name="evidenceOfConsultationForeign" type="String" />
+		<field name="nameOfAuthorizedPersonnel" type="String" />
+		<field name="miicApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.miic.application.form.services.model.MiicSuspensionOfCetAdd">
+		<field name="miicSuspensionOfCetAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="tariffHeadingNum " type="String" />
+		<field name="address" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="amountQuantity" type="String" />
+		<field name="amountEstimateInUs" type="String" />
+		<field name="technologySpecification" type="String" />
+		<field name="cetRate" type="String" />
+		<field name="rateProposed" type="String" />
+		<field name="periodOfRateChangeFrom" type="Date" />
+		<field name="periodOfRateChangeTo" type="Date" />
+		<field name="indicationOfUrgency" type="String" />
+		<field name="requestForSuspensionOfRate" type="String" />
+		<field name="evidenceOfInability" type="String" />
+		<field name="evidenceOfConsultation" type="String" />
+		<field name="counter" type="String" />
+		<field name="miicApplicationId" type="long" />
+	</model>
+</model-hints>

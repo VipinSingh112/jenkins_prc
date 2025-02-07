@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.creative.application.form.service.model.CreativeApplication">
+		<field name="uuid" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="practitionerStatus" type="String" />
+		<field name="eRegistryNumber" type="String" />
+		<field name="entertainerType" type="String" />
+		<field name="IndividualType" type="String" />
+		<field name="companyType" type="String" />
+		<field name="primaryCategory" type="String" />
+		<field name="mainCategories" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeApplicationCurrentStage">
+		<field name="creativeAppliCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyApplicantInformation">
+		<field name="creativeCompanyApplicantInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="prefix" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="sex" type="String" />
+		<field name="trn" type="String" />
+		<field name="countryOfResidence" type="String" />
+		<field name="nationality" type="String" />
+		<field name="cell" type="String" />
+		<field name="email" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyDetails">
+		<field name="creativeCompanyDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="companyBusinessRegistrationNo" type="String" />
+		<field name="dateOfCompanyRegistration" type="Date" />
+		<field name="companyTrn" type="String" />
+		<field name="companyTcc" type="String" />
+		<field name="companyProfile" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyDetailsAddress">
+		<field name="creativeComDetailsAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="streetAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="streetAddressLineTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+		<field name="creativeCompanyDetailsId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyDirectorInformation">
+		<field name="creativeComDirectorInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="directorFullName" type="String" />
+		<field name="directorTitle" type="String" />
+		<field name="directorTrn" type="String" />
+		<field name="telephoneNumber" type="String" />
+		<field name="faxNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="socialMedia" type="String" />
+		<field name="profileName" type="String" />
+		<field name="isOperatorDifferentFromOwner" type="String" />
+		<field name="operatorFirstName" type="String" />
+		<field name="operatorMiddleName" type="String" />
+		<field name="operatorLastName" type="String" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="sex" type="String" />
+		<field name="trn" type="String" />
+		<field name="cell" type="String" />
+		<field name="email" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyDirectorInformationAddress">
+		<field name="creativeComDirectorAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="streetAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="streetAddressLineTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="CreativeApplicationId" type="long" />
+		<field name="creativeComDirectorInfoId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyEconomicEffect">
+		<field name="creativeComEconomicEffectId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assessmentcountryOfOrigin" type="String" />
+		<field name="ssessmentjointVenture" type="String" />
+		<field name="assessmentLocal" type="String" />
+		<field name="assessmentForeign" type="String" />
+		<field name="shareJmd" type="String" />
+		<field name="shareExchangeRate" type="String" />
+		<field name="shareUsd" type="String" />
+		<field name="localJmd" type="String" />
+		<field name="localExchangeRate" type="String" />
+		<field name="localUsd" type="String" />
+		<field name="otherJmd" type="String" />
+		<field name="otherExchangeRate" type="String" />
+		<field name="OtherUsd" type="String" />
+		<field name="permanentLocalMale" type="String" />
+		<field name="permanentLocalFemale" type="String" />
+		<field name="permanentForeignMale" type="String" />
+		<field name="permanentForeignFemale" type="String" />
+		<field name="temporaryLocalMale" type="String" />
+		<field name="temporaryLocalFemale" type="String" />
+		<field name="temporaryForeignMale" type="String" />
+		<field name="temporaryForgeignFemale" type="String" />
+		<field name="totalLocalMale" type="String" />
+		<field name="totalLocalFemale" type="String" />
+		<field name="totalForeignMale" type="String" />
+		<field name="totalForeignFemale" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeCompanyGeneralInformation">
+		<field name="creativeCompanyGeneralInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="HaveYouRecievedAny" type="String" />
+		<field name="mprsStartDate" type="Date" />
+		<field name="mprsEndDate" type="Date" />
+		<field name="mttStartDate" type="Date" />
+		<field name="mttEndDate" type="Date" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeContactInfoAddBox">
+		<field name="creativeContactBoxId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="contactTelephone" type="String" />
+		<field name="contactFax" type="String" />
+		<field name="contactEmailAddress" type="String" />
+		<field name="counterContact" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeDirectorListinAddBox">
+		<field name="creativeDirectorBoxId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="fullName" type="String" />
+		<field name="title" type="String" />
+		<field name="trn" type="String" />
+		<field name="directorCountre" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeIndividualDetails">
+		<field name="creativeIndividualDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="sectorOfPractice" type="String" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="trn" type="String" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="sex" type="String" />
+		<field name="cell" type="String" />
+		<field name="email" type="String" />
+		<field name="areYouStudent" type="String" />
+		<field name="companyEmail" type="String" />
+		<field name="companyWebsite" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeIndividualDetailsAddress">
+		<field name="creativeIndiDetailsAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="streetAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="streetAddressLineTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="CreativeApplicationId" type="long" />
+		<field name="creativeIndividualDetailsId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeIndividualEconomicEffect">
+		<field name="creativeIndiEcoEffectId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="shareCapitalJmd" type="String" />
+		<field name="shareCapitalExchangeRate" type="String" />
+		<field name="shareCapitalUsd" type="String" />
+		<field name="localCapitalJmd" type="String" />
+		<field name="localCapitalExchangeRate" type="String" />
+		<field name="localCapitalUsd" type="String" />
+		<field name="otherJmd" type="String" />
+		<field name="otherExchangeRate" type="String" />
+		<field name="otherUsd" type="String" />
+		<field name="estimatedLocalExpenditure" type="String" />
+		<field name="otherEstimatedLocal " type="String" />
+		<field name="annualYearOne" type="String" />
+		<field name="annualOneUsd" type="String" />
+		<field name="annualYearTwo" type="String" />
+		<field name="annualTwoUsd" type="String" />
+		<field name="annualYearThree" type="String" />
+		<field name="annualThreeUsd" type="String" />
+		<field name="targetMarketLocal" type="String" />
+		<field name="targetMarketForeign" type="String" />
+		<field name="targetMarketCountries" type="String" />
+		<field name="declareInformationProvide" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeIndividualGeneralInformation">
+		<field name="creativeIndiGeneralInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="profile" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.creative.application.form.service.model.CreativeSocialMediaAddBox">
+		<field name="creativeSocialBoxId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="socialMedia" type="String" />
+		<field name="profileName" type="String" />
+		<field name="counterSocislMedia" type="String" />
+		<field name="CreativeApplicationId" type="long" />
+	</model>
+</model-hints>

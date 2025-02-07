@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.miic.stages.service.model.MiicApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="miicApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="miicApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.miic.stages.service.model.MiicCertificateOfIssuance">
+		<field name="miicCertificateOfIssuanceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="certificateNumber" type="String" />
+		<field name="dateCertificateIssued" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="documentFileEntryId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="nameOfLicensedTrustee" type="String" />
+	</model>
+	<model name="com.nbp.miic.stages.service.model.MiicRecommendationsDecision">
+		<field name="miicRecommendationsDecisionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfRecommendationsDecision" type="Date" />
+		<field name="recommendationsDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+</model-hints>

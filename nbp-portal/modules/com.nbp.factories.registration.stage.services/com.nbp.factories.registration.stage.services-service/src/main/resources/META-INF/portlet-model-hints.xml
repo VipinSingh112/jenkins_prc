@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.factories.registration.stage.services.model.FactoriesAppCommitteeDecision">
+		<field name="factoriesAppCommiDecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfCommitteeDecision" type="Date" />
+		<field name="committeeDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.factories.registration.stage.services.model.FactoriesApplicationStage">
+		<field name="uuid" type="String" />
+		<field name="factoriesApplicationStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="factoriesApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.factories.registration.stage.services.model.FactoriesCerticateOfRegis">
+		<field name="factoriesCerticateOfRegisId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="nameOfEstablishment" type="String" />
+		<field name="parish" type="String" />
+		<field name="procuctCatAndName" type="String" />
+		<field name="certificateIssueDate" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="registration" type="String" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.factories.registration.stage.services.model.FactoriesInspection">
+		<field name="factoriesInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="factoriesApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.factories.registration.stage.services.model.FactoryPaymentVerification">
+		<field name="factoryPaymentVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+</model-hints>

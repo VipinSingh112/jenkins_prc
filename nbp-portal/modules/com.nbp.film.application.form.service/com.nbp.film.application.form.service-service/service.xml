@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.film.application.form.service">
+	<namespace>FILM</namespace>
+	<entity name="FilmApplication" local-service="true"
+		remote-service="true" uuid="true" table="nbp_film_application">
+
+		<!-- PK fields -->
+
+		<column name="filmApplicationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+
+		<!-- Other fields -->
+        <column name="typeOfTransaction" type="String" />
+		<column name="projectType" type="String" />
+		<column name="productionType" type="String" />
+		<column name="importEquipment" type="String" />
+		<column name="status" type="int" />
+		<column name="applicationNumber" type="String" />
+		<column name="caseId" type="String" />
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+		<column name="isUpdateEquipmentList" type="String" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="getFilmById" return-type="FilmApplication">
+			<finder-column name="filmApplicationId" />
+		</finder>
+
+		<finder name="getFilmApplicationByStatusUser"
+			return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="getFilmByCaseId" return-type="FilmApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getFilmByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+
+		<finder name="getFilmByAppNo" return-type="FilmApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+
+	</entity>
+
+	<entity name="FilmCompanyDetails" local-service="true"
+		table="nbp_film_company_details">
+		<column name="filmCompanyDetailsId" primary="true" type="long"></column>
+		<column name="groupId" type="long"></column>
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="companyName" type="String"></column>
+		<column name="address" type="String"></column>
+		<column name="countryOrigin" type="String"></column>
+		<column name="telephoneNumber" type="String"></column>
+		<column name="mobile" type="String"></column>
+		<column name="contactPerson" type="String"></column>
+		<column name="email" type="String"></column>
+		<column name="position" type="String"></column>
+		<column name="filmApplicationId" type="long"></column>
+		<order by="desc">
+			<order-column name="createDate"></order-column>
+		</order>
+		<finder name="getFilmById" return-type="FilmCompanyDetails">
+			<finder-column name="filmApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="FilmProductionDetails" local-service="true"
+		table="nbp_film_production_details">
+
+		<!-- PK fields -->
+
+		<column name="filmProductionDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+
+		<column name="productionTitle" type="String" />
+		<column name="totalProductionBudget" type="String" />
+		<column name="expenditureInJamaica" type="String" />
+		<column name="foreignPersonnel" type="String" />
+		<column name="jamaicanPersonnel" type="String" />
+		<column name="productionType" type="String" />
+		<column name="companyName" type="String" />
+		<column name="fixerName" type="String" />
+		<column name="fixerMobile" type="String" />
+		<column name="fixerEmail" type="String" />
+		<column name="preProductionDates" type="Date" />
+		<column name="productionDates" type="Date" />
+		<column name="productionStartDate" type="Date" />
+		<column name="productionEndDate" type="Date" />
+		<column name="proposedProductionLocations" type="String" />
+		<column name="productionInternationalCrew" type="String" />
+		<column name="productionjamaicanCrew" type="String" />
+		<column name="productionExternalPermit" type="String" />
+		<column name="filmApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getFilmById" return-type="FilmProductionDetails">
+			<finder-column name="filmApplicationId" />
+		</finder>
+
+
+	</entity>
+	<entity name="FilmOtherDetails" local-service="true"
+		table="nbp_film_other_details">
+		<!-- PK fields -->
+
+		<column name="filmOtherDetailsId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="additionalPermits" type="String" />
+		<column name="additionalOtherPermits" type="String" />
+		<column name="insurance" type="String" />
+		<column name="copyOfInsurance" type="String" />
+		<column name="temporaryImportEquipment" type="String" />
+		<column name="personnelTravellingEquipment" type="String" />
+		<column name="portOfEntry" type="String" />
+		<column name="arrivalDate" type="Date" />
+		<column name="departureDate" type="Date" />
+		<column name="flightDetails" type="String" />
+		<column name="shippingCompany" type="String" />
+		<column name="shippingVesselNo" type="String" />
+		<column name="customsBroker" type="String" />
+		<column name="brokerEmail" type="String" />
+		<column name="brokerMobile" type="String" />
+		<column name="typeOfEquipmentJamaica" type="String" />
+		<column name="rentalArrangedThrough" type="String" />	
+		<column name="filmApplicationId" type="long" />
+		
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getFilmById" return-type="FilmOtherDetails">
+			<finder-column name="filmApplicationId" />
+		</finder>
+
+	</entity>
+
+	<entity name="FilmEquipmentList" table="nbp_film_equipment_list"
+		local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="filmEquipmentListId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+
+		<!-- Other fields -->
+
+		<column name="item" type="String" />
+		<column name="serialNumber" type="String" />
+		<column name="weight" type="String" />
+		<column name="quantity" type="String" />
+		<column name="unitPrice" type="String" />
+		<column name="description" type="String" />
+		<column name="total" type="String" />
+		<column name="counter" type="String" />
+		<column name="equipmentList" type="String" />
+		<column name="flightNumber" type="String" />
+		<column name="filmApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getFilmById" return-type="FilmEquipmentList">
+			<finder-column name="filmApplicationId" />
+		</finder>
+		
+		<finder name="getFilmByAppId" return-type="Collection">
+			<finder-column name="filmApplicationId" />
+		</finder>
+	</entity>
+	<entity name="FilmAdditionalEquipmentList" table="nbp_film_additional_equip_list"
+		local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="FilmAdditionalEquipmentListId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+
+		<!-- Other fields -->
+
+		<column name="arrivalDate" type="Date" />
+		<column name="airlineShipper" type="String" />
+		<column name="flightVesselNum" type="String" />
+		<column name="passengerName" type="String" />
+		<column name="entryPort" type="String" />
+		<column name="customsBroker" type="String" />
+		<column name="flightNumber" type="String" />
+		<column name="counter" type="String" />
+		<column name="filmApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getFilmById" return-type="FilmAdditionalEquipmentList">
+			<finder-column name="filmApplicationId" />
+		</finder>
+		<finder name="getFilmAddEquipByAppId" return-type="Collection">
+			<finder-column name="filmApplicationId" />
+		</finder>
+	</entity>
+	
+	<entity name="FilmApplicationCurrentStage" local-service="true"
+		table="nbp_film_stage">
+
+		<!-- PK fields -->
+
+		<column name="filmApplicationCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+       
+        <column name="currentStage" type="String"></column>
+        <column name="lastFormStage" type="String"></column>
+        <column name="filmApplicationId" type="long"></column>
+        <!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+<finder name="getFilmById" return-type="FilmApplicationCurrentStage">
+			<finder-column name="filmApplicationId" />
+		</finder>
+	</entity>
+	<entity name="FilmApplicationPayment" local-service="true"
+		table="nbp_film_application_payment">
+
+		<!-- PK fields -->
+
+		<column name="filmApplicationPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="paymentMethod" type="String"></column>
+        <column name="paymentDocId" type="String"></column>
+        <column name="paymentStatus" type="String"></column>
+        <column name="paymentFee" type="String"></column>
+        <column name="amountPaid" type="String" />
+		<column name="amountCurrency" type="String" />
+        <column name="transactionNumber" type="String"></column>
+        <column name="filmApplicationId" type="long"></column>
+        <finder name="getFilm_Fee_Pay_FAI" return-type="FilmApplicationPayment">
+            <finder-column name="filmApplicationId"></finder-column>
+        </finder>
+	</entity>
+
+</service-builder>

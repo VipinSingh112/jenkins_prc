@@ -1,0 +1,938 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.tourism.application.form.services.model.TourismAnnualEntertainBox">
+		<field name="tourismAnnualEntertainBoxId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="service" type="String" />
+		<field name="local" type="String" />
+		<field name="foreign" type="String" />
+		<field name="enterCounter" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismApplication">
+		<field name="tourismApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="requestType" type="String" />
+		<field name="requestTypeTwo" type="String" />
+		<field name="licenseCategory" type="String" />
+		<field name="licenseSubCategory" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismApplicationCurrentStage">
+		<field name="tourismAppliCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismApplicationPayment">
+		<field name="TourismApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAccoAssesment">
+		<field name="tourismBonaAccoAssesmentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="countryOrigin" type="String" />
+		<field name="jointVenture" type="String" />
+		<field name="localPer" type="String" />
+		<field name="foreignPer" type="String" />
+		<field name="capitalInvest" type="String" />
+		<field name="sourceAttach" type="String" />
+		<field name="shareCapital" type="String" />
+		<field name="loanCapital" type="String" />
+		<field name="other" type="String" />
+		<field name="permanentLocalMale" type="String" />
+		<field name="permanentLocalFemale" type="String" />
+		<field name="permanentForeignMale" type="String" />
+		<field name="permanentForeignFemale" type="String" />
+		<field name="temporaryLocalMale" type="String" />
+		<field name="temporaryLocalFemale" type="String" />
+		<field name="temporaryForeignMale" type="String" />
+		<field name="temporaryForeignFemale" type="String" />
+		<field name="totalLocalMale" type="String" />
+		<field name="totalLocalFemale" type="String" />
+		<field name="totalForeignMale" type="String" />
+		<field name="totalForeignFemale" type="String" />
+		<field name="salaryWages" type="String" />
+		<field name="estimatedExpenditure" type="String" />
+		<field name="otherExpenditure" type="String" />
+		<field name="staffPermanentLocalMale" type="String" />
+		<field name="staffPermanentLocalFemale" type="String" />
+		<field name="staffForeignLocalMale" type="String" />
+		<field name="staffForeignLocalFemale" type="String" />
+		<field name="staffTemporaryLocalMale" type="String" />
+		<field name="staffTemporaryLocalFemale" type="String" />
+		<field name="staffTemporaryForeignMale" type="String" />
+		<field name="staffTemporaryForeignFemale" type="String" />
+		<field name="staffTotalForeignMale" type="String" />
+		<field name="staffTotalForeignFemale" type="String" />
+		<field name="staffTotalLocalMale" type="String" />
+		<field name="staffTotalLocalFemale" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAccoGenralInfo">
+		<field name="tourismBonaAccoGenralInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="establishmentName" type="String" />
+		<field name="establishmentNewName" type="String" />
+		<field name="generalFacilityRoom" type="String" />
+		<field name="existingFacilityRoom" type="String" />
+		<field name="offeredFacilityDetail" type="String" />
+		<field name="plannedFacilityDetail" type="String" />
+		<field name="accomodationToBeOffered" type="String" />
+		<field name="constructionDate" type="Date" />
+		<field name="expectedCommenceDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAccommodationForm">
+		<field name="tourismBonaAFId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bonaAccoDateOfApplication" type="Date" />
+		<field name="bonaAccoTypeOfAccommodation" type="String" />
+		<field name="bonaAccoPurposeOfIncentives" type="String" />
+		<field name="bonaAccoOtherIncPurpose" type="String" />
+		<field name="bonaAccoNameOfProperty" type="String" />
+		<field name="bonaAccoNameOfOwner" type="String" />
+		<field name="bonaAccoLocation" type="String" />
+		<field name="bonaAccoCompanyNumber" type="String" />
+		<field name="bonaBusinessRegistrationNumber" type="String" />
+		<field name="bonaAccoDateOfRegistration" type="Date" />
+		<field name="bonaAccoOwnerTrnNumber" type="String" />
+		<field name="bonaAccoTccNumber" type="String" />
+		<field name="bonaAccoExpiryDate" type="Date" />
+		<field name="bonaAccoNameOfOperator" type="String" />
+		<field name="bonaAccoOperatorTrnNumber" type="String" />
+		<field name="bonaAccoOperatorTccNumber" type="String" />
+		<field name="bonaAccoOperatorExpiryDate" type="Date" />
+		<field name="bonaAccoContactPerson" type="String" />
+		<field name="bonaAccoPositionHeld" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAccommodationFormAddress">
+		<field name="tourismBonaAccommodationFAOOId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="bonaAccoAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bonaAccoTelephoneNumber" type="String" />
+		<field name="bonaAccoFaxNumber" type="String" />
+		<field name="bonaAccoEmail" type="String" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="tourismBonaAFId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAccoSignInfo">
+		<field name="tourismBonaAccoSignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="newSignApplicantName" type="String" />
+		<field name="newSignApplicantStatus" type="String" />
+		<field name="newSignDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAttractionEmployeeInfo">
+		<field name="tourismBonaAttrEmpId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="actualPermanent" type="String" />
+		<field name="actualTemporary" type="String" />
+		<field name="actualForeign" type="String" />
+		<field name="actualLocal" type="String" />
+		<field name="actualPayroll" type="String" />
+		<field name="projectedPermanent" type="String" />
+		<field name="projectedTemporary" type="String" />
+		<field name="projectedForeign" type="String" />
+		<field name="projectedLocal" type="String" />
+		<field name="projectedPayroll" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAttractionFormFirst">
+		<field name="tourismBonaAttractFormFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bonaAttractDateOfApplication" type="Date" />
+		<field name="bonaTypeOfAttrcation" type="String" />
+		<field name="bonaAttractPurposeOfIncentives" type="String" />
+		<field name="bonaAttractOtherIncPurpose" type="String" />
+		<field name="bonaAttractionNameOfProperty" type="String" />
+		<field name="bonaAttractionNameOfOwner" type="String" />
+		<field name="bonaAttractionLocation" type="String" />
+		<field name="bonaAttractionCompanyNumber" type="String" />
+		<field name="bonaAttractionBusinessRegisNo" type="String" />
+		<field name="bonaAttractionDateOfRegis" type="Date" />
+		<field name="bonaAttractionOwnerTrnNumber" type="String" />
+		<field name="bonaAttractionTccNumber" type="String" />
+		<field name="bonaAttractionExpiryDate" type="Date" />
+		<field name="bonaAttractionNameOfOperator" type="String" />
+		<field name="bonaAttractionoperatorTrnNo" type="String" />
+		<field name="bonattractionOperatorTccNO" type="String" />
+		<field name="bonaAttractOperatorExpiryDate" type="Date" />
+		<field name="bonaAttractContactPerson" type="String" />
+		<field name="bonaAttractPositionHeld" type="String" />
+		<field name="bonaAttractEntityId" type="String" />
+		<field name="bonaAttractionBriefdescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAttractionFormFirstAddress">
+		<field name="tourismBonaAttractionFFAOOId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="bonaAttractAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bonaAttractionTelephoneNo" type="String" />
+		<field name="bonaAttractionFaxNumber" type="String" />
+		<field name="bonaAttractionEmail" type="String" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="tourismBonaAttractFormFirstId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAttractionFormSecond">
+		<field name="tourismBonaAttractFormSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bonaTargetMarketLocal" type="String" />
+		<field name="bonaTargetMarketForeign" type="String" />
+		<field name="bonaTargetMarketCountries" type="String" />
+		<field name="bonaOwnerCountryOfOrigin" type="String" />
+		<field name="bonaOwnerJointVenture" type="String" />
+		<field name="bonaOwnerLocal" type="String" />
+		<field name="bonaOwnerForeign" type="String" />
+		<field name="bonaCapitalUSComponent" type="String" />
+		<field name="bonaCapitalizationJEquivalent" type="String" />
+		<field name="bonaCapitalRateOfExchange" type="String" />
+		<field name="bonaCapitalizationJComponent" type="String" />
+		<field name="bonaCapitalCapitalInvest" type="String" />
+		<field name="bonaSourcesLoan " type="String" />
+		<field name="bonaSourcesEquity" type="String" />
+		<field name="bonaSourcesStateOfLoanFinanc" type="String" />
+		<field name="bonaAnnualProjectedYearOne " type="String" />
+		<field name="bonaAnnualProjectedYearTwo" type="String" />
+		<field name="bonaAnnualProjectedYearThree " type="String" />
+		<field name="bonaAnnualProjectedNumber" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaAttractionSignInfo">
+		<field name="tourismBonAttrSignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="applicantStatus" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundContractTransPaymentInfo">
+		<field name="tourismBonaGroTransPayId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="contractType" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundPaymentInfo">
+		<field name="tourismBonaGroundPayId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentOtherMethod" type="String" />
+		<field name="paymentProof" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundSignInfo">
+		<field name="tourismBonaGroundSignInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="carApplicantName" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundTransBox">
+		<field name="tourismVehicleBoxBonaId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="vehicleMakeBona" type="String" />
+		<field name="vehiclemodelBona" type="String" />
+		<field name="vehicleYearBona" type="String" />
+		<field name="vehicleCounter" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundTransContractSign">
+		<field name="tourismBonaGroTraCoSignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="contractType" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundTransportatioCarRental">
+		<field name="tourismBonaGroundTransportCRId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="TypeOfGroundTransportation" type="String" />
+		<field name="bonaGroundDateOfApplication" type="Date" />
+		<field name="bonaGroundNameOfCompany" type="String" />
+		<field name="bonaGroundTradingName" type="String" />
+		<field name="bonaGroundCompanyRegisNo" type="String" />
+		<field name="bonaGroundTelephonNo" type="String" />
+		<field name="bonaGroundAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bonaGroundEmailAddress" type="String" />
+		<field name="bonaGroundContactPerson" type="String" />
+		<field name="bonaGroundEntityType" type="String" />
+		<field name="bonaGroundTccNo" type="String" />
+		<field name="bonaGroundExpiryDate" type="Date" />
+		<field name="bonaGroundCopyAttached" type="String" />
+		<field name="bonaGroundJtbLicense" type="String" />
+		<field name="bonaGroundExpiryDateTwo" type="Date" />
+		<field name="bonaGroundCopyAttachedTwo" type="String" />
+		<field name="bonaGroundTrnNo " type="String" />
+		<field name="bonaGroundYearInBusiness" type="String" />
+		<field name="bonaGroundCopyOfRegAttached " type="String" />
+		<field name="bonaGroundExistingFleetAmount" type="String" />
+		<field name="bonaGroundTotalVehicles" type="String" />
+		<field name="bonaGroundHowAdditionToFleet" type="String" />
+		<field name="bonaGroundReplacement" type="String" />
+		<field name="bonaGroundSummaryDealer" type="String" />
+		<field name="bonaGroundSummaryNumOfVechicle" type="String" />
+		<field name="bonaGroundSummarYear" type="String" />
+		<field name="bonaGroundSummaryType" type="String" />
+		<field name="bonaGroundSummaryCCRating" type="String" />
+		<field name="bonaGroundSummaryCommentary" type="String" />
+		<field name="bonaGroundDescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundTransportation">
+		<field name="tourismBonaGroundTransportId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfGroundTransportation" type="String" />
+		<field name="bonaGroundName" type="String" />
+		<field name="bonaGroundLandlineNo" type="String" />
+		<field name="bonaGroundMobileNo" type="String" />
+		<field name="bonaGroundFaxNo" type="String" />
+		<field name="bonaGroundLicensedWith" type="String" />
+		<field name="bonaGroundBoardExpiryDate" type="Date" />
+		<field name="bonaGroundHaveYouBenefitBefore" type="String" />
+		<field name="bonaGroundDateOfLastBenefit" type="Date" />
+		<field name="bonaGroundEntityType" type="String" />
+		<field name="bonaGroundVehicleInfoMake" type="String" />
+		<field name="bonaGroundVehicleInfoModel" type="String" />
+		<field name="bonaGroundVehicleInfoYear" type="String" />
+		<field name="bonaGroundSeatingCapacity" type="String" />
+		<field name="bonaGroundExistingFleetAmount" type="String" />
+		<field name="bonaGroundIndicateVehicleWill" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaGroundTransportationAddress">
+		<field name="tourismBonaGroundTransAddresId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bonaGroundAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tourismApplicationId" type="long" />
+		<field name="tourismBonaGroundTransportId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaOperatorInfo">
+		<field name="tourismBonaOperatorInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="operatorName" type="String" />
+		<field name="operatorNumber" type="String" />
+		<field name="issueDate" type="Date" />
+		<field name="expirationDate" type="Date" />
+		<field name="categories" type="String" />
+		<field name="subCategories" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tourismApplicationId" type="Long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaWaterSportEmployeeInfo">
+		<field name="tourismBonaWSEmplId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="actualPermanent" type="String" />
+		<field name="actualTemporary" type="String" />
+		<field name="actualForeign" type="String" />
+		<field name="actualLocal" type="String" />
+		<field name="actualPayroll" type="String" />
+		<field name="projectedPermanent" type="String" />
+		<field name="projectedTemporary" type="String" />
+		<field name="projectedForeign" type="String" />
+		<field name="projectedLocal" type="String" />
+		<field name="projectedPayroll" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaWaterSportsFormFirst">
+		<field name="tourismBonaWaterSFFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bonaWaterTypeOfAttract" type="String" />
+		<field name="bonaWaterPurposeOfIncentives" type="String" />
+		<field name="bonaWaterOtherIncPurpose" type="String" />
+		<field name="bonaNameOfWatersportsEntity" type="String" />
+		<field name="bonaWaterNameOfOwnerCompany" type="String" />
+		<field name="bonaWaterLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bonaWaterCompanyNo" type="String" />
+		<field name="bonaWaterBusinessRegisNo" type="String" />
+		<field name="bonaWaterDateOfRegistration" type="Date" />
+		<field name="bonaWaterOwnerTrnNo" type="String" />
+		<field name="bonaWaterTccNo" type="String" />
+		<field name="bonaWaterExpiryDate" type="String" />
+		<field name="bonaWaterNameOfOperator" type="String" />
+		<field name="bonaWaterOperatorTrnNo" type="String" />
+		<field name="bonaWaterOperatorTccNo" type="String" />
+		<field name="bonaWaterOperatorExpiryDate" type="Date" />
+		<field name="bonaWaterContactPerson" type="String" />
+		<field name="bonaWaterPositionHeld" type="String" />
+		<field name="bonaWaterbriefdescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaWaterSportsFormFirstAddress">
+		<field name="tourismBonaWaterSportsFFAId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="bonaWaterAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bonaWaterTeleNo" type="String" />
+		<field name="bonaWaterFaxNo" type="String" />
+		<field name="bonaWaterEmail" type="String" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="tourismBonaWaterSFFirstId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaWaterSportsFormSecond">
+		<field name="tourismBonaWaterSportsFSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bonaTargetMarketLocal" type="String" />
+		<field name="bonaTargetMarketForeign" type="String" />
+		<field name="bonaTargetMarketCountries" type="String" />
+		<field name="bonaOwnerCountryOfOrigin" type="String" />
+		<field name="bonaOwnerJointVenture" type="String" />
+		<field name="bonaOwnerLocal" type="String" />
+		<field name="bonaOwnerForeign" type="String" />
+		<field name="bonaCapitalizationUSComponent" type="String" />
+		<field name="bonaCapitalizationJEquivalent" type="String" />
+		<field name="bonaCapitalizationRateExchange" type="String" />
+		<field name="bonaCapitalizationJComponent" type="String" />
+		<field name="bonaCapitalCapitalInvest" type="String" />
+		<field name="bonaSourcesLoan " type="String" />
+		<field name="bonaSourcesEquity" type="String" />
+		<field name="bonaSourcesStateOfFinanc" type="String" />
+		<field name="bonaAnnualProjectedOne " type="String" />
+		<field name="bonaAnnualProjectedTwo" type="String" />
+		<field name="bonaAnnualProjectedThree " type="String" />
+		<field name="bonaAnnualProjectedNumber" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismBonaWaterSportSignInfo">
+		<field name="tourismBonaWSSignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="signApplicantStatus" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismGroundTransBox">
+		<field name="tourismVehicleBoxId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="vehicleMake" type="String" />
+		<field name="vehiclemodel" type="String" />
+		<field name="vehicleYear" type="String" />
+		<field name="vehicleCounter" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAccoAssesment">
+		<field name="TourismNewAccoAssesmentInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="countryOrigin" type="String" />
+		<field name="jointVenture" type="String" />
+		<field name="localPer" type="String" />
+		<field name="foreignPer" type="String" />
+		<field name="capitalInvest" type="String" />
+		<field name="sourceAttach" type="String" />
+		<field name="shareCapital" type="String" />
+		<field name="loanCapital" type="String" />
+		<field name="other" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAccoGeneralForm">
+		<field name="tourismNewAccoGenFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="establishmentName" type="String" />
+		<field name="accomadationRoom" type="String" />
+		<field name="facilityDetail" type="String" />
+		<field name="hotelOperator" type="String" />
+		<field name="offeredAccomadation" type="String" />
+		<field name="constructionDate" type="Date" />
+		<field name="commenceDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAccommodationAddress">
+		<field name="tourismNewAccommodationAOOId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="accoAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="accoTelephoneNumber" type="String" />
+		<field name="accoFaxNumber" type="String" />
+		<field name="accoEmail" type="String" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="tourismNewAccoFormId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAccommodationForm">
+		<field name="tourismNewAccoFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accoDateOfApplication" type="Date" />
+		<field name="accoTypeOfAccommodation" type="String" />
+		<field name="accoNameOfProperty" type="String" />
+		<field name="accoNameOfOwner" type="String" />
+		<field name="accoLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="accoCompanyNumber" type="String" />
+		<field name="accoBusinessRegistrationNumber" type="String" />
+		<field name="accoDateOfRegistration" type="Date" />
+		<field name="accoOwnerTrnNumber" type="String" />
+		<field name="accoTccNumber" type="String" />
+		<field name="accoExpiryDate" type="Date" />
+		<field name="accoNameOfOperator" type="String" />
+		<field name="accoOperatorTrnNumber" type="String" />
+		<field name="accoOperatorTccNumber" type="String" />
+		<field name="accoOperatorExpiryDate" type="Date" />
+		<field name="accoContactPerson" type="String" />
+		<field name="accoPositionHeld" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAccoSignInfo">
+		<field name="tourismNewAccoSignInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="signApplicantName" type="String" />
+		<field name="signApplicantStatus" type="String" />
+		<field name="newSignDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAnnualEarnings">
+		<field name="tourismNewAnnualEarningsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="yearOne" type="String" />
+		<field name="yearTwo" type="String" />
+		<field name="yearThree" type="String" />
+		<field name="targetLocalPer" type="String" />
+		<field name="targetForeignPer" type="String" />
+		<field name="targetCountries" type="String" />
+		<field name="estimatedPer" type="String" />
+		<field name="volume" type="String" />
+		<field name="expenditure" type="String" />
+		<field name="manufactureEstimatedPer" type="String" />
+		<field name="manufactureVolume" type="String" />
+		<field name="manufactureExpenditure" type="String" />
+		<field name="seafoodPer" type="String" />
+		<field name="seafoodVolume" type="String" />
+		<field name="seafoodExpenditure" type="String" />
+		<field name="enterServices" type="String" />
+		<field name="enterLocal" type="String" />
+		<field name="enterForeign" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAttractionEmployeeInfo">
+		<field name="tourismNewAttractionEmploId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="actualPermanent" type="String" />
+		<field name="actualTemporary" type="String" />
+		<field name="actualForeign" type="String" />
+		<field name="actualLocal" type="String" />
+		<field name="actualPayroll" type="String" />
+		<field name="projectedPermanent" type="String" />
+		<field name="projectedTemporary" type="String" />
+		<field name="projectedForeign" type="String" />
+		<field name="projectedLocal" type="String" />
+		<field name="projectedPayroll" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAttractionFormFirst">
+		<field name="tourismNewAttractFormFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="attractionDateOfApplication" type="Date" />
+		<field name="typeOfAttrcation" type="String" />
+		<field name="attractionNameOfProperty" type="String" />
+		<field name="attractionNameOfOwner" type="String" />
+		<field name="attractionLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="attractionCompanyNumber" type="String" />
+		<field name="attractionBusinessRegisNo" type="String" />
+		<field name="attractionDateOfRegistration" type="Date" />
+		<field name="attractionOwnerTrnNumber" type="String" />
+		<field name="attractionTccNumber" type="String" />
+		<field name="attractionExpiryDate" type="Date" />
+		<field name="attractionNameOfOperator" type="String" />
+		<field name="attractionoperatorTrnNumber" type="String" />
+		<field name="attractionOperatorTccNumber" type="String" />
+		<field name="attractOperatorExpiryDate" type="Date" />
+		<field name="attractionContactPerson" type="String" />
+		<field name="attractionPositionHeld" type="String" />
+		<field name="attractionEntityId" type="String" />
+		<field name="attractionBriefdescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAttractionFormFirstAddress">
+		<field name="tourismNewAttractionFormFAOOId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="attractionAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="attractionTelephoneNumber" type="String" />
+		<field name="attractionFaxNumber" type="String" />
+		<field name="attractionEmail" type="String" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="tourismNewAttractFormFirstId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAttractionFormSecond">
+		<field name="tourismNewAttractionFormSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="targetMarketLocal" type="String" />
+		<field name="targetMarketForeign" type="String" />
+		<field name="targetMarketCountries" type="String" />
+		<field name="ownerCountryOfOrigin" type="String" />
+		<field name="ownerJointVenture" type="String" />
+		<field name="ownerLocal" type="String" />
+		<field name="ownerForeign" type="String" />
+		<field name="capitalizationUSComponent" type="String" />
+		<field name="capitalizationJEquivalent" type="String" />
+		<field name="capitalizationRateOfExchange" type="String" />
+		<field name="capitalizationJComponent" type="String" />
+		<field name="capitalizationCapitalInvest" type="String" />
+		<field name="sourcesLoan " type="String" />
+		<field name="sourcesEquity" type="String" />
+		<field name="sourcesStateSourceOfLoanFinanc" type="String" />
+		<field name="annualProjectedOne " type="String" />
+		<field name="annualProjectedTwo" type="String" />
+		<field name="annualProjectedThree " type="String" />
+		<field name="annualProjectedNumber" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewAttractionSignInfo">
+		<field name="tourismNewAttraSignInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="newSignApplicantName" type="String" />
+		<field name="newSignApplicantStatus" type="String" />
+		<field name="newSignDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewGroundSignature">
+		<field name="TourismNewGroundSignatureId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="groundTransportationDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewGroundTransportation">
+		<field name="TourismNewGroundTransId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfGroundTransportation" type="String" />
+		<field name="newGroundName" type="String" />
+		<field name="newGroundHomeAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="newGroundBusinessAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="newGroundLandlineNo" type="String" />
+		<field name="newGroundMobileNo" type="String" />
+		<field name="newGroundFaxNo" type="String" />
+		<field name="newGroundLicensedWith" type="String" />
+		<field name="newGroundBoardExpiryDate" type="Date" />
+		<field name="newGroundHaveYouBenefitBefore" type="String" />
+		<field name="newGroundHaveBenefitDate" type="Date" />
+		<field name="newGroundEntityType" type="String" />
+		<field name="newGroundVehicleInfoMake" type="String" />
+		<field name="newGroundVehicleInfoModel" type="String" />
+		<field name="newGroundVehicleInfoYear" type="String" />
+		<field name="newGroundSeatingCapacity" type="String" />
+		<field name="newGroundExistingFleetAmount" type="String" />
+		<field name="newGroundIndicateVehicleWill" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismNewNumberOFEmployment">
+		<field name="tourismNewNumberOFEmploymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="permanentLocalMale" type="String" />
+		<field name="permanentLocalFemale" type="String" />
+		<field name="permanentForeignMale" type="String" />
+		<field name="permanentForeignFemale" type="String" />
+		<field name="temporaryLocalMale" type="String" />
+		<field name="temporaryLocalFemale" type="String" />
+		<field name="temporaryForeignMale" type="String" />
+		<field name="temporaryForeignFemale" type="String" />
+		<field name="totalLocalMale" type="String" />
+		<field name="totalLocalFemale" type="String" />
+		<field name="totalForeignMale" type="String" />
+		<field name="totalForeignFemale" type="String" />
+		<field name="salaryWages" type="String" />
+		<field name="estimatedExpenditure" type="String" />
+		<field name="otherExpenditure" type="String" />
+		<field name="perRoomInclusiveCost" type="String" />
+		<field name="perRoomExclusiveCost" type="String" />
+		<field name="staffPermanentLocalMale" type="String" />
+		<field name="staffPermanentLocalFemale" type="String" />
+		<field name="staffPermanentForeignMale" type="String" />
+		<field name="staffPermanentForeignFemale" type="String" />
+		<field name="staffTemporaryLocalMale" type="String" />
+		<field name="staffTemporaryLocalFemale" type="String" />
+		<field name="staffTemporaryForeignMale" type="String" />
+		<field name="staffTemporaryForeignFemale" type="String" />
+		<field name="staffTotalLocalMale" type="String" />
+		<field name="staffTotalLocalFemale" type="String" />
+		<field name="staffTotalForeignMale" type="String" />
+		<field name="staffTotalForeignFemale" type="String" />
+		<field name="salariesAndWages" type="String" />
+		<field name="expectedAnnualFunds" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.form.services.model.TourismSummaryAddBox">
+		<field name="tourismSummaryBoxId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dealer" type="String" />
+		<field name="numberOfvehicles" type="String" />
+		<field name="year" type="String" />
+		<field name="type" type="String" />
+		<field name="ccRating" type="String" />
+		<field name="counterSummary" type="String" />
+		<field name="tourismApplicationId" type="long" />
+	</model>
+</model-hints>

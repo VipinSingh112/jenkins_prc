@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.osi.services.stages.service.model.OsiServiceIssuanceOfReport">
+		<field name="osiServiceIssuanceOfReportId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfReport" type="Date" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="decision" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.stages.service.model.OSIServicesCertiOfIssuance">
+		<field name="oSIServicesCertiOfIssuanceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfInsolventPerson" type="String" />
+		<field name="dateCertificateIssued" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="certificateNum" type="String" />
+		<field name="nameOfLicensedTrustee" type="String" />
+		<field name="docFileEntry" type="long" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.osi.services.stages.service.model.OSIServicesRecommendations">
+		<field name="oSIServicesRecommendationsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfRecommendationsDecision" type="Date" />
+		<field name="recommendationsDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.osi.services.stages.service.model.OSIServicesStages">
+		<field name="uuid" type="String" />
+		<field name="osiServicesStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="osiServciesApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+</model-hints>

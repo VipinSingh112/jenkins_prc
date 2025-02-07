@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.manufacturing.application.form.service">
+	<namespace>MANUFACTURING</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+
+	<entity name="ManufacturingApplication" local-service="true"
+		table="nbp_manufacture_application">
+
+
+
+		<!-- PK fields -->
+
+		<column name="manufacturingApplicationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+		<!-- Other fields -->
+
+		<column name="requestType" type="String"></column>
+		<column name="licenseRequest" type="String"></column>
+		<column name="licenseCategory" type="String"></column>
+		<column name="licenseSubCategory" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="expiredLicenseAppNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="dateOfExpiration" type="Date" />
+		<column name="appCurrentStageName" type="String" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getManuafactureByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getManufacturingByStatus"
+			return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getManufacturingByAppNum"
+			return-type="ManufacturingApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getManufacturingByRT_AppNo"
+			return-type="ManufacturingApplication">
+			<finder-column name="licenseRequest"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+		<finder name="getManufacturingByCaseId"
+			return-type="ManufacturingApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="ManuCompanyInfo" local-service="true"
+		table="nbp_manufacture_company_info">
+
+		<!-- PK fields -->
+
+		<column name="manuCompanyInfoId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="companyName" type="String"></column>
+		<column name="directorName" type="String"></column>
+		<column name="businessAddress" type="String"></column>
+		<column name="tccNumber" type="String"></column>
+		<column name="incorporationDate" type="Date"></column>
+		<column name="factoryAddress" type="String"></column>
+		<column name="telephoneNumber" type="String"></column>
+		<column name="emailAddress" type="String"></column>
+		<column name="companyWebsite" type="String"></column>
+		<column name="applicantTRN" type="String"></column>
+		<column name="beneficieryTRN" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById" return-type="ManuCompanyInfo">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_CI_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManuAdditionalCompanyInfo" local-service="true"
+		table="nbp_manufacture_add_comp_info">
+
+		<!-- PK fields -->
+
+		<column name="manuAdditionalCompanyInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="companyNameRepresentative" type="String"></column>
+		<column name="companySignatureRepresentative" type="String"></column>
+		<column name="signatureDate" type="Date"></column>
+		<column name="customBrokerName" type="String"></column>
+		<column name="customBrokerAddress" type="String"></column>
+		<column name="telephoneNumber" type="String"></column>
+		<column name="brokerId" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById"
+			return-type="ManuAdditionalCompanyInfo">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_ACI_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManuEquipment" local-service="true"
+		table="nbp_manufacture_equipment">
+
+		<!-- PK fields -->
+
+		<column name="manuEquipmentId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="equipmentImported" type="String"></column>
+		<column name="land" type="String"></column>
+		<column name="equipment" type="String"></column>
+		<column name="building" type="String"></column>
+		<column name="Other" type="String"></column>
+		<column name="equipmentName" type="String"></column>
+		<column name="jamaicanDollor" type="String"></column>
+		<column name="capitalExpenditure" type="String"></column>
+		<column name="nameOFPurpose" type="String"></column>
+		<column name="equipmentMaintained" type="String"></column>
+		<column name="equipmentCreated" type="String"></column>
+		<column name="skilledEmp" type="String"></column>
+		<column name="clericalEmp" type="String"></column>
+		<column name="otherEmp" type="String"></column>
+		<column name="totalEmp" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById" return-type="ManuEquipment">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_ME_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManuExportData" local-service="true"
+		table="nbp_manufacture_export_data">
+
+		<!-- PK fields -->
+
+		<column name="manuExportDataId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="companyInvolved" type="String"></column>
+		<column name="itemsName" type="String"></column>
+		<column name="quantity" type="String"></column>
+		<column name="monetary" type="String"></column>
+		<column name="countryName" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById" return-type="ManuExportData">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_ED_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManuInternationalCertificate" local-service="true"
+		table="nbp_manu_inter_certificate">
+
+		<!-- PK fields -->
+
+		<column name="manuInternationalCertificateId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+		<column name="companyCertified" type="String"></column>
+		<column name="other" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById"
+			return-type="ManuInternationalCertificate">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_IC_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="PackagingProcess" local-service="true"
+		table="nbp_manufacture_packaging_pro">
+
+		<!-- PK fields -->
+
+		<column name="packagingProcessId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="packagingProcess" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById"
+			return-type="PackagingProcess">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_PP_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ProductionProcess" local-service="true"
+		table="nbp_manufacture_production_pro">
+
+		<!-- PK fields -->
+
+		<column name="productionProcessId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="productionProcess" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById"
+			return-type="ProductionProcess">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_PDP_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ProductiveInputsForm" local-service="true"
+		table="nbp_manu_productive_Inputsform">
+
+		<!-- PK fields -->
+
+		<column name="productiveInputsFormId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="categoryOfGoods" type="String"></column>
+		<column name="manufactureProducts" type="String"></column>
+		<column name="proposedProducts" type="String"></column>
+		<column name="processType" type="String"></column>
+		<column name="tariffCode" type="String"></column>
+		<column name="manufactureItem" type="String"></column>
+		<column name="importedCaricom" type="String"></column>
+		<column name="rawMaterialPurchased" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- finder -->
+		<finder name="getManufactureById"
+			return-type="ProductiveInputsForm">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_PI_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManuApplicationCurrentStage" local-service="true"
+		table="nbp_manufacture_stage">
+
+		<!-- PK fields -->
+
+		<column name="manuApplicationCuurentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="currentStage" type="String"></column>
+		<column name="lastFormDetailsStep" type="String"></column>
+		<column name="manufacturingApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getManufactureById"
+			return-type="ManuApplicationCurrentStage">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_CS_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManuCompanyInfoAddress" local-service="true"
+		table="nbp_manu_com_Info_Address">
+
+		<!-- PK fields -->
+		<column name="manuCompanyInfoAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="factoryAddress" type="String"></column>
+        <column name="telephoneNumber" type="String"></column>
+        <column name="emailAddress" type="String"></column>
+        <column name="companyWebsite" type="String"></column>
+        <column name="parish" type="String"></column>
+         <column name="counter" type="String"></column>
+        <column name="manufacturingApplicationId" type="long"></column>
+        <column name="manuCompanyInfoId" type="long"> </column>
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getMA_CIA" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_CII" return-type="Collection">
+			<finder-column name="manuCompanyInfoId" />
+		</finder>
+		
+	</entity>
+	<entity name="ProductiveInputsFormAdd" local-service="true"
+		table="nbp_manu_pro_input_add">
+
+		<!-- PK fields -->
+
+		<column name="productiveInputsFormAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="processType" type="String"></column>
+        <column name="tariffCode" type="String"></column>
+        <column name="manufactureItem" type="String"></column>
+        <column name="importedCaricom" type="String"></column>
+        <column name="counter" type="String"></column>
+        <column name="manufacturingApplicationId" type="long"></column>
+        <column name="productiveInputsFormId" type="long"> </column>
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getMA_PIF" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_PII" return-type="Collection">
+			<finder-column name="productiveInputsFormId" />
+		</finder>
+	</entity>
+	<entity name="ManuEquipmentAdd" local-service="true"
+		table="nbp_manu_equipment_Add">
+
+		<!-- PK fields -->
+
+		<column name="manuEquipmentAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="equipmentName" type="String"></column>
+        <column name="jamaicanDollor" type="String"></column>
+        <column name="counter" type="String"></column>
+        <column name="manufacturingApplicationId" type="long"></column>
+        <column name="manuEquipmentId" type="long"> </column>
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getMA_EAF" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMA_EAI" return-type="Collection">
+			<finder-column name="manuEquipmentId" />
+		</finder>
+	</entity>
+</service-builder>

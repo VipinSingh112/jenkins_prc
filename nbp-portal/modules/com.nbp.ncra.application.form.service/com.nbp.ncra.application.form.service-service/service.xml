@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.ncra.application.form.service">
+	<namespace>NCRA_APPLICATION_FORM</namespace>
+	<entity table="nbp_ncra_applications" name="NcraApplication" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ncraApplicationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+		
+		<column name="doYouWant" type="String"></column>
+		<column name="typeOfTransaction" type="String"></column>
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="expiredLicenseAppNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getNcraByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getNcraByStatus"
+			return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getNcraByAppNum"
+			return-type="NcraApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getNcraByCaseId"
+			return-type="NcraApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		 	<finder name="getNcraByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getNcraByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getNcraByEI_CI" return-type="NcraApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getNcraByRT_AppNo" return-type="NcraApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+    <entity local-service="true" name="NcraApplicantDetailInfo" table="nbp_ncra_applicant_details">
+        <column name="ncraApplicantDetailInfoId" primary="true" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="userName" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        
+        <column name="applicantBusinessName" type="String"></column>
+        <column name="applicantAddress" type="String"></column>
+        <column name="applicantContact" type="String"></column>
+        <column name="applicantTeleNum" type="String"></column>
+        <column name="applicantFaxNo" type="String"></column>
+        <column name="applicantEmailAddr" type="String"></column>
+        <column name="applicantLocation" type="String"></column>
+        <column name="ncraApplicationId" type="long"></column>
+        
+        <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getNcraDetail_By_App_Id"
+			return-type="NcraApplicantDetailInfo">
+			<finder-column name="ncraApplicationId"></finder-column>
+		</finder>
+    </entity>
+    <entity name="NcraVerifyWeighingDeviceInfo" local-service="true"
+    	table="nbp_ncra_verify_weigh_info">
+
+    	<!-- PK fields -->
+
+    	<column name="ncraVerifyWeighingDeviceInfoId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+    	<column name="typeofDevice" type="String" />
+	    <column name="manufacturer" type="String" />
+	    <column name="serialNumber" type="String" />
+	    <column name="quantity" type="String" />
+	    <column name="maximumCapacity" type="String" />
+	    <column name="counter" type="String" />
+		<column name="ncraApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getNcraVerify_By_NCRA_Id" return-type="NcraVerifyWeighingDeviceInfo">
+			<finder-column name="ncraApplicationId"></finder-column>
+		</finder>
+		<finder name="getNcraVerify_By_DataList" return-type="Collection">
+			<finder-column name="ncraApplicationId"></finder-column>
+		</finder>
+    </entity>
+     <entity name="NcraVerifyWeighingDate" local-service="true"
+    	table="nbp_ncra_veri_weigh_date">
+
+    	<!-- PK fields -->
+
+    	<column name="ncraVerifyWeighingDateId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	<column name="weighingDate" type="Date" />
+    	<column name="ncraApplicationId" type="long" />
+    	<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getNcraVerify_By_Date" return-type="NcraVerifyWeighingDate">
+			<finder-column name="ncraApplicationId"></finder-column>
+		</finder>
+		
+    </entity>
+    
+    <entity name="NcraCurrentStage" table="nbp_ncra_current_stages" local-service="true">
+
+    	<!-- PK fields -->
+
+    	<column name="ncraCurrentStageId" primary="true" type="long"></column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	<column name="currentStage" type="String"></column>
+		<column name="lastFormStepDetails" type="String"></column>
+		<column name="ncraApplicationId" type="long"></column>
+		
+		<finder name="getNcraCurrent_By_NCRA_Id" return-type="NcraCurrentStage">
+			<finder-column name="ncraApplicationId" />
+		</finder>
+		<finder name="getNCRA_CS_NAI" return-type="Collection">
+			<finder-column name="ncraApplicationId" />
+		</finder>
+    	
+    </entity>
+    <entity name="NcraFeeSubmission" table="nbp_ncra_fee_payment" local-service="true">
+
+    	<!-- PK fields -->
+
+    	<column name="ncraFeeSubmissionId" primary="true" type="long"></column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+   		<column name="creditStatus" type="String"></column>
+		<column name="ncraApplicationId" type="long"></column>
+		<!-- finder -->
+		<finder name="getNcraFee_By_NCRA_Id" return-type="NcraFeeSubmission">
+			<finder-column name="ncraApplicationId" />
+		</finder>
+    </entity>
+   
+</service-builder>

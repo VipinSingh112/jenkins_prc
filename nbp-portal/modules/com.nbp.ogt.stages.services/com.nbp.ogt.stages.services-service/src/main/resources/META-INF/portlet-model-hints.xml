@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.ogt.stages.services.model.OgtApplicationStage">
+		<field name="uuid" type="String" />
+		<field name="ogtStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="ogtApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+</model-hints>

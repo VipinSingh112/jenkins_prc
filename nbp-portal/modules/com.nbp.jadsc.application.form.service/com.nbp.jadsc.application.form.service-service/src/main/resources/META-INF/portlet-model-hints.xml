@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCApplication">
+		<field name="uuid" type="String" />
+		<field name="jadscApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="typeOfApplication" type="String" />
+		<field name="typeOfComplaint" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="industriesImpacted" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="breachOfConfidentiality" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="categoriesOfConfidentialInfo" type="String">
+			<hint name="max-length">3000</hint>
+		</field>
+		<field name="categoriesOfConfiOtherPlease" type="String" />
+		<field name="reasonForConfidentialStatus" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nonConfidentialSummary" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCCertificateOfService">
+		<field name="uuid" type="String" />
+		<field name="jadscCOSId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="docSubmitDate" type="Date" />
+		<field name="signatoryName" type="String" />
+		<field name="signatoryDate" type="Date" />
+		<field name="signatoryTelephone" type="String" />
+		<field name="signatoryFax" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCCertificateOfServiceAddForm">
+		<field name="uuid" type="String" />
+		<field name="jadscCOSId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="docServeCom" type="String" />
+		<field name="docServeAddress" type="String" />
+		<field name="docServeName" type="String" />
+		<field name="counter" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCCertificateOfVeracity">
+		<field name="uuid" type="String" />
+		<field name="jadscCOVId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="veracityComName" type="String" />
+		<field name="veracityComPosition" type="String" />
+		<field name="veracityComCompany" type="String" />
+		<field name="veracitySignedDate" type="Date" />
+		<field name="veracitySignedTelephone" type="String" />
+		<field name="veracitySignedFax" type="String" />
+		<field name="veracitySignedAddress" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCChecklist">
+		<field name="uuid" type="String" />
+		<field name="jadscChecklistId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="informationRegComplaint" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="selectedChecklistValues" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="description" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCChecklistAdd">
+		<field name="uuid" type="String" />
+		<field name="jADSCChecklistAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="AddItem" type="String" />
+		<field name="counter" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="jadscCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCInformationRequest">
+		<field name="uuid" type="String" />
+		<field name="jadscInfoRequestId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="companyName" type="String" />
+		<field name="address" type="String" />
+		<field name="mainTelephone" type="String" />
+		<field name="officeTelephone" type="String" />
+		<field name="cellTelephone" type="String" />
+		<field name="otherContact" type="String" />
+		<field name="whatsappTelephone" type="String" />
+		<field name="emailContact" type="String" />
+		<field name="contactPerName" type="String" />
+		<field name="contactPerPosition" type="String" />
+		<field name="contactPerPhone" type="String" />
+		<field name="contactPerEmail" type="String" />
+		<field name="altContactPerName" type="String" />
+		<field name="altContactPerPosition" type="String" />
+		<field name="altContactPerPhone" type="String" />
+		<field name="altContactPerEmail" type="String" />
+		<field name="comOperationYear" type="String" />
+		<field name="products" type="String" />
+		<field name="marketSharePer" type="String" />
+		<field name="tradeRemedyMeasure" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="fiveYearsInvestment" type="String" />
+		<field name="planCapacity" type="String" />
+		<field name="growthProjection" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCNoticeOfAppearance">
+		<field name="uuid" type="String" />
+		<field name="jadscNOAId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="fullName" type="String" />
+		<field name="addressOne" type="String" />
+		<field name="date" type="Date" />
+		<field name="name" type="String" />
+		<field name="firm" type="String" />
+		<field name="address" type="String" />
+		<field name="telephone" type="String" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jadsc.application.form.service.model.JADSCOathRequest">
+		<field name="uuid" type="String" />
+		<field name="jadscOathRequestId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="investigationType" type="String" />
+		<field name="partyName" type="String" />
+		<field name="requestReason" type="String" />
+		<field name="comOfficial" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="jadscApplicationId" type="long" />
+	</model>
+</model-hints>

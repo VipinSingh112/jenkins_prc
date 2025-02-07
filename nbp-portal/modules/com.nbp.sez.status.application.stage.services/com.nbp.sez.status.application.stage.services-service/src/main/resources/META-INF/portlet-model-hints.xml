@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="SezStatusApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusARCDecision">
+		<field name="uuid" type="String" />
+		<field name="sezStatusCommitteeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="committeeDecision" type="String" />
+		<field name="committeeDecisionDate" type="Date" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusBoardDecision">
+		<field name="uuid" type="String" />
+		<field name="sezStatusBoardId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="boardDecision" type="String" />
+		<field name="boardDecisionDate" type="Date" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusDeskVerification">
+		<field name="SezDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="sezApplicationId" type="long" />
+		<field name="document" type="String" />
+		<field name="documentName" type="String" />
+		<field name="status" type="String" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusLicenseIssuance">
+		<field name="uuid" type="String" />
+		<field name="sezStatusLicIssuedId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="licenceNumber" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="sezStatus" type="String" />
+		<field name="sezDeveloperNumber" type="String" />
+		<field name="dateOfLicIssuance" type="Date" />
+		<field name="dateOfLicenseExpiration" type="Date" />
+		<field name="docLicFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusPaymentConfirmation">
+		<field name="sezPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountreceived" type="String" />
+		<field name="receivedNumber" type="String" />
+		<field name="comments" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="paymentreceiptFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusPreApprovalConditions">
+		<field name="preApprovalId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="preApprovalLetterId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusWelcomePackage">
+		<field name="uuid" type="String" />
+		<field name="sezStatusWelcomeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateWelcomePackageSigned" type="Date" />
+		<field name="welcomePackageSubmitToAppli" type="Date" />
+		<field name="docLicFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.sez.status.application.stage.services.model.SezStatusWFHApplicationStages">
+		<field name="sezWFHAppStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="sezStatusApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+</model-hints>

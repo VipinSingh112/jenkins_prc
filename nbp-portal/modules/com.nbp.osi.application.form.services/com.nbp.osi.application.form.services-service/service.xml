@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.osi.application.form.services">
+	<namespace>OSI</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity name="OsiApplication" local-service="true"
+		table="nbp_osi_application">
+
+		<!-- PK fields -->
+
+		<column name="osiApplicationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="entityId" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="applicationType" type="String"></column>
+        <column name="applicationStatus" type="int"></column>
+        <column name="caseId" type="String"></column>
+        <column name="status" type="int"></column>
+        <column name="icmDocumentPath" type="String"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+        
+        
+        <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        
+        <finder name="getOsiByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		 <finder name="getOsiByStatus_UserId" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="applicationStatus"></finder-column>
+		</finder>
+		 <finder name="getOsiByAppStatus" return-type="Collection">
+			<finder-column name="applicationStatus"></finder-column>
+		</finder>
+		<finder name="getOsiByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getOsiByAppNum"
+			return-type="OsiApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getOsiByCaseId"
+			return-type="OsiApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+   		<finder name="getOsiByAT_AppNo"
+			return-type="OsiApplication">
+			<finder-column name="applicationType"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+            
+	</entity>
+	<entity local-service="true" name="DetailOfApplicant" remote-service="true" uuid="true" table="nbp_osi_applicant_details">
+
+		<!-- PK fields -->
+
+		<column name="detailOfApplicantId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="applicantName" type="String" />
+		<column name="applicantMiddleName" type="String" />
+		<column name="applicantLastName" type="String" />
+		<column name="applicantAddress" type="String" />
+		<column name="applicantEmail" type="String" />
+		<column name="applicantTeleNum" type="String" />
+		<column name="applicantTrn" type="String" />
+		<column name="applicantIdNumber" type="String" />
+		<column name="applicantDob" type="Date" />
+		<column name="applicantOccupation" type="String" />
+		<column name="osiApplicationId" type="long" />
+
+	
+
+		<!-- Finder methods -->
+
+		<finder name="getOsiById" return-type="DetailOfApplicant">
+			<finder-column name="osiApplicationId" />
+		</finder>
+
+		<!-- References -->
+
+	</entity>
+	<entity local-service="true" name="EducationalQualification" remote-service="true" 
+	uuid="true" table="nbp_osi_education_details">
+
+		<!-- PK fields -->
+
+		<column name="educationalDetailId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="institution" type="String" />
+		<column name="qualificationType" type="String" />
+		<column name="qualificationPeriod" type="Date" />
+		<column name="qualificationGrade" type="String" />
+		<column name="counter" type="String" />
+		<column name="osiApplicationId" type="long" />
+		
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiApplicationId" />
+		</finder>
+
+		<!-- References -->
+
+	</entity>
+	<entity name="CounsellingExperience" local-service="true"
+		table="nbp_osi_counselling">
+
+		<!-- PK fields -->
+
+		<column name="counsellingExperienceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        
+        <column name="company" type="String" />
+		<column name="position" type="String" />
+		<column name="counsellingType" type="String" />
+		<column name="serviceLength" type="String" />
+		<column name="counter" type="String" />
+		<column name="osiApplicationId" type="long" />
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiApplicationId" />
+		</finder>
+	</entity>
+	
+	<entity name="ProfessionalAffiliation" local-service="true"
+		table="nbp_osi_affiliation">
+
+		<!-- PK fields -->
+
+		<column name="professionalAffiliationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        
+        <column name="professionalAffiliationsDate" type="Date" />
+        <column name="affiliationMultivalue" type="String" />
+		<column name="osiApplicationId" type="long" />
+		
+		
+		<finder name="getOsiById" return-type="ProfessionalAffiliation">
+			<finder-column name="osiApplicationId" />
+		</finder>
+	</entity>
+	
+	<entity name="OfficialUse" local-service="true"
+		table="nbp_osi_official_use">
+
+		<!-- PK fields -->
+
+		<column name="officialUseId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        
+        <column name="receivedBy" type="String" />
+        <column name="receivedByDate" type="Date" />
+        <column name="verifiedBy" type="String" />
+        <column name="verifiedByDate" type="Date" />
+        <column name="applicationAccepted" type="String" />
+        <column name="dateCertificateIssued" type="Date" />
+        <column name="certificateNumber" type="String" />
+        <column name="remarksNotes" type="String" />
+		<column name="osiApplicationId" type="long" />
+		
+		<finder name="getOsiById" return-type="OfficialUse">
+			<finder-column name="osiApplicationId" />
+		</finder>
+	</entity>
+	<entity name="OsiCurrentStage" local-service="true"
+		table="nbp_osi_current_stage">
+
+		<!-- PK fields -->
+
+		<column name="osiCurrentStageId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="lastFormStep" type="String"></column>
+        <column name="currentStage" type="String"></column>
+        <column name="osiApplicationId" type="long"></column>
+        <finder name="getOsiById" return-type="OsiCurrentStage">
+            <finder-column name="osiApplicationId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

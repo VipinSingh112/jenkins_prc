@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.mining.lease.application.service.model.MiningAppCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="miningAppCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningAppPayment">
+		<field name="miningAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningExclusiveLicFormFive">
+		<field name="miningExclusiveLicFormFiveId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantNameLicence" type="String" />
+		<field name="trnNumberLicence" type="String" />
+		<field name="applicantNationalityLicence" type="String" />
+		<field name="applicantAddressLicence" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantTelephoneLicence" type="String" />
+		<field name="applicantEmailLicence" type="String" />
+		<field name="applicantNumberLicence" type="String" />
+		<field name="agentNameLicence" type="String" />
+		<field name="numProspectingLicence" type="String" />
+		<field name="agentNameLicenceGrant" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantLicence" type="String" />
+		<field name="justicePeaceParish" type="String" />
+		<field name="applicantLandmarkLicence" type="String" />
+		<field name="applicantAreaLicence" type="String" />
+		<field name="applicantDesires" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="dateLocationLic" type="Date" />
+		<field name="incorporationLodged" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningFormFiveDelineation">
+		<field name="miningFormFiveDelineationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="approximatelyArea" type="String" />
+		<field name="location" type="String" />
+		<field name="coordinates" type="String" />
+		<field name="northSide" type="String" />
+		<field name="eastSide" type="String" />
+		<field name="firstNorthSide" type="String" />
+		<field name="firstEastSide" type="String" />
+		<field name="firstLocationGrid" type="String" />
+		<field name="firstDegrees" type="String" />
+		<field name="secondNorthSide" type="String" />
+		<field name="secondEastSide" type="String" />
+		<field name="secondLocationGrid" type="String" />
+		<field name="secondDegrees" type="String" />
+		<field name="thirdCoordinates" type="String" />
+		<field name="thirdNorthSide" type="String" />
+		<field name="thirdEastSide" type="String" />
+		<field name="thirdDegrees" type="String" />
+		<field name="thirdGridLoc" type="String" />
+		<field name="thirdGridL" type="String" />
+		<field name="fourthCoordinates" type="String" />
+		<field name="fourthNorthSide" type="String" />
+		<field name="fourthEastSide" type="String" />
+		<field name="fourthDegrees" type="String" />
+		<field name="fourthGridLoc" type="String" />
+		<field name="fourthGridL" type="String" />
+		<field name="fifthCoordinates" type="String" />
+		<field name="fifthNorthSide" type="String" />
+		<field name="fifthEastSide" type="String" />
+		<field name="fifthDegrees" type="String" />
+		<field name="fifthGridLoc" type="String" />
+		<field name="fifthGridL" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningLeaseApplication">
+		<field name="miningLeaseApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="prospectingRightNumber" type="String" />
+		<field name="typeOfProspectingLicence" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="areaDelinationTotalApprox" type="String" />
+		<field name="licenceExclusiveSpecial" type="String" />
+		<field name="miningMineralsTypeVal" type="String" />
+		<field name="otherMineralBox" type="String" />
+		<field name="areaDelination" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="prospRightsNum" type="String" />
+		<field name="prospLicenseNum" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningProspectingLicense">
+		<field name="miningProspectingLicenseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="trnNumber" type="String" />
+		<field name="nationalityOfApplicant" type="String" />
+		<field name="addressInJamaica" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="telephoneNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="numberOfApplicant" type="String" />
+		<field name="nameOfTheAgent" type="String" />
+		<field name="numberOfThisProspecting" type="String" />
+		<field name="prospectingRight" type="String" />
+		<field name="parish" type="String" />
+		<field name="licence" type="String" />
+		<field name="stateTheNearestLandmark" type="String" />
+		<field name="approximateArea" type="String" />
+		<field name="mineralForWhichApplicant" type="String" />
+		<field name="copyOfArticle" type="String" />
+		<field name="dateUponTheLocation" type="Date" />
+		<field name="proslicenceFeeCheck" type="String" />
+		<field name="dateSurrender" type="Date" />
+		<field name="areaOfApproximately" type="String" />
+		<field name="locationBeacon" type="String" />
+		<field name="intersectionCoordinates" type="String" />
+		<field name="northTopographical" type="String" />
+		<field name="eastTopographical" type="String" />
+		<field name="firstCornerOfNorth" type="String" />
+		<field name="firstCornerOfEast" type="String" />
+		<field name="firstCornerApproximateMeter" type="String" />
+		<field name="firstCornerApproximateDegree" type="String" />
+		<field name="secondCornerOfNorth" type="String" />
+		<field name="secondCornerOfEast" type="String" />
+		<field name="secondCornerApproximateMeter" type="String" />
+		<field name="secondCornerApproximateDegree" type="String" />
+		<field name="thirdCornerOfNorth" type="String" />
+		<field name="thirdCornerOfEast" type="String" />
+		<field name="thirdCornerApproximateMeter" type="String" />
+		<field name="thirdCornerApproximateDegree" type="String" />
+		<field name="fourthCornerOfNorth" type="String" />
+		<field name="fourthCornerOfEast" type="String" />
+		<field name="fourthCornerApproximateMeter" type="String" />
+		<field name="fourthCornerApproximateDegree" type="String" />
+		<field name="fifthCornerOfNorth" type="String" />
+		<field name="fifthCornerOfEast" type="String" />
+		<field name="fifthCornerApproximateMeter" type="String" />
+		<field name="fifthCornerApproximateDegree" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningProspectingLicenseAdd">
+		<field name="miningProspectingLicenseAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="nationality" type="String" />
+		<field name="directorsOfCompany" type="String" />
+		<field name="counter" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningProspectingRights">
+		<field name="prospectingRightsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="trnNum" type="String" />
+		<field name="nationalityOfApplicant" type="String" />
+		<field name="ageOfApplicant" type="String" />
+		<field name="telephoneNum" type="String" />
+		<field name="emailAddr" type="String" />
+		<field name="addressInJamaica" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="applicantProspectAcc" type="String" />
+		<field name="otherPersonName" type="String" />
+		<field name="otherPersonAddr" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="prevApplication" type="String" />
+		<field name="offenceMiningAct" type="String" />
+		<field name="validProspectRight" type="String" />
+		<field name="surrenderProspectRight" type="String" />
+		<field name="prospectRightsFeeCheck" type="String" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.mining.lease.application.service.model.MiningRenewalLicence">
+		<field name="miningRenewalLicenceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="renewApplicantName" type="String" />
+		<field name="renewTrnNum" type="String" />
+		<field name="renewApplicantLicNum" type="String" />
+		<field name="stateWhetherRenewIs" type="String" />
+		<field name="renewTelephone" type="String" />
+		<field name="renewEmailAddr" type="String" />
+		<field name="renewNumOfApplicantLease" type="String" />
+		<field name="renApplicantDesireToMine" type="String" />
+		<field name="renewTermDesired" type="String" />
+		<field name="renewFeeCheck" type="String" />
+		<field name="renewDate" type="Date" />
+		<field name="miningLeaseApplicationId" type="long" />
+	</model>
+</model-hints>

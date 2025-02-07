@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.factories.registration.application.form.services.model.FactoriesApplicationRegistration">
+		<field name="factoriesApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="productCategory" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="areYouProcessing" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.factories.registration.application.form.services.model.FactoriesAppPayment">
+		<field name="factoriesAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="factoriesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.factories.registration.application.form.services.model.FactoriesProcessedFoodAct">
+		<field name="factoriesProcessedFoodActId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="processedActEstablishmentName" type="String" />
+		<field name="processedActParishAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="processedActAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="processedActOperatorName" type="String" />
+		<field name="processedActOperatorAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="processedActParish" type="String" />
+		<field name="processedActDescription" type="String" />
+		<field name="establishmentOperated" type="String" />
+		<field name="processedActLastDate" type="Date" />
+		<field name="processedActManufactured" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="processedActDate" type="Date" />
+		<field name="factoriesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.factories.registration.application.form.services.model.FactoriesProductDetailsAdd">
+		<field name="factoriesProductDetailsAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="productBrand" type="String" />
+		<field name="product" type="String" />
+		<field name="productSize" type="String" />
+		<field name="productMeasurementVal" type="String" />
+		<field name="counter" type="String" />
+		<field name="factoriesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.factories.registration.application.form.services.model.FactoriesRegstCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="factoriesCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="factoriesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.factories.registration.application.form.services.model.FactoriesStandardActInfo">
+		<field name="factoriesStandardActId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="standardsActEstablishmentName" type="String" />
+		<field name="standardsActAddParish" type="String" />
+		<field name="standardsActAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="standardsActTel" type="String" />
+		<field name="standardsActWhatsAppNum" type="String" />
+		<field name="standardsActEmail" type="String" />
+		<field name="standardsActFaxNum" type="String" />
+		<field name="standardsActOperatorName" type="String" />
+		<field name="standardsActOperatorAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="standardsActParish" type="String" />
+		<field name="standardsActOperatorTel" type="String" />
+		<field name="standardActProductManufactured" type="String" />
+		<field name="standardActBrandManufactured" type="String" />
+		<field name="standardsActProductSize" type="String" />
+		<field name="standardsActLastDate" type="Date" />
+		<field name="standardsActPurpose" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="standardsActDate" type="Date" />
+		<field name="establishmentBefore" type="String" />
+		<field name="factoriesApplicationId" type="long" />
+	</model>
+</model-hints>

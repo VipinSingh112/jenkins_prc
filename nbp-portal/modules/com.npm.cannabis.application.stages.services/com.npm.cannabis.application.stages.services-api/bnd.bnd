@@ -1,0 +1,11 @@
+Bundle-Name: com.npm.cannabis.application.stages.services-api
+Bundle-SymbolicName: com.npm.cannabis.application.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.npm.cannabis.application.stages.services.exception,\
+	com.npm.cannabis.application.stages.services.model,\
+	com.npm.cannabis.application.stages.services.service,\
+	com.npm.cannabis.application.stages.services.service.persistence,\
+	com.npm.cannabis.application.stages.services.constants
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.npm.cannabis.application.stages.services-service/service.xml

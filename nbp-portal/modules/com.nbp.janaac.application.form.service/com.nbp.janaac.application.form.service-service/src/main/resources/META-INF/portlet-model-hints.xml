@@ -1,0 +1,1418 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyApplicantInfo">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyApplicantInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="applicantAddress" type="String" />
+		<field name="applicantTelephone" type="String" />
+		<field name="applicantFaxNo" type="String" />
+		<field name="applicantWebsite" type="String" />
+		<field name="certificationName" type="String" />
+		<field name="certiAddress" type="String" />
+		<field name="personnelName" type="String" />
+		<field name="personnelEmail" type="String" />
+		<field name="personnelContactName" type="String" />
+		<field name="personnelContactEmail" type="String" />
+		<field name="personnelFMName" type="String" />
+		<field name="personnelFMEmail" type="String" />
+		<field name="accreditationRequest" type="String" />
+		<field name="managementSystem" type="String" />
+		<field name="specifyOther" type="String" />
+		<field name="listOfStandard" type="String" />
+		<field name="authorizedPersonnelName" type="String" />
+		<field name="authorizedPersonnelPos" type="String" />
+		<field name="authorizedPersonnelDate" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyGeneral">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyGeneralId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="cerLegalEntity" type="String" />
+		<field name="cerLegalStatusEntity" type="String" />
+		<field name="cerMajorIncomeSources" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyInfo">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="describeMechanism" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyManageReq">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyManageReqId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="optionFollow" type="String" />
+		<field name="impartialityPolicy" type="String" />
+		<field name="qMRefImpartiality" type="String" />
+		<field name="riskAssessment" type="String" />
+		<field name="qMRefRisk" type="String" />
+		<field name="orgStructure" type="String" />
+		<field name="qMRefOrgStruct" type="String" />
+		<field name="termsOfReference" type="String" />
+		<field name="qMRefTerms" type="String" />
+		<field name="processForControl" type="String" />
+		<field name="qMRefProcess" type="String" />
+		<field name="criteriaReq" type="String" />
+		<field name="qMRefCriteria" type="String" />
+		<field name="initialCompetence" type="String" />
+		<field name="qMRefInitial" type="String" />
+		<field name="selectingTraining" type="String" />
+		<field name="qMRefSelecting" type="String" />
+		<field name="monitoringCompetence" type="String" />
+		<field name="qMRefMonitoring" type="String" />
+		<field name="writtenAgreement" type="String" />
+		<field name="qMRefWritten" type="String" />
+		<field name="descOfProcess" type="String" />
+		<field name="qMRefDescProcess" type="String" />
+		<field name="processForMonitor" type="String" />
+		<field name="qMRefMonitorProcess" type="String" />
+		<field name="auditProcess" type="String" />
+		<field name="qMRefAuditProcess" type="String" />
+		<field name="processGranting" type="String" />
+		<field name="qMRefGranting" type="String" />
+		<field name="managemntSys" type="String" />
+		<field name="qMRefManagemnt" type="String" />
+		<field name="useOfCertification" type="String" />
+		<field name="qMRefUseOfCerti" type="String" />
+		<field name="handlingReq" type="String" />
+		<field name="qMRefHandling" type="String" />
+		<field name="impartialityPolicies" type="String" />
+		<field name="qMRefImpartPolicy" type="String" />
+		<field name="provisionInform" type="String" />
+		<field name="qMRefProvision" type="String" />
+		<field name="certificationDoc" type="String" />
+		<field name="qMRefCertification" type="String" />
+		<field name="rulesGoverning" type="String" />
+		<field name="qMRefGoverning" type="String" />
+		<field name="enforcableArrangements" type="String" />
+		<field name="qMRefEnforcable" type="String" />
+		<field name="ensureConfidential" type="String" />
+		<field name="qMRefEnsureConfid" type="String" />
+		<field name="informingMechanism" type="String" />
+		<field name="qMRefInforming" type="String" />
+		<field name="applicationProcess" type="String" />
+		<field name="qMRefApplication" type="String" />
+		<field name="applicationReview" type="String" />
+		<field name="qMRefReview" type="String" />
+		<field name="certificationCycle" type="String" />
+		<field name="qMRefCertiCycle" type="String" />
+		<field name="auditTime" type="String" />
+		<field name="qMRefAuditTime" type="String" />
+		<field name="samplingProgram" type="String" />
+		<field name="qMRefSampling" type="String" />
+		<field name="auditPlanning" type="String" />
+		<field name="qMRefPlanning" type="String" />
+		<field name="auditTeam" type="String" />
+		<field name="qMRefAuditTeam" type="String" />
+		<field name="onSiteAudit" type="String" />
+		<field name="qMRefonSiteAudit" type="String" />
+		<field name="auditReport" type="String" />
+		<field name="qMRefAuditReport" type="String" />
+		<field name="correctiveActions" type="String" />
+		<field name="qMRefCorrective" type="String" />
+		<field name="reviewPriorDecision" type="String" />
+		<field name="qMRefReviewPrior" type="String" />
+		<field name="transferCertification" type="String" />
+		<field name="qMRefTransfer" type="String" />
+		<field name="suspensionPolicies" type="String" />
+		<field name="qMRefSuspension" type="String" />
+		<field name="suspensionProcedure" type="String" />
+		<field name="qMRefSuspensionProc" type="String" />
+		<field name="decisionOnAppeals" type="String" />
+		<field name="qMRefDecision" type="String" />
+		<field name="handlingComplaints" type="String" />
+		<field name="qMRefComplaints" type="String" />
+		<field name="recordRetentionPolicy" type="String" />
+		<field name="qMRefRetentionPolicy" type="String" />
+		<field name="recordRetentionProc" type="String" />
+		<field name="qMRefRetentionProc" type="String" />
+		<field name="manageSysPolicies" type="String" />
+		<field name="qMRefPolicies" type="String" />
+		<field name="manageSysObjective" type="String" />
+		<field name="qMRefObjective" type="String" />
+		<field name="manageSysManual" type="String" />
+		<field name="qMRefManual" type="String" />
+		<field name="docControlProcedure" type="String" />
+		<field name="qMRefDocControl" type="String" />
+		<field name="recControlProc" type="String" />
+		<field name="qMRefRecControl" type="String" />
+		<field name="managementReview" type="String" />
+		<field name="qMRefManagementRev" type="String" />
+		<field name="internalAudits" type="String" />
+		<field name="qMRefInternal" type="String" />
+		<field name="identificationProc" type="String" />
+		<field name="qMRefIdentification" type="String" />
+		<field name="qMSScopeB" type="String" />
+		<field name="qMRefQMSScopeB" type="String" />
+		<field name="designDevB" type="String" />
+		<field name="qMRefDesignB" type="String" />
+		<field name="interestedPartyNeedsB" type="String" />
+		<field name="qMRefInterestedB" type="String" />
+		<field name="managementReviewB" type="String" />
+		<field name="qMRefmanagementReviewB" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyMngReqTwo">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyMngReqTwoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="optionFollow" type="String" />
+		<field name="certiAgreement" type="String" />
+		<field name="qMRefCertiAgreement" type="String" />
+		<field name="riskAssessment" type="String" />
+		<field name="qMRefRisk" type="String" />
+		<field name="confidentiality" type="String" />
+		<field name="qMRefConfidentiality" type="String" />
+		<field name="security" type="String" />
+		<field name="qMRefSecurity" type="String" />
+		<field name="certificationScheme" type="String" />
+		<field name="qMRefCertifiScheme" type="String" />
+		<field name="validCertification" type="String" />
+		<field name="qMRefValidCertification" type="String" />
+		<field name="preRequisites" type="String" />
+		<field name="qMRefPrerequisites" type="String" />
+		<field name="infoProvided" type="String" />
+		<field name="qMRefInfoProvided" type="String" />
+		<field name="handlingAppeals" type="String" />
+		<field name="qMRefHandlingAppeals" type="String" />
+		<field name="handlingComplaints" type="String" />
+		<field name="qMRefHandlingComplaint" type="String" />
+		<field name="orgStructure" type="String" />
+		<field name="qMRefOrgStructure" type="String" />
+		<field name="formalRules" type="String" />
+		<field name="qMRefFormalRules" type="String" />
+		<field name="safeguardingMechanism" type="String" />
+		<field name="qMRefSafeguarding" type="String" />
+		<field name="managementProc" type="String" />
+		<field name="qMRefManagementProc" type="String" />
+		<field name="contractExaminer" type="String" />
+		<field name="qMRefExaminer" type="String" />
+		<field name="contractBody" type="String" />
+		<field name="qMRefContractBody" type="String" />
+		<field name="docPolicies" type="String" />
+		<field name="qMRefDocPolicies" type="String" />
+		<field name="specifiedStandard" type="String" />
+		<field name="qMRefSpecified" type="String" />
+		<field name="applicationForm" type="String" />
+		<field name="qMRefAppliForm" type="String" />
+		<field name="applicationReview" type="String" />
+		<field name="qMRefAppliReview" type="String" />
+		<field name="assessmentPlan" type="String" />
+		<field name="qMRefAssessmentPlan" type="String" />
+		<field name="examinationProcess" type="String" />
+		<field name="qMRefExamProcess" type="String" />
+		<field name="certificationDecision" type="String" />
+		<field name="qMRefCertiDecision" type="String" />
+		<field name="certificationDoc" type="String" />
+		<field name="qMRefCertiDoc" type="String" />
+		<field name="useOfCertificates" type="String" />
+		<field name="qMRefUseOfCertificate" type="String" />
+		<field name="suspension" type="String" />
+		<field name="qMRefSuspension" type="String" />
+		<field name="processToReceive" type="String" />
+		<field name="qMRefReceiveProcess" type="String" />
+		<field name="generalManage" type="String" />
+		<field name="qMRefGeneral" type="String" />
+		<field name="docControl" type="String" />
+		<field name="qMRefDocControl" type="String" />
+		<field name="recordControl" type="String" />
+		<field name="qMRefRecControl" type="String" />
+		<field name="manageReview" type="String" />
+		<field name="qMRefManageReview" type="String" />
+		<field name="internalAudit" type="String" />
+		<field name="qMRefInternal" type="String" />
+		<field name="correctiveAction" type="String" />
+		<field name="qMRefCorrective" type="String" />
+		<field name="preventiveAction" type="String" />
+		<field name="qMRefPreventive" type="String" />
+		<field name="docInKeeping" type="String" />
+		<field name="qMRefDocInKeeping" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyPersonnel">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyPersonnelId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="internalStaffSize" type="String" />
+		<field name="auditorsNum" type="String" />
+		<field name="contractedPerNum" type="String" />
+		<field name="bodyOutsource" type="String" />
+		<field name="descSecurity" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyProdScope">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyProdScopeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="cerIntrestedParties" type="String" />
+		<field name="otherServices" type="String" />
+		<field name="otherServicesDescribe" type="String" />
+		<field name="establishedRelation" type="String" />
+		<field name="establishedRelDesc" type="String" />
+		<field name="clientService" type="String" />
+		<field name="orgAccredited" type="String" />
+		<field name="responsibleBody" type="String" />
+		<field name="accExpDate" type="Date" />
+		<field name="certBodyScope" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccCerBodyScope">
+		<field name="uuid" type="String" />
+		<field name="accCerBodyScopeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="certificationStandard" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField1" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField2" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField3" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField4" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField5" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField6" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField7" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField8" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField9" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField10" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField11" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField12" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField13" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="expertiseField14" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="cerIntrestedParties" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="otherServices" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="otherServicesDescribe" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="establishedRelation" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="establishedRelDesc" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="clientService" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="certificationCerBody" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="orgAccredited" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="responsibleBody" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="accExpDate" type="Date">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="certBodyScope" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccInsBodiesManageSys">
+		<field name="uuid" type="String" />
+		<field name="accInsBodiesManageSysId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="optionFollow" type="String" />
+		<field name="manualApproval" type="String" />
+		<field name="qMRefManual" type="String" />
+		<field name="relevantPolicies" type="String" />
+		<field name="qMRefRelevant" type="String" />
+		<field name="overallObj" type="String" />
+		<field name="qMRefOverallObj" type="String" />
+		<field name="supportingProcedure" type="String" />
+		<field name="qMRefSupporting" type="String" />
+		<field name="technicalMangmnt" type="String" />
+		<field name="qMRefTechnical" type="String" />
+		<field name="documentation" type="String" />
+		<field name="qMRefDocumentation" type="String" />
+		<field name="docContolProc" type="String" />
+		<field name="qMRefDocControl" type="String" />
+		<field name="documntChanges" type="String" />
+		<field name="qMRefDocumntChanges" type="String" />
+		<field name="controlOfQuality" type="String" />
+		<field name="qMRefControl" type="String" />
+		<field name="managementReview" type="String" />
+		<field name="qMRefManage" type="String" />
+		<field name="insInternalAudits" type="String" />
+		<field name="qMRefInternalAudit" type="String" />
+		<field name="insCorrectiveAction" type="String" />
+		<field name="qMRefCorrect" type="String" />
+		<field name="insPreventiveAction" type="String" />
+		<field name="qMRefPreventive" type="String" />
+		<field name="personnel" type="String" />
+		<field name="qMRefPersonnel" type="String" />
+		<field name="equipment" type="String" />
+		<field name="qMRefEquip" type="String" />
+		<field name="inspection" type="String" />
+		<field name="qMRefInspection" type="String" />
+		<field name="contractualArrange" type="String" />
+		<field name="qMRefContractual" type="String" />
+		<field name="handlingInsItem" type="String" />
+		<field name="qMRefHandling" type="String" />
+		<field name="complaintsAppeals" type="String" />
+		<field name="qMRefComplaints" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccInsBodiesOrganization">
+		<field name="uuid" type="String" />
+		<field name="accInsBodiesOrganizationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="insLegalEntity" type="String" />
+		<field name="insLegalStatusEntity" type="String" />
+		<field name="insBodyOrgPart" type="String" />
+		<field name="insPersonnelName" type="String" />
+		<field name="insPersonnelPosition" type="String" />
+		<field name="insStaffSize" type="String" />
+		<field name="insStaffComplement" type="String" />
+		<field name="insIncomeSource" type="String" />
+		<field name="insOrgBodyType" type="String" />
+		<field name="insBodyOwnOrgClient" type="String" />
+		<field name="insBodyOtherOrgClient" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccInsBodiesOtherReq">
+		<field name="uuid" type="String" />
+		<field name="accInsBodiesOtherReqId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicationFees" type="String" />
+		<field name="insPaymentMethod" type="String" />
+		<field name="applicantRepName" type="String" />
+		<field name="applicantRepPosition" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccInsBodiesPhyResource">
+		<field name="uuid" type="String" />
+		<field name="accInsBodiesPhyResourceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="insBodiesfacilities" type="String" />
+		<field name="insSafetyFeatures" type="String" />
+		<field name="insSecurityArrangements" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabActivitiesDesc">
+		<field name="uuid" type="String" />
+		<field name="accMediLabActivitiesDescId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="activitiesDescription" type="String" />
+		<field name="shiftWork" type="String" />
+		<field name="specimenNo" type="String" />
+		<field name="specimenLocation" type="String" />
+		<field name="requestedPOCT" type="String" />
+		<field name="requestedPOCTLocation" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabApplicationInfo">
+		<field name="uuid" type="String" />
+		<field name="accMediLabApplicationInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="applicantAddress" type="String" />
+		<field name="appliTelephoneNo" type="String" />
+		<field name="appliFaxNo" type="String" />
+		<field name="appliWebsite" type="String" />
+		<field name="laboratoryName" type="String" />
+		<field name="laboratoryAddress" type="String" />
+		<field name="nameOfIncharge" type="String" />
+		<field name="emailOfIncharge" type="String" />
+		<field name="personnelQMName" type="String" />
+		<field name="personnelQMEmail" type="String" />
+		<field name="deputyInchargeName" type="String" />
+		<field name="deputyInchargeEmail" type="String" />
+		<field name="personnelFMName" type="String" />
+		<field name="personnelFMEmail" type="String" />
+		<field name="accRequestType" type="String" />
+		<field name="authorizedPersonnelName" type="String" />
+		<field name="authorizedPosition" type="String" />
+		<field name="authorizedPersonnelDate" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabManagementReq">
+		<field name="uuid" type="String" />
+		<field name="accMediLabManagementReqId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="managementEstablished" type="String" />
+		<field name="qMRefManagement" type="String" />
+		<field name="personAware" type="String" />
+		<field name="qMRefPerson" type="String" />
+		<field name="policiesAcknowledged" type="String" />
+		<field name="qMRefPolicies" type="String" />
+		<field name="controlledDocument" type="String" />
+		<field name="qMRefControlDoc" type="String" />
+		<field name="laboratoryEstablished" type="String" />
+		<field name="qMReflabEstab" type="String" />
+		<field name="identifiedRisks" type="String" />
+		<field name="qMRefRisks" type="String" />
+		<field name="havePersonnel" type="String" />
+		<field name="qMRefPersonnel" type="String" />
+		<field name="authorizePersonnel" type="String" />
+		<field name="qMRefAuthorize" type="String" />
+		<field name="labControlDocsFulfilment" type="String" />
+		<field name="otherRefFulfil" type="String" />
+		<field name="legibleRecordsFulfil" type="String" />
+		<field name="otherRefLegibleRec" type="String" />
+		<field name="proceduresInPlace" type="String" />
+		<field name="otherRefProcedure" type="String" />
+		<field name="communicatedRequirement" type="String" />
+		<field name="otherRefRequirement" type="String" />
+		<field name="procedureForSelection" type="String" />
+		<field name="otherRefSelection" type="String" />
+		<field name="arrangementInPlace" type="String" />
+		<field name="otherRefArrange" type="String" />
+		<field name="processInPlace" type="String" />
+		<field name="otherRefProcess" type="String" />
+		<field name="labOperateProgramme" type="String" />
+		<field name="otherRefLabOperate" type="String" />
+		<field name="identifyOpportunities" type="String" />
+		<field name="otherRefOpportunity" type="String" />
+		<field name="demonstrateFulfilment" type="String" />
+		<field name="otherRefDemonstrate" type="String" />
+		<field name="ensureLabPlan" type="String" />
+		<field name="otherRefEnsurePlan" type="String" />
+		<field name="plannedManageReview" type="String" />
+		<field name="otherRefPlanned" type="String" />
+		<field name="availablePersonnel" type="String" />
+		<field name="manualRefAvailable" type="String" />
+		<field name="educationProgramme" type="String" />
+		<field name="manualRefEducation" type="String" />
+		<field name="ensureAccomodation" type="String" />
+		<field name="manualRefAccom" type="String" />
+		<field name="processForSelection" type="String" />
+		<field name="manualRefSelection" type="String" />
+		<field name="verifyReagents" type="String" />
+		<field name="manualRefReagents" type="String" />
+		<field name="docProcedure" type="String" />
+		<field name="manualRefDocProce" type="String" />
+		<field name="useExamMethods" type="String" />
+		<field name="manualRefExam" type="String" />
+		<field name="monitoringValidity" type="String" />
+		<field name="manualRefValidity" type="String" />
+		<field name="validateExam" type="String" />
+		<field name="manualRefValidateExam" type="String" />
+		<field name="uncertainityReview" type="String" />
+		<field name="manualRefUncertainity" type="String" />
+		<field name="preventResRelease" type="String" />
+		<field name="manualRefPrevent" type="String" />
+		<field name="equipmentMaintenance" type="String" />
+		<field name="manualRefMaintenance" type="String" />
+		<field name="equipCalibration" type="String" />
+		<field name="manualRefCalibrat" type="String" />
+		<field name="proficencyTesting" type="String" />
+		<field name="manualRefProfiTest" type="String" />
+		<field name="postExamReliabilty" type="String" />
+		<field name="manualRefPostExam" type="String" />
+		<field name="reportedAccurately" type="String" />
+		<field name="manualRefReported" type="String" />
+		<field name="responsiblitySpecified" type="String" />
+		<field name="manualRefSpecified" type="String" />
+		<field name="ensureAuthorities" type="String" />
+		<field name="manualRefAuthorities" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabOrganization">
+		<field name="uuid" type="String" />
+		<field name="accMediLabOrganizationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="laboratoryLegalEntity" type="String" />
+		<field name="legalStatus" type="String" />
+		<field name="laboratoryPartOfOrg" type="String" />
+		<field name="laboratoryPartOfOrgName" type="String" />
+		<field name="laboratoryPartOfOrgPos" type="String" />
+		<field name="nameOfAnalysts" type="String" />
+		<field name="majorIncomeSource" type="String" />
+		<field name="laboratoryClients" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabOtherReq">
+		<field name="uuid" type="String" />
+		<field name="accMediLabOtherReqId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="representativeName" type="String" />
+		<field name="representativePos" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabPhysicalResource">
+		<field name="uuid" type="String" />
+		<field name="accMediLabPhysicalResourceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="laboratoryfacilities" type="String" />
+		<field name="safetyFeatures" type="String" />
+		<field name="specialEnvironment" type="String" />
+		<field name="monitoringActivities" type="String" />
+		<field name="securityArrangements" type="String" />
+		<field name="laboratoryDocumented" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabTestDescription">
+		<field name="uuid" type="String" />
+		<field name="accMediLabTestDescriptionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="testClinicalActivity" type="String" />
+		<field name="testLabShiftWork" type="String" />
+		<field name="testLabSpecimenNo" type="String" />
+		<field name="testSpecimenLocation" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabTestManageReq">
+		<field name="uuid" type="String" />
+		<field name="accMediLabTestManageReqId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="policiesForFulfil" type="String" />
+		<field name="labDocRefPolicies" type="String" />
+		<field name="impartialityProvision" type="String" />
+		<field name="labDocRefImpartProv" type="String" />
+		<field name="confidientialityProv" type="String" />
+		<field name="labDocRefConfid" type="String" />
+		<field name="commitmentEvidence" type="String" />
+		<field name="labDocRefCommitment" type="String" />
+		<field name="referenceEvidence" type="String" />
+		<field name="labDocRefReference" type="String" />
+		<field name="docDescribingRole" type="String" />
+		<field name="labDocRefDocDes" type="String" />
+		<field name="rolesofPersonnel" type="String" />
+		<field name="labDocRefRoles" type="String" />
+		<field name="competenceReq" type="String" />
+		<field name="labDocRefCompetence" type="String" />
+		<field name="selectionOfPerson" type="String" />
+		<field name="labDocRefSelection" type="String" />
+		<field name="handlingEquip" type="String" />
+		<field name="labDocRefHandling" type="String" />
+		<field name="calibrationProgram" type="String" />
+		<field name="labDocRefCalibrat" type="String" />
+		<field name="approvingReq" type="String" />
+		<field name="labDocRefApproving" type="String" />
+		<field name="monitorPerformance" type="String" />
+		<field name="labDocRefMonitor" type="String" />
+		<field name="ensuringService" type="String" />
+		<field name="labDocRefEnsuring" type="String" />
+		<field name="reviewOfRequest" type="String" />
+		<field name="labDocRefRequest" type="String" />
+		<field name="procedureForLab" type="String" />
+		<field name="labDocRefProcedure" type="String" />
+		<field name="testMethodValidat" type="String" />
+		<field name="labDocRefTestMethod" type="String" />
+		<field name="samplingPlan" type="String" />
+		<field name="labDocRefSampling" type="String" />
+		<field name="transportationReciept" type="String" />
+		<field name="labDocRefTransport" type="String" />
+		<field name="uncertainityMeasure" type="String" />
+		<field name="labDocRefUncertain" type="String" />
+		<field name="testResultValidity" type="String" />
+		<field name="labDocReftestResult" type="String" />
+		<field name="complaints" type="String" />
+		<field name="labDocRefComplaints" type="String" />
+		<field name="nonConformingWork" type="String" />
+		<field name="labDocRefNonConfirm" type="String" />
+		<field name="uniqueIdentification" type="String" />
+		<field name="labDocRefUnique" type="String" />
+		<field name="currentRevisionStatus" type="String" />
+		<field name="labDocRefCurrentRev" type="String" />
+		<field name="docChangeIdentify" type="String" />
+		<field name="labDocRefDocChange" type="String" />
+		<field name="recordControl" type="String" />
+		<field name="labDocRefRecordControl" type="String" />
+		<field name="plannedAction" type="String" />
+		<field name="labDocRefPlanned" type="String" />
+		<field name="imporvementOpportunity" type="String" />
+		<field name="labDocRefImprovement" type="String" />
+		<field name="correctiveAction" type="String" />
+		<field name="labDocRefCorrective" type="String" />
+		<field name="internalAudits" type="String" />
+		<field name="labDocRefInternal" type="String" />
+		<field name="managementReview" type="String" />
+		<field name="labDocRefManagement" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabTestResourceReq">
+		<field name="uuid" type="String" />
+		<field name="accMediLabTestResourceReqId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="testExternal" type="String" />
+		<field name="testCompetence" type="String" />
+		<field name="testLabFacilities" type="String" />
+		<field name="testLabContracted" type="String" />
+		<field name="testLabFacilityEnv" type="String" />
+		<field name="testSpecialEnv" type="String" />
+		<field name="testMonitoringAct" type="String" />
+		<field name="testLabRelatedEquip" type="String" />
+		<field name="testSecurityArrange" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccMediLabTestStructural">
+		<field name="uuid" type="String" />
+		<field name="accMediLabTestStructuralId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="testLabLegalEntity" type="String" />
+		<field name="testlegalStatus" type="String" />
+		<field name="testlabPartOfOrg" type="String" />
+		<field name="testlabPartOfOrgName" type="String" />
+		<field name="testLabPartOfOrgPos" type="String" />
+		<field name="testMangerialStaff" type="String" />
+		<field name="testTechnicalStaff" type="String" />
+		<field name="testingRelevantDoc" type="String" />
+		<field name="testMajorIncome" type="String" />
+		<field name="testLabClients" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccThirdPartyAppliInfo">
+		<field name="uuid" type="String" />
+		<field name="accThirdPartyAppliInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="applicantAddress" type="String" />
+		<field name="applicantTelephone" type="String" />
+		<field name="applicantFaxNo" type="String" />
+		<field name="applicantWebsite" type="String" />
+		<field name="certificationName" type="String" />
+		<field name="certiAddress" type="String" />
+		<field name="personnelName" type="String" />
+		<field name="personnelEmail" type="String" />
+		<field name="personnelContactName" type="String" />
+		<field name="personnelContactEmail" type="String" />
+		<field name="personnelFMName" type="String" />
+		<field name="personnelFMEmail" type="String" />
+		<field name="accreditationRequest" type="String" />
+		<field name="accFdaScheme" type="String" />
+		<field name="specifyOther" type="String" />
+		<field name="supplementaryCertificate" type="String" />
+		<field name="supplementaryOther" type="String" />
+		<field name="listOfStandard" type="String" />
+		<field name="authorizedPersonnelName" type="String" />
+		<field name="authorizedPersonnelPos" type="String" />
+		<field name="authorizedPersonnelDate" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AccThirdPartyScope">
+		<field name="uuid" type="String" />
+		<field name="accThirdPartyScopeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accreditationCategory" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="foodProduct1" type="String" />
+		<field name="foodRegulation1" type="String" />
+		<field name="foodProduct2" type="String" />
+		<field name="foodRegulation2" type="String" />
+		<field name="foodProduct3" type="String" />
+		<field name="foodRegulation3" type="String" />
+		<field name="foodProduct4" type="String" />
+		<field name="foodRegulation4" type="String" />
+		<field name="foodProduct5" type="String" />
+		<field name="foodRegulation5" type="String" />
+		<field name="foodProduct6" type="String" />
+		<field name="foodRegulation6" type="String" />
+		<field name="foodProduct7" type="String" />
+		<field name="foodRegulation7" type="String" />
+		<field name="foodProduct8" type="String" />
+		<field name="foodRegulation8" type="String" />
+		<field name="foodProduct9" type="String" />
+		<field name="foodRegulation9" type="String" />
+		<field name="foodProduct10" type="String" />
+		<field name="foodRegulation10" type="String" />
+		<field name="accCategoryOther" type="String" />
+		<field name="foodProduct11" type="String" />
+		<field name="foodRegulation11" type="String" />
+		<field name="accCategoryOther12" type="String" />
+		<field name="foodProduct12" type="String" />
+		<field name="foodRegulation12" type="String" />
+		<field name="cerIntrestedParties" type="String" />
+		<field name="otherServices" type="String" />
+		<field name="otherServicesDescribe" type="String" />
+		<field name="establishedRelation" type="String" />
+		<field name="establishedRelDesc" type="String" />
+		<field name="clientService" type="String" />
+		<field name="certificationCerBody" type="String" />
+		<field name="orgAccredited" type="String" />
+		<field name="responsibleBody" type="String" />
+		<field name="accExpDate" type="Date" />
+		<field name="certBodyScope" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddCerApplicationInfo">
+		<field name="addCerApplicationInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddCerPersonnelFirst">
+		<field name="addCerPersonnelFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfStaff" type="String" />
+		<field name="jobTitle" type="String" />
+		<field name="majorResponsibility" type="String" />
+		<field name="specificFunctions" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddCerPersonnelSecond">
+		<field name="addCerPersonnelSecondId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="role" type="String" />
+		<field name="certificateStandard" type="String" />
+		<field name="areaOfExpertise" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddCerPersonnelThird">
+		<field name="addCerPersonnelThirdId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="location" type="String" />
+		<field name="certificationActivities" type="String" />
+		<field name="contactDetails" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddCerScopeService">
+		<field name="addCerScopeServiceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="clientOrganization" type="String" />
+		<field name="certificationStandards" type="String" />
+		<field name="currentCertification" type="String" />
+		<field name="dateFirstGranted" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddCerScopeServiceThird">
+		<field name="addCerScopeServiceThirdId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="organizationName" type="String" />
+		<field name="organizationAddress" type="String" />
+		<field name="certificationScheme" type="String" />
+		<field name="currentStatus" type="String" />
+		<field name="dateFirstGranted" type="Date" />
+		<field name="DateOfNextExamination" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddFdaAppliInfo">
+		<field name="addFdaAppliInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddFdaPersonnelFirst">
+		<field name="addFdaPersonnelFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfStaff" type="String" />
+		<field name="jobTitle" type="String" />
+		<field name="majorResponsibilites" type="String" />
+		<field name="specificFunctions" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddFdaPersonnelFour">
+		<field name="addFdaPersonnelFourId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="locationAddress" type="String" />
+		<field name="certificationActivities" type="String" />
+		<field name="contactDetails" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddFdaPersonnelSecond">
+		<field name="addFdaPersonnelSecondId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="role" type="String" />
+		<field name="fdaRegulation" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddFdaPersonnelThird">
+		<field name="addFdaPersonnelThirdId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="outsourcedActivity" type="String" />
+		<field name="supplierServiceProvider" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddFdaScopeClient">
+		<field name="addFdaScopeClientId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="clientOrganization" type="String" />
+		<field name="foodProducts" type="String" />
+		<field name="fdaRegulations" type="String" />
+		<field name="dateGranted" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddInsApplicationInfo">
+		<field name="addInsApplicationInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddInsOrgInfoFirst">
+		<field name="addInsOrgInfoFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="position" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddInsOrgInfoSecond">
+		<field name="addInsOrgInfoSecondId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfStaff" type="String" />
+		<field name="jobTitle" type="String" />
+		<field name="majorResponsibilities" type="String" />
+		<field name="indexInspector" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddInsOrgInfoThird">
+		<field name="AddInsOrgInfoThirdId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="inspectionActivity" type="String" />
+		<field name="fieldOfInspection" type="String" />
+		<field name="typeOfInspection" type="String" />
+		<field name="method" type="String" />
+		<field name="eqipment" type="String" />
+		<field name="limitsOfCapabilities" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabAppliInfo">
+		<field name="addLabAppliInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabCalibraStrucReqSec">
+		<field name="addLabCalibraStrucReqSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="measuredQuantity" type="String" />
+		<field name="calibrationItem" type="String" />
+		<field name="range" type="String" />
+		<field name="measurementProcedure" type="String" />
+		<field name="calibration" type="String" />
+		<field name="remarks" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabDescOfActivity">
+		<field name="addLabDescOfActivityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="location" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabMedicalDescOfActiSec">
+		<field name="addLabMedicalDescOfActiSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="requestedPoct" type="String" />
+		<field name="location" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabMedicalOrganFirst">
+		<field name="addLabMedicalOrganFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfStaff" type="String" />
+		<field name="jobTitle" type="String" />
+		<field name="majorResponsibilities" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabMedicalOrganSec">
+		<field name="addLabMedicalOrganSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="product" type="String" />
+		<field name="examination" type="String" />
+		<field name="methods" type="String" />
+		<field name="equipment" type="String" />
+		<field name="referenceRange" type="String" />
+		<field name="measurementUncertainty" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabMedicalPhysicalFirst">
+		<field name="addLabMedicalPhysicalFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="inventoryNum" type="String" />
+		<field name="item" type="String" />
+		<field name="manufacturer" type="String" />
+		<field name="modelNum" type="String" />
+		<field name="calibrationInterval" type="String" />
+		<field name="calibratedBy" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabMedicalPhysicalSec">
+		<field name="addLabMedicalPhysicalSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="location" type="String" />
+		<field name="activitiesPerformed" type="String" />
+		<field name="contactDetails" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLaboratoryPartOfOrg">
+		<field name="addLaboratoryPartOfOrgId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="laboratoryPartOfOrgName" type="String" />
+		<field name="laboratoryPartOfOrgPosition" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabResourceReqFirst">
+		<field name="addLabResourceReqFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="num" type="String" />
+		<field name="location" type="String" />
+		<field name="activities" type="String" />
+		<field name="contactDetails" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabResourceReqSec">
+		<field name="addLabResourceReqSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="inventoryNumber" type="String" />
+		<field name="item" type="String" />
+		<field name="manufacturer" type="String" />
+		<field name="modelNumber" type="String" />
+		<field name="calibrationInterval" type="String" />
+		<field name="calibratedBy" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabStructuralRequirement">
+		<field name="addLabStructuralRequirementId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfStaff" type="String" />
+		<field name="jobTitle" type="String" />
+		<field name="majorResponsibilities" type="String" />
+		<field name="indicateAnalysts " type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddLabTestStructuralReqSec">
+		<field name="addLabTestStructuralReqSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="productMaterial" type="String" />
+		<field name="tests" type="String" />
+		<field name="method" type="String" />
+		<field name="equipment" type="String" />
+		<field name="listOfCapability" type="String" />
+		<field name="estimateOfMeasurement" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddOutsourcedActivities">
+		<field name="addOutsourcedActivitiesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="outSourcedActivity" type="String" />
+		<field name="serviceProvider" type="String" />
+		<field name="locationAddress" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddPhyResourceFirst">
+		<field name="addPhyResourceFirstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="inventoryNumber" type="String" />
+		<field name="item" type="String" />
+		<field name="manufacturer" type="String" />
+		<field name="modelNumber" type="String" />
+		<field name="calibrationInterval" type="String" />
+		<field name="calibratedBy" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.AddPhyResourceSec">
+		<field name="addPhyResourceSecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="number" type="String" />
+		<field name="location" type="String" />
+		<field name="activitiesPerformed" type="String" />
+		<field name="contactDetails" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="counter" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.JanaacApplication">
+		<field name="uuid" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accreditationType" type="String" />
+		<field name="accServiceType" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="transactionType" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.JanaacApplicationPayment">
+		<field name="janaacApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.janaac.application.form.service.model.JanaacAppliCurrentStage">
+		<field name="janaacAppliCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="janaacApplicationId" type="long" />
+	</model>
+</model-hints>

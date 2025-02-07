@@ -1,0 +1,1925 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.sez.status.application.form.service">
+	<namespace>SEZ_STATUS</namespace>
+	<entity local-service="true" name="SezStatusApplication" table="nbp_sez_status_application">
+	
+		<!-- PK fields -->
+		<column name="sezStatusApplicationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+		<column name="sezStatus" type="String"></column>
+		<column name="typeOfTransaction" type="String"></column>
+		<column name="zoningClassification" type="String"></column>
+		<column name="specialEconomicZone" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="industries" type="String"></column>
+		 <column name="status" type="int"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="caseId" type="String"></column>
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="icmDocumentsPath" type="String" />
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+        <column name="doYouWantTo" type="String"></column>
+        <column name="typeOfTransactionWFH" type="String"></column>
+        <column name="controlNumberWFH" type="String"></column>
+        <column name="applicantStatusWFH" type="String"></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		 <finder name="getSezByS_U" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+         <finder name="getSezStatusByCaseId" return-type="SezStatusApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+		<finder name="getSezByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        	<finder name="getSezStatusByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getSezStatusByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getSezStatusByEI_CI" return-type="SezStatusApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getSezStatusByAppNo" return-type="SezStatusApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getSezStatusByAT_AppNo"
+			return-type="SezStatusApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+		<finder name="getSez_By_App_Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="doYouWantTo"></finder-column>
+		</finder>
+	</entity>
+	<entity name="SezDevGeneralBusinessIfo" local-service="true" table="nbp_sez_dev_gen_business_info">
+
+		<!-- PK fields -->
+
+		<column name="sezDevGeneralBusinessIfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="applicationDate" type="Date"></column>
+		<column name="applicantName" type="String"></column>
+		<column name="companyName" type="String"></column>
+		<column name="buildingNum" type="String"></column>
+		<column name="townCity" type="String"></column>
+		<column name="Parish" type="String"></column>
+		<column name="country" type="String"></column>
+		<column name="telephoneNum" type="String"></column>
+		<column name="faxNum" type="String"></column>
+		<column name="emailAddress" type="String"></column>
+		<column name="website" type="String"></column>
+		<column name="headOfficeBuildingNum" type="String"></column>
+		<column name="headOfficeTown" type="String"></column>
+		<column name="headOfficeParish" type="String"></column>
+		<column name="authRepName" type="String"></column>
+		<column name="authRepBuildingNum" type="String"></column>
+		<column name="authRepTown" type="String"></column>
+		<column name="authRepParish" type="String"></column>
+		<column name="authRepCountry" type="String"></column>
+		<column name="authReptelephoneNum" type="String"></column>
+		<column name="authRepFaxNum" type="String"></column>
+		<column name="autheEmailAddress" type="String"></column>
+		<column name="joinVenture" type="String"></column>
+		<column name="existingJamicanCom" type="String"></column>
+		<column name="articleOfIncorporation" type="String"></column>
+		<column name="pleaseSpecify" type="String"></column>
+		<column name="companyClassified" type="String"></column>
+		<column name="taxRegisNum" type="String"></column>
+		<column name="genConsumptionNum" type="String"></column>
+		<column name="taxComplianceCertificateNum" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevGeneralBusinessIfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezDevGenBusinessInfoAdd" local-service="true"
+		table="nbp_sez_dev_gen_busi_info_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevGenBusinessInfoAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="companyName" type="String"></column>
+		<column name="buildingNum" type="String"></column>
+		<column name="townCity" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="country" type="String"></column>
+		<column name="telephoneNum" type="String"></column>
+		<column name="faxNum" type="String"></column>
+		<column name="emailAddress" type="String"></column>
+		<column name="counter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="SezDevShareholdingInfo" local-service="true"
+		table="nbp_sez_dev_shareholding_info">
+
+		<!-- PK fields -->
+
+		<column name="sezDevShareholdingInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="authorised" type="String"></column>
+		<column name="subscribed" type="String"></column>
+		<column name="paidUpShareCapital" type="String"></column>
+		<column name="directorBankrupts" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevShareholdingInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="SezDevSharePrincipalAdd" local-service="true"
+		table="nbp_sez_dev_share_pricipal_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevSharePrincipalAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="name" type="String"></column>
+		<column name="buildingNum" type="String"></column>
+		<column name="parishPost" type="String"></column>
+		<column name="country" type="String"></column>
+		<column name="nationality" type="String"></column>
+		<column name="taxRegistrationNum" type="String"></column>
+		<column name="counter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevShareDirectorAdd"
+		table="nbp_sez_dev_share_director_add" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezDevShareDirectorAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="shareholderName" type="String"></column>
+		<column name="numOfShare" type="String"></column>	
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevShareComDirectorShipAdd" local-service="true"
+		table="nbp_sez_dev_share_com_dire_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevSharComDirectorShipAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="name" type="String"></column>
+		<column name="company" type="String"></column>
+		<column name="replationship" type="String"></column>
+		<column name="counter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevShareCorporationBusAdd" local-service="true"
+		table="nbp_sez_dev_corp_bus_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevCorporationBusinessAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="name" type="String"></column>
+		<column name="company" type="String"></column>
+		<column name="relationship" type="String"></column>
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="SezDevSharePleaseStateAdd"
+		table="nbp_sez_dev_please_state_add" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezDevPleaseStateAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="name" type="String"></column>
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevProposedProject" local-service="true"
+		table="nbp_sez_dev_proposed_project">
+
+		<!-- PK fields -->
+
+		<column name="sezDevProposedProjectId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="previouslyFreeZone" type="String"></column>
+		<column name="curentlyOperatingZone" type="String"></column>
+		<column name="businessConductedZone" type="String"></column>
+		<column name="locally" type="String"></column>
+		<column name="overseas" type="String"></column>
+		<column name="proposedName" type="String"></column>
+		<column name="specialEconomicZone" type="String"></column>
+		<column name="pleaseDescribe" type="String"></column>
+		<column name="seaPortKm" type="String"></column>
+		<column name="seaPortMi" type="String"></column>
+		<column name="airportKm" type="String"></column>
+		<column name="airportMi" type="String"></column>
+		<column name="roadKm" type="String"></column>
+		<column name="roadMi" type="String"></column>
+	    <column name="railKm" type="String"></column>
+		<column name="railMi" type="String"></column>
+		<column name="customProcessingKm" type="String"></column>
+		<column name="customProcessingMi" type="String"></column>
+		<column name="indicateTheLandMeasurement" type="String"></column>
+		<column name="building" type="String"></column>
+		<column name="landArea" type="String"></column>
+		<column name="ownerShip" type="String"></column>
+		<column name="otherPleaseSpecify" type="String"></column>
+		<column name="landOwnerName" type="String"></column>
+		<column name="lnadOwnerAddressOne" type="String"></column>
+		<column name="lnadOwnerAddressTwo" type="String"></column>
+		<column name="lnadOwnerTenure" type="String"></column>
+		<column name="stepToAcquireLand" type="String"></column>
+		<column name="stateWheatherTheProposedArea" type="String"></column>
+		<column name="applicantPreviously" type="String"></column>
+		<column name="pleaseProvideBrief" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevProposedProject">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="SezDevProposedProjectAdd" local-service="true"
+		table="nbp_sez_dev_prop_project_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevProposedProjectAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="nameOfZone" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevPropDevelopmentPlan" local-service="true"
+		table="nbp_sez_dev_Pro_develop_plan">
+
+		<!-- PK fields -->
+
+		<column name="sezDevPropDevelopmentPlanId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="existingBuilding" type="String"></column>
+		<column name="existingBuildingForBusiDetail" type="String"></column>
+		<column name="activitiesForSingleEntity" type="String"></column>
+		<column name="volume" type="String"></column>
+		<column name="folio" type="String"></column>
+		<column name="buildingNum" type="String"></column>
+		<column name="townCity" type="String"></column>
+		<column name="zipCode" type="String"></column>
+		<column name="zoningClassification" type="String"></column>
+		<column name="landUse" type="String"></column>
+		<column name="sezAreaHectares" type="String"></column>
+		<column name="sezAreaAcres" type="String"></column>
+		<column name="customsHectares" type="String"></column>
+		<column name="customsAcres" type="String"></column>
+		<column name="topography" type="String"></column>
+		<column name="northBoundaries" type="String"></column>
+		<column name="eastBoundaries" type="String"></column>
+		<column name="westBoundaries" type="String"></column>
+		<column name="southBoundaries" type="String"></column>
+		<column name="customLandMeasurement" type="String"></column>
+		<column name="customPercent" type="String"></column>
+		<column name="commonLandMeasurement" type="String"></column>
+		<column name="commonPercent" type="String"></column>
+		<column name="bufferLandMeasurement" type="String"></column>
+		<column name="bufferPercent" type="String"></column>
+		<column name="zoneLandMeasurement" type="String"></column>
+		<column name="zonePercent" type="String"></column>
+		<column name="ResidentialLandMeasurement" type="String"></column>
+		<column name="ResidentialPercent" type="String"></column>
+		<column name="totalLandMeasurement" type="String"></column>
+		<column name="totalPercent" type="String"></column>
+		<column name="industrialProcess" type="String"></column>
+		<column name="drinkingPurpose" type="String"></column>
+		<column name="otherSpecify" type="String"></column>
+		<column name="totalRequirement" type="String"></column>
+		<column name="quantumAndNature" type="String"></column>
+		<column name="specifyWhetherOwn" type="String"></column>
+		<column name="reqOfPower" type="String"></column>
+		<column name="mainRoadRowWidth" type="String"></column>
+		<column name="mainRoadTypeOfPavement" type="String"></column>
+		<column name="secondRowWidhth" type="String"></column>
+		<column name="secondTypeOfPavement" type="String"></column>
+		<column name="tertiaryRowWidhth" type="String"></column>
+		<column name="tertiaryTypeOfPavement" type="String"></column>
+		<column name="waterInstallationReq" type="String"></column>
+		<column name="powerInstallationReq" type="String"></column>
+		<column name="teleComInstallationReq" type="String"></column>
+		<column name="cctvInstallationReq" type="String"></column>
+		<column name="securityInterconnection" type="String"></column>
+		<column name="fireFightingInstallationReq" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevPropDevelopmentPlan">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezDevEmployeeSafetyInfoAdd" local-service="true"
+		table="nbp_sez_dev_emp_safety_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevEmployeeSafetyInfoAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="securityMeasures" type="String"></column>
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevEmployeeDefineOccuAdd" local-service="true" table="nbp_sez_dev_emp_define_occ_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevEmployeeDefineOccuAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="occuSafetySystem" type="String"></column>
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevEmplomentInfo" local-service="true"
+		table="nbp_sez_dev_emploment_info">
+
+		<!-- PK fields -->
+
+		<column name="sezDevEmplomentInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="firstYearDirect" type="String"></column>
+		<column name="firstYearInDirect" type="String"></column>
+		<column name="firstYearMale" type="String"></column>
+		<column name="firstYearFemale" type="String"></column>
+		<column name="firstYearLocal" type="String"></column>
+		<column name="firstYearForeign" type="String"></column>
+		<column name="secondYearDirect" type="String"></column>
+		<column name="secondYearIndirect" type="String"></column>
+		<column name="secondYearMale" type="String"></column>
+		<column name="secondYearFemale" type="String"></column>
+		<column name="secondYearLocal" type="String"></column>
+		<column name="secondYearForeign" type="String"></column>
+		<column name="thirdYearDirect" type="String"></column>
+		<column name="thirdYearIndirect" type="String"></column>
+		<column name="thirdYearMale" type="String"></column>
+		<column name="thirdYearFemale" type="String"></column>
+		<column name="thirdYearLocal" type="String"></column>
+		<column name="thirdYearForeign" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevEmplomentInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezDevDisasterManagement" local-service="true" table="nbp_sez_dev_disaster_manage">
+
+		<!-- PK fields -->
+
+		<column name="sezDevDisasterManagementId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="disasterManagement" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevDisasterManagement">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezDevDisasterManagementAdd" local-service="true"
+		table="nbp_sez_dev_disast_manag_add">
+
+		<!-- PK fields -->
+
+		<column name="sezDevDisasterManagementAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="disasterMitigationPlan" type="String"></column>
+		<column name="counter" type="String"></column>	
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezDevInvestmentAndFinancial" local-service="true"
+		table="nbp_sez_dev_Inves_and_financ">
+
+		<!-- PK fields -->
+
+		<column name="sezDevInvestmentAndFinancialId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="valueOfLand" type="String"></column>
+		<column name="buildingFactoryDevelop" type="String"></column>
+		<column name="onSiteInfrastructure" type="String"></column>
+		<column name="port" type="String"></column>
+		<column name="airPort" type="String"></column>
+		<column name="other" type="String"></column>
+		<column name="total" type="String"></column>
+		<column name="totalLocalDirector" type="String"></column>
+		<column name="totalForeignDirector" type="String"></column>
+		<column name="companyName" type="String"></column>
+		<column name="resisdentAddress" type="String"></column>
+		<column name="sourceOfFunds" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezDevInvestmentAndFinancial">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="sezDeveloperUndertaking" local-service="true"
+		table="nbp_sez_dev_undertaking">
+
+		<!-- PK fields -->
+
+		<column name="sezDeveloperUndertakingId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="titleOfApplicant" type="String"></column>
+		<column name="nameOfApplicant" type="String"></column>
+		<column name="telephoneNum" type="String"></column>
+		<column name="emailAddress" type="String"></column>
+		<column name="applicantSignatureDate" type="Date"></column>
+		<column name="nameOfNotaryPublic" type="String"></column>
+		<column name="publicNotarySignatureDate" type="Date"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="sezDeveloperUndertaking">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="sezSubmissionChecklist" local-service="true"
+		table="nbp_sez_dev_sub_checklist">
+
+		<!-- PK fields -->
+
+		<column name="sezSubmissionChecklistId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="selectedGeneral" type="String"></column>
+		<column name="selectedComInfoReq" type="String"></column>
+		<column name="paidShareCapProof" type="String"></column>
+		<column name="selectedSwornStateReq" type="String"></column>
+		<column name="selectedLandOccuReq" type="String"></column>
+		<column name="selectedSafetyHealthReq" type="String"></column>
+		<column name="selectedLandDevlopmentReq" type="String"></column>
+		<column name="selectedTechInfoReq" type="String"></column>
+		<column name="selectedSezPreliminaryReq" type="String"></column>
+		<column name="selectedSezDevDetailReq" type="String"></column>
+		<column name="selectedApprovalReq" type="String"></column>
+		<column name="nameReq" type="String"></column>
+		<column name="dateReq" type="Date"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="sezSubmissionChecklist">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity local-service="true" table="nbp_sez_zone_gen_business_info"
+		name="SezZoneGeneralBusinessInfo">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneGeneralBusinessInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="applicationDate" type="Date"></column>
+		<column name="developerName" type="String"></column>
+		<column name="LocationName" type="String"></column>
+		<column name="controlNum" type="String"></column>
+		<column name="existingCompany" type="String"></column>
+		<column name="articleForm" type="String"></column>
+		<column name="otherArticleForm" type="String"></column>
+		<column name="nonResidentCom" type="String"></column>
+		<column name="taxRegisNum" type="String"></column>
+		<column name="genConsumptionNum" type="String"></column>
+		<column name="taxComplianceCertificateNum" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>	
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="sezZoneGeneralBusinessInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>	
+	</entity>
+	<entity name="SezZoneGeneralBussinessAddress" local-service="true"
+		table="nbp_sez_zone_gen_buss_address">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneGenBussAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+	    <column name="zoneName" type="String"></column>
+	    <column name="zoneStreetAddress" type="String"></column>
+	    <column name="zoneTown" type="String"></column>
+	    <column name="zoneParish" type="String"></column>
+	    <column name="zoneCountry" type="String"></column>
+	    <column name="addresstype" type="String"></column>
+	    <column name="sezZoneGeneralBusinessInfoId" type="long"></column>
+	    <column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="SezZoneGeneralBussinessAddress">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+        <finder name="getSezStatusByAddressType_SAI" return-type="SezZoneGeneralBussinessAddress">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+            <finder-column name="addresstype"></finder-column>
+        </finder>
+        <finder name="getSezStatusByAddressType_GBI" return-type="SezZoneGeneralBussinessAddress">
+            <finder-column name="sezZoneGeneralBusinessInfoId"></finder-column>
+            <finder-column name="addresstype"></finder-column>
+        </finder>
+	</entity>
+	<entity table="nbp_sez_zone_pro_proj_info"
+		local-service="true" name="SezZoneProposedProjectInfo">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneProposedProjectInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityDeniedApproval" type="String"></column>
+		<column name="deniedApprovalDate" type="Date"></column>
+		<column name="deniedApprovalProjectType" type="String"></column>
+		<column name="freeZoneLocation" type="String"></column>
+		<column name="leasedBuildingNum" type="String"></column>
+		<column name="leasedTown" type="String"></column>
+		<column name="leasedParish" type="String"></column>
+		<column name="leaseYears" type="String"></column>
+		<column name="volume" type="String"></column>
+		<column name="folio" type="String"></column>
+		<column name="floorNum" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="sezZoneProposedProjectInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezZoneLocationAdd" table="nbp_sez_zone_location_add"
+		local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneLocationAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="developerLocation" type="String"></column>
+		<column name="developerLocationDescription" type="String"></column>
+		<column name="counter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezZoneFinancialInfo"
+		table="nbp_sez_zone_financial_info" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneFinancialnfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="buildingInfrastructure" type="String"></column>
+		<column name="equipmentInfrastructure" type="String"></column>
+		<column name="machinesInfrastructure" type="String"></column>
+		<column name="totalInfrastructure" type="String"></column>
+		<column name="financeSource" type="String"></column>
+		<column name="otherFinanceSource" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="sezZoneFinancialInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity table="nbp_sez_zone_emp_info" local-service="true"
+		name="SezZoneEmployInfo">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneEmpInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="labourRequirementYear" type="String"></column>
+		<column name="labourRequirementDirect" type="String"></column>
+		<column name="labourRequirementMale" type="String"></column>
+		<column name="labourRequirementFemale" type="String"></column>
+		<column name="labourRequirementLocal" type="String"></column>
+		<column name="labourRequirementForeign" type="String"></column>
+		<column name="counter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="Collection">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity table="nbp_sez_zone_user_under_info"
+		name="SezZoneUserUnderInfo" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneUserUnderInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="declarantTitle" type="String"></column>
+		<column name="declarantName" type="String"></column>
+		<column name="declarantTeleNum" type="String"></column>
+		<column name="declarantEmail" type="String"></column>
+		<column name="applicantSignatureDate" type="Date"></column>
+		<column name="publicNotaryName" type="String"></column>
+		<column name="publicNotarySignatureDate" type="Date"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezZoneUserUnderInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity table="nbp_sez_zone_dev_under_info"
+		name="SezZoneDevUnderInfo" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneDevUnderInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="developerName" type="String"></column>
+		<column name="approvalLetterNum" type="String"></column>
+		<column name="approvalLetterDate" type="Date"></column>
+		<column name="developerAgreeNum" type="String"></column>
+		<column name="developerAgreeDate" type="Date"></column>
+		<column name="developerControlNum" type="String"></column>
+		<column name="declarantTitle" type="String"></column>
+		<column name="declarantName" type="String"></column>
+		<column name="declarantTelephoneNum" type="String"></column>
+		<column name="declarantEmail" type="String"></column>
+		<column name="signatureDate" type="Date"></column>
+		<column name="publicNotaryName" type="String"></column>
+		<column name="publicNotarySignatureDate" type="Date"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezZoneDevUnderInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity table="nbp_sez_zone_sub_check_info"
+		name="SezZoneSubCheckInfo" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezZoneSubCheckInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="generalRequirement" type="String"></column>
+		<column name="companyInformation" type="String"></column>
+		<column name="swornState" type="String"></column>
+		<column name="occupancyRequirement" type="String"></column>
+		<column name="approvals" type="String"></column>
+		<column name="signatureName" type="String"></column>
+		<column name="signatureDate" type="Date"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        
+        <finder name="getSezStatusByAppId" return-type="SezZoneSubCheckInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantGeneralBussinessInfo" local-service="true"
+		table="nbp_sez_occ_gen_bussiness">
+
+		<!-- PK fields -->
+
+		<column name="sezOccGenBussId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+	    <column name="occAppDate" type="Date"></column>
+	    <column name="occSezDevName" type="String"></column>
+	    <column name="occSezDevControlNum" type="String"></column>
+	    <column name="occExistingCom" type="String"></column>
+	    <column name="occFormArticle" type="String"></column>
+	    <column name="occFormArticleOther" type="String"></column>
+	    <column name="occTRN" type="String"></column>
+	    <column name="occGCT" type="String"></column>
+	    <column name="occTCC" type="String"></column>
+	    <column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="SezOccupantGeneralBussinessInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantGeneralBussinessAddress" local-service="true"
+		table="nbp_sez_occ_gen_buss_address">
+
+		<!-- PK fields -->
+
+		<column name="sezOccGenBussAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+	    <column name="occName" type="String"></column>
+	    <column name="occStreetAddress" type="String"></column>
+	    <column name="occTown" type="String"></column>
+	    <column name="occParish" type="String"></column>
+	    <column name="occCountry" type="String"></column>
+	    <column name="addresstype" type="String"></column>
+	    <column name="sezOccGenBussId" type="long"></column>
+	    <column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="SezOccupantGeneralBussinessAddress">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+        <finder name="getSezStatusByAddressType_SAI" return-type="SezOccupantGeneralBussinessAddress">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+            <finder-column name="addresstype"></finder-column>
+        </finder>
+        <finder name="getSezStatusByAddressType_GBI" return-type="SezOccupantGeneralBussinessAddress">
+            <finder-column name="sezOccGenBussId"></finder-column>
+            <finder-column name="addresstype"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantShareHoldingInfo" local-service="true"
+		table="nbp_sez_occ_share_hold_info">
+
+		<!-- PK fields -->
+
+		<column name="sezOccShareHolderId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+		<column name="occAuthorised" type="String"></column>
+	    <column name="occSubscribed" type="String"></column>
+	    <column name="occShareHolderCounter" type="String"></column>
+	    <column name="occPaidCapital" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		 <order by="asc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="Collection">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+        <finder name="getSezStatusBy_App_Id" return-type="SezOccupantShareHoldingInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantDirectorPartnerSponsorInfo" local-service="true"
+		table="nbp_sez_occ_dir_part_spon">
+		<!-- PK fields -->
+		<column name="sezOccDirectSpoId" primary="true"
+			type="long">
+		</column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+	    <column name="occAppDate" type="Date"></column>
+	    <column name="occDirectorName" type="String"></column>
+	    <column name="occDirectorStreetAddress" type="String"></column>
+	    <column name="occDirectorZipCode" type="String"></column>
+	    <column name="occDirectorCountry" type="String"></column>
+	    <column name="counter" type="String"></column>
+    	<!-- Other columns as needed -->
+	    <column name="sezStatusApplicationId" type="long"></column>
+		 <order by="asc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="Collection">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantPrincipleDirector" local-service="true"
+		table="nbp_sez_occ_princ_dir_info">
+		<!-- PK fields -->
+		<column name="sezOccPrincDirectId" primary="true"
+			type="long">
+		</column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+		<column name="occShareholderName" type="String"></column>
+	    <column name="occShareholderNation" type="String"></column>
+	    <column name="occShareholderShares" type="String"></column>
+	    <column name="occShareholderCounter" type="String"></column>
+    	<!-- Other columns as needed -->
+	    <column name="sezStatusApplicationId" type="long"></column>
+		 <order by="asc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="Collection">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantExistingProposedProjectBriefInfo" local-service="true"
+		table="nbp_sez_occ_exist_prop_info">
+		<!-- PK fields -->
+		<column name="sezOccExistPorpId" primary="true"
+			type="long">
+		</column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Additional fields for Java variables -->
+		<column name="occBusinessDesc" type="String"></column>
+	    <column name="occDeniedFreeZoneAppr" type="String"></column>
+	    <column name="occDeniedFreeZoneApprDate" type="Date"></column>
+	    <column name="occDeniedFreeZoneApprType" type="String"></column>
+	    <column name="occFreeZoneLocation" type="String"></column>
+	    <column name="occSezDevLoc" type="String"></column>
+	    <column name="occSezDevLocDesc" type="String"></column>
+	    <column name="occSubConcessionBuilding" type="String"></column>
+	    <column name="occSubConcessionTown" type="String"></column>
+	    <column name="occSubConcessionParish" type="String"></column>
+	    <column name="occCompleteSurveyTechDesc" type="String"></column>
+	    <column name="occNorthBoundaries" type="String"></column>
+	    <column name="occEastBoundaries" type="String"></column>
+	    <column name="occWestBoundaries" type="String"></column>
+	    <column name="occSouthBoundaries" type="String"></column>
+	    <column name="occOwnership" type="String"></column>
+	    <column name="occLeaseYears" type="String"></column>
+	    <column name="occVolume" type="String"></column>
+	    <column name="occFolio" type="String"></column>
+	    <column name="occFloorNum" type="String"></column>
+	    <column name="occUndertakenService" type="String"></column>
+	    <column name="occUndertakenManufacturing" type="String"></column>
+	    <column name="occSeaPortDistanceKM" type="String"></column>
+	    <column name="occSeaPortDistanceMI" type="String"></column>
+	    <column name="occAirportDistanceKM" type="String"></column>
+	    <column name="occAirportDistanceMI" type="String"></column>
+	    <column name="occRoadDistanceKM" type="String"></column>
+	    <column name="occRoadDistanceMI" type="String"></column>
+	    <column name="occRailDistanceKM" type="String"></column>
+	    <column name="occRailDistanceMI" type="String"></column>
+	    <column name="occCustomDistanceKM" type="String"></column>
+	    <column name="occCustomDistanceMI" type="String"></column>
+    	<!-- Other columns as needed -->
+	    <column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="SezOccupantExistingProposedProjectBriefInfo">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="SezOccupantProposedAreaDevelopmentPlanInfo" local-service="true"
+			table="nbp_sez_occ_prop_area_info">
+			<!-- PK fields -->
+			<column name="sezOccPropAreaId" primary="true"
+				type="long">
+			</column>
+			<!-- Group instance -->
+			<column name="groupId" type="long"></column>
+			<!-- Audit fields -->
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<!-- Additional fields for Java variables -->
+			<column name="occProcessingArea" type="String"></column>
+		    <column name="occNonProcessingArea" type="String"></column>
+		    <column name="occOfficeRequirement" type="String"></column>
+		    <column name="occFactoryRequirement" type="String"></column>
+		    <column name="otherBuildUpRequirement" type="String"></column>
+		    <column name="occOtherAreaReqName" type="String"></column>
+		    <column name="occOtherAreaRequirement" type="String"></column>
+	    	<!-- Other columns as needed -->
+		    <column name="sezStatusApplicationId" type="long"></column>
+			 <order by="desc">
+				<order-column name="createDate" />
+			 </order>
+	        <finder name="getSezStatusByAppId" return-type="SezOccupantProposedAreaDevelopmentPlanInfo">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+		</entity>
+	<entity name="SezOccupantInvestAndFinanceInfo" local-service="true"
+			table="nbp_sez_occ_invest_fina_info">
+			<!-- PK fields -->
+			<column name="sezOccInvestFinancId" primary="true"
+				type="long">
+			</column>
+			<!-- Group instance -->
+			<column name="groupId" type="long"></column>
+			<!-- Audit fields -->
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<!-- Additional fields for Java variables -->
+			<column name="occInfraBuilding" type="String"></column>
+		    <column name="occInfraEquipment" type="String"></column>
+		    <column name="occInfraMachines" type="String"></column>
+		    <column name="occInfraTotal" type="String"></column>
+		    <column name="occInfraFinanceSource" type="String"></column>
+	    	<!-- Other columns as needed -->
+		    <column name="sezStatusApplicationId" type="long"></column>
+			 <order by="desc">
+				<order-column name="createDate" />
+			 </order>
+	        <finder name="getSezStatusByAppId" return-type="SezOccupantInvestAndFinanceInfo">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+		</entity>
+	<entity name="SezOccupantEmploymentInfo" local-service="true"
+			table="nbp_sez_occ_employee_info">
+			<!-- PK fields -->
+			<column name="sezOccEmpId" primary="true"
+				type="long">
+			</column>
+			<!-- Group instance -->
+			<column name="groupId" type="long"></column>
+			<!-- Audit fields -->
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<!-- Additional fields for Java variables -->
+			<column name="occLabourYear" type="String"></column>
+		    <column name="occLabourDirect" type="String"></column>
+		    <column name="occLabourMale" type="String"></column>
+		    <column name="occLabourFemale" type="String"></column>
+		    <column name="occLabourLocal" type="String"></column>
+		    <column name="occLabourForeign" type="String"></column>
+		    <column name="occEmpCounter" type="String"></column>
+	    	<!-- Other columns as needed -->
+		    <column name="sezStatusApplicationId" type="long"></column>
+			 <order by="asc">
+				<order-column name="createDate" />
+			 </order>
+	        <finder name="getSezStatusByAppId" return-type="SezOccupantEmploymentInfo">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+	        <finder name="getSezStatusByApplicationId" return-type="Collection">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+		</entity>
+	<entity name="SezOccupantUserUndertakingInfo" local-service="true"
+			table="nbp_sez_occ_user_under_info">
+			<!-- PK fields -->
+			<column name="sezOccUserunderId" primary="true"
+				type="long">
+			</column>
+			<!-- Group instance -->
+			<column name="groupId" type="long"></column>
+			<!-- Audit fields -->
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<!-- Additional fields for Java variables -->
+			<column name="occApplicantTitle" type="String"></column>
+		    <column name="occApplicantName" type="String"></column>
+		    <column name="occApplicantTeleNum" type="String"></column>
+		    <column name="occApplicantEmail" type="String"></column>
+		    <column name="occApplicantSignDate" type="Date"></column>
+		    <column name="occPublicNotaryName" type="String"></column>
+		    <column name="occPublicNotarySignDate" type="Date"></column>
+	    	<!-- Other columns as needed -->
+		    <column name="sezStatusApplicationId" type="long"></column>
+			 <order by="asc">
+				<order-column name="createDate" />
+			 </order>
+	        <finder name="getSezStatusByAppId" return-type="SezOccupantUserUndertakingInfo">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+		</entity>
+	<entity name="SezOccupanteDeveloperUndertakingInfo" local-service="true"
+			table="nbp_sez_occ_dev_under_info">
+			<!-- PK fields -->
+			<column name="sezOccDevUnderId" primary="true"
+				type="long">
+			</column>
+			<!-- Group instance -->
+			<column name="groupId" type="long"></column>
+			<!-- Audit fields -->
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<!-- Additional fields for Java variables -->
+			<column name="occUndertakingDevName" type="String"></column>
+		    <column name="occUndertakingApprLetter" type="String"></column>
+		    <column name="occUndertakingDate" type="Date"></column>
+		    <column name="occUndertakingAgreeNum" type="String"></column>
+		    <column name="occUndertakingAgreeDate" type="Date"></column>
+		    <column name="occUndertakingControlNum" type="String"></column>
+		    <column name="occDevApplicantTitle" type="String"></column>
+		    <column name="occDevApplicantName" type="String"></column>
+		    <column name="occDevApplicantTele" type="String"></column>
+		    <column name="occDevApplicantEmail" type="String"></column>
+		    <column name="occDevApplicantSignDate" type="Date"></column>
+		    <column name="occDevPublicNotaryName" type="String"></column>
+		    <column name="occDevPublicNotarySignDate" type="Date"></column>
+	    	<!-- Other columns as needed -->
+		    <column name="sezStatusApplicationId" type="long"></column>
+			 <order by="desc">
+				<order-column name="createDate" />
+			 </order>
+	        <finder name="getSezStatusByAppId" return-type="SezOccupanteDeveloperUndertakingInfo">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+		</entity>
+	<entity name="SezOccupanteSubmissionChecklistInfo" local-service="true"
+			table="nbp_sez_occ_sub_check_info">
+			<!-- PK fields -->
+			<column name="sezOccCheckSubmitId" primary="true"
+				type="long">
+			</column>
+			<!-- Group instance -->
+			<column name="groupId" type="long"></column>
+			<!-- Audit fields -->
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<!-- Additional fields for Java variables -->
+			<column name="occNameReq" type="String"></column>
+		    <column name="occDateReq" type="String"></column>
+		    <column name="occGeneral" type="String"></column>
+		    <column name="occComInfoRequest" type="String"></column>
+		    <column name="occSwanStateRequest" type="String"></column>
+		    <column name="occSelectedRequest" type="String"></column>
+		    <column name="occSelectedFacilityRequest" type="String"></column>
+		    <column name="occSelectedApprovals" type="String"></column>
+		    <column name="occSelectedSecurityRequest" type="String"></column>
+		    <column name="occSelectedSDetailedBussiness" type="String"></column>
+		    <column name="occPaidShareCapProof" type="String"></column>
+	    	<!-- Other columns as needed -->
+		    <column name="sezStatusApplicationId" type="long"></column>
+			 <order by="desc">
+				<order-column name="createDate" />
+			 </order>
+	        <finder name="getSezStatusByAppId" return-type="SezOccupanteSubmissionChecklistInfo">
+	            <finder-column name="sezStatusApplicationId"></finder-column>
+	        </finder>
+		</entity>
+		<entity name="SezDeveloperDetails" local-service="true"
+		table="nbp_sez_dev_details">
+
+		<!-- PK fields -->
+
+		<column name="sezDeveloperDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="developerName" type="String"></column>
+		<column name="developerNumber" type="String"></column>
+		<column name="developerControl" type="String"></column>
+		<column name="letterOfApprovalDate" type="Date"></column>
+		<column name="sezDeveloperDate" type="Date"></column>
+		<column name="letterOfApprovalEntrtyId" type="long"></column>
+		<column name="sezDeveloperAgreementEntryId" type="long"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="SezDeveloperDetails">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>	
+	<entity name="SezOccupantPrincipleOfficer" local-service="true"
+		table="nbp_sez_occ_prin_offic_add">
+
+		<!-- PK fields -->
+
+		<column name="sezOccPrincOffId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="name" type="String"></column>
+		<column name="position" type="String"></column>
+		<column name="principlOfficerCounter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		 <order by="asc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="Collection">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>	
+	<entity name="SezOccupantLocationAddBox" local-service="true"
+		table="nbp_sez_occ_location_add_box">
+
+		<!-- PK fields -->
+
+		<column name="sezOccLocationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="developerCodeLocation" type="String"></column>
+		<column name="descTypeOfAct" type="String"></column>
+		<column name="locationCounter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		 <order by="desc">
+			<order-column name="createDate" />
+		 </order>
+        <finder name="getSezStatusByAppId" return-type="Collection">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>	
+	<entity table="nbp_sez_status_app_payment"
+		name="SezStatusAppPayment" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="sezStatusAppPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="sezStatusApplicationId"  type="long"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getSezStatusByAppId" return-type="SezStatusAppPayment">
+            <finder-column name="sezStatusApplicationId"></finder-column>
+        </finder>
+	</entity>
+<entity local-service="true" name="SezStatusApplicationCurrentStage" remote-service="true" uuid="true" table="nbp_sez_app_stage">
+
+		<!-- PK fields -->
+
+		<column name="sezStageId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="sezStatusApplicationId"  type="long"></column>
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getSEZ_Stage_SAI" return-type="SezStatusApplicationCurrentStage">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+    <entity name="SezStatusWorkFromHome" local-service="true"
+    	table="nbp_sez_status_work_home">
+
+    	<!-- PK fields -->
+
+    	<column name="sezStatusWorkFromHomeId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+    	<!-- Other fields -->
+
+		<column name="companyName" type="String" />
+		<column name="contactPersonName" type="String" />
+		<column name="contactPersonEmail" type="String" />
+		<column name="controlNumber" type="String" />
+		<column name="workerUtilizingIncentive" type="String" />
+		<column name="workerUtilizingIncentiveMonth" type="String" />
+		<column name="sezStatusApplicationId"  type="long"></column>
+		
+			<!-- Finder methods -->
+		<finder name="getSezStatusByAppId" return-type="sezStatusApplicationId">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+    </entity>
+	<entity name="SezStatusWFMLocationAdd" local-service="true"
+    	table="nbp_sez_status_work_home_loc">
+
+    	<!-- PK fields -->
+
+    	<column name="sezStatusWFHLocId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+
+    	<!-- Other fields -->
+
+		<column name="controlNumber" type="String" />
+		<column name="location" type="String" />
+		<column name="parish" type="String" />
+		<column name="sezStatusApplicationId"  type="long"></column>
+
+			<!-- Finder methods -->
+		<finder name="getSezStatusByAppId" return-type="sezStatusApplicationId">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+		<finder name="getSezStatusListByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+    </entity>
+	<entity name="SezOccLocationAdd" local-service="true" table='nbp_sez_occ_location_add'>
+
+		<!-- PK fields -->
+
+		<column name="sezOccLocationAddId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="developerLocation" type="String"></column>
+        <column name="developerLocationDescription" type="String"></column>
+        <column name="counter" type="String"></column>
+		<column name="sezStatusApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezStatusByAppId" return-type="Collection">
+			<finder-column name="sezStatusApplicationId" />
+		</finder>
+	</entity>
+	<entity name="SezConsultancyInspection" local-service="true"
+		table="nbp_sez_consultancy_service">
+
+		<!-- PK fields -->
+
+		<column name="sezConsultancyInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other field-->
+		<column name="doYouWant" type="String"></column>
+		<column name="consultancyName" type="String"></column>
+		<column name="consultancyEmail" type="String"></column>
+		<column name="consultancyPhoneNum" type="String"></column>
+		<column name="consultancyDateBirth" type="Date"></column>
+		<column name="consultancyBirthCountry" type="String"></column>
+		<column name="consultancyCountry" type="String"></column>
+		<column name="consultancySezStatus" type="String"></column>
+		<column name="agendaName" type="String"></column>
+		<column name="dateForInspection" type="Date"></column>
+		<column name="consultancyTime" type="String"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+         <finder name="getSezConsultancyByCat" return-type="SezConsultancyInspection">
+			<finder-column name="doYouWant" />
+		</finder>
+	</entity>
+</service-builder>

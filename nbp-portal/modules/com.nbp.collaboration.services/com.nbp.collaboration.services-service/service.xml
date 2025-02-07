@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.collaboration.services">
+	<namespace>COLLABORATION</namespace>
+		<entity local-service="true" name="Collobartion" remote-service="true" uuid="true" table="nbp_collaboration">
+
+		<!-- PK fields -->
+
+		<column name="collaborationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="userType" type="String" />
+		<column name="comment" type="String" />
+		<column name="status" type="String" />
+		<column name="uploadedDocId" type="String" />
+		<column name="caseId" type="String" />
+		<column name="applicationId" type="String" />
+		<column name="archived" type="int" />
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="caseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="stageName_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="Stage_CU" return-type="Collection">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="userType" />
+		</finder>
+		<finder name="Stage_CUA" return-type="Collection">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="userType" />
+			<finder-column name="archived" />
+		</finder>
+	</entity>
+</service-builder>

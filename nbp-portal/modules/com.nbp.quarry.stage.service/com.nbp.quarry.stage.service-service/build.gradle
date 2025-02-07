@@ -1,0 +1,13 @@
+dependencies {
+	implementation project(":modules:com.nbp.quarry.stage.service:com.nbp.quarry.stage.service-api")
+	implementation project(":modules:com.nbp.quary.application.form.service:com.nbp.quary.application.form.service-api")
+
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.quarry.stage.service-api/src/main/java"
+}
+
+group = "com.nbp.quarry.stage.service"

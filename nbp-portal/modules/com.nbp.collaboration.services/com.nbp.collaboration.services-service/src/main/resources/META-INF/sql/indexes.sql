@@ -1,0 +1,2 @@
+create index IX_C4E17241 on nbp_collaboration (caseId[$COLUMN_LENGTH:75$], stageName[$COLUMN_LENGTH:75$], userType[$COLUMN_LENGTH:75$], archived);
+create unique index IX_5F49ED3E on nbp_collaboration (uuid_[$COLUMN_LENGTH:75$], groupId);

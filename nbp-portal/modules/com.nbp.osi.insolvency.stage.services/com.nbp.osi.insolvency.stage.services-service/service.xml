@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.osi.insolvency.stage.services">
+	<namespace>OSI_INSOLVENCY_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="OsiInsolvencyApplicationStages" remote-service="true" uuid="true" table="nbp_osi_insolvency_app_stages">
+		
+         <!-- PK fields -->
+		<column name="osiInsolveApplicationStagesId" primary="true"
+			type="long">
+		</column>
+
+
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="osiInsolvencyId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+				<!-- Finder methods -->
+		<finder name="getOIAS_OAI" return-type="OsiInsolvencyApplicationStages">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+		<finder name="getCAS_CaseIdStageName" return-type="OsiInsolvencyApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+			<finder name="getOIAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+			<finder name="getOIAS_StageName_StageStatus" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getOIAS_CaseIdStageStatus" return-type="OsiInsolvencyApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getOIAS_CaseIdAndStatus" return-type="OsiInsolvencyApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getOIAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		
+	</entity>
+	<entity name="OsiInsolveDeskVerification" local-service="true" table="nbp_osi_inso_desk_verification">
+
+		<!-- PK fields -->
+
+		<column name="OsiInsolveDeskVerificationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="documentName" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="osiInsolvencyId"  type="long" />
+        
+      <finder name="getDeskVerificationOsiInsolvencyById" return-type="Collection">
+          <finder-column name="osiInsolvencyId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="OsiInsolvencyPaymentConfirmation" local-service="true" table="nbp_osi_inso_payment_con">
+
+		<!-- PK fields -->
+
+		<column name="osiIRPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountReceived" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="comment" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="docFileEntry" type="long"></column>
+        <finder name="getOSIIRPaymentConfirmationBy_CI" return-type="OsiInsolvencyPaymentConfirmation">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getOSIIRPaymentConfirmations_By_CI" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="OsiInsolDataVerification" local-service="true" table="nbp_osi_inso_data_verification">
+
+				<!-- PK fields -->
+
+				<column name="osiInsolDataVerificationId" primary="true"
+					type="long">
+				</column>
+
+				<!-- Group instance -->
+
+				<column name="groupId" type="long"></column>
+
+				<!-- Audit fields -->
+
+				<column name="companyId" type="long"></column>
+				<column name="userId" type="long"></column>
+				<column name="userName" type="String"></column>
+				<column name="createDate" type="Date"></column>
+				<column name="modifiedDate" type="Date"></column>
+				<column name="caseId" type="String"></column>
+				<column name="status" type="String"></column>
+				
+				<!--finder -->
+		    <finder name="getOSIIRDataVerificationBy_CI" return-type="OsiInsolDataVerification">
+		           <finder-column name="caseId"></finder-column>
+		    </finder>
+			</entity>
+	<entity name="OsiInsoIIssuanceOfReport" local-service="true" table="nbp_osi_insol_issu_of_report">
+
+				<!-- PK fields -->
+
+				<column name="osiInsoIIssuanceOfReportId" primary="true"
+					type="long">
+				</column>
+
+				<!-- Group instance -->
+
+				<column name="groupId" type="long"></column>
+
+				<!-- Audit fields -->
+
+				<column name="companyId" type="long"></column>
+				<column name="userId" type="long"></column>
+				<column name="userName" type="String"></column>
+				<column name="createDate" type="Date"></column>
+				<column name="modifiedDate" type="Date"></column>
+				<column name="caseId" type="String"></column>
+				<column name="dateOfReport" type="Date"></column>
+				<column name="nameOfApplicant" type="String"></column>
+				<column name="typeOfApplicant" type="String"></column>
+				<column name="decision" type="String"></column>
+				<column name="docFileEntry" type="long"></column>
+				
+			<!--finder -->
+		    <finder name="getOSIIRIssuanceOfReportBy_CI" return-type="OsiInsoIIssuanceOfReport">
+		           <finder-column name="caseId"></finder-column>
+		    </finder>
+			</entity>
+</service-builder>

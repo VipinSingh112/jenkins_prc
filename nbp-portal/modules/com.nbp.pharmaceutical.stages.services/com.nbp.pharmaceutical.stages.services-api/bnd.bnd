@@ -1,0 +1,11 @@
+Bundle-Name: com.nbp.pharmaceutical.stages.services-api
+Bundle-SymbolicName: com.nbp.pharmaceutical.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.nbp.pharmaceutical.stages.services.exception,\
+	com.nbp.pharmaceutical.stages.services.model,\
+	com.nbp.pharmaceutical.stages.services.service,\
+	com.nbp.pharmaceutical.stages.services.service.persistence,\
+	com.nbp.pharmaceutical.stages.services.constants
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.pharmaceutical.stages.services-service/service.xml

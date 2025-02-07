@@ -1,0 +1,180 @@
+create table nbp_acquire_application (
+	uuid_ VARCHAR(75) null,
+	acquireApplicationId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	entityId VARCHAR(75) null,
+	status INTEGER,
+	applicationNumber VARCHAR(75) null,
+	caseId VARCHAR(500) null,
+	icmDocumentPath VARCHAR(500) null,
+	divestmentOptions VARCHAR(75) null,
+	tenureType VARCHAR(75) null,
+	currentUse VARCHAR(75) null,
+	pdfFileEntryId LONG,
+	appCurrentStageName VARCHAR(75) null
+);
+
+create table nbp_acquire_details (
+	acquireApplicationDetailsId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	applicantName VARCHAR(75) null,
+	applicantOrganisation VARCHAR(75) null,
+	applicantPostalAddr VARCHAR(500) null,
+	applicantEmail VARCHAR(75) null,
+	applicantTeleNum VARCHAR(75) null,
+	acquireApplicationId LONG
+);
+
+create table nbp_acquire_document_list (
+	acquireDocumentListId LONG not null primary key,
+	documentType VARCHAR(75) null,
+	documentName VARCHAR(75) null
+);
+
+create table nbp_acquire_land_details (
+	acquireLandApplicantDetailsId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	landApplicantName VARCHAR(75) null,
+	landApplicantGender VARCHAR(75) null,
+	landApplicantDob DATE null,
+	landApplicantTrnNum VARCHAR(75) null,
+	landApplicantHomeAddr VARCHAR(500) null,
+	landApplicantMailingAddr VARCHAR(500) null,
+	landApplicantPhoneNum VARCHAR(75) null,
+	landApplicantEmail VARCHAR(75) null,
+	acquireApplicationId LONG
+);
+
+create table nbp_acquire_land_employment (
+	acquireLandEmploymentId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	landEmploymentStatus VARCHAR(75) null,
+	landEmpJamaicaGovEmplyee VARCHAR(75) null,
+	landEmpCompanyName VARCHAR(75) null,
+	landEmploymentJobTitle VARCHAR(75) null,
+	landEmpCompanyAddr VARCHAR(500) null,
+	landEmpTeleNum VARCHAR(75) null,
+	landEmpGrossSalaryType VARCHAR(75) null,
+	landEmpGrossSalary VARCHAR(75) null,
+	landEmpOtherIncomeSource VARCHAR(75) null,
+	landEmpOtherSalaryType VARCHAR(75) null,
+	landEmpOtherIncomeAmount VARCHAR(75) null,
+	landEmpFinancialSupportPerson VARCHAR(75) null,
+	acquireApplicationId LONG
+);
+
+create table nbp_acquire_land_prop_details (
+	acquireLandPropertyDetailsId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	landPropIdentified VARCHAR(75) null,
+	landPropAddr VARCHAR(500) null,
+	landPropOccupation VARCHAR(75) null,
+	landPropOccupationPeriod VARCHAR(75) null,
+	landPropTenureType VARCHAR(75) null,
+	landPropDesiredLoc VARCHAR(75) null,
+	landPropProposedUse VARCHAR(75) null,
+	landPropProposedUseOther VARCHAR(75) null,
+	landPropPropTenureType VARCHAR(75) null,
+	landPropApplied VARCHAR(75) null,
+	landPropApplicationDate DATE null,
+	landPropExistingBuilding VARCHAR(75) null,
+	landPropExistingBuildingOther VARCHAR(75) null,
+	landPropOwn VARCHAR(75) null,
+	landPropGovAcquired VARCHAR(75) null,
+	landPropStateDetails VARCHAR(75) null,
+	landPropPaymentMethod VARCHAR(75) null,
+	landPropPaymentMethodOther VARCHAR(75) null,
+	landPropComments VARCHAR(500) null,
+	acquireApplicationId LONG
+);
+
+create table nbp_acquire_payment_plan (
+	acquirePaymentPlanId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	paymentMethod VARCHAR(75) null,
+	amountPaid VARCHAR(75) null,
+	paymentCurrencySelected VARCHAR(75) null,
+	paymentMethodOther VARCHAR(75) null,
+	paymentDocId VARCHAR(75) null,
+	acquireApplicationId LONG
+);
+
+create table nbp_acquire_prop_details (
+	acquirePropertyDetailsId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	propertyTenureType VARCHAR(75) null,
+	propertyIdentified VARCHAR(75) null,
+	propertyAddr VARCHAR(500) null,
+	propertyDesiredLoc VARCHAR(75) null,
+	propertyVolume VARCHAR(75) null,
+	propertyFolio VARCHAR(75) null,
+	propertyValuationNum VARCHAR(75) null,
+	propertySketchAttached VARCHAR(75) null,
+	propertyCurrentUse VARCHAR(75) null,
+	propertyCurrentUseOther VARCHAR(75) null,
+	propertyExistingBuilding VARCHAR(75) null,
+	propertyExistingBuildingOther VARCHAR(75) null,
+	propertyExistingInfrastructure VARCHAR(75) null,
+	propertyProposedUse VARCHAR(75) null,
+	propertyProposedUseOther VARCHAR(75) null,
+	propertyProposedInfrastructure VARCHAR(75) null,
+	propertyLandAreaHectare VARCHAR(75) null,
+	propertyLandAreaAcres VARCHAR(75) null,
+	propertyLandAreaRoods VARCHAR(75) null,
+	propertyLandAreaPerches VARCHAR(75) null,
+	propertyAdjoiningNorth VARCHAR(75) null,
+	propertyAdjoiningSouth VARCHAR(75) null,
+	propertyAdjoiningEast VARCHAR(75) null,
+	propertyAdjoiningWest VARCHAR(75) null,
+	propertyDate DATE null,
+	propertyAdditionalInfo VARCHAR(500) null,
+	acquireApplicationId LONG
+);
+
+create table nbp_acquire_stage (
+	acquireCurrentStageId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	currentStage VARCHAR(75) null,
+	lastFormStage VARCHAR(75) null,
+	acquireApplicationId LONG
+);

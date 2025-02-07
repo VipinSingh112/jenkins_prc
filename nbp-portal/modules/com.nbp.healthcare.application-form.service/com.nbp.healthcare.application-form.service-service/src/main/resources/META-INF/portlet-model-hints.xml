@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareApplicantAddress">
+		<field name="healthCareApplicantAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantMailingAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="healthCareApplicationId" type="long" />
+		<field name="healthCareApplicantInfoId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareApplicantInfo">
+		<field name="healthCareApplicantInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="telephoneNumber" type="String" />
+		<field name="healthCareApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareApplication">
+		<field name="healthCareApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="healthCareFacility" type="String" />
+		<field name="healthCareRegistrationNum" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareApplicationPayment">
+		<field name="healthCareApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="healthCareApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareBusinessAddress">
+		<field name="healthCareBusinessAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bussinessAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="healthCareApplicationId" type="long" />
+		<field name="healthCareBussinessInfoId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareBussinessInfo">
+		<field name="healthCareBussinessInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="telephoneNumber" type="String" />
+		<field name="email" type="String" />
+		<field name="parish" type="String" />
+		<field name="companyNumber" type="String" />
+		<field name="trnNumber" type="String" />
+		<field name="healthCareApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareCurrentStage">
+		<field name="HealthCareCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="healthCareApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareDescriptionOfService">
+		<field name="healthCareDescriptionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="descriptionOfService" type="String" />
+		<field name="healthCareApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthcareEquipHeadingList">
+		<field name="healthcareEquipHeadingListId" type="long" />
+		<field name="healthcareDescription" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="healthcareHsHeading" type="String" />
+		<field name="healthcareSubHeading" type="String" />
+	</model>
+	<model name="com.nbp.healthcare.application.form.service.model.HealthCareEquipmentInfo">
+		<field name="healthCareEquipmentInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="healthCareApplicationId" type="long" />
+		<field name="equipmentManu" type="String" />
+		<field name="equipmentModel" type="String" />
+		<field name="equipmentMake" type="String" />
+		<field name="yearOfEquipment" type="String" />
+		<field name="serialNumber" type="String" />
+		<field name="quantity" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="hsHeading" type="String" />
+		<field name="hsSubHeading" type="String" />
+		<field name="counter" type="String" />
+	</model>
+</model-hints>

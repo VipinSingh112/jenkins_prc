@@ -1,0 +1,1017 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.hsra.application.service.model.AddApplicantPractitioner">
+		<field name="uuid" type="String" />
+		<field name="addApplicantPractitionerId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.AddMedicalPractitioner">
+		<field name="uuid" type="String" />
+		<field name="addMedicalPractitionerId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="medicalPractitionerDate" type="Date" />
+		<field name="applicantDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.AlternateRsoAdd">
+		<field name="alternateRsoAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="alternateRsoName" type="String" />
+		<field name="alternateRsoTitle" type="String" />
+		<field name="alternateRsoTelephone" type="String" />
+		<field name="alternateRsoExt" type="String" />
+		<field name="alternateRsoFax" type="String" />
+		<field name="alternateRsoEmailAdd" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.AlternateRsoOneAdd">
+		<field name="alternateRsoOneAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="alternateRsoOneName" type="String" />
+		<field name="alternateRsoOneTitle" type="String" />
+		<field name="alternateRsoOneTelephone" type="String" />
+		<field name="alternateRsoOneExt" type="String" />
+		<field name="alternateRsoOneFax" type="String" />
+		<field name="alternateRsoOneEmailAdd" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.BrokerDeclarationInfo">
+		<field name="brokerDeclareInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="brokerOperatorName" type="String" />
+		<field name="brokerTitle" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.BrokerRegistrationInfo">
+		<field name="brokerRegstInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicationTypes" type="String" />
+		<field name="organizationNameD" type="String" />
+		<field name="businessPlace" type="String" />
+		<field name="organizationTrn" type="String" />
+		<field name="organizationTeleNum" type="String" />
+		<field name="organizationFaxNum" type="String" />
+		<field name="organizationEmailAdd" type="String" />
+		<field name="businessTypeBroker" type="String" />
+		<field name="businessNumberBroker" type="String" />
+		<field name="corporationNumberBroker" type="String" />
+		<field name="publicActBroker" type="String" />
+		<field name="licenceNumberBroker" type="String" />
+		<field name="expirationDateBroker" type="Date" />
+		<field name="radioactiveMaterial" type="String" />
+		<field name="nuclearMaterial" type="String" />
+		<field name="nuclearTechnology" type="String" />
+		<field name="ionizingApparatus" type="String" />
+		<field name="radiationSource" type="String" />
+		<field name="organizationTransfer" type="String" />
+		<field name="nuclearProtection" type="String" />
+		<field name="storageFacility" type="String" />
+		<field name="additionalInformation" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.DetailOfApplicantSecTwo">
+		<field name="detailOfAppliSecTwoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="organizationName" type="String" />
+		<field name="nuclearMailingAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="parish" type="String" />
+		<field name="nuclearTrnNumber" type="String" />
+		<field name="nuclearTelephoneNo" type="String" />
+		<field name="nuclearFaxNo" type="String" />
+		<field name="nuclearEmailAddr" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.DetailOfBusinessSecThree">
+		<field name="detailOfBusinessSecThreeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="businessType" type="String" />
+		<field name="nuclearBusinessNumber" type="String" />
+		<field name="nuclearCorporationNum" type="String" />
+		<field name="nuclearPublicAct" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nuclearName" type="String" />
+		<field name="nuclearAddressThird" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nuclearThirdParish" type="String" />
+		<field name="nuclearTelephoneNum" type="String" />
+		<field name="nuclearfaxNumber" type="String" />
+		<field name="nuclearEmailAdd" type="String" />
+		<field name="nuclearFinancial" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.DetailOfSources">
+		<field name="detailOfSourcesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="sourceIdentification" type="String" />
+		<field name="sourceLocation" type="String" />
+		<field name="stateActivity" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.FitPropBusinessInfo">
+		<field name="fitPropBusinessInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyType" type="String" />
+		<field name="applicantBusinessName" type="String" />
+		<field name="applicantcomName" type="String" />
+		<field name="applicantComAddress" type="String" />
+		<field name="applicantComAddressParish" type="String" />
+		<field name="applicantComNo" type="String" />
+		<field name="applicantComEmail" type="String" />
+		<field name="applicantComTelephone" type="String" />
+		<field name="applicantComTitle" type="String" />
+		<field name="materialTechnology" type="String" />
+		<field name="relevantBox" type="String" />
+		<field name="corporateDirector" type="String" />
+		<field name="facilitySources" type="String" />
+		<field name="criminalFraud" type="String" />
+		<field name="professionalSubject" type="String" />
+		<field name="employmentResign" type="String" />
+		<field name="mentallyIll" type="String" />
+		<field name="bankruptAuthority" type="String" />
+		<field name="circumstancesEvent" type="String" />
+		<field name="partnershipHsra" type="String" />
+		<field name="facilityAssociated" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.FitPropDeclareApplicant">
+		<field name="fitPropDeclareApplicantId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameApplicant" type="String" />
+		<field name="dateApplicant" type="Date" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.FitPropFinancialProfile">
+		<field name="fitPropFinancialProfileId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="financialInstitution" type="String" />
+		<field name="creditfacility" type="String" />
+		<field name="surroundingAction" type="String" />
+		<field name="jamaicaInstitution" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.FitPropPersonalDetailInfo">
+		<field name="fitPropPersonalDetailInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantFirstName" type="String" />
+		<field name="applicantMiddleName" type="String" />
+		<field name="applicantSurname" type="String" />
+		<field name="applicantFormerName" type="String" />
+		<field name="applicantAlias" type="String" />
+		<field name="applicantStreetName" type="String" />
+		<field name="applicantStreetNo" type="String" />
+		<field name="applicantPostalCode" type="String" />
+		<field name="applicantCountry" type="String" />
+		<field name="applicantTownName" type="String" />
+		<field name="applicantCity" type="String" />
+		<field name="applicantParish" type="String" />
+		<field name="applicantTelephoneNum" type="String" />
+		<field name="applicantEmailAdd" type="String" />
+		<field name="applicantDateBirth" type="Date" />
+		<field name="applicantPlaceOfBirthTown" type="String" />
+		<field name="applicantPlaceOfBirthParish" type="String" />
+		<field name="applicantPlaceOfBirthCountry" type="String" />
+		<field name="applicantNationality" type="String" />
+		<field name="applicantNisNum" type="String" />
+		<field name="applicantSocialNum" type="String" />
+		<field name="applicantNationalNum" type="String" />
+		<field name="applicantRegistrationNum" type="String" />
+		<field name="maritalStatusDetails" type="String" />
+		<field name="applicantRelationship" type="String" />
+		<field name="applicantSecTelephone" type="String" />
+		<field name="applicantSecMail" type="String" />
+		<field name="applicantSecAddress" type="String" />
+		<field name="applicantSecAddressParish" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.GenEquipmentData">
+		<field name="genEquipmentDataId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="manufacturerEquipment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="equipmentModel" type="String" />
+		<field name="equipmentSerial" type="String" />
+		<field name="operatingPotential" type="String" />
+		<field name="natureEquipment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="radiationGeneratingLoc" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="equipmentModels" type="String" />
+		<field name="equipmentStatusDetail" type="String" />
+		<field name="equipmentDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.GenerateEquipmentInfo">
+		<field name="GenerateEquipmentInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="manufacturerEquipment" type="String" />
+		<field name="equipmentModel" type="String" />
+		<field name="equipmentSerial" type="String" />
+		<field name="operatingPotential" type="String" />
+		<field name="equipmentModels" type="String" />
+		<field name="natureEquipment" type="String" />
+		<field name="equipmentStatusDetail" type="String" />
+		<field name="equipmentDate" type="Date" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.HsraApplication">
+		<field name="uuid" type="String" />
+		<field name="hsraApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="typeOfActivities" type="String" />
+		<field name="categoryOfSources" type="String" />
+		<field name="highOne" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="highTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="medium" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="lowOne" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="lowTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="typeOfTransaction" type="String" />
+		<field name="riskLevel" type="String" />
+		<field name="typeOfApplication" type="String" />
+		<field name="brokerTransactionType" type="String" />
+		<field name="specificApplicable" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="entityId" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="qualifiedArea" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="expiredDate" type="Date" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.HsraApplicationCurrentStage">
+		<field name="hsraApplicationCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.HsraApplicationPayment">
+		<field name="hsraApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.MedicalPractitionerAdd">
+		<field name="medicalPractitionerAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="medicalPractitionerName" type="String" />
+		<field name="medicalPractitionerAddress" type="String" />
+		<field name="medicalPractitionerTelephone" type="String" />
+		<field name="medicalPractitionerFax" type="String" />
+		<field name="medicalPractitionerEmail" type="String" />
+		<field name="medicalPractitionerLicenceNo" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.NotifiLegalInfo">
+		<field name="notifiLegalInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="legalPersonName" type="String" />
+		<field name="legalPersonAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="organizationName" type="String" />
+		<field name="organizationAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="contactNumber" type="String" />
+		<field name="legalPersonEmail" type="String" />
+		<field name="practiceNature" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.PurposeOfPropLicence">
+		<field name="purposeOfPropLicenceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nuclearRegstLic" type="String" />
+		<field name="nuclearBusinessPlace" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nuclearActivityMainAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationType" type="String" />
+		<field name="nuclearAdditionalLoc" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.QualifedExpertAdd">
+		<field name="qualifedExpertAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="qualifedName" type="String" />
+		<field name="qualifedTitle" type="String" />
+		<field name="qualifedTelephone" type="String" />
+		<field name="qualifedExt" type="String" />
+		<field name="qualifedFax" type="String" />
+		<field name="qualifedEmailAdd" type="String" />
+		<field name="qualifedRegistrationNo" type="String" />
+		<field name="qualifedExpirationDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.QualifedExpertOneAdd">
+		<field name="qualifedExpertOneAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="qualifedOneName" type="String" />
+		<field name="qualifedOneTitle" type="String" />
+		<field name="qualifedOneTelephone" type="String" />
+		<field name="qualifedOneExt" type="String" />
+		<field name="qualifedOneFax" type="String" />
+		<field name="qualifedOneEmailAdd" type="String" />
+		<field name="qualifedOneRegistrationNo" type="String" />
+		<field name="qualifedOneExpirationDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.QualityApplicantDetail">
+		<field name="qualityApplicantDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="expertSurname" type="String" />
+		<field name="expertFirstName" type="String" />
+		<field name="expertId" type="String" />
+		<field name="expertPosition" type="String" />
+		<field name="expertTelephone" type="String" />
+		<field name="expertMobile" type="String" />
+		<field name="expertEmail" type="String" />
+		<field name="expertDate" type="Date" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.QualityDeclarationInfo">
+		<field name="qualityDeclarationInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="declarationSignDate" type="Date" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.QualityEmploymentInfo">
+		<field name="qualityEmploymentInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="teleNo" type="String" />
+		<field name="address" type="String" />
+		<field name="parish" type="String" />
+		<field name="mobileNo" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.QualityProficiencyDetail">
+		<field name="qualityProficiDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="proficiencyDetails" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="workDurationOne" type="String" />
+		<field name="capacityOne" type="String" />
+		<field name="workDurationTwo" type="String" />
+		<field name="capacityTwo" type="String" />
+		<field name="workDurationThree" type="String" />
+		<field name="capacityThree" type="String" />
+		<field name="workDurationFour" type="String" />
+		<field name="capacityFour" type="String" />
+		<field name="workDurationFive" type="String" />
+		<field name="capacityFive" type="String" />
+		<field name="workDurationSix" type="String" />
+		<field name="capacitySix" type="String" />
+		<field name="workDurationSeven" type="String" />
+		<field name="capacitySeven" type="String" />
+		<field name="workDurationEight" type="String" />
+		<field name="capacityEight" type="String" />
+		<field name="workDurationNine" type="String" />
+		<field name="capacityNine" type="String" />
+		<field name="workDurationTen" type="String" />
+		<field name="capacityTen" type="String" />
+		<field name="workDurationEleven" type="String" />
+		<field name="capacityEleven" type="String" />
+		<field name="workDurationTwelve" type="String" />
+		<field name="capacityTwelve" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadiationDeclaration">
+		<field name="radiationDeclarationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="legalOperatorName" type="String" />
+		<field name="operatorTitle" type="String" />
+		<field name="operatorDate" type="Date" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadiationDevicesAdd">
+		<field name="radiationDevicesAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="radiationDevicesRadio" type="String" />
+		<field name="radiationDevicesMaxActivity" type="String" />
+		<field name="radiationDevicesManufacturer" type="String" />
+		<field name="radiationDevicesName" type="String" />
+		<field name="radiationDevicesModelNo" type="String" />
+		<field name="radiationDevicesNumber" type="String" />
+		<field name="radiationDevicesUse" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadiationDevicesDetailAdd">
+		<field name="radiationDevicesDetailAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="radiationDevicesRadio" type="String" />
+		<field name="radiationDevicesMaxActivity" type="String" />
+		<field name="radiationDevicesManufacturer" type="String" />
+		<field name="radiationDevicesName" type="String" />
+		<field name="radiationDevicesModelNo" type="String" />
+		<field name="radiationDevicesNumber" type="String" />
+		<field name="radiationDevicesUse" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadiationProtectionSecOne">
+		<field name="radiationProtectSecOneId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentAuthNum" type="String" />
+		<field name="reasonForAmendment" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="typeOfApplication" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadiationSafetyLowRisk">
+		<field name="radiationSafetyLowRiskId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="appendixRsoName" type="String" />
+		<field name="appendixRsoTitle" type="String" />
+		<field name="appendixRsoTeleNo" type="String" />
+		<field name="appendixRsoExt" type="String" />
+		<field name="appendixRsoFax" type="String" />
+		<field name="appendixRsoEmail" type="String" />
+		<field name="appendixRsoDetails" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="qualifiedAppendixName" type="String" />
+		<field name="qualifiedAppendixTitle" type="String" />
+		<field name="qualifiedAppendixTele" type="String" />
+		<field name="qualifiedAppendixExt" type="String" />
+		<field name="qualifiedAppendixFax" type="String" />
+		<field name="qualifiedAppendixEmail" type="String" />
+		<field name="qualifiedAppendixRegstNo" type="String" />
+		<field name="qualifiedAppendixDate" type="Date" />
+		<field name="qualifiedAppendixDetails" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="monitoringExposure" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="recordSystem" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="securityAccess" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="trainingInformation" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="leakTesting" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="emergencyProcedures" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="managementSourcesDis" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadiationSafetyProgram">
+		<field name="radiationSafetyProgramId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nuclearRsoName" type="String" />
+		<field name="nuclearRsoTitle" type="String" />
+		<field name="nuclearRsoTeleNo" type="String" />
+		<field name="nuclearRsoExt" type="String" />
+		<field name="nuclearRsoFax" type="String" />
+		<field name="nuclearRsoEmail" type="String" />
+		<field name="rsoDetails" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="qualifiedExpertName" type="String" />
+		<field name="qualifiedExpertTitle" type="String" />
+		<field name="qualifiedExpertTele" type="String" />
+		<field name="qualifiedExpertExt" type="String" />
+		<field name="qualifiedExpertFax" type="String" />
+		<field name="qualifiedExpertEmail" type="String" />
+		<field name="qualifiedExpertRegstNo" type="String" />
+		<field name="qualifiedExpertDate" type="Date" />
+		<field name="qualifiedDetails" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="applicantName" type="String" />
+		<field name="applicantTitle" type="String" />
+		<field name="otherLimitationAuth" type="String" />
+		<field name="otherDate" type="Date" />
+		<field name="classifiWorkersList" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="respiPleaseSpecify" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="tongsPleaseSpecify" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="scopeOfActivities" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="managementSystem" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="workerRecordings" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="categoriesLicence" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="renewalsSummary" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="constraintsLimits" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="equipmentMonitoring" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="areasControl" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="radioactiveSources" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="radiationiInstruments" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="healthWorkers" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="investigationLevel" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="policyDetails" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="securityAccess" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="raditionSources" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="workerTraining" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="publicControl" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="managementSources" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="emergencyProcedure" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="licenceLocation" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="achievableProgram" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="leakedTestingSources" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="transferSources" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="nuclearMaterials" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="transportPackaging" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="internalReview" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="sourcesActivities" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="individualProtectiveEquipment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="ResProPleaseSpecify" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadionuclideAdd">
+		<field name="radionuclideAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="radionuclideDetails" type="String" />
+		<field name="activityDetails" type="String" />
+		<field name="activityDate" type="Date" />
+		<field name="chemicalDetailsForm" type="String" />
+		<field name="serialNo" type="String" />
+		<field name="radionuclideLocation" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.RadionuclideInfo">
+		<field name="radionuclideInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="radionuclideDetails" type="String" />
+		<field name="activityDetails" type="String" />
+		<field name="activityDetailBq" type="String" />
+		<field name="activityDate" type="Date" />
+		<field name="chemicalDetailsForm" type="String" />
+		<field name="serialNo" type="String" />
+		<field name="sealedSource" type="String" />
+		<field name="manufacturerDetails" type="String" />
+		<field name="modelNo" type="String" />
+		<field name="identificationNo" type="String" />
+		<field name="statusDetails" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.SealedSourcesAdd">
+		<field name="sealedSourcesAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="sealedSourcesRadionu" type="String" />
+		<field name="sealedSourcesMaxActivity" type="String" />
+		<field name="sealedSourcesActivityDate" type="Date" />
+		<field name="sealedSourcesCategories" type="String" />
+		<field name="sealedSourcesUse" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.SourcesDetailAdd">
+		<field name="sourcesDetailAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="sourceIdentification" type="String" />
+		<field name="stateActivity" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.SpecificReqPropLicActivity">
+		<field name="specificReqPropLicActivityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="adminTreatment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="qualityProgramme" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="instructionsCaregivers" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="instructionsPatients" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="patientsRelease" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="treatmentRooms" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="medicalEmergencies" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="nuclearMedicine" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="diagnosticStudies" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="biomedicalResearch" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="researchReview" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="emergencyOperating" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="certificatePackages" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="exposureDevices" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="equipmentSafety" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="transportPlan" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="animalsTreatment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="animalHousing" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="disposalWaste" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="monitoringAnimalHousing" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="releaseAnimals" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="proceduresApp" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="disposalsApp" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="monitoringMaterialNu" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="handlingProcedures" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="hoppersEntry" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="operatingConditions" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="insertionType" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="installationFixed" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="transportPlanGauge" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="emergencyAddition" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="nuclearEnviroment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="fishingTool" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="sealedSources" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="abandonmentZone" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="servicingCopy" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="manufacturingDevelopment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="hsraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.hsra.application.service.model.UnsealedSourceAdd">
+		<field name="unsealedSourceAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="unsealedSourcesRadionu" type="String" />
+		<field name="unsealedSourcesActivity" type="String" />
+		<field name="unsealedSourcesTotalYear" type="String" />
+		<field name="unsealedSourcesUse" type="String" />
+		<field name="counter" type="String" />
+		<field name="hsraApplicationId" type="long" />
+	</model>
+</model-hints>

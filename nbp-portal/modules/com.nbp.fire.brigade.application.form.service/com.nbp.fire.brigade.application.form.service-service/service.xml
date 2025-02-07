@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.fire.brigade.application.form.service">
+	<namespace>FIRE_BRIGADE</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="FireBrigadeApplication" remote-service="true" uuid="true" table="nbp_fire_brigade_application">
+		
+	    <!-- PK fields -->
+		<column name="fireBrigadeApplicationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="certificateType" type="String"></column>
+		 <column name="typeOfTransaction" type="String"></column>
+		 <column name="typeOfApplicant" type="String"></column>
+		 <column name="typeOfPermises" type="String"></column>
+		 <column name="purposeOfCertificate" type="String"></column>
+		 <column name="parish" type="String"></column>
+		 <column name="status" type="int"></column>
+         <column name="applicationNumber" type="String"></column>
+         <column name="caseId" type="String"></column>
+         <column name="expiredLicenseNumber" type="String"></column>
+         <column name="icmDocumentsPath" type="String" />
+         <column name="pdfFileEntryId" type="long" />
+         <column name="appCurrentStageName" type="String" />
+         <column name="entityId" type="String"></column>
+		 
+		<!-- Order -->
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+	   <!--Finders -->
+	    <finder name="getFireBrigadeByS_U" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+         <finder name="getFireBrigadeStatusByCaseId" return-type="FireBrigadeApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+		<finder name="getFireBrigadeByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        	<finder name="getFireBrigadeByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getFireBrigadeByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getFireBrigadeByEI_CI" return-type="FireBrigadeApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getFireBrigadeByAppNo" return-type="FireBrigadeApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getFB_AppType_AppNo" return-type="FireBrigadeApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+	</entity>
+	<entity name="FireBrigadeSignatureInfo" local-service="true"
+		table="nbp_fire_signature_info">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeSignatureInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="title" type="String"></column>
+		 <column name="name" type="String"></column>
+		 <column name="telephone" type="String"></column>
+		 <column name="fax" type="String"></column>
+		 <column name="trn" type="String"></column>
+		 <column name="email" type="String"></column>
+		 <column name="date" type="Date"></column>
+		 <column name="Address" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+		 
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadeSignatureInfo">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="FireBrigadePremisesInfo" local-service="true"
+		table="nbp_fire_permises_info">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadePremisesInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="premises" type="String"></column>
+		 <column name="premisesCertified" type="String"></column>
+		 <column name="expirationDate" type="Date"></column>
+		 <column name="certificateNumber" type="String"></column>
+		 <column name="name" type="String"></column>
+		 <column name="Address" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+		 
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!--finders-->
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadePremisesInfo">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="FireBrigadeOperatorDetail" local-service="true"
+		table="nbp_fire_operator_detail">
+
+		<!-- PK fields -->
+		<column name="fireBrigadeOperatorDetailId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="operatorName" type="String"></column>
+		 <column name="businessName" type="String"></column>
+		 <column name="address" type="String"></column>
+		 <column name="premisesUses" type="String"></column>
+		 <column name="premisesOccupancy" type="String"></column>
+		 <column name="premisesBusiness" type="String"></column>
+		 <column name="maxWorkingPersons" type="String"></column>
+		 <column name="maxNumPersonsAtAnyOneTime" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+         
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!--finders-->
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadeOperatorDetail">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FireBrigadeMultFloorInfo" local-service="true"
+		table="nbp_fire_mul_floor_info">
+
+		<!-- PK fields -->
+		<column name="fireBrigadeMultFloorInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="floorAlternateExist" type="String"></column>
+		 <column name="buildingRisingMain" type="String"></column>
+		 <column name="equipmentConnection" type="String"></column>
+		 <column name="buildingParkingGarage" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+         
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!--finders-->
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadeMultFloorInfo">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FireBrigadeProEquipmentInfo" local-service="true"
+		table="nbp_fire_pro_equipment_info">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeProEquipmentInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="equipmentProtectionPre" type="String"></column>
+		 <column name="equipmentProtectionOne" type="String"></column>
+		 <column name="equipmentProtectionTwo" type="String"></column>
+		 <column name="equipmentProtectionThree" type="String"></column>
+		 <column name="equipmentProtectionFour" type="String"></column>
+		 <column name="equipmentProtectionFive" type="String"></column>
+		 <column name="equipmentProtectionSix" type="String"></column>
+		 <column name="otherEquipment" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+         
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!--finders-->
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadeProEquipmentInfo">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FireBrigadeHazardousSubInfo" local-service="true"
+		table="nbp_fire_hazar_sub_info">
+
+		<!-- PK fields -->
+		<column name="fireBrigadeHazardousSubInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="lpgCylinder" type="String"></column>
+		 <column name="flammableGases" type="String"></column>
+		 <column name="flammableCombustibleLiquid" type="String"></column>
+		 <column name="chemicalsLiquid" type="String"></column>
+		 <column name="chemicalsPowder" type="String"></column>
+		 <column name="explosives" type="String"></column>
+		 <column name="otherHazardousSubstance" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+         
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!--finders-->
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadeHazardousSubInfo">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FireBrigadeCerPurposeInfo" local-service="true"
+		table="nbp_fire_certi_purpose_info">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeCerPurposeInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		 <column name="certificatePurposePre" type="String"></column>
+		 <column name="otherCertificatePurpose" type="String"></column>
+         <column name="fireBrigadeApplicationId" type="long" />
+         
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!--finders-->
+		<finder name="getFireBrigadeByAppId" return-type="FireBrigadeCerPurposeInfo">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="FireBrigadeAppliCurrentStage" local-service="true"
+		table="nbp_fire_app_stage">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeAppliCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="fireBrigadeApplicationId"  type="long"></column>
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getFireBrigade_Stage_FBAI" return-type="FireBrigadeAppliCurrentStage">
+			<finder-column name="fireBrigadeApplicationId" />
+		</finder>
+	</entity>
+	<entity name="FireBrigadeAppPayment" table="nbp_fire_app_payment" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeAppPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="fireBrigadeApplicationId"  type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="fireBrigadeApplicationId" return-type="FireBrigadeAppPayment">
+            <finder-column name="fireBrigadeApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+</service-builder>

@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationCompanyAddress">
+		<field name="uuid" type="String" />
+		<field name="companyAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="streetName" type="String" />
+		<field name="town" type="String" />
+		<field name="parish" type="String" />
+		<field name="applicationNumber" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="companyInformationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationCompanyAuthorizedAgent">
+		<field name="uuid" type="String" />
+		<field name="cannabisCOAId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="surname" type="String" />
+		<field name="position" type="String" />
+		<field name="gender" type="String" />
+		<field name="dateOfBirth" type="Date" />
+		<field name="contactPhoneNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationCompanyInfo">
+		<field name="uuid" type="String" />
+		<field name="companyInformationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="trn" type="String" />
+		<field name="typeOfCompany" type="String" />
+		<field name="otherCompanyType" type="String" />
+		<field name="registrationNumber" type="String" />
+		<field name="contactPhoneNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="cannabisStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationIndividualAddress">
+		<field name="uuid" type="String" />
+		<field name="IndividualAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="addressType" type="String" />
+		<field name="streetName" type="String" />
+		<field name="town" type="String" />
+		<field name="parish" type="String" />
+		<field name="applicationNumber" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="individualInformationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationIndividualInfo">
+		<field name="uuid" type="String" />
+		<field name="individualInformationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="otherName" type="String" />
+		<field name="maidenName" type="String" />
+		<field name="motherMaidenName" type="String" />
+		<field name="gender" type="String" />
+		<field name="maritalStatus" type="String" />
+		<field name="dob" type="Date" />
+		<field name="placeOfBirth" type="String" />
+		<field name="nationality" type="String" />
+		<field name="durationInJamaika" type="String" />
+		<field name="trn" type="String" />
+		<field name="currentOccupation" type="String" />
+		<field name="drivingLincenseNo" type="String" />
+		<field name="passporNo" type="String" />
+		<field name="nationalIdentityNo" type="String" />
+		<field name="contactHome" type="String" />
+		<field name="contactWork" type="String" />
+		<field name="contactMobile" type="String" />
+		<field name="email" type="String" />
+		<field name="identityNumber" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplicationPayment">
+		<field name="cannabisApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="paymentReceiptNumber" type="String" />
+		<field name="paymentReceiptDocId" type="long" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="dateReceived" type="Date" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisApplications">
+		<field name="uuid" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="requestType" type="String" />
+		<field name="licenseCategory" type="String" />
+		<field name="licenseSubCategory" type="String" />
+		<field name="typeOfEntity" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNo" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="PdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisConsentByPropertyOwner">
+		<field name="uuid" type="String" />
+		<field name="cannabisCPOId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfProperty" type="String" />
+		<field name="descriptionOfProperty" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="descriptionOfIntendedUse" type="String" />
+		<field name="landType" type="String" />
+		<field name="ownsProperty" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisConsentBySoleOwner">
+		<field name="cannabisConsentBySoleOwnerId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="ownerName" type="String" />
+		<field name="date" type="Date" />
+		<field name="ownerPhone" type="String" />
+		<field name="ownerAddress" type="String" />
+		<field name="counter" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisDeclarationOfOwnership">
+		<field name="uuid" type="String" />
+		<field name="cannabisDecOfOwnershipId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="surname" type="String" />
+		<field name="position" type="String" />
+		<field name="percentOfOwnership" type="String" />
+		<field name="citizenship" type="String" />
+		<field name="trn" type="String" />
+		<field name="dob" type="Date" />
+		<field name="idNumber" type="String" />
+		<field name="typeOfId" type="String" />
+		<field name="counter" type="String" />
+		<field name="officialPoliceRecordDocId" type="long" />
+		<field name="certifiedCopyofIdDocId" type="long" />
+		<field name="signature" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisFeeMaster">
+		<field name="cannabisFeeMasterId" type="long" />
+		<field name="category" type="String" />
+		<field name="subCategory" type="String" />
+		<field name="securityBond" type="double" />
+		<field name="licenseFee" type="double" />
+		<field name="remarks" type="String" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisOccupationaLicense">
+		<field name="uuid" type="String" />
+		<field name="cannabisOccupationaLicenseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="surname" type="String" />
+		<field name="position" type="String" />
+		<field name="management" type="String" />
+		<field name="director" type="String" />
+		<field name="trn" type="String" />
+		<field name="dob" type="Date" />
+		<field name="idNumber" type="String" />
+		<field name="typeOfId" type="String" />
+		<field name="counter" type="String" />
+		<field name="officialPoliceRecordDocId" type="long" />
+		<field name="certifiedCopyofIdDocId" type="long" />
+		<field name="photoOfEmployeeDocId" type="long" />
+		<field name="signature" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisSupplementalInformation">
+		<field name="uuid" type="String" />
+		<field name="cannabisSupplementalInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="supplementInfoQuestion" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="answer" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.CannabisSupportingDocumentsMaster">
+		<field name="cannabisSupportingDocMasterId" type="long" />
+		<field name="applicationType" type="String" />
+		<field name="documentTye" type="String" />
+		<field name="landType" type="String" />
+		<field name="userType" type="String" />
+		<field name="documentName" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="remarks" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="status" type="String" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.GeneralDelarations">
+		<field name="uuid" type="String" />
+		<field name="generalDeclarationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="declartionQuestion" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="answer" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.cannabis.application.form.services.model.StatementOfFinancialHistory">
+		<field name="uuid" type="String" />
+		<field name="statementOfFinancialHistoryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="statementOfHistoryQuestion" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="answer" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.tourism.application.stages.services-api
+Bundle-SymbolicName: com.nbp.tourism.application.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.tourism.application.stages.services.exception,\
+	com.nbp.tourism.application.stages.services.model,\
+	com.nbp.tourism.application.stages.services.service,\
+	com.nbp.tourism.application.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.tourism.application.stages.services-service/service.xml

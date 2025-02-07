@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.sez.status.application.stage.services-api
+Bundle-SymbolicName: com.nbp.sez.status.application.stage.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.sez.status.application.stage.services.exception,\
+	com.nbp.sez.status.application.stage.services.model,\
+	com.nbp.sez.status.application.stage.services.service,\
+	com.nbp.sez.status.application.stage.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.sez.status.application.stage.services-service/service.xml

@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.agriculture.stages.services">
+	<namespace>NBP_AGRI</namespace>
+	<entity local-service="true" name="AgricultureApplicationStages" remote-service="true" table="nbp_agriculture_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="agricultureApplicationstageId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="agricultureApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="AAS_CAI" return-type="AgricultureApplicationStages">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+		<finder name="AAS_CaseIdStageName" return-type="AgricultureApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="AAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="AAS_CaseIdStageStatus" return-type="AgricultureApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="AAS_CaseIdAndStatus" return-type="AgricultureApplicationStages">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getAgricultureBy_SN_SS" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="AAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="AgricultureInspection" local-service="true"
+		table="nbp_agriculture_inspection">
+
+		<!-- PK fields -->
+
+		<column name="agricultureInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+       <column name="insectionDateRange" type="String" />
+		<column name="invities" type="String" />
+		<column name="location" type="String" />
+		<column name="updatedBySource"  type="String" />
+		<column name="status"  type="String" />
+		<column name="agriApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+        <finder name="getAgricultureInspectionBy_CI" return-type="AgricultureInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getAI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_CAI" return-type="Collection">
+			<finder-column name="agriApplicationId" />
+		</finder>
+		<finder name="getAI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getAI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getAI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="agriApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="AgricultureInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="agriApplicationId" />
+		</finder>
+	</entity>
+		<entity name="AgriculturePermit" local-service="true"
+		table="nbp_agriculture_permit">
+
+		<!-- PK fields -->
+
+		<column name="agriculturePermitId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="pirPermtNumber" type="String"></column>
+        <column name="dateofIssue" type="Date"></column>
+        <column name="dateOfExpiration" type="Date"></column>
+        <column name="durationOfPermit" type="String"></column>
+        <column name="pirCertificateNUmber" type="long"></column>
+        <finder name="getAgriculturePermitBy_CI" return-type="AgriculturePermit">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getAgriculturePermitBy_PN" return-type="Collection">
+            <finder-column name="pirPermtNumber"></finder-column>
+        </finder>
+        <finder name="getAgriculturePermitBy_PermitNum" return-type="AgriculturePermit">
+            <finder-column name="pirPermtNumber"></finder-column>
+        </finder>
+	</entity>
+		<entity name="AgriDeskVerification" local-service="true"
+			table="nbp_agri_desk_verification">
+
+			<!-- PK fields -->
+
+			<column name="agriDeskVerificationId" primary="true"
+				type="long">
+			</column>
+
+			<!-- Group instance -->
+
+			<column name="groupId" type="long"></column>
+
+			<!-- Audit fields -->
+
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<column name="agricultureApplicationId" type="long"></column>
+       		<column name="documentName" type="String"></column>
+        	<column name="documentStatus" type="String"></column>
+      	  	<finder name="getDeskVerificationAgri_ById" return-type="Collection">
+          	<finder-column name="agricultureApplicationId"></finder-column>
+     		</finder>
+		</entity>
+</service-builder>

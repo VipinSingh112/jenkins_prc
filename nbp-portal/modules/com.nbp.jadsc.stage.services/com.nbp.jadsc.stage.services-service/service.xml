@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.jadsc.stage.services">
+	<namespace>JADSC_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="JadscApplicationStage" remote-service="true" uuid="true" table="nbp_jadsc_application_stage">
+
+		<!-- PK fields -->
+
+		<column name="jadscAppStageId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="stageName" type="String"></column>
+		<column name="duration" type="String"></column>
+		<column name="stageStatus" type="String"></column>
+		<column name="stageStartDate" type="Date"></column>
+		<column name="stageEndDate" type="Date"></column>
+		<column name="jadscApplicationId" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="updateBySource" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJadsc_By_AI"
+			return-type="JadscApplicationStage">
+			<finder-column name="jadscApplicationId"></finder-column>
+		</finder>
+		<finder name="getJadsc_By_CaseIdStageName"
+			return-type="JadscApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getJadsc_By_CaseIdStageStatus"
+			return-type="JadscApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getJadsc_By_CaseIdAndStatus"
+			return-type="JadscApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getJadsc_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJadsc_ByCaseId" return-type="JadscApplicationStage">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJadsc_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+	</entity>
+	<entity name="JadscApplicationPreInitiation" local-service="true"
+		table="nbp_jadsc_application_pre">
+
+		<!-- PK fields -->
+
+		<column name="jadscAppliPreInitiationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateOfPreInitiation" type="Date"></column>
+        <column name="outcome" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		  <!-- Finder methods -->
+		<finder name="getJadsc_PI_CI" return-type="JadscApplicationPreInitiation">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJadsc_By_PI" return-type="Collection">
+			<finder-column name="outcome" />
+		</finder>
+		
+	</entity>
+	<entity name="JadscAppliReviewAndValid" local-service="true"
+		table="nbp_jadsc_appli_review_veri">
+
+		<!-- PK fields -->
+
+		<column name="jadscAppliReviewAndValidId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="versionOfApplication" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		  <!-- Finder methods -->
+		<finder name="getJadsc_RV_CI" return-type="JadscAppliReviewAndValid">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJadsc_By_RV" return-type="Collection">
+			<finder-column name="versionOfApplication" />
+		</finder>
+	</entity>
+	<entity name="JadscAppliPreliminationDete" local-service="true"
+		table="nbp_jadsc_appli_preli_deter">
+
+		<!-- PK fields -->
+
+		<column name="jadscAppliPreliminationDeteId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateOfPreDete" type="Date"></column>
+        <column name="Outcome" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		  <!-- Finder methods -->
+		<finder name="getJadsc_PD_CI" return-type="JadscAppliPreliminationDeter">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJadsc_By_PD" return-type="Collection">
+			<finder-column name="Outcome" />
+		</finder>
+	</entity>
+	<entity name="JadscAppliFinalDeter" local-service="true"
+		table="nbp_jadsc_appli_final_deter">
+
+		<!-- PK fields -->
+
+		<column name="jadscAppliFinalDeterId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	    <column name="dateOfFinalDeter" type="Date"></column>
+        <column name="Outcome" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		  <!-- Finder methods -->
+		<finder name="getJadsc_FD_CI" return-type="JadscAppliFinalDeter">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJadsc_By_FD" return-type="Collection">
+			<finder-column name="Outcome" />
+		</finder>
+	</entity>
+	<entity name="JadscApplicationInitiateInvestigation" local-service="true"
+		table="nbp_jadsc_appli_initi_inves">
+
+		<!-- PK fields -->
+
+		<column name="jadscAppliInvestiId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+	    <column name="dateOfIniInvest" type="Date"></column>
+        <column name="outcome" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		  <!-- Finder methods -->
+		<finder name="getJadsc_II_CI" return-type="JadscApplicationInitiateInvestigation">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getJadsc_By_II" return-type="Collection">
+			<finder-column name="outcome" />
+		</finder>
+	</entity>
+</service-builder>

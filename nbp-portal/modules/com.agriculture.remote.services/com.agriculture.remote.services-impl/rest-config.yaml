@@ -1,0 +1,9 @@
+apiDir: "../com.agriculture.remote.services-api/src/main/java"
+apiPackagePath: "com.agriculture.remote.services"
+application:
+    baseURI: "/headless-agriculture-app"
+    className: "AgricultureRemoteServicesApplication"
+    name: "AgricultureRemoteServices"
+author: "Yogesh Chandra"
+clientDir: "../com.agriculture.remote.services-client/src/main/java"
+testDir: "../com.agriculture.remote.services-test/src/testIntegration/java"

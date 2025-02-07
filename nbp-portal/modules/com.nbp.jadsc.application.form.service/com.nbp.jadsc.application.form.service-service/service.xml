@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.jadsc.application.form.service">
+	<namespace>JADSC_FORM</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="JADSCApplication" remote-service="true" uuid="true" table="nbp_jadsc_application">
+
+		<!-- PK fields -->
+
+		<column name="jadscApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+		<!-- Other fields -->
+
+		<column name="typeOfApplication" type="String" />
+		<column name="typeOfComplaint" type="String" />
+		<column name="typeOfTransaction" type="String" />
+		<column name="transactionNumber" type="String" />
+		<column name="typeOfApplicant" type="String" />
+		<column name="industriesImpacted" type="String" />
+		<column name="breachOfConfidentiality" type="String" />
+		<column name="categoriesOfConfidentialInfo" type="String" />
+		<column name="categoriesOfConfiOtherPlease" type="String" />
+		<column name="reasonForConfidentialStatus" type="String" />
+		<column name="nonConfidentialSummary" type="String" />
+		<column name="caseId" type="String"/>
+        <column name="status" type="int"/>
+        <column name="icmDocumentPath" type="String"/>
+        <column name="applicationNumber" type="String"/>
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+				<!-- Finder methods -->
+		<finder name="getJADSCById"
+			return-type="JADSCApplication">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+		<finder name="getJADSCByS_U" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="getJADSCByCaseId"
+			return-type="JADSCApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJADSCByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getJADSCByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getJADSCByEntityId_Status"
+			return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getJADSCByEI_CI"
+			return-type="JADSCApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJADSCByAppNo"
+			return-type="JADSCApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+			<finder name="getJADSCRegstByAT_AppNo"
+			return-type="JADSCApplication">
+			<finder-column name="breachOfConfidentiality"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+		<entity local-service="true" name="JADSCInformationRequest" remote-service="true" uuid="true" table="nbp_jadsc_info_request">
+
+		<!-- PK fields -->
+
+		<column name="jadscInfoRequestId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+        
+        <!-- Other Field -->
+        <column name="companyName" type="String" />
+	    <column name="address" type="String" />
+	    <column name="mainTelephone" type="String" />
+	    <column name="officeTelephone" type="String" />
+	    <column name="cellTelephone" type="String" />
+	    <column name="otherContact" type="String" />
+	    <column name="whatsappTelephone" type="String" />
+	    <column name="emailContact" type="String" />
+	    <column name="contactPerName" type="String" />
+	    <column name="contactPerPosition" type="String" />
+	    <column name="contactPerPhone" type="String" />
+	    <column name="contactPerEmail" type="String" />
+	    <column name="altContactPerName" type="String" />
+	    <column name="altContactPerPosition" type="String" />
+	    <column name="altContactPerPhone" type="String" />
+	    <column name="altContactPerEmail" type="String" />
+	    <column name="comOperationYear" type="String" />
+	    <column name="products" type="String" />
+	    <column name="marketSharePer" type="String" />
+	    <column name="tradeRemedyMeasure" type="String" />
+	    <column name="fiveYearsInvestment" type="String" />
+	    <column name="planCapacity" type="String" />
+	    <column name="growthProjection" type="String" />
+	    <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJADSCById"
+			return-type="JADSCInformationRequest">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+		<entity local-service="true" name="JADSCOathRequest" remote-service="true" uuid="true" table="nbp_jadsc_oath_request">
+
+		<!-- PK fields -->
+
+		<column name="jadscOathRequestId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+        
+        <!-- Other Field -->
+        <column name="investigationType" type="String" />
+	    <column name="partyName" type="String" />
+	    <column name="requestReason" type="String" />
+	    <column name="comOfficial" type="String" />
+	    <column name="signatureDate" type="Date" />
+	    <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJADSCById"
+			return-type="JADSCOathRequest">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+		<entity local-service="true" name="JADSCCertificateOfService" remote-service="true" uuid="true" table="nbp_jadsc_certif_servic">
+
+		<!-- PK fields -->
+
+		<column name="jadscCOSId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+        
+        <!-- Other Field -->
+        <column name="docSubmitDate" type="Date" />
+	    <column name="signatoryName" type="String" />
+	    <column name="signatoryDate" type="Date" />
+	    <column name="signatoryTelephone" type="String" />
+	    <column name="signatoryFax" type="String" />
+	    <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJADSCById"
+			return-type="JADSCCertificateOfService">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+		<entity local-service="true" name="JADSCCertificateOfServiceAddForm" remote-service="true" uuid="true" table="nbp_jadsc_certif_servic_add">
+
+		<!-- PK fields -->
+
+		<column name="jadscCOSId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+        
+        <!-- Other Field -->
+        <column name="docServeCom" type="String" />
+	    <column name="docServeAddress" type="String" />
+	    <column name="docServeName" type="String" />
+	    <column name="counter" type="String" />
+	    <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJADSCById"
+			return-type="Collection">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+			<entity local-service="true" name="JADSCCertificateOfVeracity" remote-service="true" uuid="true" table="nbp_jadsc_certif_verasity">
+
+		<!-- PK fields -->
+
+		<column name="jadscCOVId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+        
+        <!-- Other Field -->
+         <column name="veracityComName" type="String" />
+	    <column name="veracityComPosition" type="String" />
+	    <column name="veracityComCompany" type="String" />
+	    <column name="veracitySignedDate" type="Date" />
+	    <column name="veracitySignedTelephone" type="String" />
+	    <column name="veracitySignedFax" type="String" />
+	    <column name="veracitySignedAddress" type="String" />
+	    <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJADSCById"
+			return-type="JADSCCertificateOfVeracity">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+			<entity local-service="true" name="JADSCChecklist" remote-service="true" uuid="true" table="nbp_jadsc_checklist_info">
+
+		<!-- PK fields -->
+
+		<column name="jadscChecklistId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+        
+        <!-- Other Field -->
+         <column name="informationRegComplaint" type="String" />
+         <column name="selectedChecklistValues" type="String" />
+         <column name="description" type="String"/>
+	     <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="JADSC_ByAppId"
+			return-type="Collection">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+			<entity local-service="true" name="JADSCNoticeOfAppearance" remote-service="true" uuid="true" table="nbp_jadsc_notic_of_appr_info">
+
+		<!-- PK fields -->
+
+		<column name="jadscNOAId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+        
+        <!-- Other Field -->
+        <column name="fullName" type="String" />
+	    <column name="addressOne" type="String" />
+	    <column name="date" type="Date" />
+	    <column name="name" type="String" />
+	    <column name="firm" type="String" />
+	    <column name="address" type="String" />
+	    <column name="telephone" type="String" />
+	    <column name="jadscApplicationId" type="long" />
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getJADSCById"
+			return-type="JADSCNoticeOfAppearance">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	</entity>
+    <entity local-service="true" name="JADSCCurrentStage" table="nbp_jadsc_current_stage" uuid="true">
+        <column name="jadscCurrentStageId" primary="true" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="userName" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="currentStage" type="String"></column>
+        <column name="lastFormStep" type="String"></column>
+        <column name="jadscApplicationId" type="long"></column>
+        <order by="desc">
+            <order-column name="createDate"></order-column>
+        </order>
+        <finder name="getByJadsc_Stage" return-type="JADSCCurrentStage">
+            <finder-column name="jadscApplicationId"></finder-column>
+        </finder>
+    </entity>
+    <entity local-service="true" name="JADSCChecklistAdd"  table="nbp_jadsc_checklist_add" uuid="true">
+
+    	<!-- PK fields -->
+
+    	<column name="jADSCChecklistAddId" primary="true" type="long"></column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+
+        
+        <!-- other field -->
+		 <column name="AddItem" type="String"></column>
+		 <column name="counter" type="String"></column>
+		 <column name="jadscApplicationId" type="long"></column>
+	       
+        <order by="desc">
+            <order-column name="createDate"></order-column>
+        </order>
+       	<finder name="getJADSCById"
+			return-type="Collection">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	   
+       	<finder name="getAppIdJADSC"
+			return-type="Collection">
+			<finder-column name="jadscApplicationId" />
+		</finder>
+	   
+    </entity>
+</service-builder>

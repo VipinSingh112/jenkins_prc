@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.ncra.stages.services">
+	<namespace>NCRA_APPLICATION_STAGE</namespace>
+	<entity local-service="true" name="NcraApplicationStages" remote-service="true" uuid="true" table="nbp_ncra_stage_appli">
+
+		<!-- PK fields -->
+
+		<column name="ncraApplciationStage" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="stageName" type="String" />
+		<column name="stageEndDate" type="Date" />
+		<column name="stageStartDate" type="Date" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="caseId" type="String" />
+		<column name="updatedBySource"  type="String" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="get_NCRA_AppStage_By_CI" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="get_NCRA_AppStage_CI" return-type="NcraApplicationStages">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="get_NCRA_By_SN" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="get_NCRA_By_Status" return-type="NcraApplicationStage">
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="get_NCRA_By_CI_SN_SS" return-type="NcraApplicationStage">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="get_NCRA_By_CI_SN" return-type="NcraApplicationStage">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="get_NCRA_By_CI_SS" return-type="NcraApplicationStage">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />
+		</finder>
+	</entity>
+	<entity name="NcraInspection" local-service="true"
+		table="nbp_ncra_inspection">
+
+		<!-- PK fields -->
+
+		<column name="ncraInspectionId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="ncraApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		<order>
+  		  <order-column name="createDate" order-by="desc" />
+		</order>
+        
+        <finder name="getNcraInspectionBy_CI" return-type="NcraInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getNcra_AI" return-type="Collection">
+			<finder-column name="ncraApplicationId" />
+		</finder>
+		<finder name="getNcra_by_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getHsra_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getNcra_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getNcra_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="ncraApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="NcraInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="ncraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="CertificateOfVerification" local-service="true"
+    	table="nbp_certificate_of_verifi">
+
+    	<!-- PK fields -->
+
+    	<column name="certificateOfVerificationId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	<column name="nameOfApplicant" type="String"></column>
+    	<column name="productName" type="String"></column>
+    	<column name="dateCertificateIssued" type="Date"></column>
+    	<column name="dateOfExpiration" type="Date"></column>
+    	<column name="certificateNumber" type="String"></column>
+    	<column name="caseId" type="String"></column>
+    	<column name="documentFileEntryId" type="long"></column>
+    	      <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		  <!-- Finder methods -->
+		<finder name="getNcra_By_CaseId" return-type="CertificateOfVerification">
+			<finder-column name="caseId" />
+		</finder>
+    	
+    </entity>
+</service-builder>

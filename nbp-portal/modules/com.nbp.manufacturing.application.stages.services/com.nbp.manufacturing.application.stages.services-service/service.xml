@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.manufacturing.application.stages.services">
+	<namespace>MANUFACTURING_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="ManufacturingApplicationStages"
+		remote-service="true" uuid="false"
+		table="nbp_manufacturing_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="manufacturingAppStagesId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+        <column name="stageName" type="String"></column>
+        <column name="duration" type="String"></column>
+        <column name="stageStatus" type="String"></column>
+        <column name="stageStartDate" type="Date"></column>
+        <column name="stageEndDate" type="Date"></column>
+        <column name="manufacturingApplicationId" type="long"></column>
+        <column name="caseId" type="String"></column>
+        <column name="updateBySource" type="String"></column>
+        <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getMAS_MAI" return-type="ManufacturingApplicationStages">
+            <finder-column name="manufacturingApplicationId"></finder-column>
+        </finder>
+        <finder name="getMAS_CaseIdStageName" return-type="ManufacturingApplicationStages">
+            <finder-column name="caseId"></finder-column>
+            <finder-column name="stageName"></finder-column>
+        </finder>
+        <finder name="getMAS_CaseIdStageStatus" return-type="ManufacturingApplicationStages">
+            <finder-column name="caseId"></finder-column>
+            <finder-column name="stageStatus"></finder-column>
+            <finder-column name="stageName"></finder-column>
+        </finder>
+        <finder name="getMAS_CaseIdAndStatus" return-type="ManufacturingApplicationStages">
+            <finder-column name="caseId"></finder-column>
+            <finder-column name="stageStatus"></finder-column>
+        </finder>
+        <finder name="getMAS_CaseId" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getMAS_SN_Status" return-type="Collection">
+            <finder-column name="stageStatus"></finder-column>
+            <finder-column name="stageName"></finder-column>
+        </finder>
+         <finder name="getMAS_StageName" return-type="Collection">
+            <finder-column name="stageName"></finder-column>
+        </finder>
+	</entity>
+	<entity name="ManuInspection" local-service="true"
+		table="nbp_manufacturing_inspec">
+
+		<!-- PK fields -->
+
+		<column name="manuInspectionId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="manufacturingApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		
+        
+        <order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+        
+        <finder name="getManuInspectionBy_CI" return-type="ManuInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getMI_MAI" return-type="Collection">
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getMI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getMI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="ManuInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="manufacturingApplicationId" />
+		</finder>
+	</entity>
+	<entity name="ManufacturingRecommendationToJCA" local-service="true"
+		table="nbp_manufacturing_rec_jca">
+
+
+		<!-- PK fields -->
+
+		<column name="manufacturingJCAId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="date" type="Date"></column>
+        <column name="recommendationToJCA" type="String"></column>
+        <column name="recommendation" type="String"></column>
+        <column name="numberOfMIICInspectors" type="String"></column>
+        <finder name="getManuFacturingBy_CaseId" return-type="ManufacturingRecommendationToJCA">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="ManufacturingPermit" local-service="true"
+		table="nbp_manufacturing_permit">
+
+		<!-- PK fields -->
+
+		<column name="manufacturingPermitId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="PIRPermtNumber" type="String"></column>
+        <column name="dateOfIssue" type="Date"></column>
+        <column name="dateOfExpiration" type="Date"></column>
+        <column name="durationOfPermit" type="String"></column>
+        <column name="typeOfPermit" type="String"></column>
+        <column name="numberOfExtensions" type="String"></column>
+        <column name="parish" type="String"></column>
+        <column name="pirPermitCertificateNumber" type="long"></column>
+        <finder name="getManufacturingPermitBY_CI" return-type="ManufacturingPermit">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getManufacturingPermitBY_PermitNumber" return-type="ManufacturingPermit">
+            <finder-column name="PIRPermtNumber"></finder-column>
+        </finder>
+	</entity>
+	<entity name="ManuDeskVerification" local-service="true" table="nbp_manu_desk_verification">
+
+		<!-- PK fields -->
+
+		<column name="manuDeskVerificationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="documentName" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="manufacturingApplicationId"  type="long" />
+        
+        <finder name="getManuDeskVerificationByStatus_ApplicationId" return-type="Collection">
+          <finder-column name="status"></finder-column>
+          <finder-column name="manufacturingApplicationId"></finder-column>
+        </finder>
+      <finder name="getManufactuirngById" return-type="ManuDeskVerification">
+          <finder-column name="manufacturingApplicationId"></finder-column>
+      </finder>
+            <finder name="getDeskVerificationManufactuirngById" return-type="Collection">
+          <finder-column name="manufacturingApplicationId"></finder-column>
+      </finder>
+	</entity>
+</service-builder>

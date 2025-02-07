@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.fire.brigade.stage.service-api
+Bundle-SymbolicName: com.nbp.fire.brigade.stage.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.fire.brigade.stage.service.exception,\
+	com.nbp.fire.brigade.stage.service.model,\
+	com.nbp.fire.brigade.stage.service.service,\
+	com.nbp.fire.brigade.stage.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.fire.brigade.stage.service-service/service.xml

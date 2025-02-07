@@ -1,0 +1,11 @@
+dependencies {
+	implementation project(":modules:com.nbp.ogt.stages.services:com.nbp.ogt.stages.services-api")
+	implementation project(":modules:com.nbp.ogt.application.form.services:com.nbp.ogt.application.form.services-api")
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.ogt.stages.services-api/src/main/java"
+}
+
+group = "com.nbp.ogt.stages.services"

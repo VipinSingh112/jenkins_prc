@@ -1,0 +1,12 @@
+dependencies {
+	implementation  project(":modules:com.nbp.creative.stages.services:com.nbp.creative.stages.services-api")
+	implementation  project(":modules:com.nbp.creative.application.form.service:com.nbp.creative.application.form.service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.creative.stages.services-api/src/main/java"
+}
+
+group = "com.nbp.creative.stages.services"

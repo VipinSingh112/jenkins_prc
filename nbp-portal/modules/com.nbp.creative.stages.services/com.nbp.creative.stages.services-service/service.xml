@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.creative.stages.services">
+	<namespace>CREATIVE_STAGES</namespace>
+<entity local-service="true" name="CreativeApplicationStages" remote-service="true" uuid="true" table="nbp_creative_app_stages">
+		
+		<!-- PK fields -->
+
+		<column name="creativeApplicationStagesId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="creativeApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getCAS_CAI" return-type="CreativeApplicationStages">
+			<finder-column name="creativeApplicationId" />
+		</finder>
+		<finder name="getCAS_CaseIdStageName" return-type="CreativeApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+			<finder name="getCAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getCAS_CaseIdStageStatus" return-type="CreativeApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getCAS_CaseIdAndStatus" return-type="CreativeApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getCAS_SNAndSS" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getCAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		
+	</entity>
+	<entity name="CreativeInspection" local-service="true"
+		table="nbp_creative_inspection">
+
+		<!-- PK fields -->
+
+		<column name="creativeInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        
+        <!-- Other fields -->
+		
+		<column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="updatedBySource"  type="String" />
+		<column name="status"  type="String" />
+		<column name="caseId"  type="String" />
+		<column name="creativeApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+        
+        <!-- Finder methods -->
+        <finder name="getCreativeInspectionBy_CI" return-type="CreativeInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+		<finder name="getCI_CAI" return-type="Collection">
+			<finder-column name="creativeApplicationId" />
+		</finder>
+		<finder name="getCI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getCI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="creativeApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="CreativeInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="creativeApplicationId" />
+		</finder>
+        
+	</entity>
+		<entity name="CreativePermit" local-service="true"
+		table="nbp_creative_permit">
+
+		<!-- PK fields -->
+
+		<column name="creativePermitId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="caseId" type="String"></column>
+        <column name="pirPermtNumber" type="String"></column>
+        <column name="dateofIssue" type="Date"></column>
+        <column name="dateOfExpiration" type="Date"></column>
+        <column name="durationOfPermit" type="String"></column>
+        <column name="pirCertificateNumber" type="long"></column>
+        <finder name="getCreativePermitBy_CI" return-type="CreativePermit">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity>
+		<entity name="CreativeDeskVerification" local-service="true"
+			table="nbp_creative_desk_veri">
+
+			<!-- PK fields -->
+
+			<column name="creativeDeskVerificationId" primary="true"
+				type="long">
+			</column>
+
+			<!-- Group instance -->
+
+			<column name="groupId" type="long"></column>
+
+			<!-- Audit fields -->
+
+			<column name="companyId" type="long"></column>
+			<column name="userId" type="long"></column>
+			<column name="userName" type="String"></column>
+			<column name="createDate" type="Date"></column>
+			<column name="modifiedDate" type="Date"></column>
+			<column name="creativeApplicationId" type="long"></column>
+	        <column name="documentName" type="String"></column>
+	        <column name="documentStatus" type="String"></column>
+	        <finder name="getDeskVerCreativeById" return-type="Collection">
+       	    <finder-column name="creativeApplicationId"></finder-column>
+     	    </finder>
+		</entity>
+</service-builder>

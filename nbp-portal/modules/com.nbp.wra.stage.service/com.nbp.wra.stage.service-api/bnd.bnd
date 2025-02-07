@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.wra.stage.service-api
+Bundle-SymbolicName: com.nbp.wra.stage.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.wra.stage.service.exception,\
+	com.nbp.wra.stage.service.model,\
+	com.nbp.wra.stage.service.service,\
+	com.nbp.wra.stage.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.wra.stage.service-service/service.xml

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.farm.application.stages.service.model.FarmApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="farmApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="farmApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.farm.application.stages.service.model.FarmDeskVerification">
+		<field name="farmDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="farmerApplicationId" type="long" />
+		<field name="documentName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="documentStatus" type="String" />
+	</model>
+	<model name="com.nbp.farm.application.stages.service.model.FarmInspection">
+		<field name="farmInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="inspectionDate" type="Date" />
+		<field name="insectionDateRange" type="String" />
+		<field name="invities" type="String" />
+		<field name="location" type="String" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+		<field name="farmApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.farm.application.stages.service.model.FarmPermit">
+		<field name="farmPermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="pirPermtNumber" type="String" />
+		<field name="duration" type="String" />
+		<field name="dateofIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="pirCertificateNUmber" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.explosives.competency.application.form.service.model.BlasterCompetencyForm">
+		<field name="blasterCompetencyFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="surName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="gender" type="String" />
+		<field name="officeNumber" type="String" />
+		<field name="cellNum" type="String" />
+		<field name="trnNum" type="String" />
+		<field name="dateOfBirth" type="Date" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="educationalBack" type="String" />
+		<field name="blastingCourse" type="String" />
+		<field name="state" type="String" />
+		<field name="nameOfCourse" type="String" />
+		<field name="courseOrganiser" type="String" />
+		<field name="dateAppli" type="Date" />
+		<field name="explosivesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.explosives.competency.application.form.service.model.ExplosiveAppPayment">
+		<field name="explosiveAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="explosivesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.explosives.competency.application.form.service.model.ExplosivesApplication">
+		<field name="uuid" type="String" />
+		<field name="explosivesApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="competencyCertificateNumber" type="String" />
+		<field name="dateOfIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.explosives.competency.application.form.service.model.ExplosivesCurrentStage">
+		<field name="explosiveStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormDetailsStep" type="String" />
+		<field name="explosivesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.explosives.competency.application.form.service.model.PyrotechnicCompetencyForm">
+		<field name="pyrotechnicCompetencyFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstNamePyro" type="String" />
+		<field name="surNamePyro" type="String" />
+		<field name="middleNamePyro" type="String" />
+		<field name="genderPyro" type="String" />
+		<field name="officeNumberPyro" type="String" />
+		<field name="cellNumPyro" type="String" />
+		<field name="trnNumPyro" type="String" />
+		<field name="dateOfBirthPyro" type="Date" />
+		<field name="addressPyro" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="educationalBackPyro" type="String" />
+		<field name="blastingCoursePyro" type="String" />
+		<field name="statePyro" type="String" />
+		<field name="nameOfCoursePyro" type="String" />
+		<field name="courseOrganiserPyro" type="String" />
+		<field name="dateAppliPyro" type="String" />
+		<field name="explosivesApplicationId" type="long" />
+	</model>
+</model-hints>

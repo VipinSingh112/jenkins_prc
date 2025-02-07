@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.ncra.application.form.service.model.NcraApplicantDetailInfo">
+		<field name="ncraApplicantDetailInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantBusinessName" type="String" />
+		<field name="applicantAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantContact" type="String" />
+		<field name="applicantTeleNum" type="String" />
+		<field name="applicantFaxNo" type="String" />
+		<field name="applicantEmailAddr" type="String" />
+		<field name="applicantLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ncraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ncra.application.form.service.model.NcraApplication">
+		<field name="ncraApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="doYouWant" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.ncra.application.form.service.model.NcraCurrentStage">
+		<field name="ncraCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStepDetails" type="String" />
+		<field name="ncraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ncra.application.form.service.model.NcraFeeSubmission">
+		<field name="ncraFeeSubmissionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="creditStatus" type="String" />
+		<field name="ncraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ncra.application.form.service.model.NcraVerifyWeighingDate">
+		<field name="ncraVerifyWeighingDateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="weighingDate" type="Date" />
+		<field name="ncraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.ncra.application.form.service.model.NcraVerifyWeighingDeviceInfo">
+		<field name="ncraVerifyWeighingDeviceInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeofDevice" type="String" />
+		<field name="manufacturer" type="String" />
+		<field name="serialNumber" type="String" />
+		<field name="quantity" type="String" />
+		<field name="maximumCapacity" type="String" />
+		<field name="counter" type="String" />
+		<field name="ncraApplicationId" type="long" />
+	</model>
+</model-hints>

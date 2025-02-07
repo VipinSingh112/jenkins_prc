@@ -1,0 +1,55 @@
+/**
+ * SPDX-FileCopyrightText: (c) 2025 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+package com.nbp.hsra.application.service.service;
+
+import com.liferay.portal.kernel.service.ServiceWrapper;
+
+/**
+ * Provides a wrapper for {@link UnsealedSourceAddService}.
+ *
+ * @author Brian Wing Shun Chan
+ * @see UnsealedSourceAddService
+ * @generated
+ */
+public class UnsealedSourceAddServiceWrapper
+	implements ServiceWrapper<UnsealedSourceAddService>,
+			   UnsealedSourceAddService {
+
+	public UnsealedSourceAddServiceWrapper() {
+		this(null);
+	}
+
+	public UnsealedSourceAddServiceWrapper(
+		UnsealedSourceAddService unsealedSourceAddService) {
+
+		_unsealedSourceAddService = unsealedSourceAddService;
+	}
+
+	/**
+	 * Returns the OSGi service identifier.
+	 *
+	 * @return the OSGi service identifier
+	 */
+	@Override
+	public String getOSGiServiceIdentifier() {
+		return _unsealedSourceAddService.getOSGiServiceIdentifier();
+	}
+
+	@Override
+	public UnsealedSourceAddService getWrappedService() {
+		return _unsealedSourceAddService;
+	}
+
+	@Override
+	public void setWrappedService(
+		UnsealedSourceAddService unsealedSourceAddService) {
+
+		_unsealedSourceAddService = unsealedSourceAddService;
+	}
+
+	private UnsealedSourceAddService _unsealedSourceAddService;
+
+}

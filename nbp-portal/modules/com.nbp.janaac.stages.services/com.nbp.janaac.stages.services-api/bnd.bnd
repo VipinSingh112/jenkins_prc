@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.janaac.stages.services-api
+Bundle-SymbolicName: com.nbp.janaac.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.janaac.stages.services.exception,\
+	com.nbp.janaac.stages.services.model,\
+	com.nbp.janaac.stages.services.service,\
+	com.nbp.janaac.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.janaac.stages.services-service/service.xml

@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.ncra.stages.services-api
+Bundle-SymbolicName: com.nbp.ncra.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.ncra.stages.services.exception,\
+	com.nbp.ncra.stages.services.model,\
+	com.nbp.ncra.stages.services.service,\
+	com.nbp.ncra.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.ncra.stages.services-service/service.xml

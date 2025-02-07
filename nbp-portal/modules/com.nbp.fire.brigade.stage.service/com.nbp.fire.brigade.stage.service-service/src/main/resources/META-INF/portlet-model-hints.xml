@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.fire.brigade.stage.service.model.FireBrigadeApplicationStage">
+		<field name="uuid" type="String" />
+		<field name="fireBrigadeAppStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="stageEndDate" type="Date" />
+		<field name="stageStartDate" type="Date" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.fire.brigade.stage.service.model.FireBrigadeCertificate">
+		<field name="fireBrigadeCertificateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfOwner" type="String" />
+		<field name="typeOfPremises" type="String" />
+		<field name="issueDate" type="Date" />
+		<field name="expirationDate" type="Date" />
+		<field name="docFileEntry" type="long" />
+		<field name="caseId" type="String" />
+		<field name="certificateNumber" type="String" />
+	</model>
+	<model name="com.nbp.fire.brigade.stage.service.model.FireBrigadeInspection">
+		<field name="fireBrigadeInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.stage.service.model.FireBrigadePaymentConfirmation">
+		<field name="fireBrigadePaymentConfirId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountDue" type="String" />
+		<field name="amountReceived" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+</model-hints>

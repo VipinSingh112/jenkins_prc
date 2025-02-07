@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.pharmaceutical.application.form.service">
+    <namespace>PHARMACEUTICAL</namespace>
+	<entity local-service="true" name="PharmaApplication"
+    	table="nbp_pharma_application">
+
+    	<!-- PK fields -->
+
+    	<column name="pharmaApplicationId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="entityId" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+        <column name="requesttype" type="String"></column>
+        <column name="typeOfPharmaProduct" type="String"></column>
+        <column name="typeOfPharmaDrug" type="String"></column>
+        <column name="secondaryCategory" type="String"></column>
+        <column name="typeOfProduct" type="String"></column>
+        <column name="subCategoryFirstField" type="String"></column>
+        <column name="subCategorySecondField" type="String"></column>
+        <column name="status" type="int"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="caseld" type="String"></column>
+        <column name="icmDocumentsPath" type="String" />
+        <column name="pdfFileEntryId" type="long" />
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="appCurrentStageName" type="String" />
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getPharmaByAppId" return-type="PharmaApplication">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+        <finder name="getPharmaByStatusUser" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="getPharmaByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="getPharmaByAppNum" return-type="PharmaApplication">
+            <finder-column name="applicationNumber"></finder-column>
+        </finder>
+        <finder name="pharmaApplicationByCaseId" return-type="PharmaApplication">
+			<finder-column name="caseld" />
+		</finder>
+		 <finder name="getPharmaByAT_AppNo" return-type="PharmaApplication">
+			<finder-column name="requesttype" />
+			<finder-column name="expiredLicenseAppNumber" />
+		</finder>
+        
+    </entity>
+     <entity name="PharmaMedicalDeviceInfo" local-service="true"
+    	table="nbp_pharma_medical_device">
+
+    	<!-- PK fields -->
+
+    	<column name="pharmaMedicalDeviceId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+        <column name="pharmaDeviceName" type="String"></column>
+        <column name="pharmaDeviceDeisgnation" type="String"></column>
+        <column name="pharmaManufacturerName" type="String"></column>
+        <column name="pharmaManufacturerAddress" type="String"></column>
+        <column name="pharmaMedicalApplicantName" type="String"></column>
+        <column name="pharmaMedicalApplicantAddress" type="String"></column>
+        <column name="pharmaRepresentativeName" type="String"></column>
+        <column name="pharmaRepresentativeAddress" type="String"></column>
+        <column name="pharmaApplicationId" type="long"></column>
+      
+      
+      
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        
+        
+        
+        <finder name="getPharmaByAppId" return-type="PharmaMedicalDeviceInfo">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+        <finder name="getPA_MD_PAI" return-type="Collection">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>	
+    </entity>
+        <entity name="PharmaDrugInfo" local-service="true" table="nbp_pharma_drug_Info">
+
+    	<!-- PK fields -->
+
+    	<column name="pharmaDrugInfoId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+
+   
+
+    	<!-- Other fields -->
+
+        <column name="pharmaDrugBrandName" type="String"></column>
+        <column name="pharmaDrugDeisgnation" type="String"></column>
+        <column name="pharmaDosageForm" type="String"></column>
+        <column name="pharmaAdministrationRoute" type="String"></column>
+        <column name="pharmaOriginDispensing" type="String"></column>
+        <column name="pharmaLicenseHolderName" type="String"></column>
+        <column name="pharmaLicenseHolderAddress" type="String"></column>
+        <column name="pharmaApplicationId" type="long"></column>
+        
+            <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        
+        
+        
+        <finder name="getPharmaByAppId" return-type="PharmaDrugInfo">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+        <finder name="getPA_DI_PAI" return-type="Collection">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+        
+    </entity>
+     <entity name="PharmaManufacturerInfo" local-service="true"
+    	table="nbp_pharma_manufacturer">
+
+    	<!-- PK fields -->
+
+    	<column name="pharmaManufacturerInfoId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	<column name="pharmaDrugManufacturerName" type="String"></column>
+   		<column name="pharmaDrugManufacturerAdd" type="String"></column>
+    	<column name="pharmaDrugDeisgnation" type="String"></column>
+    	<column name="pharmaMarketAuthName" type="String"></column>
+    	<column name="pharmaMarketAuthAddress" type="String"></column>
+    	<column name="pharmaReguOfficerName" type="String"></column>
+    	<column name="pharmaReguOfficerContact" type="String"></column>
+    	<column name="pharmaDrugApplicName" type="String"></column>
+    	<column name="pharmaDrugApplicAddress" type="String"></column>
+        <column name="pharmaLocalReprName" type="String"></column>
+        <column name="pharmaLocalReprContact" type="String"></column>
+        <column name="pharmaLocalReprAdd" type="String"></column>
+        <column name="pharmaLocalDistName" type="String"></column>
+        <column name="pharmaLocalDistAddress" type="String"></column>
+        <column name="pharmaLocalDistContact" type="String"></column>
+        <column name="pharmaApplicationId" type="long"></column>
+            <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getPharmaByAppId" return-type="PharmaManufacturerInfo">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+        <finder name="getPA_DI_PAI" return-type="Collection">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+    </entity>
+     <entity name="PharmaCurrentStage" local-service="true"
+ 	table="nbp_pharma_current_stage">
+
+ 	<!-- PK fields -->
+
+ 	<column name="pharmaCurrentStageId" primary="true" type="long"></column>
+
+ 	<!-- Group instance -->
+
+ 	<column name="groupId" type="long"></column>
+
+ 	<!-- Audit fields -->
+
+ 	<column name="companyId" type="long"></column>
+ 	<column name="userId" type="long"></column>
+ 	<column name="userName" type="String"></column>
+ 	<column name="createDate" type="Date"></column>
+ 	<column name="modifiedDate" type="Date"></column>
+ 	<column name="currentStage" type="String"></column>
+    <column name="lastFormStage" type="String"></column>
+    <column name="pharmaApplicationId" type="long"></column>
+        <!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+<finder name="getpharmaById" return-type="PharmaCurrentStage">
+			<finder-column name="pharmaApplicationId" />
+		</finder>
+	<finder name="getPA_CS_PAI" return-type="PharmaCurrentStage">
+			<finder-column name="pharmaApplicationId" />
+		</finder>
+	
+ 	
+ </entity>
+     <entity name="PharmaDocumentList" local-service="true" table="nbp_pharma_doc_list">
+
+
+     	<!-- PK fields -->
+
+     	<column name="pharmaDocListId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<!-- Audit fields -->
+        <column name="pharmaAppType" type="String"></column>
+        <column name="pharmaDocList" type="String"></column>
+        <finder name="getPharmaDocByApplicant" return-type="Collection">
+            <finder-column name="pharmaAppType"></finder-column>
+        </finder>
+     </entity>
+     <entity name="PharmaSubCategoriesMapping"
+     	table="nbp_pharma_sub_categories" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="pharmaSubCategoriesMappingId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<!-- Audit fields -->
+        <column name="pharmaSubCategory" type="String"></column>
+        <column name="pharmaSubCategoryMapValue" type="String"></column>
+        <finder name="getPharmSubCategory" return-type="Collection">
+            <finder-column name="pharmaSubCategory"></finder-column>
+        </finder>
+     </entity>
+     <entity name="PharmaApplicationPayment" local-service="true" table="nbp_pharma_app_payment">
+
+     	<!-- PK fields -->
+
+     	<column name="pharmaApplicationPaymentId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		
+		<column name="paymentMethod" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="paymentStatus" type="String" />
+		<column name="paymentFee" type="String" />
+		<column name="amountPaid" type="String" />
+		<column name="amountCurrency" type="String" />
+		<column name="transactionNumber" type="String" />
+		<column name="pharmaApplicationId"  type="long" />
+		
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getPAP_PAI" return-type="PharmaApplicationPayment">
+			<finder-column name="pharmaApplicationId" />
+		</finder>
+     </entity>
+     <entity name="PharmaCancellationForm" table="nbp_pharma_cancel" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="pharmaCancellationFormId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+        <column name="nameOfLicenseHolder" type="String"></column>
+        <column name="dateOfRecall" type="Date"></column>
+        <column name="initiatedBy" type="String"></column>
+        <column name="licenseNumber" type="String"></column>
+        <column name="pharmaApplicationId" type="long"></column>
+
+        <finder name="getCancelById" return-type="PharmaCancellationForm">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+     </entity>
+     <entity name="PharmaRecallForm" table="nbp_pharma_recall" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="pharmaRecallFormId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+        <column name="nameOfLicenseHolder" type="String"></column>
+        <column name="dateOfRecall" type="Date"></column>
+        <column name="initiatedBy" type="String"></column>
+        <column name="typeOfRecall" type="String"></column>
+        <column name="licenseNumber" type="String"></column>
+        <column name="pharmaApplicationId" type="long"></column>
+
+        <finder name="getCancelById" return-type="PharmaRecallForm">
+            <finder-column name="pharmaApplicationId"></finder-column>
+        </finder>
+     </entity>
+      
+</service-builder>

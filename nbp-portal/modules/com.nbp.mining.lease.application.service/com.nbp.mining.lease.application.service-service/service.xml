@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.mining.lease.application.service">
+	<namespace>MINING_LEASE_APPLICATION</namespace>
+<entity local-service="true" name="MiningLeaseApplication" table="nbp_mining_applications">
+
+		<!-- PK fields -->
+
+		<column name="miningLeaseApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+
+		<column name="typeOfApplicant" type="String"></column>
+		<column name="prospectingRightNumber" type="String"></column>
+		<column name="typeOfProspectingLicence" type="String"></column>
+		<column name="typeOfTransaction" type="String"></column>
+		<column name="areaDelinationTotalApprox" type="String"></column>
+		<column name="licenceExclusiveSpecial" type="String"></column>
+		<column name="miningMineralsTypeVal" type="String"></column>
+		<column name="otherMineralBox" type="String"></column>
+		<column name="areaDelination" type="String"></column>
+		<!-- <column name="typeOfDebt" type="String"></column> -->
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="prospRightsNum" type="String"></column>
+		<column name="prospLicenseNum" type="String"></column>
+		<column name="expiredLicenseAppNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getMiningByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getMiningByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getMiningByAppNum"
+			return-type="MiningLeaseApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getMiningByCaseId"
+			return-type="MiningLeaseApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMiningBy_ProspectingRightNumber_ProspectingLicence_Number"
+			return-type="MiningLeaseApplication">
+			<finder-column name="applicationNumber"></finder-column>
+			<finder-column name="prospRightsNum"></finder-column>
+		</finder>
+		 	<finder name="getMiningByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getMiningByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getMiningByEI_CI" return-type="MiningLeaseApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMiningByRT_AppNo" return-type="MiningLeaseApplication">
+			<finder-column name="typeOfApplicant"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+    <entity name="MiningProspectingRights" table="nbp_mining_prospect_rights" local-service="true">
+
+    	<!-- PK fields -->
+
+    	<column name="prospectingRightsId" primary="true" type="long"></column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+    	<column name="nameOfApplicant" type="String"></column>
+    	<column name="trnNum" type="String"></column>
+    	<column name="nationalityOfApplicant" type="String"></column>
+    	<column name="ageOfApplicant" type="String"></column>
+    	<column name="telephoneNum" type="String"></column>
+    	<column name="emailAddr" type="String"></column>
+    	<column name="addressInJamaica" type="String"></column>
+    	<column name="applicantProspectAcc" type="String"></column>
+    	<column name="otherPersonName" type="String"></column>
+    	<column name="otherPersonAddr" type="String"></column>
+    	<column name="prevApplication" type="String"></column>
+    	<column name="offenceMiningAct" type="String"></column>
+    	<column name="validProspectRight" type="String"></column>
+    	<column name="surrenderProspectRight" type="String"></column>
+    	<column name="prospectRightsFeeCheck" type="String"></column>
+    	<column name="miningLeaseApplicationId" type="long"></column>
+    	
+    	<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getMiningById" return-type="MiningProspectingRights">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+    	
+    </entity>
+    <entity name="MiningProspectingLicense"
+    	table="nbp_mining_prospect_license"  local-service="true" >
+
+    	<!-- PK fields -->
+
+    	<column name="miningProspectingLicenseId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+    	<!-- other fields -->
+    	<column name="nameOfApplicant" type="String"></column>
+    	<column name="trnNumber" type="String"></column>
+    	<column name="nationalityOfApplicant" type="String"></column>
+    	<column name="addressInJamaica" type="String"></column>
+    	<column name="telephoneNumber" type="String"></column>
+    	<column name="emailAddress" type="String"></column>
+    	<column name="numberOfApplicant" type="String"></column>
+    	<column name="nameOfTheAgent" type="String"></column>
+    	<column name="numberOfThisProspecting" type="String"></column>
+    	<column name="prospectingRight" type="String"></column>
+    	<column name="parish" type="String"></column>
+    	<column name="licence" type="String"></column>
+    	<column name="stateTheNearestLandmark" type="String"></column>
+    	<column name="approximateArea" type="String"></column>
+    	<column name="mineralForWhichApplicant" type="String"></column>
+    	<column name="copyOfArticle" type="String"></column>
+    	<column name="dateUponTheLocation" type="Date"></column>
+    	<column name="proslicenceFeeCheck" type="String"></column>
+    	<!-- delineation -->
+    	<column name="dateSurrender" type="Date"></column>
+    	<column name="areaOfApproximately" type="String"></column>
+    	<column name="locationBeacon" type="String"></column>
+    	<column name="intersectionCoordinates" type="String"></column>
+    	<column name="northTopographical" type="String"></column>
+    	<column name="eastTopographical" type="String"></column>
+    	<column name="firstCornerOfNorth" type="String"></column>
+    	<column name="firstCornerOfEast" type="String"></column>
+    	<column name="firstCornerApproximateMeter" type="String"></column>
+    	<column name="firstCornerApproximateDegree" type="String"></column>
+    	<column name="secondCornerOfNorth" type="String"></column>
+    	<column name="secondCornerOfEast" type="String"></column>
+    	<column name="secondCornerApproximateMeter" type="String"></column>
+    	<column name="secondCornerApproximateDegree" type="String"></column>
+    	<column name="thirdCornerOfNorth" type="String"></column>
+    	<column name="thirdCornerOfEast" type="String"></column>
+    	<column name="thirdCornerApproximateMeter" type="String"></column>
+    	<column name="thirdCornerApproximateDegree" type="String"></column>
+    	<column name="fourthCornerOfNorth" type="String"></column>
+    	<column name="fourthCornerOfEast" type="String"></column>
+    	<column name="fourthCornerApproximateMeter" type="String"></column>
+    	<column name="fourthCornerApproximateDegree" type="String"></column>
+    	<column name="fifthCornerOfNorth" type="String"></column>
+    	<column name="fifthCornerOfEast" type="String"></column>
+    	<column name="fifthCornerApproximateMeter" type="String"></column>
+    	<column name="fifthCornerApproximateDegree" type="String"></column>
+    	<column name="miningLeaseApplicationId" type="long"></column>
+    	
+    	<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getMiningById" return-type="MiningProspectingLicense">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+    	
+    </entity>
+     <entity name="MiningProspectingLicenseAdd"
+    	table="nbp_mining_pro_license_add"  local-service="true" >
+
+    	<!-- PK fields -->
+
+    	<column name="miningProspectingLicenseAddId" primary="true"
+    		type="long">
+    	</column>
+
+    	<!-- Group instance -->
+
+    	<column name="groupId" type="long"></column>
+
+    	<!-- Audit fields -->
+    	<column name="companyId" type="long"></column>
+    	<column name="userId" type="long"></column>
+    	<column name="userName" type="String"></column>
+    	<column name="createDate" type="Date"></column>
+    	<column name="modifiedDate" type="Date"></column>
+    	
+    	<!-- other fields -->
+    	<column name="name" type="String"></column>
+    	<column name="nationality" type="String"></column>
+    	<column name="directorsOfCompany" type="String"></column>
+    	<column name="counter" type="String"></column>
+    	<column name="miningLeaseApplicationId" type="long"></column>
+    	
+    	<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getMiningById" return-type="Collection">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+    	
+    </entity>
+     <entity name="MiningExclusiveLicFormFive"
+     	table="nbp_exclusive_form_five" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="miningExclusiveLicFormFiveId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	<column name="applicantNameLicence" type="String"></column>
+     	<column name="trnNumberLicence" type="String"></column>
+     	<column name="applicantNationalityLicence" type="String"></column>
+     	<column name="applicantAddressLicence" type="String"></column>
+     	<column name="applicantTelephoneLicence" type="String"></column>
+     	<column name="applicantEmailLicence" type="String"></column>
+     	<column name="applicantNumberLicence" type="String"></column>
+     	<column name="agentNameLicence" type="String"></column>
+     	<column name="numProspectingLicence" type="String"></column>
+     	<column name="agentNameLicenceGrant" type="String"></column>
+     	<column name="applicantLicence" type="String"></column>
+     	<column name="justicePeaceParish" type="String"></column>
+     	<column name="applicantLandmarkLicence" type="String"></column>
+     	<column name="applicantAreaLicence" type="String"></column>
+     	<column name="applicantDesires" type="String"></column>
+     	<column name="dateLocationLic" type="Date"></column>
+     	<column name="incorporationLodged" type="String"></column>
+     	<column name="miningLeaseApplicationId" type="long"></column>
+     	
+     	<finder name="getMiningById" return-type="MiningExclusiveLicFormFive">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+     </entity>
+     <entity name="MiningFormFiveDelineation"
+     	table="nbp_delineation_area" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="miningFormFiveDelineationId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	<column name="approximatelyArea" type="String"></column>
+     	<column name="location" type="String"></column>
+     	<column name="coordinates" type="String"></column>
+     	<column name="northSide" type="String"></column>
+     	<column name="eastSide" type="String"></column>
+     	<column name="firstNorthSide" type="String"></column>
+     	<column name="firstEastSide" type="String"></column>
+     	<column name="firstLocationGrid" type="String"></column>
+     	<column name="firstDegrees" type="String"></column>
+     	<column name="secondNorthSide" type="String"></column>
+     	<column name="secondEastSide" type="String"></column>
+     	<column name="secondLocationGrid" type="String"></column>
+     	<column name="secondDegrees" type="String"></column>
+     	<column name="thirdCoordinates" type="String"></column>
+     	<column name="thirdNorthSide" type="String"></column>
+     	<column name="thirdEastSide" type="String"></column>
+     	<column name="thirdDegrees" type="String"></column>
+     	<column name="thirdGridLoc" type="String"></column>
+     	<column name="thirdGridL" type="String"></column>
+     	<column name="fourthCoordinates" type="String"></column>
+     	<column name="fourthNorthSide" type="String"></column>
+     	<column name="fourthEastSide" type="String"></column>
+     	<column name="fourthDegrees" type="String"></column>
+     	<column name="fourthGridLoc" type="String"></column>
+     	<column name="fourthGridL" type="String"></column>
+     	<column name="fifthCoordinates" type="String"></column>
+     	<column name="fifthNorthSide" type="String"></column>
+     	<column name="fifthEastSide" type="String"></column>
+     	<column name="fifthDegrees" type="String"></column>
+     	<column name="fifthGridLoc" type="String"></column>
+     	<column name="fifthGridL" type="String"></column>
+     	<column name="miningLeaseApplicationId" type="long"></column>
+     	
+     	<finder name="getMiningById" return-type="MiningFormFiveDelineationArea">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+     </entity>
+     <entity name="MiningRenewalLicence"
+     	table="nbp_mining_renew_licence" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="miningRenewalLicenceId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	<column name="renewApplicantName" type="String"></column>
+     	<column name="renewTrnNum" type="String"></column>
+     	<column name="renewApplicantLicNum" type="String"></column>
+     	<column name="stateWhetherRenewIs" type="String"></column>
+     	<column name="renewTelephone" type="String"></column>
+     	<column name="renewEmailAddr" type="String"></column>
+     	<column name="renewNumOfApplicantLease" type="String"></column>
+     	<column name="renApplicantDesireToMine" type="String"></column>
+     	<column name="renewTermDesired" type="String"></column>
+     	<column name="renewFeeCheck" type="String"></column>
+     	<column name="renewDate" type="Date"></column>
+     	<column name="miningLeaseApplicationId" type="long"></column>
+     	
+     	<finder name="getMiningById" return-type="MiningRenewalLicence">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+     </entity>
+     <entity name="MiningAppCurrentStage"
+     	table="nbp_mining_current_stage" uuid="true"
+     	local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="miningAppCurrentStageId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="miningLeaseApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getByMining_Stage" return-type="MiningAppCurrentStage">
+			<finder-column name="miningLeaseApplicationId" />
+		</finder>
+     </entity>
+     <entity table="nbp_mining_app_payment" name="MiningAppPayment" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="miningAppPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other Field -->
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="miningLeaseApplicationId"  type="long"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getMiningById" return-type="MiningAppPayment">
+            <finder-column name="miningLeaseApplicationId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

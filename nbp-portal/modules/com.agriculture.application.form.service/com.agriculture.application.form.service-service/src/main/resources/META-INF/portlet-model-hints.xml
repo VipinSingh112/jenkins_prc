@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.agriculture.application.form.service.model.AgriApplicationCurrentStage">
+		<field name="agriApplicationCurrentStageId" type="long" />
+		<field name="agricultureStageId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultueFarmer">
+		<field name="agricultueFarmerId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="farmerDetail" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="nameOfFarm" type="String" />
+		<field name="nameOfProprietor" type="String" />
+		<field name="parishAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="localAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="taxpayerRegistrationNumber" type="String" />
+		<field name="farmerRegistrationNumber" type="String" />
+		<field name="dateOfIncorporation" type="Date" />
+		<field name="telephoneNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureApiculture">
+		<field name="agricultureApicultureId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="apicultureType" type="String" />
+		<field name="numberOfColonies" type="String" />
+		<field name="averageAnnualProduction" type="String" />
+		<field name="marketLocal" type="String" />
+		<field name="marketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="apicultureCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureApplication">
+		<field name="agricultureApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="registrationStatus" type="String" />
+		<field name="farmLicenseNumber" type="String" />
+		<field name="requestType" type="String" />
+		<field name="primaryProduct" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNo" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureAquaculture">
+		<field name="agricultureAquacultureId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="aquacultureType" type="String" />
+		<field name="waterHectare" type="String" />
+		<field name="averageAnnualProduction" type="String" />
+		<field name="marketLocal" type="String" />
+		<field name="marketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="aquacultureCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureBuilding">
+		<field name="agricultureBuildingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="buildingPurpose" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="buildingSize" type="String" />
+		<field name="machineryDescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="dateOfAcquisition" type="Date" />
+		<field name="buildingCost" type="String" />
+		<field name="presentBookValue" type="String" />
+		<field name="buildingCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureCrop">
+		<field name="agricultureCropId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="cropType" type="String" />
+		<field name="cropHectare" type="String" />
+		<field name="averageAnnualProduction" type="String" />
+		<field name="cropMarketLocal" type="String" />
+		<field name="cropMarketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="cropCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureFarm">
+		<field name="agricultureFarmId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="locationOfFarm" type="String" />
+		<field name="landTenure" type="String" />
+		<field name="numberOfHectares" type="String" />
+		<field name="numberOfYears" type="String" />
+		<field name="numberOfParcels" type="String" />
+		<field name="sizeOfParcel" type="String" />
+		<field name="topography" type="String" />
+		<field name="numberOF" type="String" />
+		<field name="farmCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureLivestock">
+		<field name="agricultureLivestockId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="livestockType" type="String" />
+		<field name="numberOFAnimalsByCategory" type="String" />
+		<field name="averageAnnualProduction" type="String" />
+		<field name="livestockMarketlocal" type="String" />
+		<field name="livestockMarketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="Livestockcounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgricultureOrnamental">
+		<field name="agricultureOrnamentalId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="ornamentalType" type="String" />
+		<field name="ornamentalProduceArea" type="String" />
+		<field name="averageAnnualProduction" type="String" />
+		<field name="ornamentalMarketLocal" type="String" />
+		<field name="ornamentalMarketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="ornamentalCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgriculturePoultry">
+		<field name="agriculturePoultryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="poultryType" type="String" />
+		<field name="numberOFBirdsByCategory" type="String" />
+		<field name="averageAnnualProduction" type="String" />
+		<field name="poultryMarketLocal" type="String" />
+		<field name="poultryMarketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="poultryCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+	<model name="com.agriculture.application.form.service.model.AgriultureForestry">
+		<field name="agriultureForestryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="forestryType" type="String" />
+		<field name="forestryHectare" type="String" />
+		<field name="averageAnnulaProduction" type="String" />
+		<field name="forestryMarketLocal" type="String" />
+		<field name="forestryMarketForeign" type="String" />
+		<field name="valueOfSale" type="String" />
+		<field name="forestryCounter" type="String" />
+		<field name="agricultureApplicationId" type="long" />
+	</model>
+</model-hints>

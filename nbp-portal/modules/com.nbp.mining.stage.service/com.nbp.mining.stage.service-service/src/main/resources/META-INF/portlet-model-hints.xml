@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.mining.stage.service.model.MiningApplicationCertificateIssuance">
+		<field name="uuid" type="String" />
+		<field name="miningCertIssuId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateCertificateIssued" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="certificateNumber" type="String" />
+		<field name="caseId" type="String" />
+		<field name="documentFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.mining.stage.service.model.MiningApplicationDeskVeri">
+		<field name="miningDeskVeriId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="miningApplicationId" type="long" />
+		<field name="documentStatus" type="String" />
+		<field name="documentName" type="String" />
+	</model>
+	<model name="com.nbp.mining.stage.service.model.MiningApplicationDueDiligence">
+		<field name="uuid" type="String" />
+		<field name="miningDueDiliId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="agencyName" type="String" />
+		<field name="feedbackReceived" type="String" />
+		<field name="status" type="String" />
+		<field name="isSubToAgency" type="String" />
+	</model>
+	<model name="com.nbp.mining.stage.service.model.MiningApplicationMinisterialDecision">
+		<field name="uuid" type="String" />
+		<field name="miningDecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfCommDec" type="Date" />
+		<field name="commDecision" type="String" />
+	</model>
+	<model name="com.nbp.mining.stage.service.model.MiningApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="miningStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="miningApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+</model-hints>

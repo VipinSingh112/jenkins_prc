@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.ogt.stages.services">
+	<namespace>OGT_STAGE</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="OgtApplicationStage" remote-service="true" uuid="true" table="nbp_ogt_application_stages">
+ 
+		<!-- PK fields -->
+
+		<column name="ogtStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<!-- Other fields -->
+		<column name="stageName" type="String"></column>
+		<column name="duration" type="String"></column>
+		<column name="stageStatus" type="String"></column>
+		<column name="stageStartDate" type="Date"></column>
+		<column name="stageEndDate" type="Date"></column>
+		<column name="ogtApplicationId" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="updateBySource" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getOgt_AI"
+			return-type="OgtApplicationStage">
+			<finder-column name="ogtApplicationId"></finder-column>
+		</finder>
+		<finder name="getOgt_By_CaseIdStageName"
+			return-type="OgtApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getOgt_By_CaseIdStageStatus"
+			return-type="OgtApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getOgt_By_CaseIdAndStatus"
+			return-type="OgtApplicationStage">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getOgt_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getOgt_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getOgt_By_CI" return-type="OgtApplicationStage">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+	</entity>
+</service-builder>

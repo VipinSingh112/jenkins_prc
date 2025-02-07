@@ -1,0 +1,1284 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.jtb.application.form.service">
+	<namespace>JTB_APPLICATION_FORM</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity local-service="true" name="JTBApplication"
+		remote-service="true" uuid="true" table="nbp_jtb_applications">
+
+		<!-- PK fields -->
+
+		<column name="jtbApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+		<!-- Other fields -->
+		<column name="typeOfApplication" type="String"></column>
+		<column name="categoryTypeValAccomo" type="String"></column>
+		<column name="nonHotelSubCategory" type="String"></column>
+		<column name="jtbTransactionTypeVal" type="String"></column>
+		<column name="attractionCategoryTypeVal" type="String"></column>
+		<column name="domesticToursType" type="String"></column>
+		<column name="otherCategories" type="String"></column>
+		<column name="operatorName" type="String"></column>
+		<column name="dateOfIssue" type="Date"></column>
+		<column name="dateOfExp" type="Date"></column>
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="expiredLicenseAppNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="dateOfExpiration" type="Date" />
+		<column name="appCurrentStageName" type="String" />
+
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getJTB_ByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getJTB_By_Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getJTB_By_AppNum" return-type="JTBApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getJTB_By_RT_AppNo" return-type="JTBApplication">
+			<finder-column name="jtbTransactionTypeVal"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+		<finder name="getJTB_ByCaseId" return-type="JTBApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getJTB_By_AppType_Status" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="typeOfApplication"></finder-column>
+		</finder>
+	</entity>
+<!-- Accomodation Hotel Licence -->
+	<entity name="AccoHotelLicence" local-service="true"
+		table="nbp_jtb_acco_licence" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="accoHotelLicenceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="nameOfOwner" type="String"></column>
+		<column name="nameOfHotel" type="String"></column>
+		<column name="telephoneNo" type="String"></column>
+		<column name="faxNo" type="String"></column>
+		<column name="emailAddress" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="address" type="String"></column>
+	    <column name="jtbApplicationId" type="long" ></column>
+	    
+	     <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AccoHotelLicence">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+		
+	</entity>
+<!-- Acco general declaration -->
+	<entity name="AccoGenDeclaration" local-service="true"
+		table="nbp_jtb_acco_gen_dec" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="accoGenDeclarationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+			<!-- Other fields -->
+		<column name="noOfBedroom" type="String"></column>
+		<column name="ownerOfHotel" type="String"></column>
+		<column name="addressOne" type="String"></column>
+		<column name="compIncorporatedOne" type="String"></column>
+		<column name="companyDate" type="Date"></column>
+		<column name="hotelOperator" type="String"></column>
+		<column name="hotelOperatorDateSince" type="Date"></column>
+		<column name="addressTwo" type="String"></column>
+		<column name="compIncorporatedTwo" type="String"></column>
+		<column name="hotelOperatorName" type="String"></column>
+		<column name="dateTwo" type="Date"></column>
+		<column name="hotelIncepDate" type="Date"></column>
+		<column name="financeOfOper" type="String"></column>
+		<column name="noOfEmployee" type="String"></column>
+		<column name="signatureDate" type="Date"></column>
+		<column name="nameOfManager" type="String"></column>
+	    <column name="jtbApplicationId" type="long" ></column>
+	    
+	     <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AccoGenDeclaration">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+<!--Acco Non-Hotel Licence-->
+	<entity name="AccoNonHotelLicence" local-service="true"
+		table="nbp_jtb_acco_non_hotel_lic" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="accoNonHotelLicenceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="accoName" type="String"></column>
+		<column name="accoAddress" type="String"></column>
+		<column name="accoTeleNo" type="String"></column>
+		<column name="accoFaxNo" type="String"></column>
+		<column name="accoEmail" type="String"></column>
+		<column name="accoNoOfEmp" type="String"></column>
+		<column name="accoOfferedType" type="String"></column>
+		<column name="noOfRooms" type="String"></column>
+		<column name="ownerName" type="String"></column>
+		<column name="ownerAddress" type="String"></column>
+		<column name="ownerTeleNo" type="String"></column>
+		<column name="ownerFaxNo" type="String"></column>
+		<column name="operCompName" type="String"></column>
+		<column name="operAddress" type="String"></column>
+		<column name="managerName" type="String"></column>
+	    <column name="managerAddress" type="String"></column>
+		<column name="managerTeleNo" type="String"></column>
+		<column name="managerFaxNo" type="String"></column>
+		<column name="managerEmail" type="String"></column>		
+	    <column name="jtbApplicationId" type="long" ></column>
+	    
+	     <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AccoNonHotelLicence">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+<!-- Acco Non hotel general declaration -->
+	<entity name="AccoNonHotelGenDec" local-service="true"
+		table="nbp_jtb_acco_non_hotel_gen" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="accoNonHotelGenDecId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="nhAccoOperatorName" type="String"></column>
+		<column name="dateFrom" type="Date"></column>
+		<column name="dateTo" type="Date"></column>
+		<column name="nhAccoSince" type="Date"></column>
+		<column name="nhAccoDate" type="Date"></column>
+	    <column name="jtbApplicationId" type="long" ></column>
+	    
+	     <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AccoNonHotelGenDec">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>		
+	</entity>
+<!-- Accomodation Home Stay -->
+	<entity name="AccoHomeStay" local-service="true"
+		table="nbp_jtb_acco_home_stay_lic" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="accoHomeStayId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="homeAccoName" type="String"></column>
+		<column name="homeOwnerName" type="String"></column>
+		<column name="propertyAddress" type="String"></column>
+		<column name="homeTeleNo" type="String"></column>
+		<column name="homeMobile" type="String"></column>
+		<column name="homeEmail" type="String"></column>
+		<column name="homeEmployeeNo" type="String"></column>
+		<column name="website" type="String"></column>
+		<column name="propDirection" type="String"></column>
+		<column name="numOfBedrooms" type="String"></column>
+		<column name="numOfGuestBedroom" type="String"></column>
+		<column name="withBathroom" type="String"></column>
+		<column name="sharedBathroom" type="String"></column>
+		<column name="signDate" type="Date"></column>
+		<column name="certifiedBy" type="String"></column>	  
+	    <column name="jtbApplicationId" type="long" ></column>
+	    
+	     <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AccoHomeStay">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AccoNonHotelRequiredLic" local-service="true"
+		table="nbp_jtb_non_hotel_req_lic">
+
+		<!-- PK fields -->
+
+		<column name="accoNonHotelRequiredLicId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="requiredLicence" type="String"></column>	 
+		<column name="requiredBedroom" type="String"></column>	 
+		<column name="requiredBathroom" type="String"></column>	 
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AccoNonHotelRequiredLic">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AttractDetailFormInfo"
+		table="nbp_jtb_attract_detail" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="attractDetailFormInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="newAttractionsOwnerName" type="String"></column>	 
+		<column name="newAttractionsLocation" type="String"></column>	 
+		<column name="newAttractionsMailing" type="String"></column>	 
+		<column name="newAttractionsTelephone" type="String"></column>	 
+		<column name="newAttractionsFaxNum" type="String"></column>	 
+		<column name="newAttractionsEmailAddr" type="String"></column>	 
+		<column name="newAttractionsEmpNum" type="String"></column>	 
+		<column name="newAttractionsParish" type="String"></column>	 
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AttractDetailFormInfo">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AttractionGenDeclareInfo" local-service="true"
+		table="nbp_jtb_attract_gen_dec">
+
+		<!-- PK fields -->
+
+		<column name="attractionGenDeclareInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="newAttractionsGenOwnerName" type="String"></column>	 
+		<column name="newAttractionsCompanyLaw" type="String"></column>	 
+		<column name="newAttractionsDate" type="Date"></column>	 
+		<column name="newAttractionsName" type="String"></column>	 
+		<column name="newAttractionsStartDate" type="Date"></column>	 
+		<column name="newAttractionsSituatedLand" type="String"></column>	 
+		<column name="newAttractionsActivities" type="String"></column>	 
+		<column name="attractionNewDate" type="Date"></column>	 
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AttractionGenDeclareInfo">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AttractionCarRentalLicence"
+		table="nbp_jtb_car_rental_licence" local-service="true">
+
+		<column name="attractionCarRentalLicId" primary="true"
+			type="long">
+		</column>
+
+		<column name="groupId" type="long"></column>
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="ncrApplicantName" type="String"></column>	 
+		<column name="ncrAddress" type="String"></column>	 
+		<column name="ncrCompanyName" type="String"></column>	 
+		<column name="ncrCompanyAddr" type="String"></column>	 
+		<column name="ncrTelephone" type="String"></column>	 
+		<column name="ncrEmail" type="String"></column>	 
+		<column name="ncrManagerName" type="String"></column>	 
+		<column name="ncrDate" type="Date"></column>	 
+		<column name="ncrVehiclesNo" type="String"></column>	 
+		<column name="ncrEmployeesNo" type="String"></column>	 
+		<column name="ncrOfficeLoc" type="String"></column>	 
+		<column name="ncrPosition" type="String"></column>	 
+		<column name="ncrSignDate" type="Date"></column>	 
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AttractionCarRentalLicence">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AttractionCarRentCondition"
+		table="nbp_jtb_car_rent_condition" local-service="true">
+
+		<column name="attractionCarRenConditId" primary="true"
+			type="long">
+		</column>
+
+		<column name="groupId" type="long"></column>
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="ncrConditionProp" type="String"></column>	 
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AttractionCarRentCondition">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AttractionDomesticTour" local-service="true"
+		table="nbp_jtb_domestic_tour">
+
+		<!-- PK fields -->
+
+		<column name="attractionDomesticTourId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="domesticTourApplicantName" type="String" />
+        <column name="domesticTourAddress" type="String" />
+        <column name="domesticTourCompanyName" type="String" />
+        <column name="domesticTourExactLocation" type="String" />
+        <column name="domesticTourTelephone" type="String" />
+        <column name="domesticTourEmail" type="String" />
+        <column name="domesticTourDate" type="Date" />
+        <column name="domesticTourManagerName" type="String" />
+        <column name="domesticTourVehiclesNum" type="String" />
+        <column name="domesticTourEmployeesNo" type="String" />
+        <column name="domesticTourOfficeLocation" type="String" />
+        <column name="domesticTourSignDate" type="Date" /> 
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getJTB_ByApplicationId" return-type="AttractionDomesticTour">
+			<finder-column name="jtbApplicationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="AttractionDomesticService" local-service="true"
+		table="nbp_jtb_domestic_service">
+
+		<!-- PK fields -->
+
+		<column name="attractionDomesticServId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="individualsApartment" type="String" />
+        <column name="airportAssistance" type="String" />
+        <column name="entireTour" type="String" />
+        <column name="transfersDeparture" type="String" />
+        <column name="individualGroups" type="String" />
+        <column name="organizedconJunction" type="String" />
+        <column name="dailyTransportation" type="String" />
+        <column name="entertainment" type="String" />
+        <column name="domesticTourSealDate" type="Date" />
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionDomesticService">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionTravelAgency" local-service="true"
+		table="nbp_jtb_tarvel_agency">
+
+		<!-- PK fields -->
+
+		<column name="attractionTravelAgencyId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="applicantName" type="String" />
+        <column name="agencyAddress" type="String" />
+        <column name="agencyTelephone" type="String" />
+        <column name="agencyName" type="String" />
+        <column name="agencyAddressSec" type="String" />
+        <column name="agencyTelephoneNum" type="String" />
+        <column name="isRegistered" type="String" />
+        <column name="regstParticulars" type="String" />
+        <column name="proprietorName" type="String" />
+        <column name="managerName" type="String" />
+        <column name="managerAddress" type="String" />
+        <column name="secretaryName" type="String" />
+        <column name="secretaryAddress" type="String" />
+        <column name="bankerName" type="String" />
+        <column name="bondingCompanyName" type="String" />
+        <column name="bondingCompanyAddress" type="String" />
+        <column name="auditorsName" type="String" />
+        <column name="auditorsAddress" type="String" />
+        <column name="numberOfEmployees" type="String" />
+        <column name="signDate" type="Date" />
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionTravelAgency">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionWaterSport" local-service="true"
+		table="nbp_jtb_water_sport_operate">
+
+		<!-- PK fields -->
+
+		<column name="attractionWaterSportId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="waterSportBusinessName" type="String" />
+        <column name="waterSportMailingaAdd" type="String" />
+        <column name="waterSportOpLocationAddr" type="String" />
+        <column name="waterSportOpPhone" type="String" />
+        <column name="waterSportOpEmail" type="String" />
+        <column name="waterSportOpOwnerName" type="String" />
+        <column name="waterSportOpAddressOwner" type="String" />
+        <column name="waterSportOpManagerName" type="String" />
+        <column name="waterSportOpApplicantName" type="String" />
+        <column name="waterSportOpNationality" type="String" />
+        <column name="waterSportOpEmployeesNo" type="String" />
+        <column name="waterSportOpActivityList" type="String" />
+        <column name="occupyLocation" type="String" />
+        <column name="proposalSubmitted" type="String" />
+        <column name="foreignNationalsInvolved" type="String" />
+        <column name="workPermitApplied" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionWaterSport">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionWaterGenDeclare" local-service="true"
+		table="nbp_jtb_water_general">
+
+		<!-- PK fields -->
+
+		<column name="attractionWaterGenDeclareId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+        <column name="firstAid" type="String" />
+        <column name="cpr" type="String" />
+        <column name="divingCertificate" type="String" />
+        <column name="rlss" type="String" />
+        <column name="lifeguard" type="String" />
+        <column name="breathing" type="String" />
+        <column name="operationName" type="String" />
+        <column name="operationAddress" type="String" />
+        <column name="insuranceAmount" type="String" />
+        <column name="managerSignDate" type="Date" />
+		<column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionWaterGenDeclare">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionWaterRequired" local-service="true"
+		table="nbp_jtb_water_required">
+
+		<!-- PK fields -->
+
+		<column name="attractionWaterRequiredId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="generalOperator" type="String" />
+        <column name="waterCraft" type="String" />
+        <column name="waterSki" type="String" />
+        <column name="sunfishSail" type="String" />
+        <column name="parasail" type="String" />
+        <column name="scubaDiving" type="String" />
+        <column name="glassBoat" type="String" />
+        <column name="bananaBoat" type="String" />
+        <column name="jtbApplicationId" type="long" ></column>
+		
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionWaterRequired">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionConCarriageInfo" local-service="true"
+		table="nbp_jtb_contract_carriage">
+
+		<!-- PK fields -->
+
+		<column name="attractionConCarriageInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="ownerName" type="String" />
+        <column name="homeAddress" type="String" />
+        <column name="email" type="String" />
+        <column name="telephone" type="String" />
+        <column name="parish" type="String" />
+        <column name="newContractDate" type="Date" />
+        <column name="newContarctVehiclesNo" type="String" />
+        <column name="newContractTrn" type="String" />
+        <column name="contractOrganization" type="String" />
+        <column name="ownerSignDate" type="Date" />
+        <column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionConCarriageInfo">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionTravelHaltApp"
+		table="nbp_jtb_travel_halt_app" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="attractionTravelHaltAppId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="travelHaltApplicantName" type="String" />
+        <column name="travelHaltAddress" type="String" />
+        <column name="travelHaltTelephone" type="String" />
+        <column name="travelHaltEmail" type="String" />
+        <column name="travelHaltName" type="String" />
+        <column name="travelHaltLocation" type="String" />
+        <column name="travelHaltTelephoneNum" type="String" />
+        <column name="travelHaltEmployeesNo" type="String" />
+        <column name="travelHaltSignDate" type="Date" />
+        <column name="gasStation" type="String" />
+        <column name="refreshment" type="String" />
+        <column name="drinks" type="String" />
+        <column name="restaurant" type="String" />
+        <column name="wirelessinternet" type="String" />
+        <column name="restrooms" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionTravelHaltApp">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionWaterEmployee" local-service="true"
+		table="nbp_jtb_water_employee">
+
+		<!-- PK fields -->
+
+		<column name="attractionWaterEmpLicId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="applicantName" type="String" />
+        <column name="applicantAddress" type="String" />
+        <column name="applicantAge" type="String" />
+        <column name="applicantNationality" type="String" />
+        <column name="workPermitApplied" type="String" />
+        <column name="workPermitDate" type="Date" />
+        <column name="qualification" type="String" />
+        <column name="placeOfEmployment" type="String" />
+        <column name="ownerName" type="String" />
+        <column name="cpr" type="String" />
+        <column name="firstAid" type="String" />
+        <column name="medicFirstAid" type="String" />
+        <column name="lifeguard" type="String" />
+        <column name="rescueDiver" type="String" />
+        <column name="otherRescue" type="String" />
+        <column name="employeeSignatureDate" type="Date" />
+        <column name="timePeriod" type="String" />
+        <column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionWaterEmployee">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionBikeRentalInfo" local-service="true"
+		uuid="false" table="nbp_jtb_bike_rental">
+
+		<!-- PK fields -->
+
+		<column name="attractionBikeRentalInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <column name="applicantName" type="String" />
+		  <column name="address" type="String" />
+		  <column name="companyName" type="String" />
+		  <column name="exactLocation" type="String" />
+		  <column name="telephone" type="String" />
+		  <column name="email" type="String" />
+		  <column name="registrationDate" type="Date" />
+		  <column name="managerName" type="String" />
+		  <column name="numberOfBikes" type="String" />
+		  <column name="numberOfHelmets" type="String" />
+		  <column name="numberOfEmployees" type="String" />
+		  <column name="signatureDate" type="Date" />
+		  <column name="motorBikeIndustry" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionBikeRentalInfo">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionPlaceOfInterest" local-service="true"
+		table="nbp_jtb_place_interest">
+
+		<!-- PK fields -->
+
+		<column name="attractionPlaceOfInterestId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="placeOfInterest" type="String" />
+		<column name="typeOfRole" type="String" />
+        <column name="placeInterestOwnerName" type="String" />
+        <column name="nameOfInterestLocation" type="String" />
+        <column name="placeOfInterestLocation" type="String" />
+        <column name="placeOfInterestMailing" type="String" />
+        <column name="placeOfInterestTelephone" type="String" />
+        <column name="placeOfInterestEmail" type="String" />
+        <column name="placeOfInterestEmployeesNo" type="String" />
+        <column name="placeOfInterestParish" type="String" />
+        <column name="placeOfInterestOwnerGenDec" type="String" />
+        <column name="placeOfInterestHotelLaws" type="String" />
+        <column name="placeOfInterestDate" type="Date" />
+        <column name="placeOfInterestName" type="String" />
+        <column name="placeOfInterestOperating" type="Date" />
+        <column name="placeOfInterestAcresLand" type="String" />
+        <column name="walkingTour" type="String" />
+        <column name="cemeteryTour" type="String" />
+        <column name="gardenTour" type="String" />
+        <column name="placeOfInterestRooms" type="String" />
+        <column name="placeOfInterestTentSpace" type="String" />
+        <column name="placeOfInterestShowers" type="String" />
+        <column name="placeOfInterestSanitary" type="String" />
+        <column name="placeOfInterestSignDate" type="Date" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionPlaceOfInterest">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AttractionCraftTrader" local-service="true"
+		table="nbp_jtb_craft_trader_permit">
+
+		<!-- PK fields -->
+
+		<column name="attractionCraftTraderId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="craftTradersAppliOwner" type="String" />
+	    <column name="craftTradersAppliAddress" type="String" />
+	    <column name="craftTradersAppliPhoneNo" type="String" />
+	    <column name="craftTradersAppliEmail" type="String" />
+		<column name="occupyLocation" type="String" />
+		<column name="craftTraderGoodsType" type="String" />
+		<column name="craftTraderName" type="String" />
+	    <column name="craftTraderPosition" type="String" />
+	    <column name="craftTraderMinisterAddr" type="String" />
+	    <column name="craftTraderMinisterName" type="String" />
+	    <column name="craftTraderMinisterNamePos" type="String" />
+	    <column name="craftTraderAddressOwner" type="String" />
+	    <column name="craftTraderSignDate" type="Date" />
+	    <column name="craftTraderAssistSiDate" type="Date" />
+	    
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="AttractionCraftTrader">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JtbAddBranchDetailInfo" local-service="true"
+		table="nbp_jtb_branch_detail">
+
+		<!-- PK fields -->
+
+		<column name="jtbBranchDetailInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="counter" type="String" />
+		<column name="branchOfficeDetails" type="String" />
+		<column name="branchOfficeLocation" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getJTB_ByApplicationId" return-type="JtbBranchDetailInfo">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+		<finder name="getByJtbAppId" return-type="Collection">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JtbAddListVehicleRegst" local-service="true"
+		table="nbp_jtb_list_value_regst">
+
+		<!-- PK fields -->
+
+		<column name="jtbAddListVehicleRegstId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<column name="counter" type="String" />
+		<column name="vehicleRegstYear" type="String" />
+        <column name="vehicleRegstModel" type="String" />
+        <column name="vehicleRegstPlate" type="String" />
+        <column name="vehicleRegstExpDate" type="Date" />
+        <column name="vehicleRegstFitnessDate" type="Date" />
+        <column name="vehicleRegstChassis" type="String" />
+        <column name="vehicleRegstBased" type="String" />
+        <column name="vehicleRegstInsuranceCom" type="String" />
+        <column name="vehicleRegstPolicyNum" type="String" />
+        <column name="vehicleRegstExpiryDate" type="Date" />
+        <column name="vehicleRegstPlateNum" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getByJtbAppId" return-type="Collection">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JtbAddListDriverInfo" local-service="true"
+		table="nbp_jtb_list_driver">
+
+		<!-- PK fields -->
+
+		<column name="jtbAddListDriverInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="counter" type="String" />
+		<column name="driverName" type="String" />
+        <column name="driverLicence" type="String" />
+        <column name="driverExpiryDate" type="Date" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getByJtbAppId" return-type="Collection">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JtbAddCraftApplicantInfo" local-service="true"
+		table="nbp_jtb_craft_applicant">
+
+		<!-- PK fields -->
+
+		<column name="jtbAddCraftApplicantInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="counter" type="String" />
+		<column name="ownerName" type="String" />
+        <column name="ownerAddress" type="String" />
+        <column name="ownerPhoneNo" type="String" />
+        <column name="sellingLocation" type="String" />
+        <column name="operatingEmail" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getByJtbAppId" return-type="Collection">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JtbAddCraftEmployeeInfo" local-service="true"
+		table="nbp_jtb_craft_employee">
+
+		<!-- PK fields -->
+
+		<column name="jtbAddCraftEmployeeInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="counter" type="String" />
+		<column name="empName" type="String" />
+        <column name="empAddress" type="String" />
+        <column name="empPhoneNo" type="String" />
+		<column name="jtbApplicationId" type="long" ></column>
+        
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getByJtbAppId" return-type="Collection">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JTBCurrentStage" local-service="true"
+		table="nbp_jtb_current_stage">
+
+		<!-- PK fields -->
+
+		<column name="jTBCurrentStageId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="jtbApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getByJTB_Stage" return-type="JTBCurrentStage">
+			<finder-column name="jtbApplicationId" />
+		</finder>
+	</entity>
+	<entity name="JTBPaymentMethod" local-service="true"
+		table="nbp_jtb_payment">
+
+		<!-- PK fields -->
+
+		<column name="jTBPaymentMethodId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="jtbApplicationId"  type="long"></column>
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getJTBById" return-type="JTBPaymentMethod">
+            <finder-column name="jtbApplicationId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

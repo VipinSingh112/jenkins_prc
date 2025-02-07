@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.ogt.application.form.services">
+	<namespace>OGT_APPLICATION_FORM</namespace>
+	<entity local-service="true" name="OgtApplication" table="nbp_ogt_applications">
+
+		<!-- PK fields -->
+
+		<column name="ogtApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+		
+		<column name="doYouWant" type="String"></column>
+		<column name="typeOfApplicant" type="String"></column>
+		<column name="natureOfApplicant" type="String"></column>
+		<column name="typeOfMatter" type="String"></column>
+		<column name="typeOfDebt" type="String"></column>
+		<column name="debtStatute" type="String"></column>
+		<column name="status" type="int"></column>
+		<column name="applicationNumber" type="String"></column>
+		<column name="expiredLicenseAppNumber" type="String"></column>
+		<column name="caseId" type="String"></column>
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+		<column name="registeredManufacturer" type="String"></column>
+		<column name="prospectingRightsNum" type="String"></column>
+		<column name="typeOfBankruptcy" type="String"></column>
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getOgtByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getOgtByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getOgtByAppNum"
+			return-type="OgtApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getOgtByCaseId"
+			return-type="OgtApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		 	<finder name="getOgtByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getOgtByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getOgtByEI_CI" return-type="OgtApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getOgtByRT_AppNo" return-type="OgtApplication">
+			<finder-column name="typeOfApplicant"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+
+	</entity>
+	<entity name="OgtClaimantDetail" table="nbp_ogt_claimant_detail" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ogtClaimantDetailId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="claimantName" type="String"></column>
+		<column name="claimantFirstName" type="String"></column>
+		<column name="claimantLastName" type="String"></column>
+		<column name="claimantCompanyName" type="String"></column>
+        <column name="claimantAddress" type="String"></column>
+        <column name="claimantEmailAddr" type="String"></column>
+        <column name="claimantTeleNum" type="String"></column>
+        <column name="claimantFaxNo" type="String"></column>
+        <column name="claimantDate" type="Date"></column>
+        <column name="claimantTrn" type="String"></column>
+        <column name="claimantRelative" type="String"></column>
+        <column name="ogtApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOgtById" return-type="OgtClaimantDetail">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+        
+	</entity>
+	<entity name="OgtInsolventPersonDetail" table="nbp_ogt_insolvent_person_det" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ogtInsolventPersonDetailId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="natureOfInsolvent" type="String"></column>
+        <column name="insolventFirstName" type="String"></column>
+        <column name="insolventLastName" type="String"></column>
+        <column name="insolventCompanyName" type="String"></column>
+        <column name="insolventDebtStatute" type="String"></column>
+        <column name="ogtApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOgtById" return-type="OgtInsolventPersonDetail">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+	</entity>
+	<entity name="OgtClaimToProperty" table="nbp_ogt_claim_property" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ogtClaimToPropertyId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="propertyDate" type="Date"></column>
+		<column name="propClaimDesc" type="String"></column>
+		<column name="affidavitDesc" type="String"></column>
+        <column name="ogtApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOgtById" return-type="OgtClaimToProperty">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+	</entity>
+	<entity name="OgtClaimToSpouse" table="nbp_ogt_claim_to_spouse" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ogtClaimToSpouseId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="spouseDate" type="Date"></column>
+		<column name="claimSpouseDesc" type="String"></column>
+		<column name="nameCompletionForm" type="String"></column>
+		<column name="nameCompletionDate" type="Date"></column>
+		<column name="compPersonAddress" type="String"></column>
+		<column name="justicePeaceParish" type="String"></column>
+		<column name="nameJusticeOfPeace" type="String"></column>
+		<column name="nameJusticeDate" type="Date"></column>
+		<column name="officialAmtClaim" type="String"></column>
+		<column name="officialSection" type="String"></column>
+		<column name="officialAmtVoting" type="String"></column>
+		<column name="officialAmtVotingDate" type="Date"></column>
+		<column name="officialPayment" type="String"></column>
+		<column name="officialPaymentDate" type="Date"></column>
+        <column name="ogtApplicationId" type="long"></column>
+        
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOgtById" return-type="OgtClaimToSpouse">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+	</entity>
+	<entity name="OgtProofOfClaim" table="nbp_ogt_proof_of_claim" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="ogtProofOfClaimId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="claimProofMatter" type="String"></column>
+		<column name="claimDebtorName" type="String"></column>
+		<column name="claimantName" type="String"></column>
+		<column name="claimSentAddress" type="String"></column>
+		<column name="claimSentPhoneNum" type="String"></column>
+		<column name="claimSentFaxNo" type="String"></column>
+		<column name="claimSentEmailAddr" type="String"></column>
+		<column name="claimCompName" type="String"></column>
+		<column name="claimCertifyCheck" type="String"></column>
+		<column name="claimCompPosition" type="String"></column>
+		<column name="claimName" type="String"></column>
+		<column name="claimByCredDebtor" type="String"></column>
+		<column name="claimDateAppli" type="Date"></column>
+		<column name="claimByDebtTotalVal" type="String"></column>
+		<column name="claimByDebtStatement" type="String"></column>
+		
+		<column name="claimCategory" type="String"></column>
+		<column name="claimUnsecured" type="String"></column>
+		<column name="claimRegardingAmt" type="String"></column>
+		<column name="indicateCategoryOne" type="String"></column>
+		<column name="indicateCategoryTwo" type="String"></column>
+		<column name="indicateCategoryThree" type="String"></column>
+		<column name="indicateCategoryFour" type="String"></column>
+		<column name="otherPleaseSpecify" type="String"></column>
+		<column name="claimSecured" type="String"></column>
+		<column name="claimSecuredOne" type="String"></column>
+		<column name="claimDesc" type="String"></column>
+		<column name="aboveNamedCreditor" type="String"></column>
+		<column name="paymentDetailDesc" type="String"></column>
+		<column name="inCaseOfBankruptcy" type="String"></column>
+        <column name="ogtApplicationId" type="long"></column>
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOgtById" return-type="OgtProofOfClaim">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+	</entity>
+	<entity name="OGTAppCurrentStage" table="nbp_ogt_current_stage" uuid="true"
+     	local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="ogtAppCurrentStageId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="ogtApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getByOGT_Stage" return-type="OGTAppCurrentStage">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+     </entity>
+	<entity name="OgtSectionB" local-service="true"
+		table="nbp_ogt_section_b">
+
+		<!-- PK fields -->
+
+		<column name="ogtSectionBId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="theDebtor" type="String"></column>
+		<column name="name" type="String"></column>
+		<column name="dateOfInsolvencyOfDebtor" type="Date"></column>
+		<column name="totalValueOfClaim" type="String"></column>
+		<column name="statementOfAccount" type="String"></column>
+		<column name="unsecuredClaim" type="String"></column>
+		<column name="unsecuredClaimOf" type="String"></column>
+		<column name="regardingTheAmount" type="String"></column>
+		<column name="categoryOne" type="String"></column>
+		<column name="categoryTwo" type="String"></column>
+		<column name="categoryThree" type="String"></column>
+		<column name="categoryFour" type="String"></column>
+		<column name="otherPleaseSpecify" type="String"></column>
+		<column name="securedClaim" type="String"></column>
+		<column name="securedClaimOf" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="relationWithDebtor" type="String"></column>
+		<column name="bankruptcyEventDescription" type="String"></column>
+		<column name="bankruptcyOfAnIndividual" type="String"></column>
+		<column name="ogtApplicationId" type="long"></column>
+		
+		 <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getOgtById" return-type="OgtSectionB">
+			<finder-column name="ogtApplicationId" />
+		</finder>
+		
+	</entity>
+</service-builder>

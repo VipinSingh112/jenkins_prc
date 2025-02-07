@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.acquire.stages.service-api
+Bundle-SymbolicName: com.nbp.acquire.stages.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.acquire.stages.service.exception,\
+	com.nbp.acquire.stages.service.model,\
+	com.nbp.acquire.stages.service.service,\
+	com.nbp.acquire.stages.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.acquire.stages.service-service/service.xml

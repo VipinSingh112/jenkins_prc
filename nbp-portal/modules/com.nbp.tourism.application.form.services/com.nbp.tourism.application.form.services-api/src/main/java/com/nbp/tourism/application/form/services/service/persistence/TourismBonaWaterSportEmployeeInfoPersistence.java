@@ -1,0 +1,211 @@
+/**
+ * SPDX-FileCopyrightText: (c) 2025 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+package com.nbp.tourism.application.form.services.service.persistence;
+
+import com.liferay.portal.kernel.service.persistence.BasePersistence;
+
+import com.nbp.tourism.application.form.services.exception.NoSuchTourismBonaWaterSportEmployeeInfoException;
+import com.nbp.tourism.application.form.services.model.TourismBonaWaterSportEmployeeInfo;
+
+import org.osgi.annotation.versioning.ProviderType;
+
+/**
+ * The persistence interface for the tourism bona water sport employee info service.
+ *
+ * <p>
+ * Caching information and settings can be found in <code>portal.properties</code>
+ * </p>
+ *
+ * @author Brian Wing Shun Chan
+ * @see TourismBonaWaterSportEmployeeInfoUtil
+ * @generated
+ */
+@ProviderType
+public interface TourismBonaWaterSportEmployeeInfoPersistence
+	extends BasePersistence<TourismBonaWaterSportEmployeeInfo> {
+
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never modify or reference this interface directly. Always use {@link TourismBonaWaterSportEmployeeInfoUtil} to access the tourism bona water sport employee info persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this interface.
+	 */
+
+	/**
+	 * Returns the tourism bona water sport employee info where tourismApplicationId = &#63; or throws a <code>NoSuchTourismBonaWaterSportEmployeeInfoException</code> if it could not be found.
+	 *
+	 * @param tourismApplicationId the tourism application ID
+	 * @return the matching tourism bona water sport employee info
+	 * @throws NoSuchTourismBonaWaterSportEmployeeInfoException if a matching tourism bona water sport employee info could not be found
+	 */
+	public TourismBonaWaterSportEmployeeInfo findBygetTourismById(
+			long tourismApplicationId)
+		throws NoSuchTourismBonaWaterSportEmployeeInfoException;
+
+	/**
+	 * Returns the tourism bona water sport employee info where tourismApplicationId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
+	 *
+	 * @param tourismApplicationId the tourism application ID
+	 * @return the matching tourism bona water sport employee info, or <code>null</code> if a matching tourism bona water sport employee info could not be found
+	 */
+	public TourismBonaWaterSportEmployeeInfo fetchBygetTourismById(
+		long tourismApplicationId);
+
+	/**
+	 * Returns the tourism bona water sport employee info where tourismApplicationId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
+	 *
+	 * @param tourismApplicationId the tourism application ID
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the matching tourism bona water sport employee info, or <code>null</code> if a matching tourism bona water sport employee info could not be found
+	 */
+	public TourismBonaWaterSportEmployeeInfo fetchBygetTourismById(
+		long tourismApplicationId, boolean useFinderCache);
+
+	/**
+	 * Removes the tourism bona water sport employee info where tourismApplicationId = &#63; from the database.
+	 *
+	 * @param tourismApplicationId the tourism application ID
+	 * @return the tourism bona water sport employee info that was removed
+	 */
+	public TourismBonaWaterSportEmployeeInfo removeBygetTourismById(
+			long tourismApplicationId)
+		throws NoSuchTourismBonaWaterSportEmployeeInfoException;
+
+	/**
+	 * Returns the number of tourism bona water sport employee infos where tourismApplicationId = &#63;.
+	 *
+	 * @param tourismApplicationId the tourism application ID
+	 * @return the number of matching tourism bona water sport employee infos
+	 */
+	public int countBygetTourismById(long tourismApplicationId);
+
+	/**
+	 * Caches the tourism bona water sport employee info in the entity cache if it is enabled.
+	 *
+	 * @param tourismBonaWaterSportEmployeeInfo the tourism bona water sport employee info
+	 */
+	public void cacheResult(
+		TourismBonaWaterSportEmployeeInfo tourismBonaWaterSportEmployeeInfo);
+
+	/**
+	 * Caches the tourism bona water sport employee infos in the entity cache if it is enabled.
+	 *
+	 * @param tourismBonaWaterSportEmployeeInfos the tourism bona water sport employee infos
+	 */
+	public void cacheResult(
+		java.util.List<TourismBonaWaterSportEmployeeInfo>
+			tourismBonaWaterSportEmployeeInfos);
+
+	/**
+	 * Creates a new tourism bona water sport employee info with the primary key. Does not add the tourism bona water sport employee info to the database.
+	 *
+	 * @param tourismBonaWSEmplId the primary key for the new tourism bona water sport employee info
+	 * @return the new tourism bona water sport employee info
+	 */
+	public TourismBonaWaterSportEmployeeInfo create(long tourismBonaWSEmplId);
+
+	/**
+	 * Removes the tourism bona water sport employee info with the primary key from the database. Also notifies the appropriate model listeners.
+	 *
+	 * @param tourismBonaWSEmplId the primary key of the tourism bona water sport employee info
+	 * @return the tourism bona water sport employee info that was removed
+	 * @throws NoSuchTourismBonaWaterSportEmployeeInfoException if a tourism bona water sport employee info with the primary key could not be found
+	 */
+	public TourismBonaWaterSportEmployeeInfo remove(long tourismBonaWSEmplId)
+		throws NoSuchTourismBonaWaterSportEmployeeInfoException;
+
+	public TourismBonaWaterSportEmployeeInfo updateImpl(
+		TourismBonaWaterSportEmployeeInfo tourismBonaWaterSportEmployeeInfo);
+
+	/**
+	 * Returns the tourism bona water sport employee info with the primary key or throws a <code>NoSuchTourismBonaWaterSportEmployeeInfoException</code> if it could not be found.
+	 *
+	 * @param tourismBonaWSEmplId the primary key of the tourism bona water sport employee info
+	 * @return the tourism bona water sport employee info
+	 * @throws NoSuchTourismBonaWaterSportEmployeeInfoException if a tourism bona water sport employee info with the primary key could not be found
+	 */
+	public TourismBonaWaterSportEmployeeInfo findByPrimaryKey(
+			long tourismBonaWSEmplId)
+		throws NoSuchTourismBonaWaterSportEmployeeInfoException;
+
+	/**
+	 * Returns the tourism bona water sport employee info with the primary key or returns <code>null</code> if it could not be found.
+	 *
+	 * @param tourismBonaWSEmplId the primary key of the tourism bona water sport employee info
+	 * @return the tourism bona water sport employee info, or <code>null</code> if a tourism bona water sport employee info with the primary key could not be found
+	 */
+	public TourismBonaWaterSportEmployeeInfo fetchByPrimaryKey(
+		long tourismBonaWSEmplId);
+
+	/**
+	 * Returns all the tourism bona water sport employee infos.
+	 *
+	 * @return the tourism bona water sport employee infos
+	 */
+	public java.util.List<TourismBonaWaterSportEmployeeInfo> findAll();
+
+	/**
+	 * Returns a range of all the tourism bona water sport employee infos.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TourismBonaWaterSportEmployeeInfoModelImpl</code>.
+	 * </p>
+	 *
+	 * @param start the lower bound of the range of tourism bona water sport employee infos
+	 * @param end the upper bound of the range of tourism bona water sport employee infos (not inclusive)
+	 * @return the range of tourism bona water sport employee infos
+	 */
+	public java.util.List<TourismBonaWaterSportEmployeeInfo> findAll(
+		int start, int end);
+
+	/**
+	 * Returns an ordered range of all the tourism bona water sport employee infos.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TourismBonaWaterSportEmployeeInfoModelImpl</code>.
+	 * </p>
+	 *
+	 * @param start the lower bound of the range of tourism bona water sport employee infos
+	 * @param end the upper bound of the range of tourism bona water sport employee infos (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of tourism bona water sport employee infos
+	 */
+	public java.util.List<TourismBonaWaterSportEmployeeInfo> findAll(
+		int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator
+			<TourismBonaWaterSportEmployeeInfo> orderByComparator);
+
+	/**
+	 * Returns an ordered range of all the tourism bona water sport employee infos.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>TourismBonaWaterSportEmployeeInfoModelImpl</code>.
+	 * </p>
+	 *
+	 * @param start the lower bound of the range of tourism bona water sport employee infos
+	 * @param end the upper bound of the range of tourism bona water sport employee infos (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the ordered range of tourism bona water sport employee infos
+	 */
+	public java.util.List<TourismBonaWaterSportEmployeeInfo> findAll(
+		int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator
+			<TourismBonaWaterSportEmployeeInfo> orderByComparator,
+		boolean useFinderCache);
+
+	/**
+	 * Removes all the tourism bona water sport employee infos from the database.
+	 */
+	public void removeAll();
+
+	/**
+	 * Returns the number of tourism bona water sport employee infos.
+	 *
+	 * @return the number of tourism bona water sport employee infos
+	 */
+	public int countAll();
+
+}

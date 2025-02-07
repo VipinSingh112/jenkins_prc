@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.film.application.form.service.model.FilmAdditionalEquipmentList">
+		<field name="FilmAdditionalEquipmentListId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="arrivalDate" type="Date" />
+		<field name="airlineShipper" type="String" />
+		<field name="flightVesselNum" type="String" />
+		<field name="passengerName" type="String" />
+		<field name="entryPort" type="String" />
+		<field name="customsBroker" type="String" />
+		<field name="flightNumber" type="String" />
+		<field name="counter" type="String" />
+		<field name="filmApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmApplication">
+		<field name="uuid" type="String" />
+		<field name="filmApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="projectType" type="String" />
+		<field name="productionType" type="String" />
+		<field name="importEquipment" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="isUpdateEquipmentList" type="String" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmApplicationCurrentStage">
+		<field name="filmApplicationCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="filmApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmApplicationPayment">
+		<field name="filmApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="filmApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmCompanyDetails">
+		<field name="filmCompanyDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="countryOrigin" type="String" />
+		<field name="telephoneNumber" type="String" />
+		<field name="mobile" type="String" />
+		<field name="contactPerson" type="String" />
+		<field name="email" type="String" />
+		<field name="position" type="String" />
+		<field name="filmApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmEquipmentList">
+		<field name="filmEquipmentListId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="item" type="String" />
+		<field name="serialNumber" type="String" />
+		<field name="weight" type="String" />
+		<field name="quantity" type="String" />
+		<field name="unitPrice" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="total" type="String" />
+		<field name="counter" type="String" />
+		<field name="equipmentList" type="String" />
+		<field name="flightNumber" type="String" />
+		<field name="filmApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmOtherDetails">
+		<field name="filmOtherDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="additionalPermits" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="additionalOtherPermits" type="String" />
+		<field name="insurance" type="String" />
+		<field name="copyOfInsurance" type="String" />
+		<field name="temporaryImportEquipment" type="String" />
+		<field name="personnelTravellingEquipment" type="String" />
+		<field name="portOfEntry" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="arrivalDate" type="Date" />
+		<field name="departureDate" type="Date" />
+		<field name="flightDetails" type="String" />
+		<field name="shippingCompany" type="String" />
+		<field name="shippingVesselNo" type="String" />
+		<field name="customsBroker" type="String" />
+		<field name="brokerEmail" type="String" />
+		<field name="brokerMobile" type="String" />
+		<field name="typeOfEquipmentJamaica" type="String" />
+		<field name="rentalArrangedThrough" type="String" />
+		<field name="filmApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.film.application.form.service.model.FilmProductionDetails">
+		<field name="filmProductionDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="productionTitle" type="String" />
+		<field name="totalProductionBudget" type="String" />
+		<field name="expenditureInJamaica" type="String" />
+		<field name="foreignPersonnel" type="String" />
+		<field name="jamaicanPersonnel" type="String" />
+		<field name="productionType" type="String" />
+		<field name="companyName" type="String" />
+		<field name="fixerName" type="String" />
+		<field name="fixerMobile" type="String" />
+		<field name="fixerEmail" type="String" />
+		<field name="preProductionDates" type="Date" />
+		<field name="productionDates" type="Date" />
+		<field name="productionStartDate" type="Date" />
+		<field name="productionEndDate" type="Date" />
+		<field name="proposedProductionLocations" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="productionInternationalCrew" type="String" />
+		<field name="productionjamaicanCrew" type="String" />
+		<field name="productionExternalPermit" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="filmApplicationId" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.miic.stages.service">
+	<namespace>MIIC_APPLICATION_STAGE</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="MiicApplicationStages" remote-service="true" uuid="true" table="nbp_miic_stage">
+
+		<!-- PK fields -->
+
+		<column name="miicApplicationStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="miicApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+
+		<!-- Finder methods -->
+
+		<finder name="getMIIC_CAI" return-type="MiicApplicationStages">
+			<finder-column name="miicApplicationId" />
+		</finder>
+		<finder name="getMIIC_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getMIIC_CaseIdStageName" return-type="MiicApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getMIIC_CaseIdStageStatus" return-type="MiicApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getMIIC_CaseIdAndStatus" return-type="MiicApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getMIIC_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getMIIC_By_CaseId" return-type="MiicApplicationStages">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="MiicRecommendationsDecision" local-service="true"
+		table="nbp_miic_recommen_decision">
+
+		<!-- PK fields -->
+
+		<column name="miicRecommendationsDecisionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateOfRecommendationsDecision" type="Date"></column>
+		<column name="recommendationsDecision" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		  <!-- Finder methods -->
+		<finder name="getMiic_RD_by_CI" return-type="MiicRecommendationsDecision">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="MiicCertificateOfIssuance" local-service="true"
+		table="nbp_miic_certificate_of_issuan">
+
+		<!-- PK fields -->
+
+		<column name="miicCertificateOfIssuanceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="certificateNumber" type="String"></column>
+		<column name="dateCertificateIssued" type="Date"></column>
+		<column name="dateOfExpiration" type="Date"></column>
+		<column name="documentFileEntryId" type="long"></column>
+        <column name="caseId" type="String"></column>
+        <column name="nameOfLicensedTrustee" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		  <!-- Finder methods -->
+		<finder name="getMiic_CI_by_CI" return-type="MiicCertificateOfIssuance">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+</service-builder>

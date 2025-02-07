@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.fire.brigade.stage.service">
+	<namespace>FIRE_BRIGADE</namespace>
+	<entity local-service="true" name="FireBrigadeApplicationStage" remote-service="true" uuid="true" table="nbp_fire_brigade_app_stage">
+		<!-- PK fields -->
+
+		<column name="fireBrigadeAppStageId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="stageEndDate" type="Date" />
+		<column name="stageStartDate" type="Date" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="caseId" type="String" />
+		<column name="updatedBySource"  type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="get_FB_AppStage_By_CI" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="get_FB_AppStage_CI" return-type="FireBrigadeApplicationStage">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="get_FB_By_SN" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="get_FB_By_Status" return-type="FireBrigadeApplicationStage">
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="get_FB_By_CI_SN_SS" return-type="FireBrigadeApplicationStage">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="get_FB_By_CI_SN" return-type="FireBrigadeApplicationStage">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="get_FB_By_CI_SS" return-type="FireBrigadeApplicationStage">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />
+		</finder>
+	</entity>
+	<entity name="FireBrigadePaymentConfirmation" 
+		local-service="true" table="nbp_fire_payment_confirmation">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadePaymentConfirId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+		<column name="dateReceived" type="Date"></column>
+		<column name="amountDue" type="String"></column>
+		<column name="amountReceived" type="String"></column>
+		<column name="receiptNumber" type="String"></column>
+		<column name="comment" type="String"></column>
+		<column name="amountOutstanding" type="String"></column>
+		<column name="dueDate" type="Date"></column>
+		<column name="status" type="String"></column>
+		<column name="docFileEntry" type="long"></column>
+		
+	  <finder name="getFBA_PC_By_FBI" return-type="Collection">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+      <finder name="getFireBrigadePaymentByCaseId" return-type="FireBrigadePaymentConfirmation">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="FireBrigadeCertificate" local-service="true"
+		table="nbp_fire_brigade_certificate">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeCertificateId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="nameOfOwner" type="String"></column>
+		<column name="typeOfPremises" type="String"></column>
+		<column name="issueDate"  type="Date" />
+		<column name="expirationDate"  type="Date" />
+		<column name="docFileEntry" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="certificateNumber" type="String"></column>
+		
+	   <finder name="getFireBrigadeCertificateByCaseId" return-type="FireBrigadeCertificate">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+		
+	</entity>
+	<entity name="FireBrigadeInspection" local-service="true"
+		table="nbp_fire_brigade_inspection">
+
+		<!-- PK fields -->
+
+		<column name="fireBrigadeInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="fireBrigadeApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		
+		 <order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+        
+        <finder name="getFireBrigadeInspectionBy_CI" return-type="FireBrigadeInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getFBI_FBAI" return-type="Collection">
+			<finder-column name="fireBrigadeApplicationId" />
+		</finder>
+		<finder name="getFBI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getFBI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getFBI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getFBI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="fireBrigadeApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="FireBrigadeInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="fireBrigadeApplicationId" />
+		</finder>
+		
+	</entity>
+</service-builder>

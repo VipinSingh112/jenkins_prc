@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.explosives.competency.stages.service">
+	<namespace>EXPLOSIVE_STAGES</namespace>
+	<entity local-service="true" name="ExplosiveApplicationStages"
+		remote-service="true" uuid="true" table="nbp_explosive_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="expApplicationStagesId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate" type="Date" />
+		<column name="explosiveApplicationId" type="long" />
+		<column name="caseId" type="String" />
+		<column name="updatedBySource" type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getEXP_CAI"
+			return-type="ExplosiveApplicationStages">
+			<finder-column name="explosiveApplicationId" />
+		</finder>
+		<finder name="getEXP_CaseIdStageName"
+			return-type="ExplosiveApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getEXP_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getEXP_CaseIdStageStatus"
+			return-type="ExplosiveApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getEXP_CaseIdAndStatus"
+			return-type="ExplosiveApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getEXP_SNAndSS" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+		<finder name="getEXP_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getEXP_By_CaseId" return-type="ExplosiveApplicationStages">
+			<finder-column name="caseId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="ExplosiveCommisionDecision"
+		remote-service="true" uuid="true"
+		table="nbp_explosive_commision_decis">
+
+		<!-- PK fields -->
+
+		<column name="commisiondecId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="commisionDecision" type="String" />
+		<column name="decisionDate" type="Date" />
+		<column name="caseId" type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getEXP_CD_CI"
+			return-type="ExplosiveCommisionDecision">
+			<finder-column name="caseId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="ExplosiveIssuanceOfLicence"
+		remote-service="true" uuid="true" table="nbp_explosive_issu_lic">
+
+		<!-- PK fields -->
+
+		<column name="issuanceId" primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="dateOfIssuance" type="Date" />
+		<column name="dateOfExpiration" type="Date" />
+		<column name="certificateNumber" type="String" />
+		<column name="certificateNumberId" type="long" />
+		<column name="caseId" type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getEXP_CD_CI"
+			return-type="ExplosiveIssuanceOfLicence">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getEXP_CD_List_CI" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+
+	</entity>
+
+<entity local-service="true"
+	name="ExplosiveReviewAndVerification" remote-service="true" uuid="true"
+	table="nbp_explosive_rev_ver">
+
+	<!-- PK fields -->
+
+	<column name="issuanceId" primary="true" type="long">
+	</column>
+
+	<!-- Group instance -->
+
+	<column name="groupId" type="long"></column>
+
+	<!-- Audit fields -->
+
+	<column name="companyId" type="long"></column>
+	<column name="userId" type="long"></column>
+	<column name="userName" type="String"></column>
+	<column name="createDate" type="Date"></column>
+	<column name="modifiedDate" type="Date"></column>
+
+	<!-- Other fields -->
+
+	<column name="caseId" type="String"></column>
+	<column name="amountDue" type="String"></column>
+	<column name="dateReceived" type="Date"></column>
+	<column name="amountreceived" type="String"></column>
+	<column name="receivedNumber" type="String"></column>
+	<column name="comments" type="String"></column>
+	<column name="amountOutstanding" type="String"></column>
+	<column name="dueDate" type="Date"></column>
+	<column name="status" type="String"></column>
+	<column name="paymentreceiptFileEntryId" type="long"></column>
+	<order by="asc">
+		<order-column name="createDate" />
+	</order>
+
+	<!-- Finder methods -->
+	<finder name="getEXP_RV_CI"
+		return-type="ExplosiveReviewAndVerification">
+		<finder-column name="caseId" />
+	</finder>
+	<finder name="getEXP_RV_List_CI" return-type="Collection">
+		<finder-column name="caseId" />
+	</finder>
+
+</entity>
+</service-builder>

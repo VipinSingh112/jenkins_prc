@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.janaac.stages.services.model.JanaacApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="janaacApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+	<model name="com.nbp.janaac.stages.services.model.JanaacCommitteeDecision">
+		<field name="janaacCommitteeDecisionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfCommitteeDecision" type="Date" />
+		<field name="committeeDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.janaac.stages.services.model.JanaacInspection">
+		<field name="janaacInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="janaacApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.janaac.stages.services.model.JanaacPaymentVerification">
+		<field name="janaacPaymentVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.janaac.stages.services.model.JanaacReport">
+		<field name="janaacReportId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfReport" type="Date" />
+		<field name="report" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+</model-hints>

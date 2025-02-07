@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.ncra.stages.services.model.CertificateOfVerification">
+		<field name="certificateOfVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="productName" type="String" />
+		<field name="dateCertificateIssued" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="certificateNumber" type="String" />
+		<field name="caseId" type="String" />
+		<field name="documentFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.ncra.stages.services.model.NcraApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="ncraApplciationStage" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="stageEndDate" type="Date" />
+		<field name="stageStartDate" type="Date" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.ncra.stages.services.model.NcraInspection">
+		<field name="ncraInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="ncraApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+</model-hints>

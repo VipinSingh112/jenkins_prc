@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.ncbj.stages.services.model.NcbjAppBoardDecision">
+		<field name="ncbjAppBoardDecisionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfBoardDecision" type="Date" />
+		<field name="committeeDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.ncbj.stages.services.model.NcbjApplicationCorrectiveAction">
+		<field name="ncbjAppCorrActionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="preApprovalLetterId" type="long" />
+	</model>
+	<model name="com.nbp.ncbj.stages.services.model.NcbjApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="ncbjStagesApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="ncbjApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+	<model name="com.nbp.ncbj.stages.services.model.NcbjInspection">
+		<field name="ncbjInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="ncbjApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.ncbj.stages.services.model.NcbjLicenceCertificate">
+		<field name="ncbjLicenceCertificateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="licenceCertificate" type="String" />
+		<field name="NameOfApplicant" type="String" />
+		<field name="nameOfCertification" type="String" />
+		<field name="scopeOfCertification" type="String" />
+		<field name="issueDate" type="Date" />
+		<field name="expirationDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.ncbj.stages.services.model.NcbjPaymentConfirmation">
+		<field name="ncbjPaymentConfirmationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+</model-hints>

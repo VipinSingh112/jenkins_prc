@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.nbp.medical.facilities.application.form.service">
+	<namespace>MEDICAL_FACILITIES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity name="MedicalFacilitiesApp" local-service="true"
+		table="nbp_medical_facilities_app" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesAppId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="natureOfApplicant" type="String" />
+		<column name="typeOfTransaction" type="String" />
+		<column name="registrationNumber" type="Long" />
+		<column name="medicalCategory" type="String" />
+		<!-- for long term care facilities -->
+		<column name="subCategory" type="String" />
+		<column name="nursingHomesCategory" type="String" />
+		<column name="nursingSubCategoryVal" type="String" />
+		<column name="numberOfBeds" type="String" />
+		<column name="caseId" type="String"/>
+        <column name="status" type="int"/>
+        <column name="icmDocumentPath" type="String"/>
+        <column name="applicationNumber" type="String"/>
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+        <column name="entityId" type="String"></column>
+        <!-- Finder methods -->
+        <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        
+        
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="MedicalFacilitiesApplication">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+		<finder name="getMedicalFacilitiesBy_S_U"
+			return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="userId" />
+		</finder>
+		<finder name="getMedicalFacilitiesBy_Status"
+			return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getMedicalByAppNo" return-type="MedicalFacilitiesApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getMedicalByCaseID" return-type="MedicalFacilitiesApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder><finder name="getMedicalByExpiredLicNum" return-type="MedicalFacilitiesApplication">
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+	<!-- Applicant details -->
+	<entity name="MedicalFacilitiesAppliInfo" local-service="true"
+		table="nbp_medical_appli_info" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesAppliId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="applicantName" type="String" />
+		<column name="appliTelephoneNumber" type="String" />
+		<column name="appliAddress" type="String" />
+		<column name="appliEmailAddress" type="String" />
+		<column name="appliNationality" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Company Details -->
+	<entity name="MedicalFacilitiesComDetail" local-service="true"
+		table="nbp_medical_company_detail" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesComDetailId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="fullName" type="String" />
+		<column name="privateAddress" type="String" />
+		<column name="registeredOffice" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Home Details -->
+	<entity name="MedicalFacilitiesHomeInfo" local-service="true"
+		table="nbp_medical_home_info" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesHomeInfoId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="nameOfOwner" type="String" />
+		<column name="homeAddress" type="String" />
+		<column name="homeTelephoneNumber" type="String" />
+		<column name="homeEmailAddress" type="String" />
+		<column name="description" type="String" />
+		<column name="otherBusinessDetails" type="String" />
+		<column name="maternityPatients" type="String" />
+		<column name="otherPatients" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+		<finder name="getMedicalFacilities_ByAppId"
+			return-type="MedicalFacilitiesHomeInfo">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Number of patients -->
+	<entity name="MedicalFacilitiesHomeTwo" local-service="true"
+		table="nbp_medical_no_of_patient" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesHomeTwoId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="maternityPatients" type="String" />
+		<column name="otherPatients" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+		<finder name="getMedicalFacilities_ByAppId"
+			return-type="MedicalFacilitiesHomeTwo">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Nursing staff -->
+	<entity name="MedicalFacilitiesNurseStaff" local-service="true"
+		table="nbp_medical_nursing_staff" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesNurseStaffId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="nStaffName" type="String" />
+		<column name="nStaffQualification" type="String" />
+		<column name="nStaffState" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Maternity home details -->
+	<entity name="MedicalFacilitiesMaterHome" local-service="true"
+		table="nbp_medical_maternity_home" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesMaterHomeId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="nurseName" type="String" />
+		<column name="nurseQualification" type="String" />
+		<column name="otherPerson" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Medical Practitioner/ Qualified Nurses details -->
+	<entity name="MedicalFacilitiesNurseDetail" local-service="true"
+		table="nbp_medical_nurse_detail" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesNurseDetailId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="qNurseName" type="String" />
+		<column name="qNurseQualification" type="String" />
+		<column name="ratioOfQNurses" type="String" />
+		<column name="counter" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="Collection">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Qualified Nurse -->
+	<entity local-service="true" name="MedicalFacilitiesQNurse"
+		table="nbp_medical_nurse_info" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesQNurseId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="checkQualifiedNurse" type="String" />
+		<column name="name" type="String" />
+		<column name="qualification" type="String" />
+		<column name="nursingStaffCategory" type="String" />
+		<column name="qNurseName" type="String" />
+		<column name="qNurseQualification" type="String" />
+		<column name="ratioOfQNurses" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="MedicalFacilitiesQNurse">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<!-- Signature Info -->
+	<entity name="MedicalFacilitiesSignInfo" local-service="true"
+		table="nbp_medical_sign_info" uuid="true">
+		<!-- PK fields -->
+		<column name="medicalFacilitiesSignInfoId" primary="true"
+			type="long"> </column>
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+		<!-- Audit fields -->
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+		<column name="number" type="String" />
+		<column name="particulars" type="String" />
+		<column name="chargedFees" type="String" />
+		<column name="addressOfOtherNHome" type="String" />
+		<column name="enteredDate" type="Date" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- finder methods -->
+		<finder name="getMedicalFacilitiesById"
+			return-type="MedicalFacilitiesSignInfo">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+	</entity>
+	<entity name="MedicalCurrentStage" table="nbp_medical_current_stage" uuid="true"
+     	local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="medicalCurrentStageId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="medicalFacilitiesAppId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getByMED_Stage" return-type="MedicalCurrentStage">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+     </entity>
+     
+     <entity name="MedicalFaciltiesPayment"
+     	table="nbp_medical_app_payment" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="medicalFaciltiesPaymentId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="medicalFacilitiesAppId"  type="long" />
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getMedicalAppById" return-type="MedicalFaciltiesPayment">
+            <finder-column name="medicalFacilitiesAppId"></finder-column>
+        </finder>
+     </entity>
+     <entity name="MedicalNurseStaffPremises" local-service="true"
+     	table="nbp_medical_staff_premises">
+
+     	<!-- PK fields -->
+
+     	<column name="medicalNurseStaffPremisesId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<column name="nursingStaffCategory" type="String" />
+		<column name="medicalFacilitiesAppId" type="long" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getMedicalFacilities_ByAppId"
+			return-type="MedicalNurseStaffPremises">
+			<finder-column name="medicalFacilitiesAppId" />
+		</finder>
+     </entity>
+</service-builder>

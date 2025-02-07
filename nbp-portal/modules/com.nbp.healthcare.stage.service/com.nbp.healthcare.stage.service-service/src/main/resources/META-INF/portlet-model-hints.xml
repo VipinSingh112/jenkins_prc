@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.healthcare.stage.service.model.HealthApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="healthApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="healthApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.healthcare.stage.service.model.HealthCareDueDiligence">
+		<field name="healthDDId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateSubmittedAgency " type="Date" />
+		<field name="nameofAgency" type="String" />
+		<field name="agencyDecision" type="String" />
+		<field name="reasonForObejction" type="String" />
+		<field name="durationOfPeriod" type="String" />
+		<field name="date" type="Date" />
+		<field name="feedbackReceived" type="Date" />
+		<field name="Status" type="String" />
+	</model>
+	<model name="com.nbp.healthcare.stage.service.model.HealthCarePermit">
+		<field name="healthPermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="permitTransaction" type="String" />
+		<field name="nameofApplicant" type="String" />
+		<field name="category" type="String" />
+		<field name="pirPermt" type="String" />
+		<field name="bonafideHC" type="String" />
+		<field name="tariffCode" type="String" />
+		<field name="dateofIssue" type="Date" />
+		<field name="pirPermitFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.healthcare.stage.service.model.HealthDeskVerification">
+		<field name="healthDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="healthCareApplicationId" type="long" />
+		<field name="documentName" type="String" />
+		<field name="documentStatus" type="String" />
+	</model>
+</model-hints>

@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.npm.cannabis.application.stages.services">
+	<namespace>CANNABIS_STAGES</namespace>
+	<entity local-service="true" name="CannabisApplicationStages" remote-service="true" table="nbp_cannabis_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="cannabisApplicationstageId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="cannabisApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		
+		<!-- Finder methods -->
+		<finder name="getCAS_CAI" return-type="CannabisApplicationStages">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCAS_CaseIdStageName" return-type="CannabisApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getCAS_CaseIdStageStatus" return-type="CannabisApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getCAS_CaseIdAndStatus" return-type="CannabisApplicationStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getCAS_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCAS_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getCAS_StageName_StageStatus" return-type="Collection">
+			<finder-column name="stageStatus" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getCAS_StageNameStatus" return-type="Collection">
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="CannabisApplicationDueDiligence" remote-service="true" table="nbp_cannabis_app_duediligence">
+
+		<!-- PK fields -->
+
+		<column name="cannabisAppDDId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="transactionNumber" type="String" />
+		<column name="entityName" type="String" />
+		<column name="dateOfApplication" type="Date" />
+		<column name="agencyContactName" type="String" />
+		<column name="agencyEmailAddress"  type="String" />
+		<column name="licenseNumber"  type="String" />
+		<column name="agencyName"  type="String" />
+		<column name="submittedToAgencyDate"  type="Date" />
+		<column name="feedbackReceivedDate"  type="Date" />
+		<column name="deadlineDate"  type="Date" />
+		<column name="cannabisApplicationId"  type="long" />
+		<column name="updatedBySource"  type="String" />
+		<column name="status"  type="String" />
+		<column name="statusOfAgencyLetter"  type="String" />
+		<column name="agencyDecision"  type="String" />
+		<column name="caseId"  type="String" />
+		
+		
+		<!-- Finder methods -->
+		<finder name="getCADD_CAI" return-type="CannabisApplicationDueDiligence">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCADD_CaseIdAgnecyName" return-type="CannabisApplicationDueDiligence">
+			<finder-column name="caseId" />
+			<finder-column name="agencyName" />
+		</finder>
+		<finder name="getCADD_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCADD_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="CannabisConditionalLicense" remote-service="true" table="nbp_cannabis_con_license">
+
+		<!-- PK fields -->
+
+		<column name="cannabisConditonalLicenseId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="entityNumber" type="String" />
+		<column name="entityName" type="String" />
+		<column name="categoryTier" type="String" />
+		<column name="numberOfTheExtension" type="int" />
+		<column name="ListOfPreconditions"  type="String" />
+		<column name="payentAmtDue"  type="String" />
+		<column name="issueDate"  type="Date" />
+		<column name="expirationDate"  type="Date" />
+		<column name="cannabisApplicationId"  type="long" />
+		<column name="updatedBySource"  type="String" />
+		<column name="status"  type="String" />
+		<column name="caseId"  type="String" />
+		<column name="conditionalLicenseFileId"  type="long" />
+		
+		
+		<!-- Finder methods -->
+		<finder name="getCCL_CAI" return-type="CannabisConditionalLicense">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCCL_CaseId" return-type="CannabisConditionalLicense">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCCL_BycaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="CannabisLicense" remote-service="true" table="nbp_cannabis_license">
+
+		<!-- PK fields -->
+
+		<column name="cannabisLicenseId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="entityNumber" type="String" />
+		<column name="entityName" type="String" />
+		<column name="categoryTier" type="String" />
+		<column name="numberOfTheExtension" type="String" />
+		<column name="ListOfConditions"  type="String" />
+		<column name="payentAmtDue"  type="String" />
+		<column name="issueDate"  type="Date" />
+		<column name="expirationDate"  type="Date" />
+		<column name="cannabisApplicationId"  type="long" />
+		<column name="updatedBySource"  type="String" />
+		<column name="nameOfBPMStep"  type="String" />
+		<column name="licenseConditionsFulfilled"  type="String" />
+		<column name="dateFulfilled"  type="String" />
+		<column name="feeOptionSelected"  type="String" />
+		<column name="feeAmount"  type="String" />
+		<column name="feePaidDate"  type="Date" />
+		<column name="bpmUserNameRole"  type="String" />
+		<column name="stageName"  type="String" />
+		<column name="status"  type="String" />
+		<column name="caseId"  type="String" />
+		<column name="licenseNumber"  type="String" />
+		<column name="licenseFileId"  type="long" />
+		
+		
+		<!-- Finder methods -->
+		<finder name="getCL_CAI" return-type="CannabisLicense">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCL_CaseId" return-type="CannabisLicense">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCL_LN" return-type="CannabisLicense">
+			<finder-column name="licenseNumber" />
+		</finder>
+	</entity>	
+	
+	<entity local-service="true" name="CannabisLicensePayment" remote-service="true" table="nbp_cannabis_license_payment">
+
+		<!-- PK fields -->
+
+		<column name="cannabisLicensePaymentId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="bondAmtDue" type="String" />
+		<column name="licenseFeeDue" type="String" />
+		<column name="feeIssuanceDue" type="String" />
+		<column name="feeOption" type="String" />
+		<column name="deferredPaymentType"  type="String" />
+		<column name="feePaymentdDate"  type="Date" />
+		<column name="paymentOption"  type="String" />
+		<column name="paymentAmtRecieved"  type="String" />
+		<column name="paymentStatus"  type="String" />
+		<column name="updatedBySource"  type="String" />
+		<column name="status"  type="String" />
+		<column name="caseId"  type="String" />
+		<column name="amountCurrency"  type="String" />
+		<column name="cannabisApplicationId"  type="long" />
+		
+		
+		<!-- Finder methods -->
+		<finder name="getCLP_CAI" return-type="CannabisConditionalLicense">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCADD_CaseId" return-type="CannabisConditionalLicense">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	
+	<entity local-service="true" name="CannabisInspection" remote-service="true" table="nbp_cannabis_inspection">
+
+		<!-- PK fields -->
+
+		<column name="cannabisInspectionId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="inspectionDate" type="Date" />
+		<column name="insectionDateRange" type="String" />
+		<column name="invities" type="String" />
+		<column name="location" type="String" />
+		<column name="updatedBySource"  type="String" />
+		<column name="status"  type="String" />
+		<column name="caseId"  type="String" />
+		<column name="cannabisApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		
+		<order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getCI_CAI" return-type="Collection">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getCI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="CannabisInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	
+	<entity local-service="true" name="CannabisLicensePreCondtions" remote-service="true" table="nbp_cannabis_pre_conditions">
+
+		<!-- PK fields -->
+
+		<column name="cannabisPreconditionsId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="caseId" type="String" />
+		<column name="precondition" type="String" />
+		<column name="licenseType" type="String" />
+		<column name="status"  type="String" />
+		<column name="cannabisApplicationId"  type="long" />
+		
+		<order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getCI_CAI" return-type="Collection">
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+		<finder name="getCI_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getCI_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getCI_CaseIdLicenseType" return-type="Collection">
+			<finder-column name="caseId" />
+			<finder-column name="licenseType" />
+		</finder>
+		<finder name="getCI_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="cannabisApplicationId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="FullLicenseCommitteeDecision" remote-service="true" table="nbp_cannabis_comm_decision">
+
+		<!-- PK fields -->
+
+		<column name="fullLicenseCommitteeDecisionId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="caseId" type="String" />
+		<column name="licenseFeeDue" type="String" />
+		<column name="bondFeeDue" type="String" />
+		<column name="committeeDecision"  type="String" />
+		<column name="totalAmountDue"  type="long" />
+		
+		<order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getFLCD_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getFLCD_By_CaseId" return-type="FullLicenseCommitteeDecision">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getFLCD_CD" return-type="Collection">
+			<finder-column name="committeeDecision" />
+		</finder>
+		<finder name="getFLCD_CD_caseId" return-type="FullLicenseCommitteeDecision">
+			<finder-column name="committeeDecision" />
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="CannabisApplicationDeskVeri" local-service="true"
+		table="nbp_cannabis_desk_verifi">
+
+		<!-- PK fields -->
+
+		<column name="cannabisDeskVeriId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="cannabisApplicationId" type="long"></column>
+        <column name="documentStatus" type="String"></column>
+        <column name="documentName" type="String"></column>
+        <finder name="getCannabisAppDV_ById" return-type="Collection">
+          <finder-column name="cannabisApplicationId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="CannabisApplicationPaymentConfirmation"
+		local-service="true" table="nbp_cannabis_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="cannabisAppliPaymentConfirId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+		<column name="dateReceived" type="Date"></column>
+		<column name="amountDue" type="String"></column>
+		<column name="amountReceived" type="String"></column>
+		<column name="receiptNumber" type="String"></column>
+		<column name="comment" type="String"></column>
+		<column name="amountOutstanding" type="String"></column>
+		<column name="dueDate" type="Date"></column>
+		<column name="status" type="String"></column>
+		<column name="docFileEntry" type="long"></column>
+		
+		 <finder name="getCannabisPaymentByCaseId" return-type="CannabisApplicationPaymentConfirmation">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+		 <finder name="getCA_PC_By_CI" return-type="Collection">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+		
+	</entity>
+
+</service-builder>

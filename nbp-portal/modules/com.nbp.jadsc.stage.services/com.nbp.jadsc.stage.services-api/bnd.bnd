@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.jadsc.stage.services-api
+Bundle-SymbolicName: com.nbp.jadsc.stage.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.jadsc.stage.services.exception,\
+	com.nbp.jadsc.stage.services.model,\
+	com.nbp.jadsc.stage.services.service,\
+	com.nbp.jadsc.stage.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.jadsc.stage.services-service/service.xml

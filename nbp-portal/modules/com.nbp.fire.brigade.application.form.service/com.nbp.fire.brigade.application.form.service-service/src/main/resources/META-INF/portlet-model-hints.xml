@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeApplication">
+		<field name="uuid" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="certificateType" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="typeOfPermises" type="String" />
+		<field name="purposeOfCertificate" type="String" />
+		<field name="parish" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="expiredLicenseNumber" type="String" />
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+		<field name="entityId" type="String" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeAppliCurrentStage">
+		<field name="fireBrigadeAppliCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeAppPayment">
+		<field name="fireBrigadeAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeCerPurposeInfo">
+		<field name="fireBrigadeCerPurposeInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="certificatePurposePre" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="otherCertificatePurpose" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeHazardousSubInfo">
+		<field name="fireBrigadeHazardousSubInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="lpgCylinder" type="String" />
+		<field name="flammableGases" type="String" />
+		<field name="flammableCombustibleLiquid" type="String" />
+		<field name="chemicalsLiquid" type="String" />
+		<field name="chemicalsPowder" type="String" />
+		<field name="explosives" type="String" />
+		<field name="otherHazardousSubstance" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeMultFloorInfo">
+		<field name="fireBrigadeMultFloorInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="floorAlternateExist" type="String" />
+		<field name="buildingRisingMain" type="String" />
+		<field name="equipmentConnection" type="String" />
+		<field name="buildingParkingGarage" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeOperatorDetail">
+		<field name="fireBrigadeOperatorDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="operatorName" type="String" />
+		<field name="businessName" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="premisesUses" type="String" />
+		<field name="premisesOccupancy" type="String" />
+		<field name="premisesBusiness" type="String" />
+		<field name="maxWorkingPersons" type="String" />
+		<field name="maxNumPersonsAtAnyOneTime" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadePremisesInfo">
+		<field name="fireBrigadePremisesInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="premises" type="String" />
+		<field name="premisesCertified" type="String" />
+		<field name="expirationDate" type="Date" />
+		<field name="certificateNumber" type="String" />
+		<field name="name" type="String" />
+		<field name="Address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeProEquipmentInfo">
+		<field name="fireBrigadeProEquipmentInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="equipmentProtectionPre" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="equipmentProtectionOne" type="String" />
+		<field name="equipmentProtectionTwo" type="String" />
+		<field name="equipmentProtectionThree" type="String" />
+		<field name="equipmentProtectionFour" type="String" />
+		<field name="equipmentProtectionFive" type="String" />
+		<field name="equipmentProtectionSix" type="String" />
+		<field name="otherEquipment" type="String" />
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.fire.brigade.application.form.service.model.FireBrigadeSignatureInfo">
+		<field name="fireBrigadeSignatureInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="title" type="String" />
+		<field name="name" type="String" />
+		<field name="telephone" type="String" />
+		<field name="fax" type="String" />
+		<field name="trn" type="String" />
+		<field name="email" type="String" />
+		<field name="date" type="Date" />
+		<field name="Address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="fireBrigadeApplicationId" type="long" />
+	</model>
+</model-hints>

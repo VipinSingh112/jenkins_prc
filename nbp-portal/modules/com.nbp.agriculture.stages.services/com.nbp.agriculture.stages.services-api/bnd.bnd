@@ -1,0 +1,11 @@
+Bundle-Name: com.nbp.agriculture.stages.services-api
+Bundle-SymbolicName: com.nbp.agriculture.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.nbp.agriculture.stages.services.exception,\
+	com.nbp.agriculture.stages.services.model,\
+	com.nbp.agriculture.stages.services.service,\
+	com.nbp.agriculture.stages.services.service.persistence,\
+	com.nbp.agriculture.stages.services.constants
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.agriculture.stages.services-service/service.xml

@@ -1,0 +1,11 @@
+dependencies {
+	implementation project(":modules:com.nbp.wra.application.form.service:com.nbp.wra.application.form.service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.wra.application.form.service-api/src/main/java"
+}
+
+group = "com.nbp.wra.application.form.service"

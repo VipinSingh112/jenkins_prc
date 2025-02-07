@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.pharmaceutical.application-form.service-api
+Bundle-SymbolicName: com.nbp.pharmaceutical.application.form.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.pharmaceutical.application.form.service.exception,\
+	com.nbp.pharmaceutical.application.form.service.model,\
+	com.nbp.pharmaceutical.application.form.service.service,\
+	com.nbp.pharmaceutical.application.form.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.pharmaceutical.application-form.service-service/service.xml

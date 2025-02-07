@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.osi.services.stages.service-api
+Bundle-SymbolicName: com.nbp.osi.services.stages.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.osi.services.stages.service.exception,\
+	com.nbp.osi.services.stages.service.model,\
+	com.nbp.osi.services.stages.service.service,\
+	com.nbp.osi.services.stages.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.osi.services.stages.service-service/service.xml

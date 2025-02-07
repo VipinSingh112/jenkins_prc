@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.jtb.application.form.service.model.AccoGenDeclaration">
+		<field name="uuid" type="String" />
+		<field name="accoGenDeclarationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="noOfBedroom" type="String" />
+		<field name="ownerOfHotel" type="String" />
+		<field name="addressOne" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="compIncorporatedOne" type="String" />
+		<field name="companyDate" type="Date" />
+		<field name="hotelOperator" type="String" />
+		<field name="hotelOperatorDateSince" type="Date" />
+		<field name="addressTwo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="compIncorporatedTwo" type="String" />
+		<field name="hotelOperatorName" type="String" />
+		<field name="dateTwo" type="Date" />
+		<field name="hotelIncepDate" type="Date" />
+		<field name="financeOfOper" type="String" />
+		<field name="noOfEmployee" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="nameOfManager" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AccoHomeStay">
+		<field name="uuid" type="String" />
+		<field name="accoHomeStayId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="homeAccoName" type="String" />
+		<field name="homeOwnerName" type="String" />
+		<field name="propertyAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="homeTeleNo" type="String" />
+		<field name="homeMobile" type="String" />
+		<field name="homeEmail" type="String" />
+		<field name="homeEmployeeNo" type="String" />
+		<field name="website" type="String" />
+		<field name="propDirection" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="numOfBedrooms" type="String" />
+		<field name="numOfGuestBedroom" type="String" />
+		<field name="withBathroom" type="String" />
+		<field name="sharedBathroom" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="certifiedBy" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AccoHotelLicence">
+		<field name="uuid" type="String" />
+		<field name="accoHotelLicenceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nameOfOwner" type="String" />
+		<field name="nameOfHotel" type="String" />
+		<field name="telephoneNo" type="String" />
+		<field name="faxNo" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="parish" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AccoNonHotelGenDec">
+		<field name="uuid" type="String" />
+		<field name="accoNonHotelGenDecId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nhAccoOperatorName" type="String" />
+		<field name="dateFrom" type="Date" />
+		<field name="dateTo" type="Date" />
+		<field name="nhAccoSince" type="Date" />
+		<field name="nhAccoDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AccoNonHotelLicence">
+		<field name="uuid" type="String" />
+		<field name="accoNonHotelLicenceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="accoName" type="String" />
+		<field name="accoAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="accoTeleNo" type="String" />
+		<field name="accoFaxNo" type="String" />
+		<field name="accoEmail" type="String" />
+		<field name="accoNoOfEmp" type="String" />
+		<field name="accoOfferedType" type="String" />
+		<field name="noOfRooms" type="String" />
+		<field name="ownerName" type="String" />
+		<field name="ownerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ownerTeleNo" type="String" />
+		<field name="ownerFaxNo" type="String" />
+		<field name="operCompName" type="String" />
+		<field name="operAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="managerName" type="String" />
+		<field name="managerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="managerTeleNo" type="String" />
+		<field name="managerFaxNo" type="String" />
+		<field name="managerEmail" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AccoNonHotelRequiredLic">
+		<field name="accoNonHotelRequiredLicId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="requiredLicence" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="requiredBedroom" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="requiredBathroom" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractDetailFormInfo">
+		<field name="attractDetailFormInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="newAttractionsOwnerName" type="String" />
+		<field name="newAttractionsLocation" type="String" />
+		<field name="newAttractionsMailing" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="newAttractionsTelephone" type="String" />
+		<field name="newAttractionsFaxNum" type="String" />
+		<field name="newAttractionsEmailAddr" type="String" />
+		<field name="newAttractionsEmpNum" type="String" />
+		<field name="newAttractionsParish" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionBikeRentalInfo">
+		<field name="attractionBikeRentalInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="companyName" type="String" />
+		<field name="exactLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="telephone" type="String" />
+		<field name="email" type="String" />
+		<field name="registrationDate" type="Date" />
+		<field name="managerName" type="String" />
+		<field name="numberOfBikes" type="String" />
+		<field name="numberOfHelmets" type="String" />
+		<field name="numberOfEmployees" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="motorBikeIndustry" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionCarRentalLicence">
+		<field name="attractionCarRentalLicId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="ncrApplicantName" type="String" />
+		<field name="ncrAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ncrCompanyName" type="String" />
+		<field name="ncrCompanyAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ncrTelephone" type="String" />
+		<field name="ncrEmail" type="String" />
+		<field name="ncrManagerName" type="String" />
+		<field name="ncrDate" type="Date" />
+		<field name="ncrVehiclesNo" type="String" />
+		<field name="ncrEmployeesNo" type="String" />
+		<field name="ncrOfficeLoc" type="String" />
+		<field name="ncrPosition" type="String" />
+		<field name="ncrSignDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionCarRentCondition">
+		<field name="attractionCarRenConditId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="ncrConditionProp" type="String">
+			<hint name="max-length">3000</hint>
+		</field>
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionConCarriageInfo">
+		<field name="attractionConCarriageInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="ownerName" type="String" />
+		<field name="homeAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="email" type="String" />
+		<field name="telephone" type="String" />
+		<field name="parish" type="String" />
+		<field name="newContractDate" type="Date" />
+		<field name="newContarctVehiclesNo" type="String" />
+		<field name="newContractTrn" type="String" />
+		<field name="contractOrganization" type="String" />
+		<field name="ownerSignDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionCraftTrader">
+		<field name="attractionCraftTraderId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="craftTradersAppliOwner" type="String" />
+		<field name="craftTradersAppliAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="craftTradersAppliPhoneNo" type="String" />
+		<field name="craftTradersAppliEmail" type="String" />
+		<field name="occupyLocation" type="String" />
+		<field name="craftTraderGoodsType" type="String" />
+		<field name="craftTraderName" type="String" />
+		<field name="craftTraderPosition" type="String" />
+		<field name="craftTraderMinisterAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="craftTraderMinisterName" type="String" />
+		<field name="craftTraderMinisterNamePos" type="String" />
+		<field name="craftTraderAddressOwner" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="craftTraderSignDate" type="Date" />
+		<field name="craftTraderAssistSiDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionDomesticService">
+		<field name="attractionDomesticServId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="individualsApartment" type="String" />
+		<field name="airportAssistance" type="String" />
+		<field name="entireTour" type="String" />
+		<field name="transfersDeparture" type="String" />
+		<field name="individualGroups" type="String" />
+		<field name="organizedconJunction" type="String" />
+		<field name="dailyTransportation" type="String" />
+		<field name="entertainment" type="String" />
+		<field name="domesticTourSealDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionDomesticTour">
+		<field name="attractionDomesticTourId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="domesticTourApplicantName" type="String" />
+		<field name="domesticTourAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="domesticTourCompanyName" type="String" />
+		<field name="domesticTourExactLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="domesticTourTelephone" type="String" />
+		<field name="domesticTourEmail" type="String" />
+		<field name="domesticTourDate" type="Date" />
+		<field name="domesticTourManagerName" type="String" />
+		<field name="domesticTourVehiclesNum" type="String" />
+		<field name="domesticTourEmployeesNo" type="String" />
+		<field name="domesticTourOfficeLocation" type="String" />
+		<field name="domesticTourSignDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionGenDeclareInfo">
+		<field name="attractionGenDeclareInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="newAttractionsGenOwnerName" type="String" />
+		<field name="newAttractionsCompanyLaw" type="String" />
+		<field name="newAttractionsDate" type="Date" />
+		<field name="newAttractionsName" type="String" />
+		<field name="newAttractionsStartDate" type="Date" />
+		<field name="newAttractionsSituatedLand" type="String" />
+		<field name="newAttractionsActivities" type="String" />
+		<field name="attractionNewDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionPlaceOfInterest">
+		<field name="attractionPlaceOfInterestId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="placeOfInterest" type="String" />
+		<field name="typeOfRole" type="String" />
+		<field name="placeInterestOwnerName" type="String" />
+		<field name="nameOfInterestLocation" type="String" />
+		<field name="placeOfInterestLocation" type="String" />
+		<field name="placeOfInterestMailing" type="String" />
+		<field name="placeOfInterestTelephone" type="String" />
+		<field name="placeOfInterestEmail" type="String" />
+		<field name="placeOfInterestEmployeesNo" type="String" />
+		<field name="placeOfInterestParish" type="String" />
+		<field name="placeOfInterestOwnerGenDec" type="String" />
+		<field name="placeOfInterestHotelLaws" type="String" />
+		<field name="placeOfInterestDate" type="Date" />
+		<field name="placeOfInterestName" type="String" />
+		<field name="placeOfInterestOperating" type="Date" />
+		<field name="placeOfInterestAcresLand" type="String" />
+		<field name="walkingTour" type="String" />
+		<field name="cemeteryTour" type="String" />
+		<field name="gardenTour" type="String" />
+		<field name="placeOfInterestRooms" type="String" />
+		<field name="placeOfInterestTentSpace" type="String" />
+		<field name="placeOfInterestShowers" type="String" />
+		<field name="placeOfInterestSanitary" type="String" />
+		<field name="placeOfInterestSignDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionTravelAgency">
+		<field name="attractionTravelAgencyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="agencyAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="agencyTelephone" type="String" />
+		<field name="agencyName" type="String" />
+		<field name="agencyAddressSec" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="agencyTelephoneNum" type="String" />
+		<field name="isRegistered" type="String" />
+		<field name="regstParticulars" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="proprietorName" type="String" />
+		<field name="managerName" type="String" />
+		<field name="managerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="secretaryName" type="String" />
+		<field name="secretaryAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bankerName" type="String" />
+		<field name="bondingCompanyName" type="String" />
+		<field name="bondingCompanyAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="auditorsName" type="String" />
+		<field name="auditorsAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="numberOfEmployees" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionTravelHaltApp">
+		<field name="attractionTravelHaltAppId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="travelHaltApplicantName" type="String" />
+		<field name="travelHaltAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="travelHaltTelephone" type="String" />
+		<field name="travelHaltEmail" type="String" />
+		<field name="travelHaltName" type="String" />
+		<field name="travelHaltLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="travelHaltTelephoneNum" type="String" />
+		<field name="travelHaltEmployeesNo" type="String" />
+		<field name="travelHaltSignDate" type="Date" />
+		<field name="gasStation" type="String" />
+		<field name="refreshment" type="String" />
+		<field name="drinks" type="String" />
+		<field name="restaurant" type="String" />
+		<field name="wirelessinternet" type="String" />
+		<field name="restrooms" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionWaterEmployee">
+		<field name="attractionWaterEmpLicId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="applicantAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantAge" type="String" />
+		<field name="applicantNationality" type="String" />
+		<field name="workPermitApplied" type="String" />
+		<field name="workPermitDate" type="Date" />
+		<field name="qualification" type="String" />
+		<field name="placeOfEmployment" type="String" />
+		<field name="ownerName" type="String" />
+		<field name="cpr" type="String" />
+		<field name="firstAid" type="String" />
+		<field name="medicFirstAid" type="String" />
+		<field name="lifeguard" type="String" />
+		<field name="rescueDiver" type="String" />
+		<field name="otherRescue" type="String" />
+		<field name="employeeSignatureDate" type="Date" />
+		<field name="timePeriod" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionWaterGenDeclare">
+		<field name="attractionWaterGenDeclareId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstAid" type="String" />
+		<field name="cpr" type="String" />
+		<field name="divingCertificate" type="String" />
+		<field name="rlss" type="String" />
+		<field name="lifeguard" type="String" />
+		<field name="breathing" type="String" />
+		<field name="operationName" type="String" />
+		<field name="operationAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="insuranceAmount" type="String" />
+		<field name="managerSignDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionWaterRequired">
+		<field name="attractionWaterRequiredId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="generalOperator" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="waterCraft" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="waterSki" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="sunfishSail" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="parasail" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="scubaDiving" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="glassBoat" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bananaBoat" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.AttractionWaterSport">
+		<field name="attractionWaterSportId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="waterSportBusinessName" type="String" />
+		<field name="waterSportMailingaAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="waterSportOpLocationAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="waterSportOpPhone" type="String" />
+		<field name="waterSportOpEmail" type="String" />
+		<field name="waterSportOpOwnerName" type="String" />
+		<field name="waterSportOpAddressOwner" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="waterSportOpManagerName" type="String" />
+		<field name="waterSportOpApplicantName" type="String" />
+		<field name="waterSportOpNationality" type="String" />
+		<field name="waterSportOpEmployeesNo" type="String" />
+		<field name="waterSportOpActivityList" type="String" />
+		<field name="occupyLocation" type="String" />
+		<field name="proposalSubmitted" type="String" />
+		<field name="foreignNationalsInvolved" type="String" />
+		<field name="workPermitApplied" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JtbAddBranchDetailInfo">
+		<field name="jtbBranchDetailInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="branchOfficeDetails" type="String" />
+		<field name="branchOfficeLocation" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JtbAddCraftApplicantInfo">
+		<field name="jtbAddCraftApplicantInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="ownerName" type="String" />
+		<field name="ownerAddress" type="String" />
+		<field name="ownerPhoneNo" type="String" />
+		<field name="sellingLocation" type="String" />
+		<field name="operatingEmail" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JtbAddCraftEmployeeInfo">
+		<field name="jtbAddCraftEmployeeInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="empName" type="String" />
+		<field name="empAddress" type="String" />
+		<field name="empPhoneNo" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JtbAddListDriverInfo">
+		<field name="jtbAddListDriverInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="driverName" type="String" />
+		<field name="driverLicence" type="String" />
+		<field name="driverExpiryDate" type="Date" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JtbAddListVehicleRegst">
+		<field name="jtbAddListVehicleRegstId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="counter" type="String" />
+		<field name="vehicleRegstYear" type="String" />
+		<field name="vehicleRegstModel" type="String" />
+		<field name="vehicleRegstPlate" type="String" />
+		<field name="vehicleRegstExpDate" type="Date" />
+		<field name="vehicleRegstFitnessDate" type="Date" />
+		<field name="vehicleRegstChassis" type="String" />
+		<field name="vehicleRegstBased" type="String" />
+		<field name="vehicleRegstInsuranceCom" type="String" />
+		<field name="vehicleRegstPolicyNum" type="String" />
+		<field name="vehicleRegstExpiryDate" type="Date" />
+		<field name="vehicleRegstPlateNum" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JTBApplication">
+		<field name="uuid" type="String" />
+		<field name="jtbApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="typeOfApplication" type="String" />
+		<field name="categoryTypeValAccomo" type="String" />
+		<field name="nonHotelSubCategory" type="String" />
+		<field name="jtbTransactionTypeVal" type="String" />
+		<field name="attractionCategoryTypeVal" type="String" />
+		<field name="domesticToursType" type="String" />
+		<field name="otherCategories" type="String" />
+		<field name="operatorName" type="String" />
+		<field name="dateOfIssue" type="Date" />
+		<field name="dateOfExp" type="Date" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JTBCurrentStage">
+		<field name="jTBCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.jtb.application.form.service.model.JTBPaymentMethod">
+		<field name="jTBPaymentMethodId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="jtbApplicationId" type="long" />
+	</model>
+</model-hints>

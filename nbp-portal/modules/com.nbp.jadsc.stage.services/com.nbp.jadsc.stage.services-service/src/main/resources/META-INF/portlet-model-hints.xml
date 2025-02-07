@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.jadsc.stage.services.model.JadscApplicationInitiateInvestigation">
+		<field name="jadscAppliInvestiId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfIniInvest" type="Date" />
+		<field name="outcome" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.jadsc.stage.services.model.JadscApplicationPreInitiation">
+		<field name="jadscAppliPreInitiationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfPreInitiation" type="Date" />
+		<field name="outcome" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.jadsc.stage.services.model.JadscApplicationStage">
+		<field name="uuid" type="String" />
+		<field name="jadscAppStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="jadscApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updateBySource" type="String" />
+	</model>
+	<model name="com.nbp.jadsc.stage.services.model.JadscAppliFinalDeter">
+		<field name="jadscAppliFinalDeterId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfFinalDeter" type="Date" />
+		<field name="Outcome" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.jadsc.stage.services.model.JadscAppliPreliminationDete">
+		<field name="jadscAppliPreliminationDeteId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateOfPreDete" type="Date" />
+		<field name="Outcome" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.nbp.jadsc.stage.services.model.JadscAppliReviewAndValid">
+		<field name="jadscAppliReviewAndValidId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="versionOfApplication" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+</model-hints>

@@ -1,0 +1,13 @@
+dependencies {
+	implementation project(":modules:com.nbp.ncra.stages.services:com.nbp.ncra.stages.services-api")
+	
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+	implementation project(":modules:com.nbp.ncra.application.form.service:com.nbp.ncra.application.form.service-api")
+}
+
+buildService {
+	apiDir = "../com.nbp.ncra.stages.services-api/src/main/java"
+}
+
+group = "com.nbp.ncra.stages.services"

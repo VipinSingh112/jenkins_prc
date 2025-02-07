@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.osi.services.application.form.service.model.OSIServiceComSign">
+		<field name="osiComSignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="comSignDate" type="Date" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OSIServiceCurrentStage">
+		<field name="osiCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormDetailsStep" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesApplicantinfo">
+		<field name="uuid" type="String" />
+		<field name="osiServicesApplicanId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantNature" type="String" />
+		<field name="indiFirstName" type="String" />
+		<field name="indiLastName" type="String" />
+		<field name="companyName" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="emailAddress" type="String" />
+		<field name="telephone" type="String" />
+		<field name="applicationDate" type="Date" />
+		<field name="trnNumber" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesApplication">
+		<field name="uuid" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="long" />
+		<field name="doYouWant" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="natureOfApplicant" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesAppPayment">
+		<field name="osiServicesAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesAssignmentDetailinfo">
+		<field name="uuid" type="String" />
+		<field name="osiADId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assignmentName" type="String" />
+		<field name="assignmentDated" type="Date" />
+		<field name="selectedAssignmentAttached" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="assignmentAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="trusteeAct" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesGeneralBenefitOfCreditorsinfo">
+		<field name="uuid" type="String" />
+		<field name="osiBOCInsoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="creditorName" type="String" />
+		<field name="creditorDate" type="Date" />
+		<field name="creditorAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesInsolventPersoninfo">
+		<field name="uuid" type="String" />
+		<field name="osiServicesInsoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="insolventPersonNature" type="String" />
+		<field name="insolventIndiFirstName" type="String" />
+		<field name="insolventIndiLastName" type="String" />
+		<field name="insolventCompanyName" type="String" />
+		<field name="insolventAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="insolventParish" type="String" />
+		<field name="insolventEmailAddress" type="String" />
+		<field name="insolventTelephone" type="String" />
+		<field name="insolventApplicationDate" type="Date" />
+		<field name="insolventTrnNumber" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesTrusteeBreadDownAddinfo">
+		<field name="uuid" type="String" />
+		<field name="osiTrusId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="breakdownWorkingYear" type="String" />
+		<field name="workingBankrupties" type="String" />
+		<field name="workingProposal" type="String" />
+		<field name="workingComBankrupts" type="String" />
+		<field name="workingComProposal" type="String" />
+		<field name="workingInterimReceive" type="String" />
+		<field name="breakdownWorkingCreditors" type="String" />
+		<field name="breakdownWorkingOther" type="String" />
+		<field name="counter" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesTrusteeCompanyinfo">
+		<field name="uuid" type="String" />
+		<field name="osiTrusId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="comCorporationName" type="String" />
+		<field name="comHeadOfficeAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="comTeleNo" type="String" />
+		<field name="comFaxNo" type="String" />
+		<field name="comEmail" type="String" />
+		<field name="otherCountry" type="String" />
+		<field name="comIncorporationDate" type="Date" />
+		<field name="comLicenceRequest" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesTrusteeDeclerationAndSignatureinfo">
+		<field name="uuid" type="String" />
+		<field name="osiDeclerationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="indiUndersignedApplicantName" type="String" />
+		<field name="indiUndersignedDated" type="Date" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesTrusteeIndividualDetailinfo">
+		<field name="uuid" type="String" />
+		<field name="osTIId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="indiFamilyName" type="String" />
+		<field name="indiGivenName" type="String" />
+		<field name="indiDateOfBirth" type="Date" />
+		<field name="indiOtherLegalNames" type="String" />
+		<field name="indiBusinessAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="indiBusinessTeleNo" type="String" />
+		<field name="indiBusinessFaxNo" type="String" />
+		<field name="indiBusinessEmail" type="String" />
+		<field name="indiHomeAddress" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="indiHomeTeleNo" type="String" />
+		<field name="indiHomeFaxNo" type="String" />
+		<field name="indiHomeEmail" type="String" />
+		<field name="indiCurrentEmployer" type="String" />
+		<field name="indiDateOfEmployment" type="Date" />
+		<field name="indiProfessionalOrg" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesTrusteeIndividualQualificationinfo">
+		<field name="uuid" type="String" />
+		<field name="osQualificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="orgMember" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OsiServicesTrusteeLicenseBreakdowninfo">
+		<field name="uuid" type="String" />
+		<field name="osiLicBreakId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="indiBreakdownApplicantName" type="String" />
+		<field name="indiBreakdownFirm" type="String" />
+		<field name="indiBreakdownDated" type="Date" />
+		<field name="indiBreakdownTrusteeName" type="String" />
+		<field name="indiBreakdownTrusteeDate" type="Date" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.services.application.form.service.model.OSIServiceSupportingDocInd">
+		<field name="oSIServiceSupportingDocIndId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="supportingDocCheckboxes" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="nonProvisionReasonReq1" type="String" />
+		<field name="expectedDateReq1" type="Date" />
+		<field name="nonProvisionReasonReq2" type="String" />
+		<field name="expectedDateReq2" type="Date" />
+		<field name="nonProvisionReasonReq3" type="String" />
+		<field name="expectedDateReq3" type="Date" />
+		<field name="nonProvisionReasonReq4" type="String" />
+		<field name="expectedDateReq4" type="Date" />
+		<field name="nonProvisionReasonReq5" type="String" />
+		<field name="expectedDateReq5" type="Date" />
+		<field name="nonProvisionReasonReq6" type="String" />
+		<field name="expectedDateReq6" type="Date" />
+		<field name="nonProvisionReasonReq7" type="String" />
+		<field name="expectedDateReq7" type="Date" />
+		<field name="nonProvisionReasonReq8" type="String" />
+		<field name="expectedDateReq8" type="Date" />
+		<field name="nonProvisionReasonReq9" type="String" />
+		<field name="expectedDateReq9" type="Date" />
+		<field name="nonProvisionReasonReq10" type="String" />
+		<field name="expectedDateReq10" type="Date" />
+		<field name="nonProvisionReasonReq11" type="String" />
+		<field name="expectedDateReq11" type="Date" />
+		<field name="nonProvisionReasonReq12" type="String" />
+		<field name="expectedDateReq12" type="Date" />
+		<field name="category" type="String" />
+		<field name="osiServicesApplicationId" type="long" />
+	</model>
+</model-hints>

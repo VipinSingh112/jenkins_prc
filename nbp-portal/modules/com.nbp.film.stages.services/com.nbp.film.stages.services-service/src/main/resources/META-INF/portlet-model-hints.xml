@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.film.stages.services.model.FilmApplicationRegister">
+		<field name="filmApplicationRegisterId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="registrationDate" type="Date" />
+		<field name="filmRegistrationNum" type="String" />
+		<field name="titleOfProduction" type="String" />
+		<field name="dateOfIssued" type="Date" />
+		<field name="productionCompany" type="String" />
+		<field name="technicalFormOfProd" type="String" />
+		<field name="OriginOfProdCom" type="String" />
+		<field name="permitsRequired" type="String" />
+		<field name="shootLocationInJamaica" type="String" />
+		<field name="preProductionDate" type="Date" />
+		<field name="productionStartDate" type="Date" />
+		<field name="proposedDateOfArrival" type="String" />
+		<field name="portOfEntry" type="String" />
+		<field name="proposedDateOfDeparture" type="Date" />
+		<field name="fullProductionBudget" type="String" />
+		<field name="expectedBudgetSpendInJA" type="String" />
+		<field name="numberOFForeignCrewHired" type="String" />
+		<field name="numberJamaicaCrewHired" type="String" />
+		<field name="valueOfBondWaiver" type="String" />
+		<field name="customsBroker" type="String" />
+		<field name="localProductionManagerOrFixer" type="String" />
+	</model>
+	<model name="com.nbp.film.stages.services.model.FilmApplicationStages">
+		<field name="filmApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="filmApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.film.stages.services.model.FilmDeskVerification">
+		<field name="filmDeskVerificaId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="filmApplicationId" type="long" />
+		<field name="documentName" type="String" />
+		<field name="status" type="String" />
+	</model>
+	<model name="com.nbp.film.stages.services.model.FilmFullRegistration">
+		<field name="filmFullRegistrationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="productionType" type="String" />
+		<field name="registrationNumber" type="String" />
+		<field name="duration" type="String" />
+		<field name="dateOfIssued" type="Date" />
+		<field name="productionTitle" type="String" />
+		<field name="productionDateFrom" type="Date" />
+		<field name="productionDateTo" type="Date" />
+		<field name="termsAndConditions" type="String" />
+		<field name="docFileEntrys" type="long" />
+	</model>
+	<model name="com.nbp.film.stages.services.model.FilmPaymentConfirmation">
+		<field name="filmPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+</model-hints>

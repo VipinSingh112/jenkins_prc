@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.factories.registration.application.form.services-api
+Bundle-SymbolicName: com.nbp.factories.registration.application.form.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.factories.registration.application.form.services.exception,\
+	com.nbp.factories.registration.application.form.services.model,\
+	com.nbp.factories.registration.application.form.services.service,\
+	com.nbp.factories.registration.application.form.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.factories.registration.application.form.services-service/service.xml

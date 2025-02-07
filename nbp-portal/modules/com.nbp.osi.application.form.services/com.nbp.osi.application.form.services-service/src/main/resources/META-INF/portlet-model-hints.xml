@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.osi.application.form.services.model.CounsellingExperience">
+		<field name="counsellingExperienceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="company" type="String" />
+		<field name="position" type="String" />
+		<field name="counsellingType" type="String" />
+		<field name="serviceLength" type="String" />
+		<field name="counter" type="String" />
+		<field name="osiApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.application.form.services.model.DetailOfApplicant">
+		<field name="uuid" type="String" />
+		<field name="detailOfApplicantId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="applicantMiddleName" type="String" />
+		<field name="applicantLastName" type="String" />
+		<field name="applicantAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantEmail" type="String" />
+		<field name="applicantTeleNum" type="String" />
+		<field name="applicantTrn" type="String" />
+		<field name="applicantIdNumber" type="String" />
+		<field name="applicantDob" type="Date" />
+		<field name="applicantOccupation" type="String" />
+		<field name="osiApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.application.form.services.model.EducationalQualification">
+		<field name="uuid" type="String" />
+		<field name="educationalDetailId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="institution" type="String" />
+		<field name="qualificationType" type="String" />
+		<field name="qualificationPeriod" type="Date" />
+		<field name="qualificationGrade" type="String" />
+		<field name="counter" type="String" />
+		<field name="osiApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.application.form.services.model.OfficialUse">
+		<field name="officialUseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="receivedBy" type="String" />
+		<field name="receivedByDate" type="Date" />
+		<field name="verifiedBy" type="String" />
+		<field name="verifiedByDate" type="Date" />
+		<field name="applicationAccepted" type="String" />
+		<field name="dateCertificateIssued" type="Date" />
+		<field name="certificateNumber" type="String" />
+		<field name="remarksNotes" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="osiApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.application.form.services.model.OsiApplication">
+		<field name="osiApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="entityId" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicationType" type="String" />
+		<field name="applicationStatus" type="int" />
+		<field name="caseId" type="String" />
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.osi.application.form.services.model.OsiCurrentStage">
+		<field name="osiCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="lastFormStep" type="String" />
+		<field name="currentStage" type="String" />
+		<field name="osiApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.application.form.services.model.ProfessionalAffiliation">
+		<field name="professionalAffiliationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="professionalAffiliationsDate" type="Date" />
+		<field name="affiliationMultivalue" type="String" />
+		<field name="osiApplicationId" type="long" />
+	</model>
+</model-hints>

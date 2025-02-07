@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.wra.application.form.service.model.LicenceToAbstractInfo">
+		<field name="abstractLicenceId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicationNum" type="String" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="parishApplicant" type="String" />
+		<field name="mailingAddOfApplicant" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="emailOfApplicant" type="String" />
+		<field name="officePhone" type="String" />
+		<field name="mobilePhone" type="String" />
+		<field name="homePhone" type="String" />
+		<field name="locationOfProposedParish" type="String" />
+		<field name="locationOfProParishWork" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="nameOfContractor" type="String" />
+		<field name="parishContractor" type="String" />
+		<field name="addressOfContractor" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="sourceOfWater" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="purposeWaterUse" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="areaAndCropType" type="String" />
+		<field name="systemOfIrrigation" type="String" />
+		<field name="meansOfDisposal" type="String" />
+		<field name="estimateDepthOfBorewell" type="String" />
+		<field name="diameterOfBorewell" type="String" />
+		<field name="artesianSupply" type="String" />
+		<field name="geologicalStrait" type="String" />
+		<field name="methodOfAbstractingWater" type="String" />
+		<field name="maxDailyQuant" type="String" />
+		<field name="typeOfAppratusProposed" type="String" />
+		<field name="otherInformation" type="String" />
+		<field name="requestToSupplyWater" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="authorityInformation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="dateOfSign" type="Date" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.LicenceToWellDriller">
+		<field name="licenceToWellDrillerId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="wellDrillingApplicationNo" type="String" />
+		<field name="permitDrillingApplicantName" type="String" />
+		<field name="permitDrillingAddressParish" type="String" />
+		<field name="permitDrillingApplicantAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingDOBDate" type="Date" />
+		<field name="permitDrillingEducational" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingSpecificTraining" type="String" />
+		<field name="permitDrillingSpecificExp" type="String" />
+		<field name="permitDrillingSelfEmployed" type="String" />
+		<field name="permitDrillingName" type="String" />
+		<field name="permitDrillingPresentEmployer" type="String" />
+		<field name="permitDrillingEmployerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingFirstRefName" type="String" />
+		<field name="permitDrillingFirstRefAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingSecondRefName" type="String" />
+		<field name="permitDrillingSecondRefAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingSignature" type="String" />
+		<field name="permitDrillingSignatureDate" type="Date" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.PermitToDrillAWell">
+		<field name="drillAWellApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="permitDrillApplicationNum" type="String" />
+		<field name="permitDrillingApplicantName" type="String" />
+		<field name="permitDrillingMailingAddParish" type="String" />
+		<field name="permitDrillingMailingAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingEmailAddress" type="String" />
+		<field name="permitDrillingOfficePhone" type="String" />
+		<field name="permitDrillingMobilePhone" type="String" />
+		<field name="wellDrillingHomePhone" type="String" />
+		<field name="permitDrillingWorkLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingNature" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingContractorName" type="String" />
+		<field name="permitDrillContractAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingContractorAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingPurpose" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingBoreholeDepth" type="String" />
+		<field name="permitDrillingDiameterBorehole" type="String" />
+		<field name="permitDrillingMethod" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingConstMethod" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="permitDrillingSupplies" type="String" />
+		<field name="permitDrillingTechnicalInfo" type="String" />
+		<field name="permitDrillingCubic" type="String" />
+		<field name="permitDrillingAuthority" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantSignaturePermitBtn" type="String" />
+		<field name="permitDrillingSignDate" type="Date" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.RenewLicAbstractAndWater">
+		<field name="renewLicAbstractAndWaterId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="renewName" type="String" />
+		<field name="renewContact" type="String" />
+		<field name="renewJobTitle" type="String" />
+		<field name="renewTelephoneNum" type="String" />
+		<field name="renewFaxNum" type="String" />
+		<field name="renewParishLocation" type="String" />
+		<field name="renewAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="renewSourceName" type="String" />
+		<field name="renewDetailsParishAdd" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="renewDetailsLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="renewAbstractionRate" type="String" />
+		<field name="renewDetailsUse" type="String" />
+		<field name="renewAbstractionMethod" type="String" />
+		<field name="attachedDevice" type="String" />
+		<field name="renewStateDevice" type="String" />
+		<field name="abstractionData" type="String" />
+		<field name="renewSignName" type="String" />
+		<field name="renewDate" type="Date" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.WRAAppCurrentStage">
+		<field name="uuid" type="String" />
+		<field name="wraAppCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStep" type="String" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.WRAApplication">
+		<field name="wraApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="Date" />
+		<field name="typeOfApplication" type="String" />
+		<field name="typeOfTransaction" type="String" />
+		<field name="typeOfPermit" type="String" />
+		<field name="typeOfTransacPermit" type="String" />
+		<field name="userWaterTypeCat" type="String" />
+		<field name="consumptiveSubCat" type="String" />
+		<field name="nonConsumptiveSubCat" type="String" />
+		<field name="industrialTypeSubCat" type="String" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="caseId" type="String" />
+		<field name="applicationNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.WRAAppPayment">
+		<field name="wraAppPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.wra.application.form.service.model.WRAReqIrrigation">
+		<field name="wraReqIrrigationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="abstractAreaIrrigated" type="String" />
+		<field name="abstractSystemIrrigated" type="String" />
+		<field name="counter" type="String" />
+		<field name="wraApplicationId" type="long" />
+	</model>
+</model-hints>

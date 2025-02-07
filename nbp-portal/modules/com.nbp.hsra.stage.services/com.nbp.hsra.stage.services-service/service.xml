@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.hsra.stage.services">
+	<namespace>HSRA_STAGE</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="HsraApplicationStages" remote-service="true" uuid="true" table="nbp_hsra_application_stage">
+
+		<!-- PK fields -->
+
+		<column name="hsraApplicationStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="stageName" type="String"></column>
+		<column name="duration" type="String"></column>
+		<column name="stageStatus" type="String"></column>
+		<column name="stageStartDate" type="Date"></column>
+		<column name="stageEndDate" type="Date"></column>
+		<column name="hsraApplicationId" type="long"></column>
+		<column name="caseId" type="String"></column>
+		<column name="updateBySource" type="String"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getHsra_By_AI"
+			return-type="HsraApplicationStages">
+			<finder-column name="hsraApplicationId"></finder-column>
+		</finder>
+		<finder name="getHsra_By_CaseIdStageName"
+			return-type="HsraApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getHsra_By_CaseIdStageStatus"
+			return-type="HsraApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+			<finder-column name="stageName"></finder-column>
+		</finder>
+		<finder name="getHsra_By_CaseIdAndStatus"
+			return-type="HsraApplicationStages">
+			<finder-column name="caseId"></finder-column>
+			<finder-column name="stageStatus"></finder-column>
+		</finder>
+		<finder name="getHsra_By_CaseId" return-type="Collection">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getHsraApp_By_CaseId" return-type="HsraApplicationStages">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getHsra_By_StageName" return-type="Collection">
+			<finder-column name="stageName"></finder-column>
+		</finder>
+	</entity>
+		<entity local-service="true" name="HSRAApplicationDueDiligence" remote-service="true" table="nbp_hsra_app_duediligence">
+
+		<!-- PK fields -->
+
+		<column name="hsraAppDDId" primary="true" type="long" />
+			<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		
+		<column name="transactionNumber" type="String" />
+		<column name="entityName" type="String" />
+		<column name="dateOfApplication" type="Date" />
+		<column name="agencyContactName" type="String" />
+		<column name="agencyEmailAddress"  type="String" />
+		<column name="licenseNumber"  type="String" />
+		<column name="agencyName"  type="String" />
+		<column name="submittedToAgencyDate"  type="Date" />
+		<column name="feedbackReceivedDate"  type="Date" />
+		<column name="feedbackReceived"  type="String" />
+		<column name="deadlineDate"  type="Date" />
+		<column name="hsraApplicationId"  type="long" />
+		<column name="updatedBySource"  type="String" />
+		<column name="durationOfTimeSpent"  type="String" />
+		<column name="agencyDecision"  type="String" />
+		<column name="status"  type="String" />
+		<column name="caseId"  type="String" />
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+		<finder name="getHSRADD_By_CAI" return-type="HSRAApplicationDueDiligence">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getHSRADD_CAI" return-type="HSRAApplicationDueDiligence">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		<finder name="getHSRADD_CaseIdAgnecyName" return-type="HSRAApplicationDueDiligence">
+			<finder-column name="caseId" />
+			<finder-column name="agencyName" />
+		</finder>
+		<finder name="getHSRADD_AgnecyName" return-type="Collection">
+			<finder-column name="agencyName" />
+		</finder>
+		<finder name="getPHARMADD_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="HSRAApplicationLicenseIssuance" local-service="true"
+		table="nbp_hsra_lic_iss">
+
+		<!-- PK fields -->
+
+		<column name="hsraFullLicenseId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="licenseNumber" type="String"></column>
+        <column name="dateOfIssue" type="Date"></column>
+        <column name="dateOfExpiry" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="feePaidAmount" type="String"></column>
+        <column name="receiptNumber" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="leadTime" type="String"></column>
+        <column name="caseId" type="String"></column>
+        <column name="licenseDocId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getHSRA_lic_iss_By_CI" return-type="HSRAApplicationLicenseIssuance">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getHSRA_lic_iss_By_CID" return-type="Collection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        <finder name="getHSRA_lic_iss_By_LN" return-type="HSRAApplicationLicenseIssuance">
+            <finder-column name="licenseNumber"></finder-column>
+        </finder>
+	</entity>
+	<entity name="HSRAPaymentConfirmation" local-service="true"
+		table="nbp_hsra_payment_confirm">
+
+		<!-- PK fields -->
+
+		<column name="hsraPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="amountDue" type="String"></column>
+        <column name="dateReceived" type="Date"></column>
+        <column name="amountreceived" type="String"></column>
+        <column name="receivedNumber" type="String"></column>
+        <column name="comments" type="String"></column>
+        <column name="amountOutstanding" type="String"></column>
+        <column name="dueDate" type="Date"></column>
+        <column name="status" type="String"></column>
+        <column name="paymentreceiptFileEntryId" type="long"></column>
+         <order by="asc">
+			<order-column name="createDate" />
+		</order>
+        <finder name="getPaymentConfirmationBy_CI" return-type="HSRAPaymentConfirmation">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+        <finder name="getPaymentConfirmation_By_CI" return-type="Collection">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="HsraInspection" local-service="true"
+		table="nbp_hsra_inspection">
+
+		<!-- PK fields -->
+
+		<column name="hsraInspectionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+        <column name="dateOfInspection" type="Date"></column>
+		<column name="timeOfInspection" type="String" />
+		<column name="location" type="String" />
+		<column name="status"  type="String" />
+		<column name="hsraApplicationId"  type="long" />
+		<column name="slotBookedByUser"  type="long" />
+		
+		 <order>
+  			  <order-column name="createDate" order-by="desc" />
+		</order>
+        
+        <finder name="getHsraInspectionBy_CI" return-type="HsraInspection">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+		<finder name="getHsra_FBAI" return-type="Collection">
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		<finder name="getHsra_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getHsra_Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="getHsra_CaseIdStatus" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getHsra_CaseIdApplicationId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="hsraApplicationId" />
+		</finder>
+		<finder name="getInspectionByStatus_SlotBoooked_ApplicationId" return-type="HsraInspection">
+			<finder-column name="status" />
+			<finder-column name="slotBookedByUser" />
+			<finder-column name="hsraApplicationId" />
+		</finder>
+	</entity>
+	<entity name="HsraApplicationDeskVeri" local-service="true"
+		table="nbp_hsra_desk_verifi">
+
+		<!-- PK fields -->
+
+		<column name="hsraApplicationDeskVeriId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="hsraApplicationId" type="long"></column>
+        <column name="documentStatus" type="String"></column>
+        <column name="documentName" type="String"></column>
+        <finder name="getHsraAppDV_ById" return-type="Collection">
+          <finder-column name="hsraApplicationId"></finder-column>
+      </finder>
+	</entity>
+</service-builder>

@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireApplication">
+		<field name="uuid" type="String" />
+		<field name="acquireApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="divestmentOptions" type="String" />
+		<field name="tenureType" type="String" />
+		<field name="currentUse" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireApplicationDetails">
+		<field name="acquireApplicationDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicantName" type="String" />
+		<field name="applicantOrganisation" type="String" />
+		<field name="applicantPostalAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicantEmail" type="String" />
+		<field name="applicantTeleNum" type="String" />
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireCurrentStage">
+		<field name="acquireCurrentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireDocumentList">
+		<field name="acquireDocumentListId" type="long" />
+		<field name="documentType" type="String" />
+		<field name="documentName" type="String" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireLandApplicantDetails">
+		<field name="acquireLandApplicantDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="landApplicantName" type="String" />
+		<field name="landApplicantGender" type="String" />
+		<field name="landApplicantDob" type="Date" />
+		<field name="landApplicantTrnNum" type="String" />
+		<field name="landApplicantHomeAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="landApplicantMailingAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="landApplicantPhoneNum" type="String" />
+		<field name="landApplicantEmail" type="String" />
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireLandEmployment">
+		<field name="acquireLandEmploymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="landEmploymentStatus" type="String" />
+		<field name="landEmpJamaicaGovEmplyee" type="String" />
+		<field name="landEmpCompanyName" type="String" />
+		<field name="landEmploymentJobTitle" type="String" />
+		<field name="landEmpCompanyAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="landEmpTeleNum" type="String" />
+		<field name="landEmpGrossSalaryType" type="String" />
+		<field name="landEmpGrossSalary" type="String" />
+		<field name="landEmpOtherIncomeSource" type="String" />
+		<field name="landEmpOtherSalaryType" type="String" />
+		<field name="landEmpOtherIncomeAmount" type="String" />
+		<field name="landEmpFinancialSupportPerson" type="String" />
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquireLandPropertyDetails">
+		<field name="acquireLandPropertyDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="landPropIdentified" type="String" />
+		<field name="landPropAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="landPropOccupation" type="String" />
+		<field name="landPropOccupationPeriod" type="String" />
+		<field name="landPropTenureType" type="String" />
+		<field name="landPropDesiredLoc" type="String" />
+		<field name="landPropProposedUse" type="String" />
+		<field name="landPropProposedUseOther" type="String" />
+		<field name="landPropPropTenureType" type="String" />
+		<field name="landPropApplied" type="String" />
+		<field name="landPropApplicationDate" type="Date" />
+		<field name="landPropExistingBuilding" type="String" />
+		<field name="landPropExistingBuildingOther" type="String" />
+		<field name="landPropOwn" type="String" />
+		<field name="landPropGovAcquired" type="String" />
+		<field name="landPropStateDetails" type="String" />
+		<field name="landPropPaymentMethod" type="String" />
+		<field name="landPropPaymentMethodOther" type="String" />
+		<field name="landPropComments" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquirePaymentPlan">
+		<field name="acquirePaymentPlanId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="paymentCurrencySelected" type="String" />
+		<field name="paymentMethodOther" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.application.form.service.model.AcquirePropertyDetails">
+		<field name="acquirePropertyDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="propertyTenureType" type="String" />
+		<field name="propertyIdentified" type="String" />
+		<field name="propertyAddr" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="propertyDesiredLoc" type="String" />
+		<field name="propertyVolume" type="String" />
+		<field name="propertyFolio" type="String" />
+		<field name="propertyValuationNum" type="String" />
+		<field name="propertySketchAttached" type="String" />
+		<field name="propertyCurrentUse" type="String" />
+		<field name="propertyCurrentUseOther" type="String" />
+		<field name="propertyExistingBuilding" type="String" />
+		<field name="propertyExistingBuildingOther" type="String" />
+		<field name="propertyExistingInfrastructure" type="String" />
+		<field name="propertyProposedUse" type="String" />
+		<field name="propertyProposedUseOther" type="String" />
+		<field name="propertyProposedInfrastructure" type="String" />
+		<field name="propertyLandAreaHectare" type="String" />
+		<field name="propertyLandAreaAcres" type="String" />
+		<field name="propertyLandAreaRoods" type="String" />
+		<field name="propertyLandAreaPerches" type="String" />
+		<field name="propertyAdjoiningNorth" type="String" />
+		<field name="propertyAdjoiningSouth" type="String" />
+		<field name="propertyAdjoiningEast" type="String" />
+		<field name="propertyAdjoiningWest" type="String" />
+		<field name="propertyDate" type="Date" />
+		<field name="propertyAdditionalInfo" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="acquireApplicationId" type="long" />
+	</model>
+</model-hints>

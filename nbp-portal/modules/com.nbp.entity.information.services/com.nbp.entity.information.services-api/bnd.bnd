@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.entity.information.services-api
+Bundle-SymbolicName: com.nbp.entity.information.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.entity.information.services.exception,\
+	com.nbp.entity.information.services.model,\
+	com.nbp.entity.information.services.service,\
+	com.nbp.entity.information.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.entity.information.services-service/service.xml

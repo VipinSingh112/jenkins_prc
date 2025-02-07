@@ -1,0 +1,1173 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.osi.insolvency.application.form.services">
+	<namespace>OSI_INSOLVENCY</namespace>
+	<entity local-service="true" remote-service="true" name="OsiInsolvencyApplication" table="nbp_osi_insolv_application"> 
+	
+		<!-- PK fields -->
+	<column name="osiInsolvencyId" primary="true"
+			type="long">
+     </column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+		
+		<!-- Other fields -->
+        <column name="applicantStatus" type="String" />
+        <column name="typeOfApplicant" type="String" />
+        <column name="subjectData" type="String" />
+		<column name="applicantIndividual" type="String" />
+		<column name="applicantCompany" type="String" />
+		<column name="realEstateBoard" type="String" />
+		<column name="caseId" type="String"/>
+        <column name="status" type="int"/>
+        <column name="icmDocumentPath" type="String"/>
+        <column name="applicationNumber" type="String"/>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+       
+       <order by="desc">
+			<order-column name="createDate" />
+		</order>
+       
+       	<finder name="getOsiInsolvencyById" return-type="OsiInsolvencyApplication">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+		<finder name="getOsiByS_U" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getOsiByAppNum" return-type="OsiInsolvencyApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getOsiByCaseId" return-type="OsiInsolvencyApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getOsiInsolvencyByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		 <finder name="getOsiInsolvencyByStatus_UserId" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		 <finder name="getOsiInsolvencyByApplicationStatus_Status" return-type="Collection">
+			<finder-column name="applicantStatus"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="VerificationRequestorsInfo" table="nbp_osi_ver_request_detail"> 
+
+		<!-- PK fields -->
+
+		<column name="requestorInformationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="verRequestorName" type="String" />
+		<column name="verRequestorLastName" type="String" />
+		<column name="verRequestorOccupation" type="String" />
+		<column name="verRequestorAddress" type="String" />
+		<column name="verDateOfRequest" type="Date" />
+		<column name="verRequestorTelNum" type="String" />
+		<column name="verRequestorEmail" type="String" />
+		<column name="osiInsolvencyId" type="long" />
+
+		<!-- Finder methods -->
+
+		<finder name="getOsiById" return-type="VerificationRequestorsInfo">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="SubjectData"
+		table="nbp_osi_subject_data">
+
+		<!-- PK fields -->
+		<!-- PK fields -->
+
+		<column name="subjectDataId" primary="true" type="long" />
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="verSubjectNameTitle" type="String" />
+		<column name="verSubjectFirstName" type="String" />
+		<column name="verSubjectMiddleName" type="String" />
+		<column name="verSubjectSurname" type="String" />
+		<column name="verSubjectDob" type="Date" />
+		<column name="verPresentAddress" type="String" />
+		<column name="verPlaceOfBirth" type="String" />
+		<column name="verSubjectTrn" type="String" />
+		<column name="verSubjectTelNum" type="String" />
+		<column name="verSubjectEmail" type="String" />
+		<column name="osiInsolvencyId" type="long" />
+		<!-- Finder methods -->
+
+		<finder name="getOsiById" return-type="SubjectData">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="AssessmentIndividualPersonalDetails"
+		table="nbp_osi_assessment_detail">
+
+
+		<column name="assessmentDetailsId" primary="true" type="long"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+        <!-- Audit fields -->
+        <column name="initialDateContact" type="Date"></column>
+        <column name="personalName" type="String"></column>
+        <column name="personalAddress" type="String"></column>
+        <column name="personalEmail" type="String"></column>
+        <column name="personalTelNum" type="String"></column>
+        <column name="personalTrn" type="String"></column>
+        <column name="personalNis" type="String"></column>
+        <column name="personalDob" type="Date"></column>
+        <column name="personalAge" type="String"></column>
+        <column name="personalMaritalStatus" type="String"></column>
+        <column name="personalDependents" type="String"></column>
+        <column name="personalOccupation" type="String"></column>
+        
+        <column name="emergencyName" type="String"></column>
+        <column name="emergencyEmail" type="String"></column>
+        <column name="emergencyTelNum" type="String"></column>
+        <column name="emergencyAddress" type="String"></column>
+        <column name="emergencyEmployer" type="String"></column>
+        
+        <column name="employerAddress" type="String"></column>
+        <column name="employerEmail" type="String"></column>
+        <column name="employerTelNum" type="String"></column>
+        
+        <column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="AssessmentIndividualPersonalDetails">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+        </entity>
+        
+	<entity name="SecuredCreditor" local-service="true"
+		table="nbp_osi_liability_detail">
+
+		<!-- PK fields -->
+
+		<column name="securedCreditorId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="securedCreditorName" type="String"></column>
+		<column name="securedCreditorAsset" type="String"></column>
+		<column name="securedCreditorLiability" type="String"></column>
+		<column name="securedCreditorPayment" type="String"></column>
+		<column name="securedCreditorCounter" type="String"></column>
+		<column name="securedCreditorDate" type="Date"></column>
+        <column name="osiInsolvencyId" type="long" />
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+        
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	
+		<entity name="PreferredCreditor" local-service="true"
+		table="nbp_osi_preferred_detail">
+
+		<!-- PK fields -->
+
+		<column name="preferredCreditorId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="preferredCreditorName" type="String"></column>
+		<column name="preferredCreditorLiability" type="String"></column>
+		<column name="preferredCreditorAmount" type="String"></column>
+		<column name="preferredCreditorPayment" type="String"></column>
+		<column name="preferredCreditorCounter" type="String"></column>
+		<column name="preferredCreditorDate" type="Date"></column>
+        <column name="osiInsolvencyId" type="long" />
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="UnsecuredCreditor"  local-service="true" table="nbp_osi_unsec_creditor"> 
+
+		<!-- PK fields -->
+
+		<column name="unsecuredCreditorId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="unsecuredCreditorName" type="String"></column>
+		<column name="unsecuredCreditorDebt" type="String"></column>
+		<column name="unsecuredCreditorAmount" type="String"></column>
+		<column name="unsecuredCreditorPayment" type="String"></column>
+		<column name="unsecuredCreditorCounter" type="String"></column>
+		<column name="unsecuredCreditorDate" type="Date"></column>
+		<column name="osiInsolvencyId" type="long" />
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	
+	<entity name="GrandTotal" local-service="true" table="nbp_osi_grand_total">
+
+		<!-- PK fields -->
+
+		<column name="grandTotalId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="totalSecuredLiabilities" type="String"></column>
+		<column name="securedTotalMonthlyPayments" type="String"></column>
+		
+		<column name="totalPreferredLiabilities" type="String"></column>
+		<column name="preferredTotalMonthlyPayments" type="String"></column>
+		
+		<column name="totalUnsecuredLiabilities" type="String"></column>
+		<column name="unsecuredTotalMonthlyPayments" type="String"></column>
+		
+		<column name="grandTotal" type="String"></column>
+	    <column name="osiInsolvencyId" type="long" />
+		<finder name="getOsiById" return-type="GrandTotal">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	
+	<entity name="UsedSecurity"  local-service="true" table="nbp_osi_used_security">
+
+		<!-- PK fields -->
+
+		<column name="usedSecurityId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="assetType" type="String"></column>
+		<column name="securityHolder" type="String"></column>
+		<column name="securityDetail" type="String"></column>
+		<column name="securityValue" type="String"></column>
+		<column name="securityLiability" type="String"></column>
+		<column name="securityNetValue" type="String"></column>
+		<column name="securityCounter" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+		
+	</entity>
+	<entity name="NotUsedSecurity"  local-service="true" table="nbp_not_used_security">
+
+		<!-- PK fields -->
+
+		<column name="notUsedSecurityId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="realProperty" type="String"></column>
+		<column name="notUsedLocation" type="String"></column>
+		<column name="notUsedDescription" type="String"></column>
+		<column name="notUsedCounter" type="String"></column>
+		<column name="notUsedValue" type="String"></column>
+		<column name="notNetValue" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="MonthlyIncome"  local-service="true" table="nbp_osi_monthly_income">
+
+		<!-- PK fields -->
+
+		<column name="monthlyIncomeId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="basicSalary" type="String"></column>
+		<column name="grossSalary" type="String"></column>
+		<column name="statutoryDeduction" type="String"></column>
+		<column name="otherDeductions" type="String"></column>
+		<column name="loanDeductions" type="String"></column>
+		<column name="totalDeductions" type="String"></column>
+		<column name="netSalary" type="String"></column>
+		<column name="otherIncome" type="String"></column>
+		<column name="incomeToCover" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="MonthlyIncome">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	
+	<entity name="MonthlyExpenses"  local-service="true" table="nbp_osi_monthly_expense">
+
+		<!-- PK fields -->
+
+		<column name="monthlyExpensesId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="typeOfExpense" type="String"></column>
+		<column name="lightExpense" type="String"></column>
+		<column name="cableExpense" type="String"></column>
+		<column name="waterExpense" type="String"></column>
+		<column name="expenseCounter" type="String"></column>
+		<column name="telephoneExpense" type="String"></column>
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="FinancialPosition"
+		 local-service="true" table="nbp_osi_financial_position">
+
+		<!-- PK fields -->
+
+		<column name="financialPositionId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="securedLiabilities" type="String"></column>
+		<column name="unsecuredLiabilities" type="String"></column>
+		<column name="amountLiabilities" type="String"></column>
+		<column name="deficitLiabilities" type="String"></column>
+		<column name="assestsUsedAsSecurity" type="String"></column>
+		<column name="assestsNotUsedAsSecurity" type="String"></column>
+		<column name="assestsDisposable" type="String"></column>
+		<column name="assestsSurplus" type="String"></column>
+		<column name="assestsSummary" type="String"></column>
+		<column name="assestsProposal" type="String"></column>
+		<column name="assestsTrusteeResponse" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="FinancialPosition">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="CompanyDetails"  local-service="true"  table="nbp_osi_company_details">
+
+		<!-- PK fields -->
+
+		<column name="companyDetailsId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="companyDate" type="Date"></column>
+		<column name="companyName" type="String"></column>
+		<column name="companyAddress" type="String"></column>
+		<column name="companyEmail" type="String"></column>
+		<column name="companyTelNum" type="String"></column>
+		<column name="companyTrn" type="String"></column>
+		<column name="companyDateInco" type="Date"></column>
+		<column name="companyTypeOfCo" type="String"></column>
+		<column name="companyCore" type="String"></column>
+		<column name="companyEmployees" type="String"></column>
+		<column name="companyLastReturn" type="Date"></column>
+		<column name="companyTurnover" type="String"></column>
+		<column name="companyShares" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="CompanyDetails">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="DirectorsForm" local-service="true"  table="nbp_osi_directors_form">
+
+		<!-- PK fields -->
+
+		<column name="directorsFormId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="directorsName" type="String"></column>
+		<column name="directorsDateAppointed" type="Date"></column>
+		<column name="directorsOccupation" type="String"></column>
+		<column name="directorsContactNum" type="String"></column>
+		<column name="directorsAddress" type="String"></column>
+		<column name="directorsCounter" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="ShareholdersHoldings"  local-service="true" table="nbp_osi_shareholder">
+
+		<!-- PK fields -->
+
+		<column name="shareholdersHoldingsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="shareholderName" type="String"></column>
+		<column name="shareholderDate" type="Date"></column>
+		<column name="shareholderOccupation" type="String"></column>
+		<column name="shareholderShares" type="String"></column>
+		<column name="shareholderAddress" type="String"></column>
+		<column name="shareholderCounter" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="CompanySecretary"  local-service="true" table="nbp_osi_company_secretary">
+
+		<!-- PK fields -->
+
+		<column name="companySecretaryId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="secretaryName" type="String"></column>
+		<column name="secretaryDate" type="Date"></column>
+		<column name="secretaryOccupation" type="String"></column>
+		<column name="secretaryContactNum" type="String"></column>
+		<column name="secretaryAddress" type="String"></column>
+		<column name="secretaryCounter" type="String"></column>
+		<column name="osiInsolvencyId" type="long" />
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+		
+	</entity>
+	<entity name="CompanySecuredCreditor" local-service="true"
+		table="nbp_osi_secured_creditor">
+
+		<!-- PK fields -->
+
+		<column name="companySecuredCreditorId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="securedCreditor" type="String"></column>
+		<column name="securedSecurity" type="String"></column>
+		<column name="securedPurpose" type="String"></column>
+		<column name="securedLiabilty" type="String"></column>
+		<column name="comSecurityValue" type="String"></column>
+		<column name="comSecurityCounter" type="String"></column>
+	    <column name="osiInsolvencyId" type="long" />
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="CompanyUnsecuredCreditor" local-service="true"
+		table="nbp_osi_unsecured_cred">
+
+		<!-- PK fields -->
+
+		<column name="companyUnsecuredCreditorId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="unsecuredCreditor" type="String"></column>
+		<column name="unsecuredDebtor" type="String"></column>
+		<column name="unsecuredPurpose" type="String"></column>
+		<column name="unsecuredLiabilty" type="String"></column>
+		<column name="unsecuredCounter" type="String"></column>
+	    <column name="osiInsolvencyId" type="long" />
+        
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="CompanyTotalLiability" local-service="true"
+		table="nbp_osi_insolv_total_liab">
+
+		<!-- PK fields -->
+
+		<column name="companyTotalLiabilityId" primary="true"
+			type="long">
+		</column>
+     
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="comTotalLiability" type="String"></column>
+		<column name="osiInsolvencyId"  type="long" />
+        
+        <finder name="getOsiById" return-type="CompanyTotalLiability">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="AssetsUsedAsSecurity" local-service="true"
+		table="nbp_osi_used_as_security">
+
+		<!-- PK fields -->
+
+		<column name="assetsUsedAsSecurityId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="assetSecurity" type="String"></column>
+		<column name="assetSecurityHolder" type="String"></column>
+		<column name="assetDetails" type="String"></column>
+		<column name="assetValue" type="String"></column>
+		<column name="assetLiability" type="String"></column>
+		<column name="assetNetValue" type="String"></column>
+		<column name="assetCounter" type="String"></column>
+		<column name="comTotalAssetUsedSecurity" type="String"></column>
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+	    <column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="AssetsNotUsedAsSecurity" local-service="true"
+		table="nbp_osi_not_used_security">
+
+		<!-- PK fields -->
+
+		<column name="assetsNotUsedAsSecurityId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="assetRealProp" type="String"></column>
+		<column name="assetNoValue" type="String"></column>
+		<column name="assetDescription" type="String"></column>
+		<column name="assetNoCounter" type="String"></column>
+		<column name="comTotalAssetNotUsedSecurity" type="String"></column>
+		
+        <order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+	    <column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="Collection">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="CompanyFinancialPosition" local-service="true"
+		table="nbp_osi_comp_financial_pos">
+
+		<!-- PK fields -->
+
+		<column name="companyFinancialPositionId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="companySecured" type="String"></column>
+		<column name="companyUnsecured" type="String"></column>
+		<column name="companyAmount" type="String"></column>
+		<column name="companyDeficit" type="String"></column>
+		<column name="companyNetValue" type="String"></column>
+		<column name="companyAssetValue" type="String"></column>
+		<column name="companyDisposableAsset" type="String"></column>
+		<column name="companySurplus" type="String"></column>
+		<column name="companySummary" type="String"></column>
+		<column name="companyProposal" type="String"></column>
+		<column name="companyTrusteeResponse" type="String"></column>
+		
+	    <column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="CompanyFinancialPosition">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="VerificationCompanyInfo" local-service="true"
+		table="nbp_osi_ver_company">
+
+		<!-- PK fields -->
+
+		<column name="verificationCompanyInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="verComName" type="String"></column>
+		<column name="verComTrn" type="String"></column>
+		 <column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="VerComSubjectData">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiInsolvencyCurrentStage" local-service="true"
+		table="nbp_osi_insolv_current_stage">
+
+		<!-- PK fields -->
+
+		<column name="osiInsolvencyCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="osiInsolvencyStageId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="currentStage" type="String"></column>
+        <column name="lastFormStage" type="String"></column>
+        <column name="osiInsolvencyId" type="long" />
+        
+        <!-- Finder methods -->
+
+		<finder name="getOsiInsolvenyById" return-type="OsiInsolvencyCurrentStage">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+        <finder name="getOI_Stage_OII" return-type="OsiInsolvencyCurrentStage">
+            <finder-column name="osiInsolvencyId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="OsiInsolvencyApplicationPayment" local-service="true"
+		table="nbp_osi_insolvecy_app_payment">
+
+		<!-- PK fields -->
+
+		<column name="osiInsolveApplicationPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="paymentMethod" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="paymentStatus" type="String" />
+		<column name="paymentFee" type="String" />
+		<column name="amountPaid" type="String" />
+		<column name="amountCurrency" type="String" />
+		<column name="transactionNumber" type="String" />
+		<column name="osiInsolvencyId"  type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getOIP_OII" return-type="OsiInsolvencyApplicationPayment">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiAssesmentDetailsOfAsset" local-service="true"
+		table="nbp_osi_insolvecy_det_asset">
+
+		<!-- PK fields -->
+
+		<column name="osiAssetDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="totalAssetUsedAsSecurity" type="String" />
+		<column name="totalAssetNotUsedAsSec" type="String" />
+		<column name="totalValuesOfAsset" type="String" />
+		<column name="osiInsolvencyId"  type="long" />
+		
+			<!-- Finder methods -->
+		<finder name="getOIP_OII" return-type="OsiAssesmentDetailsOfAsset">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiAssessmentSignature" local-service="true"
+		table="nbp_osi_insolvecy_asses_sign">
+
+		<!-- PK fields -->
+
+		<column name="osiAssessmentSignatureId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="assessSignName" type="String" />
+		<column name="assessSignDate" type="String" />
+		<column name="osiInsolvencyId"  type="long" />
+		<finder name="getOsiById" return-type="OsiAssessmentSignature">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiIndiTotalDetailOfAssets" local-service="true"
+		table="nbp_osi_insolv_tot_assets">
+
+		<!-- PK fields -->
+
+		<column name="osiIndiTotalDetailOfAssetsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="totalValueOfAssetUsedSecu" type="String"></column>
+		<column name="totalValueOfAssetNotUsedSecu" type="String"></column>
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="OsiIndiTotalDetailOfAssets">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiTotalMonthlyExpense" local-service="true"
+		table="nbp_osi_insolv_tot_expense">
+
+		<!-- PK fields -->
+
+		<column name="osiTotalMonthlyExpenseId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="totalExpense" type="String"></column>
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="OsiTotalMonthlyExpense">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiComTotalLiability" local-service="true"
+		table="nbp_osi_insolv_tot_liablity">
+
+		<!-- PK fields -->
+
+		<column name="osiComTotalLiabilityId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="totalLiability" type="String"></column>
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="OsiComTotalLiability">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiComSecurityTotal" local-service="true"
+		table="nbp_insolv_com_security_tot">
+
+		<!-- PK fields -->
+
+		<column name="osiComSecurityTotalId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="comSecuritTotal" type="String"></column>
+		<column name="comAssetTotal" type="String"></column>
+		<column name="comSecuritTotalValue" type="String"></column>
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<column name="osiInsolvencyId" type="long" />
+        
+        <finder name="getOsiById" return-type="OsiComSecurityTotal">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+	<entity name="OsiInsolvPaymentPlan" local-service="true"
+		table="nbp_osi_insolv_payment">
+
+		<!-- PK fields -->
+
+		<column name="osiInsolvPaymentPlanId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="paymentMethod" type="String" />
+		<column name="amountPaid" type="String" />
+		<column name="paymentCurrencySelected" type="String" />
+		<column name="paymentMethodOther" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="osiInsolvencyId"  type="long" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getOsiInsolvPaymentById" return-type="OsiInsolvPaymentPlan">
+			<finder-column name="osiInsolvencyId" />
+		</finder>
+	</entity>
+</service-builder>

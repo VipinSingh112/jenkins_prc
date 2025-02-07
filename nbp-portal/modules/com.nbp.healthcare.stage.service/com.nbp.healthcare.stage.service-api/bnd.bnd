@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.healthcare.stage.service-api
+Bundle-SymbolicName: com.nbp.healthcare.stage.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.healthcare.stage.service.exception,\
+	com.nbp.healthcare.stage.service.model,\
+	com.nbp.healthcare.stage.service.service,\
+	com.nbp.healthcare.stage.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.healthcare.stage.service-service/service.xml

@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.explosives.competency.application.form.service">
+	<namespace>EXPLOSIVE</namespace>
+	<entity local-service="true" name="ExplosivesApplication" remote-service="true" uuid="true" table="nbp_explosives_application">
+
+		<!-- PK fields -->
+
+		<column name="explosivesApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="typeOfApplicant" type="String"/>
+		<column name="typeOfTransaction" type="String"/>
+		<column name="competencyCertificateNumber" type="String"/>
+		<column name="dateOfIssue" type="Date"/>
+		<column name="dateOfExpiration" type="Date"/>
+		<column name="caseId" type="String"/>
+        <column name="status" type="int"/>
+        <column name="icmDocumentPath" type="String"/>
+        <column name="applicationNumber" type="String"/>
+        <column name="expiredLicenseAppNumber" type="String"/>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+
+		<!-- Order -->
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		
+		<finder name="getExplosiveById" return-type="ExplosivesApplication">
+			<finder-column name="explosivesApplicationId"/>
+		</finder>
+				<finder name="getExplosiveAppByStatusUser"
+			return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+
+		<finder name="getExplosiveByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+
+		<finder name="getExplosiveByAppNo" return-type="ExplosivesApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getExplosiveByCaseId" return-type="ExplosivesApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getExplosiveRegstBy_CaseId" return-type="ExplosivesApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getExplosiveRegstByAT_AppNo"
+			return-type="ExplosivesApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity name="ExplosivesCurrentStage" local-service="true"
+		table="nbp_explosives_stage">
+
+		<!-- PK fields -->
+
+		<column name="explosiveStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="currentStage" type="String"></column>
+		<column name="lastFormDetailsStep" type="String"></column>
+		<column name="explosivesApplicationId" type="long"></column>
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<finder name="getByExplosive_Stage" return-type="ExplosivesCurrentStage">
+			<finder-column name="explosivesApplicationId" />
+		</finder>
+	</entity>
+	<entity name="BlasterCompetencyForm" local-service="true"
+		table="nbp_blaster_competency">
+
+		<!-- PK fields -->
+
+		<column name="blasterCompetencyFormId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- other fields -->
+		
+		<column name="firstName" type="String"/>
+		<column name="surName" type="String"/>
+		<column name="middleName" type="String"/>
+		<column name="gender" type="String"/>
+		<column name="officeNumber" type="String"/>
+		<column name="cellNum" type="String"/>
+        <column name="trnNum" type="String"/>
+        <column name="dateOfBirth" type="Date"/>
+        <column name="address" type="String"/>
+        <column name="educationalBack" type="String"/>
+        <column name="blastingCourse" type="String" />
+        <column name="state" type="String" />
+        <column name="nameOfCourse" type="String" />
+        <column name="courseOrganiser" type="String" />
+        <column name="dateAppli" type="Date" />	
+        <column name="explosivesApplicationId" type="long" />	
+        <!-- Order -->
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getExplosiveById" return-type="BlasterCompetencyForm">
+            <finder-column name="explosivesApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="PyrotechnicCompetencyForm" local-service="true"
+		table="nbp_pyrotechnic_competency">
+
+		<!-- PK fields -->
+
+		<column name="pyrotechnicCompetencyFormId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- other fields -->
+		
+		<column name="firstNamePyro" type="String"/>
+		<column name="surNamePyro" type="String"/>
+		<column name="middleNamePyro" type="String"/>
+		<column name="genderPyro" type="String"/>
+		<column name="officeNumberPyro" type="String"/>
+		<column name="cellNumPyro" type="String"/>
+        <column name="trnNumPyro" type="String"/>
+        <column name="dateOfBirthPyro" type="Date"/>
+        <column name="addressPyro" type="String"/>
+        <column name="educationalBackPyro" type="String"/>
+        <column name="blastingCoursePyro" type="String" />
+        <column name="statePyro" type="String" />
+        <column name="nameOfCoursePyro" type="String" />
+        <column name="courseOrganiserPyro" type="String" />
+        <column name="dateAppliPyro" type="String" />	
+        <column name="explosivesApplicationId" type="long" />	
+        <!-- Order -->
+		 <order by="desc">
+			<order-column name="createDate" />
+		</order>
+		<finder name="getExplosiveById" return-type="PyrotechnicCompetencyForm">
+            <finder-column name="explosivesApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="ExplosiveAppPayment" local-service="true"
+		table="nbp_explosive_payment">
+
+		<!-- PK fields -->
+
+		<column name="explosiveAppPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other Field -->
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="explosivesApplicationId"  type="long"></column>
+		<order by="desc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getExplosiveById" return-type="ExplosiveAppPayment">
+            <finder-column name="explosivesApplicationId"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

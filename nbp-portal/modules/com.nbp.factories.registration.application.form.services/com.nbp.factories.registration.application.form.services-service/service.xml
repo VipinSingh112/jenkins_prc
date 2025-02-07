@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.factories.registration.application.form.services">
+	<namespace>FACTORIES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="FactoriesApplicationRegistration" remote-service="true" table="nbp_factories_application">
+
+		<!-- PK fields -->
+
+		<column name="factoriesApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+
+		<!-- Other fields -->
+
+		<column name="status" type="int"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="caseId" type="String"></column>
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="icmDocumentPath" type="String"></column>
+		<column name="productCategory" type="String"></column>
+		<column name="areYouProcessing" type="String"></column>
+		<column name="typeOfTransaction" type="String"></column>
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+			<finder name="getFactoriesRegistrationById" return-type="FactoriesApplicationRegistration">
+			<finder-column name="factoriesApplicationId" />
+		</finder>
+
+		<finder name="getFactoriesRegistrationApplicationByStatusUser"
+			return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+
+		<finder name="getFactoriesRegistrationByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+
+		<finder name="getFactoriesRegistrationByAppNo" return-type="AcquireApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getFactoriesRegistrationByCaseId" return-type="AcquireApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getFactoriesRegstBy_AppNo" return-type="FactoriesApplicationRegistration">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getFactoriesRegstBy_CaseId" return-type="FactoriesApplicationRegistration">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getFactoriesRegstByAT_AppNo"
+			return-type="FactoriesApplicationRegistration">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+		
+		
+		
+	</entity>
+	     <entity table="nbp_factories_app_payment" name="FactoriesAppPayment" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="factoriesAppPaymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other Field -->
+		<column name="paymentMethod" type="String"></column>
+		<column name="paymentDocId" type="String"></column>
+		<column name="paymentStatus" type="String"></column>
+		<column name="paymentFee" type="String"></column>
+		<column name="amountPaid" type="String"></column>
+		<column name="amountCurrency" type="String"></column>
+		<column name="transactionNumber" type="String"></column>
+		<column name="factoriesApplicationId"  type="long"></column>
+		<order by="asc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getMiningById" return-type="FactoriesAppPayment">
+            <finder-column name="factoriesApplicationId"></finder-column>
+        </finder>
+	</entity>
+	     <entity table="nbp_factories_stand_act_info" name="FactoriesStandardActInfo" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="factoriesStandardActId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other Field -->
+	    <column name="standardsActEstablishmentName" type="String"></column>
+	    <column name="standardsActAddParish" type="String"></column>
+	    <column name="standardsActAddress" type="String"></column>
+	    <column name="standardsActTel" type="String"></column>
+	    <column name="standardsActWhatsAppNum" type="String"></column>
+	    <column name="standardsActEmail" type="String"></column>
+	    <column name="standardsActFaxNum" type="String"></column>
+	    <column name="standardsActOperatorName" type="String"></column>
+	    <column name="standardsActOperatorAddress" type="String"></column>
+	    <column name="standardsActParish" type="String"></column>
+	    <column name="standardsActOperatorTel" type="String"></column>
+	    <column name="standardActProductManufactured" type="String"></column>
+	    <column name="standardActBrandManufactured" type="String"></column>
+	    <column name="standardsActProductSize" type="String"></column>
+	    <column name="standardsActLastDate" type="Date"></column>
+	    <column name="standardsActPurpose" type="String"></column>
+	    <column name="standardsActDate" type="Date"></column>
+	    <column name="establishmentBefore" type="String"></column>
+		<column name="factoriesApplicationId"  type="long"></column>
+		<order by="asc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getFactoriesById" return-type="FactoriesStandardActInfo">
+            <finder-column name="factoriesApplicationId"></finder-column>
+        </finder>
+	</entity>
+     <entity name="FactoriesProcessedFoodAct" local-service="true"
+     	table="nbp_factories_pro_food_act">
+
+     	<!-- PK fields -->
+
+     	<column name="factoriesProcessedFoodActId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<column name="processedActEstablishmentName" type="String"></column>
+     	<column name="processedActParishAddress" type="String"></column>
+     	<column name="processedActAddress" type="String"></column>
+     	<column name="processedActOperatorName" type="String"></column>
+     	<column name="processedActOperatorAddress" type="String"></column>
+     	<column name="processedActParish" type="String"></column>
+     	<column name="processedActDescription" type="String"></column>
+     	<column name="establishmentOperated" type="String"></column>
+     	<column name="processedActLastDate" type="Date"></column>
+     	<column name="processedActManufactured" type="String"></column>
+     	<column name="processedActDate" type="Date"></column>
+		<column name="factoriesApplicationId"  type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getFactoriesById" return-type="FactoriesProcessedFoodAct">
+            <finder-column name="factoriesApplicationId"></finder-column>
+        </finder>
+	     </entity>
+	  <entity name="FactoriesRegstCurrentStage" table="nbp_factories_current_stage" uuid="true" local-service="true">
+
+     	<!-- PK fields -->
+
+     	<column name="factoriesCurrentStageId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="factoriesApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getByFactories_Stage" return-type="FactoriesRegstCurrentStage">
+			<finder-column name="factoriesApplicationId" />
+		</finder>
+     </entity>
+	  <entity name="FactoriesProductDetailsAdd"
+	  	table="nbp_factories_product_det" local-service="true">
+
+	  	<!-- PK fields -->
+
+	  	<column name="factoriesProductDetailsAddId" primary="true"
+	  		type="long">
+	  	</column>
+
+	  	<!-- Group instance -->
+
+	  	<column name="groupId" type="long"></column>
+
+	  	<!-- Audit fields -->
+
+	  	<column name="companyId" type="long"></column>
+	  	<column name="userId" type="long"></column>
+	  	<column name="userName" type="String"></column>
+	  	<column name="createDate" type="Date"></column>
+	  	<column name="modifiedDate" type="Date"></column>
+	  	
+	  	<column name="productBrand" type="String"></column>
+	  	<column name="product" type="String"></column>
+	  	<column name="productSize" type="String"></column>
+	  	<column name="productMeasurementVal" type="String"></column>
+	  	<column name="counter" type="String"></column>
+	  	<column name="factoriesApplicationId"  type="long"></column>
+		
+		<order by="asc">
+			<order-column name="createDate" />
+		 </order>
+		<finder name="getFactoriesById" return-type="Collection">
+            <finder-column name="factoriesApplicationId"></finder-column>
+        </finder>
+	  </entity>
+</service-builder>

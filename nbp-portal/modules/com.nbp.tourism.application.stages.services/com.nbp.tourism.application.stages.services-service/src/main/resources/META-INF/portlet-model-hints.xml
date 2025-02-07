@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.tourism.application.stages.services.model.TourismApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="tourismApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.tourism.application.stages.services.model.TourismDeskVerification">
+		<field name="tourismDeskVeriId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="tourismApplicationId" type="long" />
+		<field name="documentStatus" type="String" />
+		<field name="documentName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+	</model>
+	<model name="com.nbp.tourism.application.stages.services.model.TourismPaymentConfirmation">
+		<field name="tourismPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.tourism.application.stages.services.model.TourismPermit">
+		<field name="tourismgPermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="PIRPermtNumber" type="String" />
+		<field name="dateOfIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="durationOfPermit" type="String" />
+		<field name="typeOfPermit" type="String" />
+		<field name="numberOfExtensions" type="String" />
+		<field name="parish" type="String" />
+		<field name="pirPermitCertificateNumber" type="long" />
+	</model>
+</model-hints>

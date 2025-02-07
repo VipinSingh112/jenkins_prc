@@ -1,0 +1,595 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.agriculture.application.form.service">
+	<namespace>AGRICULTURE</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<!-- form 1 -->
+	<entity name="AgricultureApplication" local-service="true" table="agriculture_application">
+
+		<!-- PK fields -->
+
+		<column name="agricultureApplicationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+				<!-- Other fields -->
+		<column name="registrationStatus" type="String" />	
+		<column name="farmLicenseNumber" type="String" />	
+		<column name="requestType" type="String" />
+        <column name="primaryProduct" type="String" />
+        <column name="status" type="int"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="expiredLicenseAppNo" type="String"></column>
+        <column name="caseId" type="String"></column>
+        <column name="icmDocumentsPath" type="String" />
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+        <!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+        <finder name="getAgricultureById" return-type="AgricultureApplication">
+            <finder-column name="agricultureApplicationId"></finder-column></finder>
+        <finder name="getAgriApplicationByStatusUser" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="getAgriApplicationByRT_AppNo" return-type="AgricultureApplication">
+            <finder-column name="expiredLicenseAppNo"></finder-column>
+            <finder-column name="requestType"></finder-column>
+        </finder>
+        <finder name="getAgricultureByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="getAgricultureByAppNo" return-type="AgricultureApplication">
+            <finder-column name="applicationNumber"></finder-column>
+        </finder>
+        <finder name="getAgricultureBy_CI" return-type="AgricultureApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+	</entity> 
+	
+	<!-- form 2 -->
+	<entity name="AgricultueFarmer" local-service="true"
+		table="agriculture_farmer">
+
+		<!-- PK fields -->
+
+		<column name="agricultueFarmerId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		<column name="farmerDetail"  type="String" />
+		<column name="nameOfApplicant"  type="String" />
+		<column name="nameOfFarm"  type="String" />
+		<column name="nameOfProprietor"  type="String" />
+		<column name="parishAddress"  type="String" />
+		<column name="localAddress"  type="String" />
+		<column name="taxpayerRegistrationNumber"  type="String" />
+		<column name="farmerRegistrationNumber"  type="String" />
+		<column name="dateOfIncorporation"  type="Date" />
+		<column name="telephoneNumber"  type="String" />
+		<column name="emailAddress"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+
+	  
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultueFarmer">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAF_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+	
+	
+	<!-- form 3 -->
+	<entity name="AgricultureFarm" local-service="true"
+		table="agriculture_farm">
+
+		<!-- PK fields -->
+
+		<column name="agricultureFarmId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="locationOfFarm"  type="String" />
+		<column name="landTenure"  type="String" />
+		<column name="numberOfHectares"  type="String" />
+		<column name="numberOfYears"  type="String" />
+		<column name="numberOfParcels"  type="String" />
+		<column name="sizeOfParcel"  type="String" />
+		<column name="topography"  type="String" />
+		<column name="numberOF"  type="String" />
+		<column name="farmCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureFarm">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAFa_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+	
+	<!-- form 4 -->
+	<entity name="AgricultureBuilding" local-service="true"
+		table="agriculture_building">
+
+		<!-- PK fields -->
+
+		<column name="agricultureBuildingId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="buildingPurpose"  type="String" />
+		<column name="buildingSize"  type="String" />
+		<column name="machineryDescription"  type="String" />
+		<column name="dateOfAcquisition"  type="Date" />
+		<column name="buildingCost"  type="String" />
+		<column name="presentBookValue"  type="String" />
+		<column name="buildingCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+	
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureBuilding">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAB_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+
+	
+	<!-- form 5 -->
+	<entity name="AgricultureLivestock" local-service="true"
+		table="agriculture_livestock">
+
+		<!-- PK fields -->
+
+		<column name="agricultureLivestockId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="livestockType"  type="String" />
+		<column name="numberOFAnimalsByCategory"  type="String" />
+		<column name="averageAnnualProduction"  type="String" />
+		<column name="livestockMarketlocal"  type="String" />
+		<column name="livestockMarketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="Livestockcounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureLivestock">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAL_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+
+	
+	<!-- Form 6 -->
+	<entity name="AgricultureCrop" local-service="true"
+		table="agriculture_crop">
+
+		<!-- PK fields -->
+
+		<column name="agricultureCropId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="cropType"  type="String" />
+		<column name="cropHectare"  type="String" />
+		<column name="averageAnnualProduction"  type="String" />
+		<column name="cropMarketLocal"  type="String" />
+		<column name="cropMarketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="cropCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureCrop">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAC_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+	
+	<!-- Form 7 -->
+	<entity name="AgriculturePoultry" local-service="true"
+		table="agriculture_poultry">
+
+		<!-- PK fields -->
+
+		<column name="agriculturePoultryId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="poultryType"  type="String" />
+		<column name="numberOFBirdsByCategory"  type="String" />
+		<column name="averageAnnualProduction"  type="String" />
+		<column name="poultryMarketLocal"  type="String" />
+		<column name="poultryMarketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="poultryCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgriculturePoultry">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAP_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+	
+	<!-- Form 8 -->
+	<entity name="AgricultureAquaculture" local-service="true"
+		table="agriculture_aqaculture">
+
+		<!-- PK fields -->
+
+		<column name="agricultureAquacultureId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		
+		<!-- Other fields -->
+		
+		<column name="aquacultureType"  type="String" />
+		<column name="waterHectare"  type="String" />
+		<column name="averageAnnualProduction"  type="String" />
+		<column name="marketLocal"  type="String" />
+		<column name="marketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="aquacultureCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+	
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureAquaculture">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAAqua_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	
+	<!-- Form 9 -->
+	<entity name="AgricultureApiculture" local-service="true"
+		table="agriculture_apiculture">
+
+		<!-- PK fields -->
+
+		<column name="agricultureApicultureId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		
+		<!-- Other fields -->
+		
+		<column name="apicultureType"  type="String" />
+		<column name="numberOfColonies"  type="String" />
+		<column name="averageAnnualProduction"  type="String" />
+		<column name="marketLocal"  type="String" />
+		<column name="marketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="apicultureCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureApiculture">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAApi_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	     </entity>
+	
+	<!-- Form 10 -->
+	<entity name="AgriultureForestry" local-service="true" table="agriculture_forestry">
+
+		<!-- PK fields -->
+
+		<column name="agriultureForestryId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		 <!-- Other fields -->
+		
+		<column name="forestryType"  type="String" />
+		<column name="forestryHectare"  type="String" />
+		<column name="averageAnnulaProduction"  type="String" />
+		<column name="forestryMarketLocal"  type="String" />
+		<column name="forestryMarketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="forestryCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+	
+		
+		<!-- Order -->
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgriultureForestry">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAForest_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	  </entity>
+
+<!-- Form 11 -->
+	<entity name="AgricultureOrnamental" local-service="true" table="agriculture_ornamental">
+
+		<!-- PK fields -->
+
+		<column name="agricultureOrnamentalId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+		
+		<column name="ornamentalType"  type="String" />
+		<column name="ornamentalProduceArea"  type="String" />
+		<column name="averageAnnualProduction"  type="String" />
+		<column name="ornamentalMarketLocal"  type="String" />
+		<column name="ornamentalMarketForeign"  type="String" />
+		<column name="valueOfSale"  type="String" />
+		<column name="ornamentalCounter"  type="String" />
+		<column name="agricultureApplicationId"  type="long" />
+		
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgricultureOrnamental">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAO_by_AAI" return-type="Collection">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+		
+	</entity>
+	<entity name="AgriApplicationCurrentStage" local-service="true" table="nbp_agriculture_stage">
+
+		<!-- PK fields -->
+
+		<column name="agriApplicationCurrentStageId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="agricultureStageId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+      
+        
+        	<!-- Other fields -->
+        <column name="currentStage" type="String"></column>
+        <column name="lastFormStage" type="String"></column>
+        <column name="agricultureApplicationId" type="long"></column>
+        
+       <!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getAgricultureById" return-type="AgriApplicationCurrentStage">
+			<finder-column name="agricultureApplicationId" />
+		</finder>
+        <finder name="getAA_Stage_AAI" return-type="AgriApplicationCurrentStage">
+            <finder-column name="agricultureApplicationId"></finder-column>
+        </finder>
+	</entity>
+
+</service-builder>

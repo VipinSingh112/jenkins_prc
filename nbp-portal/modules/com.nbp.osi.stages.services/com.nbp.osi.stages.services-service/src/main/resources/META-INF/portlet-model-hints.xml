@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.osi.stages.services.model.OsiApplicationPermit">
+		<field name="osiApplicationPermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="decision" type="String" />
+		<field name="dateOfDecision" type="Date" />
+		<field name="dateOfIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="permitNumber" type="String" />
+		<field name="fileEntryId" type="String" />
+	</model>
+	<model name="com.nbp.osi.stages.services.model.OsiApplicationStages">
+		<field name="uuid" type="String" />
+		<field name="OsiApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="osiApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.osi.stages.services.model.OsiDeskVerification">
+		<field name="osiDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="documentName" type="String" />
+		<field name="status" type="String" />
+		<field name="osiApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.osi.stages.services.model.OsiInspection">
+		<field name="osiInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="timeOfInspection" type="String" />
+		<field name="location" type="String" />
+		<field name="status" type="String" />
+		<field name="osiApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+</model-hints>

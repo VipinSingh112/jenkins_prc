@@ -1,0 +1,55 @@
+/**
+ * SPDX-FileCopyrightText: (c) 2025 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+package com.nbp.film.application.form.service.service;
+
+import com.liferay.portal.kernel.service.ServiceWrapper;
+
+/**
+ * Provides a wrapper for {@link FilmCompanyDetailsService}.
+ *
+ * @author Brian Wing Shun Chan
+ * @see FilmCompanyDetailsService
+ * @generated
+ */
+public class FilmCompanyDetailsServiceWrapper
+	implements FilmCompanyDetailsService,
+			   ServiceWrapper<FilmCompanyDetailsService> {
+
+	public FilmCompanyDetailsServiceWrapper() {
+		this(null);
+	}
+
+	public FilmCompanyDetailsServiceWrapper(
+		FilmCompanyDetailsService filmCompanyDetailsService) {
+
+		_filmCompanyDetailsService = filmCompanyDetailsService;
+	}
+
+	/**
+	 * Returns the OSGi service identifier.
+	 *
+	 * @return the OSGi service identifier
+	 */
+	@Override
+	public String getOSGiServiceIdentifier() {
+		return _filmCompanyDetailsService.getOSGiServiceIdentifier();
+	}
+
+	@Override
+	public FilmCompanyDetailsService getWrappedService() {
+		return _filmCompanyDetailsService;
+	}
+
+	@Override
+	public void setWrappedService(
+		FilmCompanyDetailsService filmCompanyDetailsService) {
+
+		_filmCompanyDetailsService = filmCompanyDetailsService;
+	}
+
+	private FilmCompanyDetailsService _filmCompanyDetailsService;
+
+}

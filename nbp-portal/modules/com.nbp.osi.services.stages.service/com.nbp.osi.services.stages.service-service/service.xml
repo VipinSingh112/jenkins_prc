@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.osi.services.stages.service">
+	<namespace>OSI_SERVICE_STAGES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="OSIServicesStages" remote-service="true" uuid="true" table="nbp_osi_services_app_stages">
+
+		<!-- PK fields -->
+
+		<column name="osiServicesStagesId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="stageName" type="String" />
+		<column name="duration" type="String" />
+		<column name="stageStatus" type="String" />
+		<column name="stageStartDate" type="Date" />
+		<column name="stageEndDate"  type="Date" />
+		<column name="osiServciesApplicationId"  type="long" />
+		<column name="caseId"  type="String" />
+		<column name="updatedBySource"  type="String" />
+
+		<!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+	<!-- Finder methods -->
+		<finder name="getOSI_Service_OSIID" return-type="OSIServicesStages">
+			<finder-column name="osiServciesApplicationId" />
+		</finder>
+		<finder name="getOSI_Service_CaseIdStageName" return-type="OSIServicesStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getOSI_Service_StageName" return-type="Collection">
+			<finder-column name="stageName" />
+		</finder>
+		<finder name="getOSI_Service_CaseIdStageStatus" return-type="OSIServicesStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageName" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getOSI_Service_CaseIdAndStatus" return-type="OSIServicesStages">
+			<finder-column name="caseId" />
+			<finder-column name="stageStatus" />	
+		</finder>
+		<finder name="getOSI_Service_CaseId" return-type="Collection">
+			<finder-column name="caseId" />
+		</finder>
+		<finder name="getOSI_Service_By_CaseId" return-type="OSIServicesStages">
+			<finder-column name="caseId" />
+		</finder>
+	</entity>
+	<entity name="OSIServicesRecommendations" local-service="true"
+		table="nbp_osi_services_recommen">
+
+		<!-- PK fields -->
+		<column name="oSIServicesRecommendationsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateOfRecommendationsDecision" type="Date"></column>
+		<column name="recommendationsDecision" type="String"></column>
+        <column name="caseId" type="String"></column>
+         <order by="desc">
+			<order-column name="createDate" />
+		</order>
+       <!-- Finder methods -->		
+	  <finder name="getOsiServicesRecommendationByCaseId" return-type="OSIServicesRecommendations">
+          <finder-column name="caseId"></finder-column>
+      </finder>
+	</entity>
+	<entity name="OSIServicesCertiOfIssuance" local-service="true"
+		table="nbp_osi_services_certi_of_issu">
+
+		<!-- PK fields -->
+
+		<column name="oSIServicesCertiOfIssuanceId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="nameOfInsolventPerson" type="String"></column>
+		<column name="dateCertificateIssued" type="Date"></column>
+		<column name="dateOfExpiration" type="Date"></column>
+		<column name="certificateNum" type="String"></column>
+		<column name="nameOfLicensedTrustee" type="String"></column>
+		<column name="docFileEntry" type="long"></column>
+		<column name="caseId" type="String"></column>
+		
+	   <finder name="getOsiServicesCertiOfIssuanceServicesByCaseId" return-type="OSIServicesCertiOfIssuance">
+          <finder-column name="caseId"></finder-column>
+       </finder>
+	</entity>
+	<entity name="OsiServiceIssuanceOfReport" local-service="true"
+		table="nbp_osi_service_report">
+
+		<!-- PK fields -->
+
+		<column name="osiServiceIssuanceOfReportId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="caseId" type="String"></column>
+		<column name="dateOfReport" type="Date"></column>
+		<column name="nameOfApplicant" type="String"></column>
+		<column name="typeOfApplicant" type="String"></column>
+		<column name="decision" type="String"></column>
+		<column name="docFileEntry" type="long"></column>
+		
+		<!--finder -->
+		    <finder name="getOSIIssuanceOfReportBy_CI" return-type="OsiServiceIssuanceOfReport">
+		           <finder-column name="caseId"></finder-column>
+		    </finder>
+	</entity>
+</service-builder>

@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.explosives-competency.stages.service-api
+Bundle-SymbolicName: com.nbp.explosives.competency.stages.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.explosives.competency.stages.service.exception,\
+	com.nbp.explosives.competency.stages.service.model,\
+	com.nbp.explosives.competency.stages.service.service,\
+	com.nbp.explosives.competency.stages.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.explosives-competency.stages.service-service/service.xml

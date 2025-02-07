@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.acquire.application.form.service">
+	<namespace>ACQUIRE</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity name="AcquireApplication" local-service="true" uuid="true"
+		table="nbp_acquire_application">
+
+		<!-- PK fields -->
+
+		<column name="acquireApplicationId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="entityId" type="String"></column>
+		<!-- Other fields -->
+        <column name="status" type="int"></column>
+        <column name="applicationNumber" type="String"></column>
+        <column name="caseId" type="String"></column>
+        <column name="icmDocumentPath" type="String"></column>
+        <column name="divestmentOptions" type="String"></column>
+        <column name="tenureType" type="String"></column>
+        <column name="currentUse" type="String"></column>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="getAcquireById" return-type="AcquireApplication">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+
+		<finder name="getAcquireApplicationByStatusUser"
+			return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+
+		<finder name="getAcquireByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+
+		<finder name="getAcquireByAppNo" return-type="AcquireApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getAcquireByCaseId" return-type="AcquireApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+        
+	</entity>
+	<entity name="AcquireApplicationDetails" local-service="true" table="nbp_acquire_details">
+
+		<!-- PK fields -->
+
+		<column name="acquireApplicationDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+
+
+		<column name="applicantName" type="String" />
+		<column name="applicantOrganisation" type="String" />
+		<column name="applicantPostalAddr" type="String" />
+		<column name="applicantEmail" type="String" />
+		<column name="applicantTeleNum" type="String" />		
+		<column name="acquireApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquireApplicationDetails">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="AcquirePaymentPlan" local-service="true" table="nbp_acquire_payment_plan">
+
+		<!-- PK fields -->
+
+		<column name="acquirePaymentPlanId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+			
+		<!-- Other fields -->
+
+
+		<column name="paymentMethod" type="String" />
+		<column name="amountPaid" type="String" />
+		<column name="paymentCurrencySelected" type="String" />
+		<column name="paymentMethodOther" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="acquireApplicationId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquirePaymentPlan">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AcquirePropertyDetails" local-service="true" table="nbp_acquire_prop_details">
+
+		<!-- PK fields -->
+
+		<column name="acquirePropertyDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+
+		<column name="propertyTenureType" type="String" />
+		<column name="propertyIdentified" type="String" />
+		<column name="propertyAddr" type="String" />
+		<column name="propertyDesiredLoc" type="String" />
+		<column name="propertyVolume" type="String" />
+		<column name="propertyFolio" type="String" />
+		<column name="propertyValuationNum" type="String" />
+		<column name="propertySketchAttached" type="String" />
+		<column name="propertyCurrentUse" type="String" />
+		<column name="propertyCurrentUseOther" type="String" />
+		<column name="propertyExistingBuilding" type="String" />
+		<column name="propertyExistingBuildingOther" type="String" />
+		<column name="propertyExistingInfrastructure" type="String" />
+		<column name="propertyProposedUse" type="String" />
+		<column name="propertyProposedUseOther" type="String" />
+		<column name="propertyProposedInfrastructure" type="String" />
+		<column name="propertyLandAreaHectare" type="String" />
+		<column name="propertyLandAreaAcres" type="String" />
+		<column name="propertyLandAreaRoods" type="String" />
+		<column name="propertyLandAreaPerches" type="String" />
+		<column name="propertyAdjoiningNorth" type="String" />
+		<column name="propertyAdjoiningSouth" type="String" />
+		<column name="propertyAdjoiningEast" type="String" />
+		<column name="propertyAdjoiningWest" type="String" />
+		<column name="propertyDate" type="Date" />
+		<column name="propertyAdditionalInfo" type="String" />
+		<column name="acquireApplicationId" type="long" />
+		
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquirePropertyDetails">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="AcquireLandApplicantDetails" local-service="true" table="nbp_acquire_land_details">
+
+		<!-- PK fields -->
+
+		<column name="acquireLandApplicantDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+
+		<column name="landApplicantName" type="String" />
+		<column name="landApplicantGender" type="String" />
+		<column name="landApplicantDob" type="Date" />
+		<column name="landApplicantTrnNum" type="String" />
+		<column name="landApplicantHomeAddr" type="String" />
+		<column name="landApplicantMailingAddr" type="String" />
+		<column name="landApplicantPhoneNum" type="String" />
+		<column name="landApplicantEmail" type="String" />
+		<column name="acquireApplicationId" type="long" />
+		
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquireLandApplicantDetails">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AcquireLandEmployment" local-service="true" table="nbp_acquire_land_employment">
+
+		<!-- PK fields -->
+
+		<column name="acquireLandEmploymentId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+
+		<column name="landEmploymentStatus" type="String" />
+		<column name="landEmpJamaicaGovEmplyee" type="String" />
+		<column name="landEmpCompanyName" type="String" />
+		<column name="landEmploymentJobTitle" type="String" />
+		<column name="landEmpCompanyAddr" type="String" />
+		<column name="landEmpTeleNum" type="String" />
+		<column name="landEmpGrossSalaryType" type="String" />
+		<column name="landEmpGrossSalary" type="String" />
+		<column name="landEmpOtherIncomeSource" type="String" />
+		<column name="landEmpOtherSalaryType" type="String" />
+		<column name="landEmpOtherIncomeAmount" type="String" />
+		<column name="landEmpFinancialSupportPerson" type="String" />	
+		<column name="acquireApplicationId" type="long" />
+		
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquireLandEmployment">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AcquireLandPropertyDetails" local-service="true" table="nbp_acquire_land_prop_details">
+
+		<!-- PK fields -->
+
+		<column name="acquireLandPropertyDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+
+		<column name="landPropIdentified" type="String" />
+		<column name="landPropAddr" type="String" />
+		<column name="landPropOccupation" type="String" />
+		<column name="landPropOccupationPeriod" type="String" />
+		<column name="landPropTenureType" type="String" />
+		<column name="landPropDesiredLoc" type="String" />
+		<column name="landPropProposedUse" type="String" />
+		<column name="landPropProposedUseOther" type="String" />
+		<column name="landPropPropTenureType" type="String" />
+		<column name="landPropApplied" type="String" />
+		<column name="landPropApplicationDate" type="Date" />
+		<column name="landPropExistingBuilding" type="String" />
+		<column name="landPropExistingBuildingOther" type="String" />
+		<column name="landPropOwn" type="String" />
+		<column name="landPropGovAcquired" type="String" />
+		<column name="landPropStateDetails" type="String" />
+		<column name="landPropPaymentMethod" type="String" />
+		<column name="landPropPaymentMethodOther" type="String" />
+		<column name="landPropComments" type="String" />		
+		<column name="acquireApplicationId" type="long" />
+		
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquireLandPropertyDetails">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="AcquireCurrentStage" local-service="true" table="nbp_acquire_stage">
+
+		<!-- PK fields -->
+
+		<column name="acquireCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+       
+        <column name="currentStage" type="String"></column>
+        <column name="lastFormStage" type="String"></column>
+        <column name="acquireApplicationId" type="long"></column>
+        <!-- Order -->
+
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+        <!-- Finder methods -->
+		<finder name="getAcquireById" return-type="AcquireCurrentStage">
+			<finder-column name="acquireApplicationId" />
+		</finder>
+	</entity>
+	<entity name="AcquireDocumentList" table="nbp_acquire_document_list"
+		local-service="true">
+		<!-- PK fields -->
+		<column name="acquireDocumentListId" primary="true"
+			type="long">
+		</column>
+		<!-- Other fields -->
+        <column name="documentType" type="String"></column>
+        <column name="documentName" type="String"></column>
+        <finder name="getAcquireDocListByDocType" return-type="Collection">
+            <finder-column name="documentType"></finder-column>
+        </finder>
+	</entity>
+</service-builder>

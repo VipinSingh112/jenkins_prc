@@ -1,0 +1,1243 @@
+/**
+ * SPDX-FileCopyrightText: (c) 2025 Liferay, Inc. https://liferay.com
+ * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+ */
+
+package com.nbp.quary.application.form.service.service.persistence.impl;
+
+import com.liferay.petra.string.StringBundler;
+import com.liferay.portal.kernel.configuration.Configuration;
+import com.liferay.portal.kernel.dao.orm.EntityCache;
+import com.liferay.portal.kernel.dao.orm.FinderCache;
+import com.liferay.portal.kernel.dao.orm.FinderPath;
+import com.liferay.portal.kernel.dao.orm.Query;
+import com.liferay.portal.kernel.dao.orm.QueryPos;
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
+import com.liferay.portal.kernel.dao.orm.Session;
+import com.liferay.portal.kernel.dao.orm.SessionFactory;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.security.auth.CompanyThreadLocal;
+import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.service.ServiceContextThreadLocal;
+import com.liferay.portal.kernel.service.persistence.impl.BasePersistenceImpl;
+import com.liferay.portal.kernel.util.GetterUtil;
+import com.liferay.portal.kernel.util.OrderByComparator;
+import com.liferay.portal.kernel.util.PropsKeys;
+import com.liferay.portal.kernel.util.PropsUtil;
+import com.liferay.portal.kernel.util.ProxyUtil;
+
+import com.nbp.quary.application.form.service.exception.NoSuchDirectorDetailsAddException;
+import com.nbp.quary.application.form.service.model.DirectorDetailsAdd;
+import com.nbp.quary.application.form.service.model.DirectorDetailsAddTable;
+import com.nbp.quary.application.form.service.model.impl.DirectorDetailsAddImpl;
+import com.nbp.quary.application.form.service.model.impl.DirectorDetailsAddModelImpl;
+import com.nbp.quary.application.form.service.service.persistence.DirectorDetailsAddPersistence;
+import com.nbp.quary.application.form.service.service.persistence.DirectorDetailsAddUtil;
+import com.nbp.quary.application.form.service.service.persistence.impl.constants.QUARRY_APPLICATION_FORMPersistenceConstants;
+
+import java.io.Serializable;
+
+import java.lang.reflect.InvocationHandler;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.sql.DataSource;
+
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+
+/**
+ * The persistence implementation for the director details add service.
+ *
+ * <p>
+ * Caching information and settings can be found in <code>portal.properties</code>
+ * </p>
+ *
+ * @author Brian Wing Shun Chan
+ * @generated
+ */
+@Component(service = DirectorDetailsAddPersistence.class)
+public class DirectorDetailsAddPersistenceImpl
+	extends BasePersistenceImpl<DirectorDetailsAdd>
+	implements DirectorDetailsAddPersistence {
+
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never modify or reference this class directly. Always use <code>DirectorDetailsAddUtil</code> to access the director details add persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this class.
+	 */
+	public static final String FINDER_CLASS_NAME_ENTITY =
+		DirectorDetailsAddImpl.class.getName();
+
+	public static final String FINDER_CLASS_NAME_LIST_WITH_PAGINATION =
+		FINDER_CLASS_NAME_ENTITY + ".List1";
+
+	public static final String FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION =
+		FINDER_CLASS_NAME_ENTITY + ".List2";
+
+	private FinderPath _finderPathWithPaginationFindAll;
+	private FinderPath _finderPathWithoutPaginationFindAll;
+	private FinderPath _finderPathCountAll;
+	private FinderPath _finderPathWithPaginationFindBygetQuarry_ById;
+	private FinderPath _finderPathWithoutPaginationFindBygetQuarry_ById;
+	private FinderPath _finderPathCountBygetQuarry_ById;
+
+	/**
+	 * Returns all the director details adds where quarryApplicationId = &#63;.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @return the matching director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findBygetQuarry_ById(
+		long quarryApplicationId) {
+
+		return findBygetQuarry_ById(
+			quarryApplicationId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the director details adds where quarryApplicationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>DirectorDetailsAddModelImpl</code>.
+	 * </p>
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param start the lower bound of the range of director details adds
+	 * @param end the upper bound of the range of director details adds (not inclusive)
+	 * @return the range of matching director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findBygetQuarry_ById(
+		long quarryApplicationId, int start, int end) {
+
+		return findBygetQuarry_ById(quarryApplicationId, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the director details adds where quarryApplicationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>DirectorDetailsAddModelImpl</code>.
+	 * </p>
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param start the lower bound of the range of director details adds
+	 * @param end the upper bound of the range of director details adds (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findBygetQuarry_ById(
+		long quarryApplicationId, int start, int end,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator) {
+
+		return findBygetQuarry_ById(
+			quarryApplicationId, start, end, orderByComparator, true);
+	}
+
+	/**
+	 * Returns an ordered range of all the director details adds where quarryApplicationId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>DirectorDetailsAddModelImpl</code>.
+	 * </p>
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param start the lower bound of the range of director details adds
+	 * @param end the upper bound of the range of director details adds (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the ordered range of matching director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findBygetQuarry_ById(
+		long quarryApplicationId, int start, int end,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator,
+		boolean useFinderCache) {
+
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+			(orderByComparator == null)) {
+
+			if (useFinderCache) {
+				finderPath = _finderPathWithoutPaginationFindBygetQuarry_ById;
+				finderArgs = new Object[] {quarryApplicationId};
+			}
+		}
+		else if (useFinderCache) {
+			finderPath = _finderPathWithPaginationFindBygetQuarry_ById;
+			finderArgs = new Object[] {
+				quarryApplicationId, start, end, orderByComparator
+			};
+		}
+
+		List<DirectorDetailsAdd> list = null;
+
+		if (useFinderCache) {
+			list = (List<DirectorDetailsAdd>)finderCache.getResult(
+				finderPath, finderArgs, this);
+
+			if ((list != null) && !list.isEmpty()) {
+				for (DirectorDetailsAdd directorDetailsAdd : list) {
+					if (quarryApplicationId !=
+							directorDetailsAdd.getQuarryApplicationId()) {
+
+						list = null;
+
+						break;
+					}
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler sb = null;
+
+			if (orderByComparator != null) {
+				sb = new StringBundler(
+					3 + (orderByComparator.getOrderByFields().length * 2));
+			}
+			else {
+				sb = new StringBundler(3);
+			}
+
+			sb.append(_SQL_SELECT_DIRECTORDETAILSADD_WHERE);
+
+			sb.append(_FINDER_COLUMN_GETQUARRY_BYID_QUARRYAPPLICATIONID_2);
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(
+					sb, _ORDER_BY_ENTITY_ALIAS, orderByComparator);
+			}
+			else {
+				sb.append(DirectorDetailsAddModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = sb.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query query = session.createQuery(sql);
+
+				QueryPos queryPos = QueryPos.getInstance(query);
+
+				queryPos.add(quarryApplicationId);
+
+				list = (List<DirectorDetailsAdd>)QueryUtil.list(
+					query, getDialect(), start, end);
+
+				cacheResult(list);
+
+				if (useFinderCache) {
+					finderCache.putResult(finderPath, finderArgs, list);
+				}
+			}
+			catch (Exception exception) {
+				throw processException(exception);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first director details add in the ordered set where quarryApplicationId = &#63;.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching director details add
+	 * @throws NoSuchDirectorDetailsAddException if a matching director details add could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd findBygetQuarry_ById_First(
+			long quarryApplicationId,
+			OrderByComparator<DirectorDetailsAdd> orderByComparator)
+		throws NoSuchDirectorDetailsAddException {
+
+		DirectorDetailsAdd directorDetailsAdd = fetchBygetQuarry_ById_First(
+			quarryApplicationId, orderByComparator);
+
+		if (directorDetailsAdd != null) {
+			return directorDetailsAdd;
+		}
+
+		StringBundler sb = new StringBundler(4);
+
+		sb.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		sb.append("quarryApplicationId=");
+		sb.append(quarryApplicationId);
+
+		sb.append("}");
+
+		throw new NoSuchDirectorDetailsAddException(sb.toString());
+	}
+
+	/**
+	 * Returns the first director details add in the ordered set where quarryApplicationId = &#63;.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching director details add, or <code>null</code> if a matching director details add could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd fetchBygetQuarry_ById_First(
+		long quarryApplicationId,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator) {
+
+		List<DirectorDetailsAdd> list = findBygetQuarry_ById(
+			quarryApplicationId, 0, 1, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last director details add in the ordered set where quarryApplicationId = &#63;.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching director details add
+	 * @throws NoSuchDirectorDetailsAddException if a matching director details add could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd findBygetQuarry_ById_Last(
+			long quarryApplicationId,
+			OrderByComparator<DirectorDetailsAdd> orderByComparator)
+		throws NoSuchDirectorDetailsAddException {
+
+		DirectorDetailsAdd directorDetailsAdd = fetchBygetQuarry_ById_Last(
+			quarryApplicationId, orderByComparator);
+
+		if (directorDetailsAdd != null) {
+			return directorDetailsAdd;
+		}
+
+		StringBundler sb = new StringBundler(4);
+
+		sb.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		sb.append("quarryApplicationId=");
+		sb.append(quarryApplicationId);
+
+		sb.append("}");
+
+		throw new NoSuchDirectorDetailsAddException(sb.toString());
+	}
+
+	/**
+	 * Returns the last director details add in the ordered set where quarryApplicationId = &#63;.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching director details add, or <code>null</code> if a matching director details add could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd fetchBygetQuarry_ById_Last(
+		long quarryApplicationId,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator) {
+
+		int count = countBygetQuarry_ById(quarryApplicationId);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<DirectorDetailsAdd> list = findBygetQuarry_ById(
+			quarryApplicationId, count - 1, count, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the director details adds before and after the current director details add in the ordered set where quarryApplicationId = &#63;.
+	 *
+	 * @param directorDetailsAddId the primary key of the current director details add
+	 * @param quarryApplicationId the quarry application ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next director details add
+	 * @throws NoSuchDirectorDetailsAddException if a director details add with the primary key could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd[] findBygetQuarry_ById_PrevAndNext(
+			long directorDetailsAddId, long quarryApplicationId,
+			OrderByComparator<DirectorDetailsAdd> orderByComparator)
+		throws NoSuchDirectorDetailsAddException {
+
+		DirectorDetailsAdd directorDetailsAdd = findByPrimaryKey(
+			directorDetailsAddId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			DirectorDetailsAdd[] array = new DirectorDetailsAddImpl[3];
+
+			array[0] = getBygetQuarry_ById_PrevAndNext(
+				session, directorDetailsAdd, quarryApplicationId,
+				orderByComparator, true);
+
+			array[1] = directorDetailsAdd;
+
+			array[2] = getBygetQuarry_ById_PrevAndNext(
+				session, directorDetailsAdd, quarryApplicationId,
+				orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception exception) {
+			throw processException(exception);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected DirectorDetailsAdd getBygetQuarry_ById_PrevAndNext(
+		Session session, DirectorDetailsAdd directorDetailsAdd,
+		long quarryApplicationId,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator,
+		boolean previous) {
+
+		StringBundler sb = null;
+
+		if (orderByComparator != null) {
+			sb = new StringBundler(
+				4 + (orderByComparator.getOrderByConditionFields().length * 3) +
+					(orderByComparator.getOrderByFields().length * 3));
+		}
+		else {
+			sb = new StringBundler(3);
+		}
+
+		sb.append(_SQL_SELECT_DIRECTORDETAILSADD_WHERE);
+
+		sb.append(_FINDER_COLUMN_GETQUARRY_BYID_QUARRYAPPLICATIONID_2);
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields =
+				orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				sb.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				sb.append(_ORDER_BY_ENTITY_ALIAS);
+				sb.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						sb.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						sb.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						sb.append(WHERE_GREATER_THAN);
+					}
+					else {
+						sb.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			sb.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				sb.append(_ORDER_BY_ENTITY_ALIAS);
+				sb.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						sb.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						sb.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						sb.append(ORDER_BY_ASC);
+					}
+					else {
+						sb.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			sb.append(DirectorDetailsAddModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = sb.toString();
+
+		Query query = session.createQuery(sql);
+
+		query.setFirstResult(0);
+		query.setMaxResults(2);
+
+		QueryPos queryPos = QueryPos.getInstance(query);
+
+		queryPos.add(quarryApplicationId);
+
+		if (orderByComparator != null) {
+			for (Object orderByConditionValue :
+					orderByComparator.getOrderByConditionValues(
+						directorDetailsAdd)) {
+
+				queryPos.add(orderByConditionValue);
+			}
+		}
+
+		List<DirectorDetailsAdd> list = query.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the director details adds where quarryApplicationId = &#63; from the database.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 */
+	@Override
+	public void removeBygetQuarry_ById(long quarryApplicationId) {
+		for (DirectorDetailsAdd directorDetailsAdd :
+				findBygetQuarry_ById(
+					quarryApplicationId, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
+					null)) {
+
+			remove(directorDetailsAdd);
+		}
+	}
+
+	/**
+	 * Returns the number of director details adds where quarryApplicationId = &#63;.
+	 *
+	 * @param quarryApplicationId the quarry application ID
+	 * @return the number of matching director details adds
+	 */
+	@Override
+	public int countBygetQuarry_ById(long quarryApplicationId) {
+		FinderPath finderPath = _finderPathCountBygetQuarry_ById;
+
+		Object[] finderArgs = new Object[] {quarryApplicationId};
+
+		Long count = (Long)finderCache.getResult(finderPath, finderArgs, this);
+
+		if (count == null) {
+			StringBundler sb = new StringBundler(2);
+
+			sb.append(_SQL_COUNT_DIRECTORDETAILSADD_WHERE);
+
+			sb.append(_FINDER_COLUMN_GETQUARRY_BYID_QUARRYAPPLICATIONID_2);
+
+			String sql = sb.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query query = session.createQuery(sql);
+
+				QueryPos queryPos = QueryPos.getInstance(query);
+
+				queryPos.add(quarryApplicationId);
+
+				count = (Long)query.uniqueResult();
+
+				finderCache.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception exception) {
+				throw processException(exception);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String
+		_FINDER_COLUMN_GETQUARRY_BYID_QUARRYAPPLICATIONID_2 =
+			"directorDetailsAdd.quarryApplicationId = ?";
+
+	public DirectorDetailsAddPersistenceImpl() {
+		setModelClass(DirectorDetailsAdd.class);
+
+		setModelImplClass(DirectorDetailsAddImpl.class);
+		setModelPKClass(long.class);
+
+		setTable(DirectorDetailsAddTable.INSTANCE);
+	}
+
+	/**
+	 * Caches the director details add in the entity cache if it is enabled.
+	 *
+	 * @param directorDetailsAdd the director details add
+	 */
+	@Override
+	public void cacheResult(DirectorDetailsAdd directorDetailsAdd) {
+		entityCache.putResult(
+			DirectorDetailsAddImpl.class, directorDetailsAdd.getPrimaryKey(),
+			directorDetailsAdd);
+	}
+
+	private int _valueObjectFinderCacheListThreshold;
+
+	/**
+	 * Caches the director details adds in the entity cache if it is enabled.
+	 *
+	 * @param directorDetailsAdds the director details adds
+	 */
+	@Override
+	public void cacheResult(List<DirectorDetailsAdd> directorDetailsAdds) {
+		if ((_valueObjectFinderCacheListThreshold == 0) ||
+			((_valueObjectFinderCacheListThreshold > 0) &&
+			 (directorDetailsAdds.size() >
+				 _valueObjectFinderCacheListThreshold))) {
+
+			return;
+		}
+
+		for (DirectorDetailsAdd directorDetailsAdd : directorDetailsAdds) {
+			if (entityCache.getResult(
+					DirectorDetailsAddImpl.class,
+					directorDetailsAdd.getPrimaryKey()) == null) {
+
+				cacheResult(directorDetailsAdd);
+			}
+		}
+	}
+
+	/**
+	 * Clears the cache for all director details adds.
+	 *
+	 * <p>
+	 * The <code>EntityCache</code> and <code>FinderCache</code> are both cleared by this method.
+	 * </p>
+	 */
+	@Override
+	public void clearCache() {
+		entityCache.clearCache(DirectorDetailsAddImpl.class);
+
+		finderCache.clearCache(DirectorDetailsAddImpl.class);
+	}
+
+	/**
+	 * Clears the cache for the director details add.
+	 *
+	 * <p>
+	 * The <code>EntityCache</code> and <code>FinderCache</code> are both cleared by this method.
+	 * </p>
+	 */
+	@Override
+	public void clearCache(DirectorDetailsAdd directorDetailsAdd) {
+		entityCache.removeResult(
+			DirectorDetailsAddImpl.class, directorDetailsAdd);
+	}
+
+	@Override
+	public void clearCache(List<DirectorDetailsAdd> directorDetailsAdds) {
+		for (DirectorDetailsAdd directorDetailsAdd : directorDetailsAdds) {
+			entityCache.removeResult(
+				DirectorDetailsAddImpl.class, directorDetailsAdd);
+		}
+	}
+
+	@Override
+	public void clearCache(Set<Serializable> primaryKeys) {
+		finderCache.clearCache(DirectorDetailsAddImpl.class);
+
+		for (Serializable primaryKey : primaryKeys) {
+			entityCache.removeResult(DirectorDetailsAddImpl.class, primaryKey);
+		}
+	}
+
+	/**
+	 * Creates a new director details add with the primary key. Does not add the director details add to the database.
+	 *
+	 * @param directorDetailsAddId the primary key for the new director details add
+	 * @return the new director details add
+	 */
+	@Override
+	public DirectorDetailsAdd create(long directorDetailsAddId) {
+		DirectorDetailsAdd directorDetailsAdd = new DirectorDetailsAddImpl();
+
+		directorDetailsAdd.setNew(true);
+		directorDetailsAdd.setPrimaryKey(directorDetailsAddId);
+
+		directorDetailsAdd.setCompanyId(CompanyThreadLocal.getCompanyId());
+
+		return directorDetailsAdd;
+	}
+
+	/**
+	 * Removes the director details add with the primary key from the database. Also notifies the appropriate model listeners.
+	 *
+	 * @param directorDetailsAddId the primary key of the director details add
+	 * @return the director details add that was removed
+	 * @throws NoSuchDirectorDetailsAddException if a director details add with the primary key could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd remove(long directorDetailsAddId)
+		throws NoSuchDirectorDetailsAddException {
+
+		return remove((Serializable)directorDetailsAddId);
+	}
+
+	/**
+	 * Removes the director details add with the primary key from the database. Also notifies the appropriate model listeners.
+	 *
+	 * @param primaryKey the primary key of the director details add
+	 * @return the director details add that was removed
+	 * @throws NoSuchDirectorDetailsAddException if a director details add with the primary key could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd remove(Serializable primaryKey)
+		throws NoSuchDirectorDetailsAddException {
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			DirectorDetailsAdd directorDetailsAdd =
+				(DirectorDetailsAdd)session.get(
+					DirectorDetailsAddImpl.class, primaryKey);
+
+			if (directorDetailsAdd == null) {
+				if (_log.isDebugEnabled()) {
+					_log.debug(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
+				}
+
+				throw new NoSuchDirectorDetailsAddException(
+					_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
+			}
+
+			return remove(directorDetailsAdd);
+		}
+		catch (NoSuchDirectorDetailsAddException noSuchEntityException) {
+			throw noSuchEntityException;
+		}
+		catch (Exception exception) {
+			throw processException(exception);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	@Override
+	protected DirectorDetailsAdd removeImpl(
+		DirectorDetailsAdd directorDetailsAdd) {
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			if (!session.contains(directorDetailsAdd)) {
+				directorDetailsAdd = (DirectorDetailsAdd)session.get(
+					DirectorDetailsAddImpl.class,
+					directorDetailsAdd.getPrimaryKeyObj());
+			}
+
+			if (directorDetailsAdd != null) {
+				session.delete(directorDetailsAdd);
+			}
+		}
+		catch (Exception exception) {
+			throw processException(exception);
+		}
+		finally {
+			closeSession(session);
+		}
+
+		if (directorDetailsAdd != null) {
+			clearCache(directorDetailsAdd);
+		}
+
+		return directorDetailsAdd;
+	}
+
+	@Override
+	public DirectorDetailsAdd updateImpl(
+		DirectorDetailsAdd directorDetailsAdd) {
+
+		boolean isNew = directorDetailsAdd.isNew();
+
+		if (!(directorDetailsAdd instanceof DirectorDetailsAddModelImpl)) {
+			InvocationHandler invocationHandler = null;
+
+			if (ProxyUtil.isProxyClass(directorDetailsAdd.getClass())) {
+				invocationHandler = ProxyUtil.getInvocationHandler(
+					directorDetailsAdd);
+
+				throw new IllegalArgumentException(
+					"Implement ModelWrapper in directorDetailsAdd proxy " +
+						invocationHandler.getClass());
+			}
+
+			throw new IllegalArgumentException(
+				"Implement ModelWrapper in custom DirectorDetailsAdd implementation " +
+					directorDetailsAdd.getClass());
+		}
+
+		DirectorDetailsAddModelImpl directorDetailsAddModelImpl =
+			(DirectorDetailsAddModelImpl)directorDetailsAdd;
+
+		ServiceContext serviceContext =
+			ServiceContextThreadLocal.getServiceContext();
+
+		Date date = new Date();
+
+		if (isNew && (directorDetailsAdd.getCreateDate() == null)) {
+			if (serviceContext == null) {
+				directorDetailsAdd.setCreateDate(date);
+			}
+			else {
+				directorDetailsAdd.setCreateDate(
+					serviceContext.getCreateDate(date));
+			}
+		}
+
+		if (!directorDetailsAddModelImpl.hasSetModifiedDate()) {
+			if (serviceContext == null) {
+				directorDetailsAdd.setModifiedDate(date);
+			}
+			else {
+				directorDetailsAdd.setModifiedDate(
+					serviceContext.getModifiedDate(date));
+			}
+		}
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			if (isNew) {
+				session.save(directorDetailsAdd);
+			}
+			else {
+				directorDetailsAdd = (DirectorDetailsAdd)session.merge(
+					directorDetailsAdd);
+			}
+		}
+		catch (Exception exception) {
+			throw processException(exception);
+		}
+		finally {
+			closeSession(session);
+		}
+
+		entityCache.putResult(
+			DirectorDetailsAddImpl.class, directorDetailsAddModelImpl, false,
+			true);
+
+		if (isNew) {
+			directorDetailsAdd.setNew(false);
+		}
+
+		directorDetailsAdd.resetOriginalValues();
+
+		return directorDetailsAdd;
+	}
+
+	/**
+	 * Returns the director details add with the primary key or throws a <code>com.liferay.portal.kernel.exception.NoSuchModelException</code> if it could not be found.
+	 *
+	 * @param primaryKey the primary key of the director details add
+	 * @return the director details add
+	 * @throws NoSuchDirectorDetailsAddException if a director details add with the primary key could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd findByPrimaryKey(Serializable primaryKey)
+		throws NoSuchDirectorDetailsAddException {
+
+		DirectorDetailsAdd directorDetailsAdd = fetchByPrimaryKey(primaryKey);
+
+		if (directorDetailsAdd == null) {
+			if (_log.isDebugEnabled()) {
+				_log.debug(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
+			}
+
+			throw new NoSuchDirectorDetailsAddException(
+				_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
+		}
+
+		return directorDetailsAdd;
+	}
+
+	/**
+	 * Returns the director details add with the primary key or throws a <code>NoSuchDirectorDetailsAddException</code> if it could not be found.
+	 *
+	 * @param directorDetailsAddId the primary key of the director details add
+	 * @return the director details add
+	 * @throws NoSuchDirectorDetailsAddException if a director details add with the primary key could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd findByPrimaryKey(long directorDetailsAddId)
+		throws NoSuchDirectorDetailsAddException {
+
+		return findByPrimaryKey((Serializable)directorDetailsAddId);
+	}
+
+	/**
+	 * Returns the director details add with the primary key or returns <code>null</code> if it could not be found.
+	 *
+	 * @param directorDetailsAddId the primary key of the director details add
+	 * @return the director details add, or <code>null</code> if a director details add with the primary key could not be found
+	 */
+	@Override
+	public DirectorDetailsAdd fetchByPrimaryKey(long directorDetailsAddId) {
+		return fetchByPrimaryKey((Serializable)directorDetailsAddId);
+	}
+
+	/**
+	 * Returns all the director details adds.
+	 *
+	 * @return the director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findAll() {
+		return findAll(QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the director details adds.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>DirectorDetailsAddModelImpl</code>.
+	 * </p>
+	 *
+	 * @param start the lower bound of the range of director details adds
+	 * @param end the upper bound of the range of director details adds (not inclusive)
+	 * @return the range of director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findAll(int start, int end) {
+		return findAll(start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the director details adds.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>DirectorDetailsAddModelImpl</code>.
+	 * </p>
+	 *
+	 * @param start the lower bound of the range of director details adds
+	 * @param end the upper bound of the range of director details adds (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findAll(
+		int start, int end,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator) {
+
+		return findAll(start, end, orderByComparator, true);
+	}
+
+	/**
+	 * Returns an ordered range of all the director details adds.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>DirectorDetailsAddModelImpl</code>.
+	 * </p>
+	 *
+	 * @param start the lower bound of the range of director details adds
+	 * @param end the upper bound of the range of director details adds (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @param useFinderCache whether to use the finder cache
+	 * @return the ordered range of director details adds
+	 */
+	@Override
+	public List<DirectorDetailsAdd> findAll(
+		int start, int end,
+		OrderByComparator<DirectorDetailsAdd> orderByComparator,
+		boolean useFinderCache) {
+
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+			(orderByComparator == null)) {
+
+			if (useFinderCache) {
+				finderPath = _finderPathWithoutPaginationFindAll;
+				finderArgs = FINDER_ARGS_EMPTY;
+			}
+		}
+		else if (useFinderCache) {
+			finderPath = _finderPathWithPaginationFindAll;
+			finderArgs = new Object[] {start, end, orderByComparator};
+		}
+
+		List<DirectorDetailsAdd> list = null;
+
+		if (useFinderCache) {
+			list = (List<DirectorDetailsAdd>)finderCache.getResult(
+				finderPath, finderArgs, this);
+		}
+
+		if (list == null) {
+			StringBundler sb = null;
+			String sql = null;
+
+			if (orderByComparator != null) {
+				sb = new StringBundler(
+					2 + (orderByComparator.getOrderByFields().length * 2));
+
+				sb.append(_SQL_SELECT_DIRECTORDETAILSADD);
+
+				appendOrderByComparator(
+					sb, _ORDER_BY_ENTITY_ALIAS, orderByComparator);
+
+				sql = sb.toString();
+			}
+			else {
+				sql = _SQL_SELECT_DIRECTORDETAILSADD;
+
+				sql = sql.concat(DirectorDetailsAddModelImpl.ORDER_BY_JPQL);
+			}
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query query = session.createQuery(sql);
+
+				list = (List<DirectorDetailsAdd>)QueryUtil.list(
+					query, getDialect(), start, end);
+
+				cacheResult(list);
+
+				if (useFinderCache) {
+					finderCache.putResult(finderPath, finderArgs, list);
+				}
+			}
+			catch (Exception exception) {
+				throw processException(exception);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Removes all the director details adds from the database.
+	 *
+	 */
+	@Override
+	public void removeAll() {
+		for (DirectorDetailsAdd directorDetailsAdd : findAll()) {
+			remove(directorDetailsAdd);
+		}
+	}
+
+	/**
+	 * Returns the number of director details adds.
+	 *
+	 * @return the number of director details adds
+	 */
+	@Override
+	public int countAll() {
+		Long count = (Long)finderCache.getResult(
+			_finderPathCountAll, FINDER_ARGS_EMPTY, this);
+
+		if (count == null) {
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query query = session.createQuery(
+					_SQL_COUNT_DIRECTORDETAILSADD);
+
+				count = (Long)query.uniqueResult();
+
+				finderCache.putResult(
+					_finderPathCountAll, FINDER_ARGS_EMPTY, count);
+			}
+			catch (Exception exception) {
+				throw processException(exception);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	@Override
+	protected EntityCache getEntityCache() {
+		return entityCache;
+	}
+
+	@Override
+	protected String getPKDBName() {
+		return "directorDetailsAddId";
+	}
+
+	@Override
+	protected String getSelectSQL() {
+		return _SQL_SELECT_DIRECTORDETAILSADD;
+	}
+
+	@Override
+	protected Map<String, Integer> getTableColumnsMap() {
+		return DirectorDetailsAddModelImpl.TABLE_COLUMNS_MAP;
+	}
+
+	/**
+	 * Initializes the director details add persistence.
+	 */
+	@Activate
+	public void activate() {
+		_valueObjectFinderCacheListThreshold = GetterUtil.getInteger(
+			PropsUtil.get(PropsKeys.VALUE_OBJECT_FINDER_CACHE_LIST_THRESHOLD));
+
+		_finderPathWithPaginationFindAll = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0],
+			new String[0], true);
+
+		_finderPathWithoutPaginationFindAll = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findAll", new String[0],
+			new String[0], true);
+
+		_finderPathCountAll = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll",
+			new String[0], new String[0], false);
+
+		_finderPathWithPaginationFindBygetQuarry_ById = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findBygetQuarry_ById",
+			new String[] {
+				Long.class.getName(), Integer.class.getName(),
+				Integer.class.getName(), OrderByComparator.class.getName()
+			},
+			new String[] {"quarryApplicationId"}, true);
+
+		_finderPathWithoutPaginationFindBygetQuarry_ById = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findBygetQuarry_ById",
+			new String[] {Long.class.getName()},
+			new String[] {"quarryApplicationId"}, true);
+
+		_finderPathCountBygetQuarry_ById = new FinderPath(
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countBygetQuarry_ById",
+			new String[] {Long.class.getName()},
+			new String[] {"quarryApplicationId"}, false);
+
+		DirectorDetailsAddUtil.setPersistence(this);
+	}
+
+	@Deactivate
+	public void deactivate() {
+		DirectorDetailsAddUtil.setPersistence(null);
+
+		entityCache.removeCache(DirectorDetailsAddImpl.class.getName());
+	}
+
+	@Override
+	@Reference(
+		target = QUARRY_APPLICATION_FORMPersistenceConstants.SERVICE_CONFIGURATION_FILTER,
+		unbind = "-"
+	)
+	public void setConfiguration(Configuration configuration) {
+	}
+
+	@Override
+	@Reference(
+		target = QUARRY_APPLICATION_FORMPersistenceConstants.ORIGIN_BUNDLE_SYMBOLIC_NAME_FILTER,
+		unbind = "-"
+	)
+	public void setDataSource(DataSource dataSource) {
+		super.setDataSource(dataSource);
+	}
+
+	@Override
+	@Reference(
+		target = QUARRY_APPLICATION_FORMPersistenceConstants.ORIGIN_BUNDLE_SYMBOLIC_NAME_FILTER,
+		unbind = "-"
+	)
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		super.setSessionFactory(sessionFactory);
+	}
+
+	@Reference
+	protected EntityCache entityCache;
+
+	@Reference
+	protected FinderCache finderCache;
+
+	private static final String _SQL_SELECT_DIRECTORDETAILSADD =
+		"SELECT directorDetailsAdd FROM DirectorDetailsAdd directorDetailsAdd";
+
+	private static final String _SQL_SELECT_DIRECTORDETAILSADD_WHERE =
+		"SELECT directorDetailsAdd FROM DirectorDetailsAdd directorDetailsAdd WHERE ";
+
+	private static final String _SQL_COUNT_DIRECTORDETAILSADD =
+		"SELECT COUNT(directorDetailsAdd) FROM DirectorDetailsAdd directorDetailsAdd";
+
+	private static final String _SQL_COUNT_DIRECTORDETAILSADD_WHERE =
+		"SELECT COUNT(directorDetailsAdd) FROM DirectorDetailsAdd directorDetailsAdd WHERE ";
+
+	private static final String _ORDER_BY_ENTITY_ALIAS = "directorDetailsAdd.";
+
+	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY =
+		"No DirectorDetailsAdd exists with the primary key ";
+
+	private static final String _NO_SUCH_ENTITY_WITH_KEY =
+		"No DirectorDetailsAdd exists with the key {";
+
+	private static final Log _log = LogFactoryUtil.getLog(
+		DirectorDetailsAddPersistenceImpl.class);
+
+	@Override
+	protected FinderCache getFinderCache() {
+		return finderCache;
+	}
+
+}

@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.quary.application.form.service">
+	<namespace>QUARRY_APPLICATION_FORM</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="QuarryApplication" remote-service="true" uuid="true" table="nbp_quarry_application">
+
+		<!-- PK fields -->
+
+		<column name="quarryApplicationId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="long"></column>
+		<!-- Other fields -->
+
+		<column name="natureOfApplicant" type="String"/>
+		<column name="typeOfTransaction" type="String"/>
+		<column name="renewLicenceNumber" type="String"/>
+		<column name="typeOfMaterialQuarried" type="String"/>
+		<column name="caseId" type="String"/>
+        <column name="status" type="int"/>
+        <column name="icmDocumentPath" type="String"/>
+        <column name="applicationNumber" type="String"/>
+        <column name="expiredLicenseAppNumber" type="String"/>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+			<!-- Finder methods -->
+		<finder name="getQuarryById" return-type="QuarryApplication">
+			<finder-column name="quarryApplicationId"/>
+		</finder>
+		 <finder name="getQuarryByS_U" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+         <finder name="getQuarryByCaseId" return-type="QuarryApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+		<finder name="getQuarryByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        	<finder name="getQuarryByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getQuarryByEntityId_Status" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getQuarryByEI_CI" return-type="QuarryApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getQuarryByAppNo" return-type="QuarryApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getQuarryByAppType_AppNo" return-type="QuarryApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+		<!-- References -->
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+	<entity local-service="true" name="QuarryApplicationMachinesAndEquipment" remote-service="true" uuid="true" table="nbp_quarry_machines_equip">
+
+		<!-- PK fields -->
+
+		<column name="quarryApplicationMachinId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<!-- Other fields -->
+
+		<column name="manchineName" type="String"/>
+		<column name="isManchineNameChecked" type="String"/>
+		<column name="quantity" type="String"/>
+		<column name="locationOfPermises" type="String"/>
+		<column name="locatedOnLocation" type="String"/>
+		<column name="otherValue" type="String"/>
+        <column name="quarryApplicationId" type="String" />
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="manchineName" />
+		</order>
+			<!-- Finder methods -->
+		<finder name="getQuarryById" return-type="Collection">
+			<finder-column name="quarryApplicationId"/>
+		</finder>
+		<finder name="getQuarryMAchineEquipment_By_MachineName_AppId" return-type="Collection">
+			<finder-column name="quarryApplicationId"/>
+			<finder-column name="manchineName"/>
+		</finder>
+
+
+	</entity>
+		<entity name="QuarryCurrentStage" local-service="true"
+		table="nbp_quarry_stage">
+
+		<!-- PK fields -->
+
+		<column name="auarryStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="currentStage" type="String"></column>
+		<column name="lastFormDetailsStep" type="String"></column>
+		<column name="quarryApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="QuarryCurrentStage">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+		<finder name="getQuarry_CS_AI" return-type="Collection">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+		<entity name="QuarryApplicatntInformation" local-service="true"
+		table="nbp_quarry_applicant_info">
+
+		<!-- PK fields -->
+
+		<column name="auarryApplicantId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="nameOfApplicant" type="String"></column>
+		<column name="addressOfApplicant" type="String"></column>
+		<column name="telephoneOfApplicant" type="String"></column>
+		<column name="emailOfApplicant" type="String"></column>
+		<column name="trnAndTcc" type="String"></column>
+		<column name="quarryApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="QuarryApplicatntInformation">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+		<entity name="QuarryInformaation" local-service="true"
+		table="nbp_quarry__info">
+
+		<!-- PK fields -->
+
+		<column name="auarryInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="location" type="String"></column>
+		<column name="district" type="String"></column>
+		<column name="parish" type="String"></column>
+		<column name="actualSizeOfQuary" type="String"></column>
+		<column name="hasQuarrySubmitted" type="String"></column>
+		<column name="sixCopiesOfLocation" type="String"></column>
+		<column name="legalAccessToLand" type="String"></column>
+		<column name="ownerShipEnclosed" type="String"></column>
+		<column name="adjacentPropOwner" type="String"></column>
+		<column name="measurement" type="String"></column>
+		<column name="landOwnerName" type="String"></column>
+		<column name="landOwnerAddress" type="String"></column>
+		<column name="quarryApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="QuarryApplicatntInformation">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+		<entity name="QuarryMaterialInformation" local-service="true"
+		table="nbp_quarry_material_info">
+
+		<!-- PK fields -->
+
+		<column name="materialInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="typeOfMaterial" type="String"></column>
+		<column name="reserveEstimate" type="String"></column>
+		<column name="estimateDailyProd" type="String"></column>
+		<column name="actualSizeOfQuary" type="String"></column>
+		<column name="hasQuarrySubmitted" type="String"></column>
+		<column name="sixCopiesOfLocation" type="String"></column>
+		<column name="legalAccessToLand" type="String"></column>
+		<column name="ownerShipEnclosed" type="String"></column>
+		<column name="adjacentPropOwner" type="String"></column>
+		<column name="quarryApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="QuarryApplicatntInformation">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+		<entity name="QuarryMaterialInformationEquipmentList" local-service="true"
+		table="nbp_quarry_material_List_info">
+
+		<!-- PK fields -->
+
+		<column name="materialInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="machineName" type="String"></column>
+		<column name="quantity" type="String"></column>
+		<column name="locatedOnPermises" type="String"></column>
+		<column name="isManchineNameChecked" type="String"></column>
+		<column name="otherValue" type="String"></column>
+		<column name="quarryApplicationId" type="long"></column>
+		<order by="asc">
+			<order-column name="machineName" />
+		</order>
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="Collection">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+		<finder name="getQuarry_By_MachineName_AppId"
+			return-type="Collection">
+			<finder-column name="quarryApplicationId" />
+			<finder-column name="machineName" />
+		</finder>
+	</entity>
+		<entity name="QuarryGeneralInformation" local-service="true"
+		table="nbp_quarry_general_info">
+
+		<!-- PK fields -->
+
+		<column name="generalInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="proposedNumberOfEmploy" type="String"></column>
+		<column name="nonRefundableFee" type="String"></column>
+		<column name="convictedUnderQuarryLaw" type="String"></column>
+		<column name="giveDetails" type="String"></column>
+		<column name="licenseRefused" type="String"></column>
+		<column name="dateOfSignature" type="Date"></column>
+		<column name="quarryApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="QuarryGeneralInformation">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+		<entity name="QuarryTransferApplicantInfo" local-service="true"
+		table="nbp_quarry_transfer_info">
+
+		<!-- PK fields -->
+
+		<column name="quarryTransferInfoId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- other fields -->
+		<column name="transferCompanyName" type="String"></column>
+		<column name="transferLicenceNumber" type="String"></column>
+		<column name="transferLicenseLease" type="String"></column>
+		<column name="transferLeaseReason" type="String"></column>
+		<column name="nameOfApplicant" type="String"></column>
+		<column name="telephone" type="String"></column>
+		<column name="email" type="String"></column>
+		<column name="nationalityOfApplicant" type="String"></column>
+		<column name="addressInJamaica" type="String"></column>
+		<column name="nameOfDirector" type="String"></column>
+		<column name="nationalityOfDirector" type="String"></column>
+		<column name="dateOfTransfer" type="Date"></column>
+		<column name="trnAndTcc" type="String"></column>
+		<column name="quarryApplicationId" type="long"></column>
+
+		<!-- finder -->
+		<finder name="getQuarry_ById"
+			return-type="QuarryTransferApplicantInfo">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+	     <entity name="QuarryApplicationPayment" local-service="true" table="nbp_quarry_app_payment">
+
+     	<!-- PK fields -->
+
+     	<column name="quarryApplicationPaymentId" primary="true"
+     		type="long">
+     	</column>
+
+     	<!-- Group instance -->
+
+     	<column name="groupId" type="long"></column>
+
+     	<!-- Audit fields -->
+
+     	<column name="companyId" type="long"></column>
+     	<column name="userId" type="long"></column>
+     	<column name="userName" type="String"></column>
+     	<column name="createDate" type="Date"></column>
+     	<column name="modifiedDate" type="Date"></column>
+     	
+     	<!-- Other fields -->
+		
+		<column name="paymentMethod" type="String" />
+		<column name="paymentDocId" type="String" />
+		<column name="paymentStatus" type="String" />
+		<column name="paymentFee" type="String" />
+		<column name="amountPaid" type="String" />
+		<column name="amountCurrency" type="String" />
+		<column name="transactionNumber" type="String" />
+		<column name="quarryApplicationId" type="long"></column>
+		
+		
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getQuarry_Pay_AppId" return-type="QuarryApplicationPayment">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	</entity>
+	
+	     <entity name="DirectorDetailsAdd" local-service="true"
+	     	table="nbp_quarry_add_director">
+
+	     	<!-- PK fields -->
+
+	     	<column name="directorDetailsAddId" primary="true"
+	     		type="long">
+	     	</column>
+
+	     	<!-- Group instance -->
+
+	     	<column name="groupId" type="long"></column>
+
+	     	<!-- Audit fields -->
+
+	     	<column name="companyId" type="long"></column>
+	     	<column name="userId" type="long"></column>
+	     	<column name="userName" type="String"></column>
+	     	<column name="createDate" type="Date"></column>
+	     	<column name="modifiedDate" type="Date"></column>
+	     	
+	     	<!-- Other fields -->
+	        <column name="directorName" type="String"></column>
+	        <column name="directorNationality" type="String"></column>
+	        <column name="quarryApplicationId" type="long"></column>
+	        <column name="counter" type="String"></column>
+	        
+	        <finder name="getQuarry_ById"
+			return-type="Collection">
+			<finder-column name="quarryApplicationId" />
+		</finder>
+	     </entity>
+</service-builder>

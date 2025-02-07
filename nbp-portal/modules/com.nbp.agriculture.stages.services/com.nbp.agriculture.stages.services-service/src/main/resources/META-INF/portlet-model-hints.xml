@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.agriculture.stages.services.model.AgricultureApplicationStages">
+		<field name="agricultureApplicationstageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="agricultureApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.agriculture.stages.services.model.AgricultureInspection">
+		<field name="agricultureInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateOfInspection" type="Date" />
+		<field name="insectionDateRange" type="String" />
+		<field name="invities" type="String" />
+		<field name="location" type="String" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="agriApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.nbp.agriculture.stages.services.model.AgriculturePermit">
+		<field name="agriculturePermitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="pirPermtNumber" type="String" />
+		<field name="dateofIssue" type="Date" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="durationOfPermit" type="String" />
+		<field name="pirCertificateNUmber" type="long" />
+	</model>
+	<model name="com.nbp.agriculture.stages.services.model.AgriDeskVerification">
+		<field name="agriDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="agricultureApplicationId" type="long" />
+		<field name="documentName" type="String" />
+		<field name="documentStatus" type="String" />
+	</model>
+</model-hints>

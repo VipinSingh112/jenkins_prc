@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuAdditionalCompanyInfo">
+		<field name="manuAdditionalCompanyInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyNameRepresentative" type="String" />
+		<field name="companySignatureRepresentative" type="String" />
+		<field name="signatureDate" type="Date" />
+		<field name="customBrokerName" type="String" />
+		<field name="customBrokerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="telephoneNumber" type="String" />
+		<field name="brokerId" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuApplicationCurrentStage">
+		<field name="manuApplicationCuurentStageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormDetailsStep" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuCompanyInfo">
+		<field name="manuCompanyInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="directorName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="businessAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="tccNumber" type="String" />
+		<field name="incorporationDate" type="Date" />
+		<field name="factoryAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="telephoneNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="companyWebsite" type="String" />
+		<field name="applicantTRN" type="String" />
+		<field name="beneficieryTRN" type="String" />
+		<field name="parish" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuCompanyInfoAddress">
+		<field name="manuCompanyInfoAddressId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="factoryAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="telephoneNumber" type="String" />
+		<field name="emailAddress" type="String" />
+		<field name="companyWebsite" type="String" />
+		<field name="parish" type="String" />
+		<field name="counter" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+		<field name="manuCompanyInfoId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuEquipment">
+		<field name="manuEquipmentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="equipmentImported" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="land" type="String" />
+		<field name="equipment" type="String" />
+		<field name="building" type="String" />
+		<field name="Other" type="String" />
+		<field name="equipmentName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="jamaicanDollor" type="String" />
+		<field name="capitalExpenditure" type="String" />
+		<field name="nameOFPurpose" type="String" />
+		<field name="equipmentMaintained" type="String" />
+		<field name="equipmentCreated" type="String" />
+		<field name="skilledEmp" type="String" />
+		<field name="clericalEmp" type="String" />
+		<field name="otherEmp" type="String" />
+		<field name="totalEmp" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuEquipmentAdd">
+		<field name="manuEquipmentAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="equipmentName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="jamaicanDollor" type="String" />
+		<field name="counter" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+		<field name="manuEquipmentId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuExportData">
+		<field name="manuExportDataId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyInvolved" type="String" />
+		<field name="itemsName" type="String" />
+		<field name="quantity" type="String" />
+		<field name="monetary" type="String" />
+		<field name="countryName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManufacturingApplication">
+		<field name="manufacturingApplicationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="requestType" type="String" />
+		<field name="licenseRequest" type="String" />
+		<field name="licenseCategory" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="licenseSubCategory" type="String">
+			<hint name="max-length">800</hint>
+		</field>
+		<field name="parish" type="String" />
+		<field name="status" type="int" />
+		<field name="applicationNumber" type="String" />
+		<field name="expiredLicenseAppNumber" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="icmDocumentsPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="pdfFileEntryId" type="long" />
+		<field name="dateOfExpiration" type="Date" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ManuInternationalCertificate">
+		<field name="manuInternationalCertificateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyCertified" type="String" />
+		<field name="other" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.PackagingProcess">
+		<field name="packagingProcessId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="packagingProcess" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ProductionProcess">
+		<field name="productionProcessId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="productionProcess" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ProductiveInputsForm">
+		<field name="productiveInputsFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="categoryOfGoods" type="String" />
+		<field name="manufactureProducts" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="proposedProducts" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="processType" type="String" />
+		<field name="tariffCode" type="String" />
+		<field name="manufactureItem" type="String" />
+		<field name="importedCaricom" type="String" />
+		<field name="rawMaterialPurchased" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="manufacturingApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.manufacturing.application.form.service.model.ProductiveInputsFormAdd">
+		<field name="productiveInputsFormAddId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="processType" type="String" />
+		<field name="tariffCode" type="String" />
+		<field name="manufactureItem" type="String" />
+		<field name="importedCaricom" type="String" />
+		<field name="counter" type="String" />
+		<field name="manufacturingApplicationId" type="long" />
+		<field name="productiveInputsFormId" type="long" />
+	</model>
+</model-hints>

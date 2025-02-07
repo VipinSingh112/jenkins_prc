@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.ogt.stages.services-api
+Bundle-SymbolicName: com.nbp.ogt.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.ogt.stages.services.exception,\
+	com.nbp.ogt.stages.services.model,\
+	com.nbp.ogt.stages.services.service,\
+	com.nbp.ogt.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.ogt.stages.services-service/service.xml

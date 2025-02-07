@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.miic.stages.service-api
+Bundle-SymbolicName: com.nbp.miic.stages.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.miic.stages.service.exception,\
+	com.nbp.miic.stages.service.model,\
+	com.nbp.miic.stages.service.service,\
+	com.nbp.miic.stages.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.miic.stages.service-service/service.xml

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.entity.information.services">
+	<namespace>NBP_ENTITY</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="EntityInformation" remote-service="true" uuid="true" table="nbp_entity_info">
+
+		<!-- PK fields -->
+
+		<column name="entityInfoId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="entityName" type="String" />
+		<column name="entityAddressOne" type="String" />
+		<column name="entityAddressTwo" type="String" />
+		<column name="telephone" type="String" />
+		<column name="mailingAdd" type="String" />
+		<column name="permanentAdd" type="String" />
+		<column name="fax" type="String" />
+		<column name="website" type="String" />
+		<column name="postalCode" type="String" />
+		<column name="parish" type="String" />
+		<column name="officeEmail" type="String" />
+		<column name="country" type="String" />
+		<column name="incorporationDate" type="Date" />
+		<column name="incorporationPlace" type="String" />
+		<column name="isUserPrimaryUser" type="String" />
+		<column name="entityNumber" type="String"  />
+		<column name="userType" type="String"  />
+		<column name="trn" type="String"  />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="entityNumber" return-type="EntityInformation">
+			<finder-column name="entityNumber" />
+		</finder>
+		<!-- References -->
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+</service-builder>

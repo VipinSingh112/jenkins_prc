@@ -1,0 +1,733 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.creative.application.form.service">
+	<namespace>CREATIVE</namespace>
+	<entity  name="CreativeApplication" remote-service="true" local-service="true" uuid="true" table="nbp_creative_application">
+
+		<!-- PK fields -->
+
+		<column name="CreativeApplicationId" primary="true" type="long" />
+        
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="entityId" type="String"></column>
+
+		<!-- Other fields -->
+
+		<column name="practitionerStatus" type="String" />
+		<column name="eRegistryNumber" type="String" />
+		<column name="entertainerType" type="String" />
+		<column name="IndividualType" type="String" />
+		<column name="companyType" type="String" />
+		<column name="primaryCategory" type="String" />
+        <column name="mainCategories" type="String" />
+        <column name="status" type="int" />
+		<column name="applicationNumber" type="String" />
+		<column name="caseId" type="String" />
+		<column name="icmDocumentsPath" type="String" />
+		<column name="pdfFileEntryId" type="long" />
+		<column name="appCurrentStageName" type="String" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="getCreativeById" return-type="CreativeApplication">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+				
+        <finder name="getCreativeApplicationByStatusUser" return-type="Collection">
+            <finder-column name="status"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        
+        <finder name="getCreativeByStatus" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        
+        <finder name="getCreativeByAppNo" return-type="CreativeApplication">
+            <finder-column name="applicationNumber"></finder-column>
+        </finder>
+         <finder name="getCreativeBy_CI" return-type="CreativeApplication">
+            <finder-column name="caseId"></finder-column>
+        </finder>
+        
+        
+	</entity>
+	<entity name="CreativeIndividualDetails" local-service="true" table="nbp_creative_individual_detail">
+
+
+		<!-- PK fields -->
+
+		<column name="creativeIndividualDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+
+		<column name="sectorOfPractice" type="String" />
+		<column name="firstName" type="String" />
+		<column name="middleName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="trn" type="String" />
+        <column name="city" type="String" />
+		<column name="country" type="String" />
+		<column name="sex" type="String" />
+		<column name="cell" type="String" />
+		<column name="email" type="String" />
+		<column name="areYouStudent" type="String" />
+		<column name="companyEmail" type="String" />
+		<column name="companyWebsite" type="String" />
+        <column name="CreativeApplicationId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+			<!-- Finder methods -->
+		<finder name="getCreativeById" return-type="CreativeIndividualDetails">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="CreativeIndividualDetailsAddress" local-service="true" table="nbp_creative_ida">
+
+		<!-- PK fields -->
+
+		<column name="creativeIndiDetailsAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+		<column name="streetAddress" type="String" />
+		<column name="streetAddressLineTwo" type="String" />
+        <column name="CreativeApplicationId"  type="long" />
+        <column name="creativeIndividualDetailsId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getCreativeById" return-type="CreativeIndividualDetailsAddress">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="CreativeIndividualGeneralInformation" local-service="true" table="nbp_creative_indi_general_info">
+
+		<!-- PK fields -->
+
+		<column name="creativeIndiGeneralInfoId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+
+		<column name="profile" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+			<!-- Finder methods -->
+
+		<finder name="getCreativeById" return-type="CreativeIndividualGeneralInformation">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+		
+	</entity>
+	<entity name="CreativeIndividualEconomicEffect" local-service="true" table="nbp_creative_economic_effect">
+
+		<!-- PK fields -->
+
+		<column name="creativeIndiEcoEffectId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+
+		<column name="shareCapitalJmd" type="String" />
+		<column name="shareCapitalExchangeRate" type="String" />
+		<column name="shareCapitalUsd" type="String" />
+		<column name="localCapitalJmd" type="String" />
+		<column name="localCapitalExchangeRate" type="String" />
+		<column name="localCapitalUsd" type="String" />
+		<column name="otherJmd" type="String" />
+		<column name="otherExchangeRate" type="String" />
+        <column name="otherUsd" type="String" />
+		<column name="estimatedLocalExpenditure" type="String" />
+		<column name="otherEstimatedLocal " type="String" />
+		<column name="annualYearOne" type="String" />
+		<column name="annualOneUsd" type="String" />
+		<column name="annualYearTwo" type="String" />
+		<column name="annualTwoUsd" type="String" />
+		<column name="annualYearThree" type="String" />
+		<column name="annualThreeUsd" type="String" />
+		<column name="targetMarketLocal" type="String" />
+		<column name="targetMarketForeign" type="String" />
+		<column name="targetMarketCountries" type="String" />
+		<column name="declareInformationProvide" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+				<!-- Finder methods -->
+
+		<finder name="getCreativeById" return-type="CreativeIndividualEconomicEffect">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="CreativeCompanyDetails" local-service="true" table="nbp_creative_company_detail">
+
+		<!-- PK fields -->
+
+		<column name="creativeCompanyDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+
+		<column name="companyName" type="String" />
+		<column name="companyBusinessRegistrationNo" type="String" />
+		<column name="dateOfCompanyRegistration" type="Date" />
+		<column name="companyTrn" type="String" />
+		<column name="companyTcc" type="String" />
+        <column name="companyProfile" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+				<!-- Finder methods -->
+
+		<finder name="getCreativeById" return-type="CreativeCompanyDetails">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+		
+	</entity>
+	<entity name="CreativeCompanyDetailsAddress" local-service="true" table="nbp_creative_com_detail_addres">
+
+		<!-- PK fields -->
+
+		<column name="creativeComDetailsAddressId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+			
+        <column name="addressType" type="String" />
+		<column name="streetAddress" type="String" />
+		<column name="streetAddressLineTwo" type="String" />
+		<column name="city" type="String" />
+		<column name="country" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		<column name="creativeCompanyDetailsId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+			<!-- Finder methods -->
+		<finder name="getCreative_Com_Detail_AT" return-type="CreativeCompanyDetailsAddress">
+		  <finder-column name="addressType"></finder-column>
+          <finder-column name="creativeCompanyDetailsId"></finder-column>
+		</finder>
+		
+	</entity>
+	<entity name="CreativeCompanyDirectorInformation" local-service="true" table="nbp_comapny_director_info">
+
+		<!-- PK fields -->
+
+		<column name="creativeComDirectorInfoId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+
+		<column name="directorFullName" type="String" />
+		<column name="directorTitle" type="String" />
+		<column name="directorTrn" type="String" />
+		<column name="telephoneNumber" type="String" />
+		<column name="faxNumber" type="String" />
+        <column name="emailAddress" type="String" />
+		<column name="socialMedia" type="String" />
+		<column name="profileName" type="String" />
+		<column name="isOperatorDifferentFromOwner" type="String" />
+		<column name="operatorFirstName" type="String" />
+		<column name="operatorMiddleName" type="String" />
+		<column name="operatorLastName" type="String" />
+		<column name="city" type="String" />
+		<column name="country" type="String" />
+		<column name="sex" type="String" />
+		<column name="trn" type="String" />
+		<column name="cell" type="String" />
+		<column name="email" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+				<!-- Finder methods -->
+
+		<finder name="getCreativeById" return-type="CreativeCompanyDirectorInformation">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="CreativeCompanyDirectorInformationAddress" local-service="true" table="nbp_creactive_company_dia">
+
+		<!-- PK fields -->
+
+		<column name="creativeComDirectorAddressId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+
+		<column name="streetAddress" type="String" />
+		<column name="streetAddressLineTwo" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		<column name="creativeComDirectorInfoId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		
+			<!-- Finder methods -->
+			<!-- Finder methods -->
+		<finder name="getCreativeById" return-type="CreativeCompanyDirectorInformationAddress">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="CreativeCompanyApplicantInformation" local-service="true" table="nbp_creative_com_appli_info">
+
+		<!-- PK fields -->
+
+		<column name="creativeCompanyApplicantInfoId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+       
+		<column name="prefix" type="String" />
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="sex" type="String" />
+		<column name="trn" type="String" />
+        <column name="countryOfResidence" type="String" />
+		<column name="nationality" type="String" />
+		<column name="cell" type="String" />
+		<column name="email" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+
+		<finder name="getCreativeById" return-type="CreativeCompanyApplicantInformation">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+			
+	</entity>
+	<entity name="CreativeCompanyGeneralInformation" local-service="true" table="nbp_creative_company_gen_info">
+
+		<!-- PK fields -->
+
+		<column name="creativeCompanyGeneralInfoId"
+			primary="true" type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+         <column name="HaveYouRecievedAny" type="String" />
+		 <column name="mprsStartDate" type="Date" />
+		 <column name="mprsEndDate" type="Date" />
+		 <column name="mttStartDate" type="Date" />
+	   	 <column name="mttEndDate" type="Date" />
+	   	 <column name="CreativeApplicationId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getCreativeById" return-type="CreativeCompanyGeneralInformation">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="CreativeCompanyEconomicEffect" local-service="true" table="nbp_creative_com_eco_effect">
+
+		<!-- PK fields -->
+
+		<column name="creativeComEconomicEffectId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+
+		<column name="assessmentcountryOfOrigin" type="String" />
+		<column name="ssessmentjointVenture" type="String" />
+		<column name="assessmentLocal" type="String" />
+		<column name="assessmentForeign" type="String" />
+		<column name="shareJmd" type="String" />
+		<column name="shareExchangeRate" type="String" />
+        <column name="shareUsd" type="String" />
+		<column name="localJmd" type="String" />
+		<column name="localExchangeRate" type="String" />
+		<column name="localUsd" type="String" />
+		<column name="otherJmd" type="String" />
+		<column name="otherExchangeRate" type="String" />
+		<column name="OtherUsd" type="String" />
+		<column name="permanentLocalMale" type="String" />
+		<column name="permanentLocalFemale" type="String" />
+		<column name="permanentForeignMale" type="String" />
+		<column name="permanentForeignFemale" type="String" />
+		<column name="temporaryLocalMale" type="String" />
+		<column name="temporaryLocalFemale" type="String" />
+		<column name="temporaryForeignMale" type="String" />
+		<column name="temporaryForgeignFemale" type="String" />
+		<column name="totalLocalMale" type="String" />
+		<column name="totalLocalFemale" type="String" />
+		<column name="totalForeignMale" type="String" />
+		<column name="totalForeignFemale" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+        
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getCreativeById" return-type="CreativeCompanyEconomicEffect">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+		
+	</entity>
+	<entity name="CreativeApplicationCurrentStage" local-service="true" table="nbp_creative_current_stage">
+
+		<!-- PK fields -->
+
+		<column name="creativeAppliCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getCreativeById" return-type="CreativeApplicationCurrentStage">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+        <finder name="getCA_Stage_CAI" return-type="CreativeApplicationCurrentStage">
+            <finder-column name="CreativeApplicationId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="CreativeDirectorListinAddBox" local-service="true" table="nbp_creative_director_box">
+
+		<!-- PK fields -->
+
+		<column name="creativeDirectorBoxId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+		<column name="fullName" type="String" />
+		<column name="title" type="String" />
+		<column name="trn" type="String" />
+		<column name="directorCountre" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getCA_DLB_CAI" return-type="Collection">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="CreativeContactInfoAddBox" local-service="true" table="nbp_creative_contact_box">
+
+		<!-- PK fields -->
+
+		<column name="creativeContactBoxId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+		<column name="contactTelephone" type="String" />
+		<column name="contactFax" type="String" />
+		<column name="contactEmailAddress" type="String" />
+		<column name="counterContact" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getCA_CCB_CAI" return-type="Collection">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="CreativeSocialMediaAddBox" local-service="true" table="nbp_creative_social_box">
+
+		<!-- PK fields -->
+
+		<column name="creativeSocialBoxId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+		<column name="socialMedia" type="String" />
+		<column name="profileName" type="String" />
+		<column name="counterSocislMedia" type="String" />
+		<column name="CreativeApplicationId"  type="long" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<finder name="getCA_CSB_CAI" return-type="Collection">
+			<finder-column name="CreativeApplicationId" />
+		</finder>
+		
+	</entity>
+</service-builder>

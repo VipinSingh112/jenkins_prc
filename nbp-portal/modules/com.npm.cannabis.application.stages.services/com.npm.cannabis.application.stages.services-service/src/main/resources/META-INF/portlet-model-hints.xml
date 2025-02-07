@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisApplicationDeskVeri">
+		<field name="cannabisDeskVeriId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="documentStatus" type="String" />
+		<field name="documentName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisApplicationDueDiligence">
+		<field name="cannabisAppDDId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="transactionNumber" type="String" />
+		<field name="entityName" type="String" />
+		<field name="dateOfApplication" type="Date" />
+		<field name="agencyContactName" type="String" />
+		<field name="agencyEmailAddress" type="String" />
+		<field name="licenseNumber" type="String" />
+		<field name="agencyName" type="String" />
+		<field name="submittedToAgencyDate" type="Date" />
+		<field name="feedbackReceivedDate" type="Date" />
+		<field name="deadlineDate" type="Date" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="statusOfAgencyLetter" type="String" />
+		<field name="agencyDecision" type="String" />
+		<field name="caseId" type="String" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisApplicationPaymentConfirmation">
+		<field name="cannabisAppliPaymentConfirId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountDue" type="String" />
+		<field name="amountReceived" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisApplicationStages">
+		<field name="cannabisApplicationstageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisConditionalLicense">
+		<field name="cannabisConditonalLicenseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityNumber" type="String" />
+		<field name="entityName" type="String" />
+		<field name="categoryTier" type="String" />
+		<field name="numberOfTheExtension" type="int" />
+		<field name="ListOfPreconditions" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="payentAmtDue" type="String" />
+		<field name="issueDate" type="Date" />
+		<field name="expirationDate" type="Date" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+		<field name="conditionalLicenseFileId" type="long" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisInspection">
+		<field name="cannabisInspectionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="inspectionDate" type="Date" />
+		<field name="insectionDateRange" type="String" />
+		<field name="invities" type="String" />
+		<field name="location" type="String" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="slotBookedByUser" type="long" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisLicense">
+		<field name="cannabisLicenseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityNumber" type="String" />
+		<field name="entityName" type="String" />
+		<field name="categoryTier" type="String" />
+		<field name="numberOfTheExtension" type="String" />
+		<field name="ListOfConditions" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="payentAmtDue" type="String" />
+		<field name="issueDate" type="Date" />
+		<field name="expirationDate" type="Date" />
+		<field name="cannabisApplicationId" type="long" />
+		<field name="updatedBySource" type="String" />
+		<field name="nameOfBPMStep" type="String" />
+		<field name="licenseConditionsFulfilled" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="dateFulfilled" type="String" />
+		<field name="feeOptionSelected" type="String" />
+		<field name="feeAmount" type="String" />
+		<field name="feePaidDate" type="Date" />
+		<field name="bpmUserNameRole" type="String" />
+		<field name="stageName" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+		<field name="licenseNumber" type="String" />
+		<field name="licenseFileId" type="long" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisLicensePayment">
+		<field name="cannabisLicensePaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="bondAmtDue" type="String" />
+		<field name="licenseFeeDue" type="String" />
+		<field name="feeIssuanceDue" type="String" />
+		<field name="feeOption" type="String" />
+		<field name="deferredPaymentType" type="String" />
+		<field name="feePaymentdDate" type="Date" />
+		<field name="paymentOption" type="String" />
+		<field name="paymentAmtRecieved" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="updatedBySource" type="String" />
+		<field name="status" type="String" />
+		<field name="caseId" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.CannabisLicensePreCondtions">
+		<field name="cannabisPreconditionsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="precondition" type="String" />
+		<field name="licenseType" type="String" />
+		<field name="status" type="String" />
+		<field name="cannabisApplicationId" type="long" />
+	</model>
+	<model name="com.npm.cannabis.application.stages.services.model.FullLicenseCommitteeDecision">
+		<field name="fullLicenseCommitteeDecisionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="licenseFeeDue" type="String" />
+		<field name="bondFeeDue" type="String" />
+		<field name="committeeDecision" type="String" />
+		<field name="totalAmountDue" type="long" />
+	</model>
+</model-hints>

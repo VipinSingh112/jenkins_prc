@@ -1,0 +1,11 @@
+dependencies {
+	implementation project(":modules:com.nbp.mining.stage.service:com.nbp.mining.stage.service-api")
+	implementation project(":modules:com.nbp.mining.lease.application.service:com.nbp.mining.lease.application.service-api")
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.mining.stage.service-api/src/main/java"
+}
+
+group = "com.nbp.mining.stage.service"

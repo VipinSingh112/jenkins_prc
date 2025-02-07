@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.acquire.stages.service.model.AcquireAdvertising">
+		<field name="acquireAdvertisingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateFrom" type="Date" />
+		<field name="dateTo" type="Date" />
+		<field name="advertisingMediaStatus" type="String" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireApplicationStages">
+		<field name="acquireApplicationStagesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="stageName" type="String" />
+		<field name="duration" type="String" />
+		<field name="stageStatus" type="String" />
+		<field name="stageStartDate" type="Date" />
+		<field name="stageEndDate" type="Date" />
+		<field name="acquireApplicationId" type="long" />
+		<field name="caseId" type="String" />
+		<field name="updatedBySource" type="String" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireDeskVerification">
+		<field name="acquireDeskVerificationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="acquireApplicationId" type="long" />
+		<field name="documentName" type="String" />
+		<field name="documentStatus" type="String" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireDraftAgreement">
+		<field name="acquireDraftId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="paymentAmountDue" type="String" />
+		<field name="docFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireDueDiligence">
+		<field name="sampleId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="siteVisitRequired" type="String" />
+		<field name="preferredSitVisitDate" type="Date" />
+		<field name="agencySubmissionStatus" type="String" />
+		<field name="nameOfAgency" type="String" />
+		<field name="caseId" type="String" />
+		<field name="dateSubmittedToAgency" type="Date" />
+		<field name="agencyRecommendations" type="String" />
+		<field name="dateFeedbackReceived" type="Date" />
+		<field name="acquireApplicationId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireEvaluation">
+		<field name="acquireEvaluationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="typeOfCommittee" type="String" />
+		<field name="dateOfCommitteeDecision" type="Date" />
+		<field name="committeeDecision" type="String" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireExecution">
+		<field name="acquireExecutionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="paymentSection" type="String" />
+		<field name="paymentAmountDue" type="String" />
+		<field name="contractSection" type="String" />
+		<field name="dateContractExecuted" type="Date" />
+		<field name="docFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireFinalExecutedAgreement">
+		<field name="acquirefinalId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateContractExecuted" type="Date" />
+		<field name="docFileEntryId" type="long" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquirePaymentConfirmation">
+		<field name="acquirePaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="dateReceived" type="Date" />
+		<field name="amountReceived" type="String" />
+		<field name="amountDue" type="String" />
+		<field name="receiptNumber" type="String" />
+		<field name="comment" type="String" />
+		<field name="amountOutstanding" type="String" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="String" />
+		<field name="docFileEntry" type="long" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireTendering">
+		<field name="acquireTenderingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="nameOfEachBidders" type="String" />
+		<field name="bidPriceofeachBid" type="String" />
+		<field name="minPriceOfTenderOffer" type="String" />
+		<field name="meetsMinimum" type="String" />
+		<field name="highestOffer" type="String" />
+		<field name="status" type="String" />
+	</model>
+	<model name="com.nbp.acquire.stages.service.model.AcquireValuation">
+		<field name="acquireValuationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="caseId" type="String" />
+		<field name="valuationNumber" type="String" />
+		<field name="valuationVolume" type="String" />
+		<field name="valuationFolio" type="String" />
+		<field name="valuationStatus" type="String" />
+	</model>
+</model-hints>

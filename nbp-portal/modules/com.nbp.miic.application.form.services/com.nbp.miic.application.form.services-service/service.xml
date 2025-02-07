@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.nbp.miic.application.form.services">
+	<namespace>MIIC_SERVICES</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity name="MiicApplication" table="nbp_miic_application"
+	local-service="true" remote-service="true" uuid="true">
+		
+	    <!-- PK fields -->
+		<column name="miicApplicationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		
+
+	    <!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+        <column name="miicApplication" type="String" />
+        <column name="typeOfManufacturer " type="String" />
+        <column name="typeOfTransaction" type="String" />
+		<column name="caseId" type="String"/>
+        <column name="status" type="int"/>
+        <column name="icmDocumentPath" type="String"/>
+        <column name="applicationNumber" type="String"/>
+        <column name="expiredLicenseAppNumber" type="String"></column>
+        <column name="pdfFileEntryId" type="long" />
+        <column name="appCurrentStageName" type="String" />
+        <column name="entityId" type="String"></column>
+        
+        <!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+		<!-- Finder methods -->
+		<finder name="getMIICById"
+			return-type="MiicApplication">
+			<finder-column name="miicApplicationId" />
+		</finder>
+		<finder name="getMIICByS_U" return-type="Collection">
+			<finder-column name="status"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="getMIICByCaseId"
+			return-type="MiicApplication">
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMIICByStatus" return-type="Collection">
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getMIICByEntityId" return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+		</finder>
+		<finder name="getMIICByEntityId_Status"
+			return-type="Collection">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+		<finder name="getMIICByEI_CI"
+			return-type="MiicApplication">
+			<finder-column name="entityId"></finder-column>
+			<finder-column name="caseId"></finder-column>
+		</finder>
+		<finder name="getMIICByAppNo"
+			return-type="MiicApplication">
+			<finder-column name="applicationNumber"></finder-column>
+		</finder>
+		<finder name="getMIICByAT_AppNo"
+			return-type="MiicApplication">
+			<finder-column name="typeOfTransaction"></finder-column>
+			<finder-column name="expiredLicenseAppNumber"></finder-column>
+		</finder>
+	</entity>
+	<entity name="MiicApplicantDetails" local-service="true"
+		table="nbp_miic_applicant_details">
+
+		<!-- PK fields -->
+		<column name="miicApplicantDetailsId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+        <column name="natureOfApplicant" type="String" />
+        <column name="applicantName " type="String" />
+        <column name="address" type="String" />
+		<column name="email" type="String"/>
+        <column name="telephone" type="String"/>
+        <column name="dateOfApplication" type="Date"/>
+        <column name="trnNumber" type="String"/>
+        <column name="miicApplicationId" type="long"/>
+        <column name="nameOfProducer" type="String"/>
+        <column name="companyName" type="String"/>
+        <column name="firstName" type="String"/>
+        <column name="lastName" type="String"/>
+        
+        <!-- Finder methods -->
+		<finder name="getMiicById" return-type="MiicApplicantDetails">
+			<finder-column name="miicApplicationId" />
+		</finder>
+	</entity>
+	<entity name="MiicSuspensionOfCetAdd" local-service="true"
+		table="nbp_miic_suspension_of_cet">
+
+		<!-- PK fields -->
+		<column name="miicSuspensionOfCetAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		
+		<!-- Other fields -->
+        <column name="name" type="String" />
+        <column name="tariffHeadingNum " type="String" />
+        <column name="address" type="String" />
+		<column name="description" type="String"/>
+        <column name="amountQuantity" type="String"/>
+        <column name="amountEstimateInUs" type="String"/>
+        <column name="technologySpecification" type="String"/>
+        <column name="cetRate" type="String"/>
+        <column name="rateProposed" type="String"/>
+        <column name="periodOfRateChangeFrom" type="Date"/>
+        <column name="periodOfRateChangeTo" type="Date"/>
+        <column name="indicationOfUrgency" type="String"/>
+        <column name="requestForSuspensionOfRate" type="String"/>
+        <column name="evidenceOfInability" type="String"/>
+        <column name="evidenceOfConsultation" type="String"/>
+        <column name="counter" type="String"></column>	
+        <column name="miicApplicationId" type="long"/>
+        
+        <!-- Finder methods -->
+        <finder name="getMiicById" return-type="Collection">
+			<finder-column name="miicApplicationId" />
+		</finder>
+	</entity>
+	<entity name="MiicSafeguardMaterialAdd" local-service="true"
+		table="nbp_miic_safeguard_material">
+
+		<!-- PK fields -->
+		<column name="miicSafeguardMaterialAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+        <column name="nameOfProducer" type="String" />
+        <column name="addressOfProducer " type="String" />
+		<column name="description" type="String"/>
+        <column name="tariffHeadingNum" type="String"/>
+        <column name="amount" type="String"/>
+        <column name="quantity" type="String"/>
+        <column name="technologySpecification" type="String"/>
+        <column name="periodOfImportationFrom" type="Date"/>
+        <column name="periodOfImportationTo" type="Date"/>
+        <column name="counter" type="String"></column>	
+        <column name="miicApplicationId" type="long"/>
+		  <!-- Finder methods -->
+        <finder name="getMiicById" return-type="Collection">
+			<finder-column name="miicApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="MiicSafeguardGoodAdd" local-service="true"
+		table="nbp_miic_safeguard_good">
+
+		<!-- PK fields -->
+		<column name="miicSafeguardGoodAddId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+        <column name="tariffHeadingNum" type="String" />
+		<column name="description" type="String"/>
+        <column name="amountQuantity" type="String"/>
+        <column name="amountEstimate" type="String"/>
+        <column name="resonForRequest" type="String"/>
+        <column name="counter" type="String"></column>	
+        <column name="miicApplicationId" type="long"/>
+		  <!-- Finder methods -->
+        <finder name="getMiicById" return-type="Collection">
+			<finder-column name="miicApplicationId" />
+		</finder>
+	</entity>
+	<entity name="MiicApplicationCurrentStage" local-service="true"
+		table="nbp_miic_app_stage">
+
+		<!-- PK fields -->
+		<column name="miicApplicationCurrentStageId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+			<!-- Other fields -->
+		<column name="currentStage" type="String" />
+		<column name="lastFormStep" type="String" />
+		<column name="miicApplicationId"  type="long"></column>
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="getMIIC_Stage_MIIC_AI" return-type="MiicApplicationCurrentStage">
+			<finder-column name="miicApplicationId" />
+		</finder>
+		
+	</entity>
+	<entity name="MiicSuspensionOfCet" local-service="true"
+		table="nbp_miic_Suspension">
+
+		<!-- PK fields -->
+
+		<column name="miicSuspensionOfCetId" primary="true"
+			type="long">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Other fields -->
+        <column name="indicationOfUrgency" type="String" />
+		<column name="requestForSuspension" type="String"/>
+        <column name="evidenceOfInability" type="String"/>
+        <column name="evidenceOfConsultation" type="String"/>
+        <column name="evidenceOfConsultationForeign" type="String"/>
+        <column name="nameOfAuthorizedPersonnel" type="String"/>
+        <column name="miicApplicationId" type="long"/>
+		  <!-- Finder methods -->
+        <finder name="getMiicById" return-type="MiicSuspensionOfCet">
+			<finder-column name="miicApplicationId" />
+		</finder>
+	</entity>
+	<entity name="MiicPayment" local-service="true"
+		table="nbp_miic_payment">
+
+		<!-- PK fields -->
+
+		<column name="miicPaymentId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="miicApplicationId"  type="long"></column>
+	</entity>
+</service-builder>

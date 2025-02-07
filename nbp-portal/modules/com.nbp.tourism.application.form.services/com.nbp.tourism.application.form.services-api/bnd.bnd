@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.tourism.application.form.services-api
+Bundle-SymbolicName: com.nbp.tourism.application.form.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.tourism.application.form.services.exception,\
+	com.nbp.tourism.application.form.services.model,\
+	com.nbp.tourism.application.form.services.service,\
+	com.nbp.tourism.application.form.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.tourism.application.form.services-service/service.xml

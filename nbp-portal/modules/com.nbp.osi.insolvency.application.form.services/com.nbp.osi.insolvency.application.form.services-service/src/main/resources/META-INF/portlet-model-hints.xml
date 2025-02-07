@@ -1,0 +1,567 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.AssessmentIndividualPersonalDetails">
+		<field name="assessmentDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="initialDateContact" type="Date" />
+		<field name="personalName" type="String" />
+		<field name="personalAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="personalEmail" type="String" />
+		<field name="personalTelNum" type="String" />
+		<field name="personalTrn" type="String" />
+		<field name="personalNis" type="String" />
+		<field name="personalDob" type="Date" />
+		<field name="personalAge" type="String" />
+		<field name="personalMaritalStatus" type="String" />
+		<field name="personalDependents" type="String" />
+		<field name="personalOccupation" type="String" />
+		<field name="emergencyName" type="String" />
+		<field name="emergencyEmail" type="String" />
+		<field name="emergencyTelNum" type="String" />
+		<field name="emergencyAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="emergencyEmployer" type="String" />
+		<field name="employerAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="employerEmail" type="String" />
+		<field name="employerTelNum" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.AssetsNotUsedAsSecurity">
+		<field name="assetsNotUsedAsSecurityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assetRealProp" type="String" />
+		<field name="assetNoValue" type="String" />
+		<field name="assetDescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="assetNoCounter" type="String" />
+		<field name="comTotalAssetNotUsedSecurity" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.AssetsUsedAsSecurity">
+		<field name="assetsUsedAsSecurityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assetSecurity" type="String" />
+		<field name="assetSecurityHolder" type="String" />
+		<field name="assetDetails" type="String" />
+		<field name="assetValue" type="String" />
+		<field name="assetLiability" type="String" />
+		<field name="assetNetValue" type="String" />
+		<field name="assetCounter" type="String" />
+		<field name="comTotalAssetUsedSecurity" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.CompanyDetails">
+		<field name="companyDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="companyAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="companyEmail" type="String" />
+		<field name="companyTelNum" type="String" />
+		<field name="companyTrn" type="String" />
+		<field name="companyDateInco" type="Date" />
+		<field name="companyTypeOfCo" type="String" />
+		<field name="companyCore" type="String" />
+		<field name="companyEmployees" type="String" />
+		<field name="companyLastReturn" type="Date" />
+		<field name="companyTurnover" type="String" />
+		<field name="companyShares" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.CompanyFinancialPosition">
+		<field name="companyFinancialPositionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companySecured" type="String" />
+		<field name="companyUnsecured" type="String" />
+		<field name="companyAmount" type="String" />
+		<field name="companyDeficit" type="String" />
+		<field name="companyNetValue" type="String" />
+		<field name="companyAssetValue" type="String" />
+		<field name="companyDisposableAsset" type="String" />
+		<field name="companySurplus" type="String" />
+		<field name="companySummary" type="String" />
+		<field name="companyProposal" type="String" />
+		<field name="companyTrusteeResponse" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.CompanySecretary">
+		<field name="companySecretaryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="secretaryName" type="String" />
+		<field name="secretaryDate" type="Date" />
+		<field name="secretaryOccupation" type="String" />
+		<field name="secretaryContactNum" type="String" />
+		<field name="secretaryAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="secretaryCounter" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.CompanySecuredCreditor">
+		<field name="companySecuredCreditorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="securedCreditor" type="String" />
+		<field name="securedSecurity" type="String" />
+		<field name="securedPurpose" type="String" />
+		<field name="securedLiabilty" type="String" />
+		<field name="comSecurityValue" type="String" />
+		<field name="comSecurityCounter" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.CompanyTotalLiability">
+		<field name="companyTotalLiabilityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="comTotalLiability" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.CompanyUnsecuredCreditor">
+		<field name="companyUnsecuredCreditorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="unsecuredCreditor" type="String" />
+		<field name="unsecuredDebtor" type="String" />
+		<field name="unsecuredPurpose" type="String" />
+		<field name="unsecuredLiabilty" type="String" />
+		<field name="unsecuredCounter" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.DirectorsForm">
+		<field name="directorsFormId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="directorsName" type="String" />
+		<field name="directorsDateAppointed" type="Date" />
+		<field name="directorsOccupation" type="String" />
+		<field name="directorsContactNum" type="String" />
+		<field name="directorsAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="directorsCounter" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.FinancialPosition">
+		<field name="financialPositionId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="securedLiabilities" type="String" />
+		<field name="unsecuredLiabilities" type="String" />
+		<field name="amountLiabilities" type="String" />
+		<field name="deficitLiabilities" type="String" />
+		<field name="assestsUsedAsSecurity" type="String" />
+		<field name="assestsNotUsedAsSecurity" type="String" />
+		<field name="assestsDisposable" type="String" />
+		<field name="assestsSurplus" type="String" />
+		<field name="assestsSummary" type="String" />
+		<field name="assestsProposal" type="String" />
+		<field name="assestsTrusteeResponse" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.GrandTotal">
+		<field name="grandTotalId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="totalSecuredLiabilities" type="String" />
+		<field name="securedTotalMonthlyPayments" type="String" />
+		<field name="totalPreferredLiabilities" type="String" />
+		<field name="preferredTotalMonthlyPayments" type="String" />
+		<field name="totalUnsecuredLiabilities" type="String" />
+		<field name="unsecuredTotalMonthlyPayments" type="String" />
+		<field name="grandTotal" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.MonthlyExpenses">
+		<field name="monthlyExpensesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfExpense" type="String" />
+		<field name="lightExpense" type="String" />
+		<field name="cableExpense" type="String" />
+		<field name="waterExpense" type="String" />
+		<field name="expenseCounter" type="String" />
+		<field name="telephoneExpense" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.MonthlyIncome">
+		<field name="monthlyIncomeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="basicSalary" type="String" />
+		<field name="grossSalary" type="String" />
+		<field name="statutoryDeduction" type="String" />
+		<field name="otherDeductions" type="String" />
+		<field name="loanDeductions" type="String" />
+		<field name="totalDeductions" type="String" />
+		<field name="netSalary" type="String" />
+		<field name="otherIncome" type="String" />
+		<field name="incomeToCover" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.NotUsedSecurity">
+		<field name="notUsedSecurityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="realProperty" type="String" />
+		<field name="notUsedLocation" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="notUsedDescription" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="notUsedCounter" type="String" />
+		<field name="notUsedValue" type="String" />
+		<field name="notNetValue" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiAssesmentDetailsOfAsset">
+		<field name="osiAssetDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="totalAssetUsedAsSecurity" type="String" />
+		<field name="totalAssetNotUsedAsSec" type="String" />
+		<field name="totalValuesOfAsset" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiAssessmentSignature">
+		<field name="osiAssessmentSignatureId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assessSignName" type="String" />
+		<field name="assessSignDate" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiComSecurityTotal">
+		<field name="osiComSecurityTotalId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="comSecuritTotal" type="String" />
+		<field name="comAssetTotal" type="String" />
+		<field name="comSecuritTotalValue" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiComTotalLiability">
+		<field name="osiComTotalLiabilityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="totalLiability" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiIndiTotalDetailOfAssets">
+		<field name="osiIndiTotalDetailOfAssetsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="totalValueOfAssetUsedSecu" type="String" />
+		<field name="totalValueOfAssetNotUsedSecu" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiInsolvencyApplication">
+		<field name="osiInsolvencyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="entityId" type="String" />
+		<field name="applicantStatus" type="String" />
+		<field name="typeOfApplicant" type="String" />
+		<field name="subjectData" type="String" />
+		<field name="applicantIndividual" type="String" />
+		<field name="applicantCompany" type="String" />
+		<field name="realEstateBoard" type="String" />
+		<field name="caseId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="icmDocumentPath" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="applicationNumber" type="String" />
+		<field name="pdfFileEntryId" type="long" />
+		<field name="appCurrentStageName" type="String" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiInsolvencyApplicationPayment">
+		<field name="osiInsolveApplicationPaymentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="paymentStatus" type="String" />
+		<field name="paymentFee" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="amountCurrency" type="String" />
+		<field name="transactionNumber" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiInsolvencyCurrentStage">
+		<field name="osiInsolvencyCurrentStageId" type="long" />
+		<field name="osiInsolvencyStageId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="currentStage" type="String" />
+		<field name="lastFormStage" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiInsolvPaymentPlan">
+		<field name="osiInsolvPaymentPlanId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="paymentMethod" type="String" />
+		<field name="amountPaid" type="String" />
+		<field name="paymentCurrencySelected" type="String" />
+		<field name="paymentMethodOther" type="String" />
+		<field name="paymentDocId" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.OsiTotalMonthlyExpense">
+		<field name="osiTotalMonthlyExpenseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="totalExpense" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.PreferredCreditor">
+		<field name="preferredCreditorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="preferredCreditorName" type="String" />
+		<field name="preferredCreditorLiability" type="String" />
+		<field name="preferredCreditorAmount" type="String" />
+		<field name="preferredCreditorPayment" type="String" />
+		<field name="preferredCreditorCounter" type="String" />
+		<field name="preferredCreditorDate" type="Date" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.SecuredCreditor">
+		<field name="securedCreditorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="securedCreditorName" type="String" />
+		<field name="securedCreditorAsset" type="String" />
+		<field name="securedCreditorLiability" type="String" />
+		<field name="securedCreditorPayment" type="String" />
+		<field name="securedCreditorCounter" type="String" />
+		<field name="securedCreditorDate" type="Date" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.ShareholdersHoldings">
+		<field name="shareholdersHoldingsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="shareholderName" type="String" />
+		<field name="shareholderDate" type="Date" />
+		<field name="shareholderOccupation" type="String" />
+		<field name="shareholderShares" type="String" />
+		<field name="shareholderAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="shareholderCounter" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.SubjectData">
+		<field name="subjectDataId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="verSubjectNameTitle" type="String" />
+		<field name="verSubjectFirstName" type="String" />
+		<field name="verSubjectMiddleName" type="String" />
+		<field name="verSubjectSurname" type="String" />
+		<field name="verSubjectDob" type="Date" />
+		<field name="verPresentAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="verPlaceOfBirth" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="verSubjectTrn" type="String" />
+		<field name="verSubjectTelNum" type="String" />
+		<field name="verSubjectEmail" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.UnsecuredCreditor">
+		<field name="unsecuredCreditorId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="unsecuredCreditorName" type="String" />
+		<field name="unsecuredCreditorDebt" type="String" />
+		<field name="unsecuredCreditorAmount" type="String" />
+		<field name="unsecuredCreditorPayment" type="String" />
+		<field name="unsecuredCreditorCounter" type="String" />
+		<field name="unsecuredCreditorDate" type="Date" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.UsedSecurity">
+		<field name="usedSecurityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assetType" type="String" />
+		<field name="securityHolder" type="String" />
+		<field name="securityDetail" type="String" />
+		<field name="securityValue" type="String" />
+		<field name="securityLiability" type="String" />
+		<field name="securityNetValue" type="String" />
+		<field name="securityCounter" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.VerificationCompanyInfo">
+		<field name="verificationCompanyInfoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="verComName" type="String" />
+		<field name="verComTrn" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+	<model name="com.nbp.osi.insolvency.application.form.services.model.VerificationRequestorsInfo">
+		<field name="requestorInformationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="verRequestorName" type="String" />
+		<field name="verRequestorLastName" type="String" />
+		<field name="verRequestorOccupation" type="String" />
+		<field name="verRequestorAddress" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="verDateOfRequest" type="Date" />
+		<field name="verRequestorTelNum" type="String" />
+		<field name="verRequestorEmail" type="String" />
+		<field name="osiInsolvencyId" type="long" />
+	</model>
+</model-hints>

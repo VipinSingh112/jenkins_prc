@@ -1,0 +1,10 @@
+Bundle-Name: com.nbp.film.stages.services-api
+Bundle-SymbolicName: com.nbp.film.stages.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.nbp.film.stages.services.exception,\
+	com.nbp.film.stages.services.model,\
+	com.nbp.film.stages.services.service,\
+	com.nbp.film.stages.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../com.nbp.film.stages.services-service/service.xml

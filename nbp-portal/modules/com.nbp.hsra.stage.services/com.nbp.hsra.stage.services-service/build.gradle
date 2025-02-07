@@ -1,0 +1,12 @@
+dependencies {
+	implementation project(":modules:com.nbp.hsra.application.service:com.nbp.hsra.application.service-api")
+	implementation project(":modules:com.nbp.hsra.stage.services:com.nbp.hsra.stage.services-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.nbp.hsra.stage.services-api/src/main/java"
+}
+
+group = "com.nbp.hsra.stage.services"

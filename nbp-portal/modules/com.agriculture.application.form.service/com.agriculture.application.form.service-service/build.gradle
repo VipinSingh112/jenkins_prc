@@ -1,0 +1,11 @@
+dependencies {
+	implementation project(":modules:com.agriculture.application.form.service:com.agriculture.application.form.service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../com.agriculture.application.form.service-api/src/main/java"
+}
+
+group = "com.agriculture.application.form.service"
