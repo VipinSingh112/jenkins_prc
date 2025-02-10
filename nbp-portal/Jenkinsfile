@@ -22,7 +22,7 @@ pipeline {
 
         stage('Deploy to Liferay') {
             steps {
-                bat "copy modules\\build\\libs\\*.jar %LIFERAY_HOME%\\deploy\\"
+                bat "copy nbp-portal\\build\\libs\\*.jar %LIFERAY_HOME%\\deploy\\"
             }
         }
     }
