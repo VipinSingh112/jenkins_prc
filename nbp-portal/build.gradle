@@ -1,16 +1,1 @@
-def liferayHome = project.hasProperty('LIFERAY_HOME') ? project.LIFERAY_HOME : "C:/JBG/Server/liferay-dxp"
 
- task customDeploy  {
-    doLast {
-        def deployDir = new File("$liferayHome/deploy")
-        if (!deployDir.exists()) {
-            deployDir.mkdirs()  //
-        }
-        copy {
-            from file("build/libs/com.nbp.commons.util.jar")
-            into deployDir
-        }
-    }
-}
-
-// Check GETTING_STARTED.markdown for information regarding usage.
