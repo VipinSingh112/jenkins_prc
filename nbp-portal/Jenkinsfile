@@ -2,25 +2,27 @@ pipeline {
     agent any
 
     environment {
-        LIFERAY_HOME = "C:\JBG\Server\liferay-dxp" 
+        LIFERAY_HOME = "C:\\JBG\\Server\\liferay-dxp" 
     }
 
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/VipinSingh112/jenkins_prc.git'
+               git branch: 'main', url: 'https://github.com/VipinSingh112/jenkins_prc.git'
             }
         }
 
         stage('Build with Gradle') {
             steps {
-                sh './gradlew clean build'
+                dir('nbp-portal'){
+                   bat 'gradle build' 
+                }
             }
         }
 
         stage('Deploy to Liferay') {
             steps {
-                sh 'cp modules/build/libs/*.jar $LIFERAY_HOME/deploy/' 
+                bat "copy nbp-portal\\build\\libs\\*.jar %LIFERAY_HOME%\\deploy\\"
             }
         }
     }
