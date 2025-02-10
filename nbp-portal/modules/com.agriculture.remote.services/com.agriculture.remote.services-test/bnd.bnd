@@ -1,4 +1,0 @@
-Bundle-Name: com.agriculture.remote.services-test
-Bundle-SymbolicName: com.agriculture.remote.services.test
-Bundle-Version: 1.0.0
--includeresource: com.agriculture.remote.services.client.jar=../com.agriculture.remote.services-client/build/libs/com.agriculture.remote.services.client-1.0.0.jar;lib:=true

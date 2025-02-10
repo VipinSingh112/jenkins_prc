@@ -1,6 +1,0 @@
-Bundle-Name: com.agriculture.remote.services-api
-Bundle-SymbolicName: com.agriculture.remote.services.api
-Bundle-Version: 1.0.0
-Export-Package:\
-	com.agriculture.remote.services.dto.v1_0,\
-	com.agriculture.remote.services.resource.v1_0
