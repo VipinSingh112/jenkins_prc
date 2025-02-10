@@ -15,9 +15,7 @@ pipeline {
         stage('Build with Gradle') {
             steps {
                 dir('nbp-portal'){
-                    dir('nbp-portal'){
-            bat 'gradle deploy -PLIFERAY_HOME="%LIFERAY_HOME%"'  
-                    }
+                    bat 'gradle deploy -PLIFERAY_HOME="%LIFERAY_HOME%"'  
                 }
             }
         }
