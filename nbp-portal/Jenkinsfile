@@ -14,7 +14,9 @@ pipeline {
 
         stage('Build with Gradle') {
             steps {
-                bat 'gradle build'
+                dir('nbp-portal'){
+                   bat 'gradle build' 
+                }
             }
         }
 
