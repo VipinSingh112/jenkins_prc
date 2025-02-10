@@ -1,6 +1,6 @@
 def liferayHome = project.hasProperty('LIFERAY_HOME') ? project.LIFERAY_HOME : "C:/JBG/Server/liferay-dxp"
 
- task customDeploy { {
+ task customDeploy  {
     doLast {
         def deployDir = new File("$liferayHome/deploy")
         if (!deployDir.exists()) {
