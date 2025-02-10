@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/VipinSingh112/jenkins_prc.git'
+               git branch: 'main',  git 'https://github.com/VipinSingh112/jenkins_prc.git'
             }
         }
 
