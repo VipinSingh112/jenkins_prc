@@ -1,5 +1,0 @@
-Bundle-Name: com.nbp.user.dashboard
-Bundle-SymbolicName: com.nbp.user.dashboard
-Bundle-Version: 1.0.0
-Export-Package: com.nbp.user.dashboard.constants
-Web-ContextPath: /com.nbp.user.dashboard
