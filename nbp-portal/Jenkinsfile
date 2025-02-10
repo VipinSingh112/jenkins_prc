@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-               git branch: 'main',  git 'https://github.com/VipinSingh112/jenkins_prc.git'
+               git branch: 'main', url: 'https://github.com/VipinSingh112/jenkins_prc.git'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
 
         stage('Deploy to Liferay') {
             steps {
-                sh 'cp modules/build/libs/*.jar $LIFERAY_HOME/deploy/' 
+                bat "copy modules\\build\\libs\\*.jar %LIFERAY_HOME%\\deploy\\"
             }
         }
     }
