@@ -1,2 +1,0 @@
-create index IX_781B59DD on nbp_cannabis_collaboration (caseId[$COLUMN_LENGTH:75$], cannabisStage[$COLUMN_LENGTH:75$], userType[$COLUMN_LENGTH:75$], archived);
-create unique index IX_CC61C04E on nbp_cannabis_collaboration (uuid_[$COLUMN_LENGTH:75$], groupId);

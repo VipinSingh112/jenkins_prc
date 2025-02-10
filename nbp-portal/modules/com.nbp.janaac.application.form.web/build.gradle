@@ -1,7 +1,0 @@
-dependencies {
-	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
-	implementation project(":modules:com.nbp.commons.util")
-	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.0.3"
-	implementation project(":modules:com.nbp.janaac.application.form.service:com.nbp.janaac.application.form.service-api")
-	
-}
